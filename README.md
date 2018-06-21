@@ -6,7 +6,7 @@ Start by making a pull request of your uploaded files - including a name for the
 
 I will then create a folder containing those files.
 
-Since the 4050 series tapes only use file numbers - please use those same file numbers for each file.
+Since the 4050 series tapes only use file numbers - please use those same file numbers as the filename for each file.
 
 Some tapes have additional program name information stored in the file Header, so also include the output of the TLIST command as a separate file in your submission.
 
