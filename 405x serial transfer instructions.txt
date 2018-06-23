@@ -1,0 +1,125 @@
+Tektronix 4050 serial transfers to or from a PC
+-----------------------------------------------
+June 21, 2018 Monty McGraw
+
+This program assumes you have a working 405x computer with working tape drive and at least one good tape.
+
+I have found the original tapes from the 70's and 80's have bad drive belts.
+Search the vcfed.org forum for QIC tape repair instructions.
+Best source of replacement belts are to remove the ones in a 3M DC6150 or 3M DC6250 new/old stock cartridges.
+
+I used half an old PC printer cable 25-pin end to make my serial cable, and an ohmmeter to find the wire on the 25-pin connector that I wanted to solder to the 9-pin Female connector.  I used a 9-pin Female connector with solder cups on the pins and a backshell.
+
+I also recommend after soldering a cable wire to the 9-pin connector, that you recheck the connection from both ends using the ohmmeter.
+
+The pin numbers for both connectors should be embossed in the plastic holding the pins.
+
+Serial cable wiring
+-------------------
+
+PC side 		  4051 Side
+9 Pin Female 	  25 pin D-sub male
+
+1 - DTR 		  Pin 8 - DCD
+2 - Receive Data  Pin 3 - Transmitted Data
+3 - Transmit Data Pin 2 - Received Data
+4 - CD 			  Pin 20- DTR
+5 - Signal Ground Pin 7
+6 - No Connect	  ---        
+7 - CTS 		  Pin 4 - RTS
+8 - RTS 		  Pin 5 - CTS
+9 - No Connect    ---		  
+
+
+PC serial software and configuration
+------------------------------------
+
+I recommend PUTTY or EXTRAPUTTY - both free software downloads.
+
+Select "Serial" underneath Port.  Ensure the COM port number is correct - default is COM1
+
+Then select Serial in Category menu near the bottom.
+Set the Speed to 9600, 7 data bits, 1 stop bit, Even Parity, XON/XOFF flow control
+
+Select Window in the Category menu and increase the number of lines of scrollback to 99999.
+
+Select Session in the Category menu and type a name for this session - like 4051 and select Save.
+
+Plug your serial cable between the 4051/4052/4054 and PC. 
+
+Manually enter the bootstrap serial program into the Tektronix:
+---------------------------------------------------------------
+
+Type in the following program, and save it before running it :)
+							       -------------------------
+I have removed the REMARKS, the full program you will load in has all of the remarks
+Press the Auto Number key near the top of the keyboard
+
+100 M$=CHR(13)
+110 CALL "RATE",2400,2,0
+120 CALL "RCRLF",1,2,0
+130 CALL "RSTRIN","",M$,"*COP*"
+140 CALL "TCRLF",1,2,1
+150 PRINT "ESTABLISH COMMUNICATION LINK to PC"
+160 PRINT "Press User Definable Key #5 to switch back to BASIC MODE"
+170 CALL "CMSET"
+180 CALL "TERMIN"
+190 PRINT "YOU ARE NOW IN BASIC MODE"
+200 PRINT "PC DISC TO 4052 TAPE TRANSFER"
+210 PRINT @32,26:2
+220 PRINT "INSERT THE TAPE AND INPUT THE FILE # TO RECEIVE DATA ";
+230 INPUT F
+240 FIND F
+250 CALL "RCRLF",1,2,1
+260 CALL "CMSET"
+270 CALL "DTRECV"
+280 CALL "RCRLF",1,2,0
+290 PRINT "TRANSMISSION COMPLETE"
+
+
+Now to test your bootstrap program. Run your serial program.
+
+Plug in the serial cable between the 4051 and PC.
+
+Type RUN on the 405x to run your 4051 Bootstrap program.
+
+The 4051 BUSY then I/O lights should flash once then stop
+flashing. This means the 4051 senses the connection to the PC. If the
+lights don't stop flashing, recheck your serial cable pinout.
+
+When the lights stop flashing, try typing on the PC side in the
+serial window. You won't see an echo of your typing on the PC but
+should see it fine on the 4051.
+
+Try typing on the 4051, you should see that in the serial console window.
+
+Great. Now you are ready to transfer the full program that is attached to
+this email. Save the attachment on your PC.
+
+On the 4051, press the User Definable Key #5, the program should now print
+several lines and ask for you to 
+INSERT THE TAPE AND INPUT THE FILE NUMBER TO RECEIVE THE DATA.
+
+You should put in a tape to write this program on and have already MARKed
+the size of the file for 4096 bytes - if not, press the 4051 BREAK key twice
+to stop the bootstrap program and prepare the tape. 
+
+Then you can RUN the bootstrap program and hit the UserDef Key#5.
+
+Input the file number you will be writing TO on the 4051.
+
+The 4051 will then be waiting for the file transfer.
+On the PC, pull down the Transfer | Send Text File dialog box in
+Hyperterminal. Browse and select the file that I attached to this email.
+Click OK. You should hear the tape drive storing the file. 
+
+When the PC is done (no more 4051 tape activity) you need to type on the PC serial console window:
+*COP*
+
+This will close the file on the 4051 tape and you should see "TRANSMISSION
+COMPLETE"
+
+You now have the full 4051 send/receive program. Try it out on a file.
+
+Like I said, this program converts 4051 control characters (typically in
+PRINT statements for formatting) into three ASCII characters "~X~" (where X is the ASCII letter that you type with the Control key pressed). This conversion is necessary to keep the serial program from going wild trying to print the control characters.
