@@ -1,0 +1,31 @@
+100 REM *****  RESTORE PROGRAM
+110 REM  File 5
+120 PAGE
+130 PRINT "                  Restore HP Program from Tek Cartridge~J~~J~"
+140 IF F THEN 180
+150 PRINT "Load Restore Cartridge and press RETURN.~G~ ";
+160 INPUT X$
+170 F=1
+180 PRINT "~J~File Number";
+190 INPUT F1
+200 FIND F1
+210 CALL "CMINIT"
+220 CALL "RATE",R,0,2
+230 CALL "MARGIN",0,0,0
+240 PRINT @40:"SCR",C$
+250 INPUT %40:N$
+260 N$="TAPE"&C$
+270 CALL "EOLCHR",13,N$,0
+280 CALL "RSTRIN","","",""
+290 CALL "PROMPT",1,200,"~Q~"
+300 CALL "TSTRIN","~@~","~@~","~@~~@~~@~~@~~@~~@~~J~"
+310 CALL "TCRLF",1,2,1
+320 CALL "CMSET"
+330 CALL "DTSEND"
+340 PAGE
+350 PRINT "Program now resides in your HP Workspace."
+360 PRINT "Press RETURN to go to Terminal Mode.";
+370 N=2
+380 INPUT X$
+390 N=2
+400 GO TO 500

@@ -1,0 +1,115 @@
+99 REM 51/00-8030/0
+100 REM Test program for ICS/Fairchild coupler subroutines
+110 INIT
+120 N=0
+130 GOSUB 1415
+140 REM Take a pair of readings
+150 GOSUB 1000
+160 PRINT D1,D2
+170 N=N+1
+180 GO TO 140
+1000 REM Tektronix-4051 Subroutine to Read Data from Two
+1005 REM Fairchild/ICS 4880 GPIB Bus Couplers
+1010 REM
+1015 REM J. R. Matey--RCA Laboratories, Princeton, NJ 08540
+1020 REM Version 3.1      3 January 1979
+1025 REM
+1030 REM Global Variables
+1035 REM A1-address on GPIB of first bus coupler
+1040 REM A2-address on GPIB of second bus coupler
+1045 REM    both are weighted sums of the low order 5 bits of the
+1050 REM    address switch
+1055 REM D1-data read from device A1
+1060 REM D2-data read from device A2
+1065 REM F1-status flag for device A1
+1070 REM F2-status flag for device A2
+1075 REM
+1080 REM Local Variables
+1085 REM Q9-test variable
+1090 REM T9-time out counter
+1095 REM S-polling status
+1100 REM D-polling pointer
+1105 REM I$-ASCII input variable
+1110 REM W$-working string
+1115 REM
+1120 REM Associated Subroutines
+1125 REM SRQ interrupt subroutine (below)
+1130 REM Initialization and testing routine (below)
+1135 REM
+1140 REM --------------USE OF THE ROUTINES-----------------------
+1145 REM --------------------------------------------------------
+1150 REM      The intialization routine must be called first, after
+1155 REM that, each pair of readings, D1,D2, is obtained by a call
+1160 REM to this routine.
+1165 REM --------------------------------------------------------
+1170 REM
+1175 T9=0
+1180 F1=0
+1185 F2=0
+1190 ON SRQ THEN 1300
+1195 REM Trigger the two couplers--Note that this sequence is
+1200 REM not the sequence recommended by Tektronix or by ICS. It has
+1205 REM the advantage that it works consistantly.  The manufacturers'
+1210 REM suggestions are not reliable because of a subtle timing error.
+1215 WBYTE @63,95:
+1220 WBYTE @A1+32:
+1225 WBYTE @A2+32:
+1230 WBYTE @8:
+1235 WBYTE @63,95:
+1240 WBYTE @63,95:
+1245 REM Wait in a loop until both devices have responded.
+1250 REM The T9 test maybe altered for slower or faster devices.
+1255 T9=T9+1
+1260 IF F1*F2=0 THEN 1270
+1265 RETURN
+1270 IF T9<100 THEN 1255
+1275 W$=CHR(7)
+1280 PRINT "Time out--coupler(s) not responding to trigger";W$;W$;W$;W$
+1285 PRINT "F1= ";F1;"  F2= ";F2
+1290 STOP
+1295 REM ********************************************************
+1300 REM Service Request (SRQ) Subroutine
+1305 REM
+1310 POLL D,S;A1;A2
+1315 GO TO D OF 1355,1385
+1320 REM --------------------------------------------------------
+1325 W$=CHR(7)
+1330 PRINT "Polling error";W$;W$;W$;W$;W$
+1335 PRINT "D=";D;"  s=";S;"  F1=";F1;"  F2=";F2
+1340 PRINT "A1=";A1;"  A2=";A2
+1345 STOP
+1350 REM --------------------------------------------------------
+1355 REM Device A1 input and data conditioning
+1360 INPUT @A1,32:I$
+1365 D1=VAL(I$)
+1370 F1=S
+1375 RETURN
+1380 REM --------------------------------------------------------
+1385 REM Device A2 input and data conditioning
+1390 INPUT @A2,32:I$
+1395 D2=VAL(I$)
+1400 F2=S
+1405 RETURN
+1410 REM ********************************************************
+1415 REM Initialization Subroutine
+1420 ON SRQ THEN 1510
+1425 WBYTE @63,95:
+1430 REM  Set addresses of the devices
+1435 A1=16
+1440 A2=9
+1445 PRINT "Check"
+1450 PRINT "1. Correct attachment of cables to 4880's"
+1455 PRINT "2. SRQ buttons on the 4880's are out"
+1460 PRINT "3. Address switches are set correctly"
+1465 PRINT "   A1=";A1;"     A2=";A2
+1470 PRINT "4. 4880's power on"
+1475 PRINT "Enter 1 for test readings, 0 otherwise"
+1480 INPUT Q9
+1485 IF Q9=0 THEN 1500
+1490 GOSUB 1000
+1495 PRINT "D1= ";D1;"   D2= ";D2
+1500 RETURN
+1505 REM ********************************************************
+1510 REM Dummy subroutine to handle spurious SRQ's on startup
+1515 RETURN
+1520 REM*********************************************************
