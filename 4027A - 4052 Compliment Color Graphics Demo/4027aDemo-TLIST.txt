@@ -1,0 +1,12 @@
+ 1      ASCII   PROG AM           2304
+ 2      ASCII   PROG              2048
+ 3      ASCII   PROG              3328
+ 4      ASCII   PROG              3328
+ 5      ASCII   PROG              5120
+ 6      ASCII   PROG              2304
+ 7      ASCII   PROG              1536
+ 8      ASCII   PROG              1536
+ 9      ASCII   PROG              3840
+ 10     ASCII   PROGRAM           3840
+ 11     ASCII   PROG              8192
+ 12     LAST                      768
