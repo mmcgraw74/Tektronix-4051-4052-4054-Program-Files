@@ -1,0 +1,85 @@
+1 REM FILE 16: PICTURE ENTRY-DIGITIZER
+2 REM Part #062-3409-00
+3 GO TO 100
+4 REM ----USER-DEFINABLE KEY HANDLER
+8 REM
+12 REM
+16 REM
+20 REM
+24 REM
+28 REM
+32 REM
+36 REM
+40 Q9=Q9+1
+41 RETURN
+100 REM 4050 SERIES GPIB SUPPORT SOFTWARE FOR 4662
+110 INIT
+120 Q9=0
+130 T=1
+140 SET KEY
+150 DIM X$(40)
+160 RESTORE
+170 DATA -99999,-99999,99999,99999,0,100,2
+180 READ O6,O7,O8,O9,D,O2,O3
+190 PRINT "~L~~I~PICTURE ENTRY-DIGITIZER~_~"
+200 PRINT "~_~Insert STORAGE TAPE and enter target file number ";
+210 INPUT F
+220 IF F<=0 THEN 200
+230 FIND F
+240 ON EOF (0) THEN 780
+250 PRINT "~_~Enter picture name~_~"
+260 INPUT X$
+270 IF LEN(X$)>0 THEN 290
+280 X$=" "
+290 WRITE @33:X$
+300 PRINT "~_~Move the pen to the lower left corner of the"
+310 PRINT "digitizing window and press CALL.~_~"
+320 GOSUB 640
+330 O6=X
+340 O7=Y
+350 X1=D
+360 D=0
+370 PRINT "Move the pen to the upper right corner of the digitizing"
+380 PRINT "window and press CALL again.~_~~_~"
+390 GOSUB 640
+400 IF X<=O6 OR Y<=O7 THEN 110
+410 WRITE @33:O3,X1,D
+420 O8=X
+430 O9=Y
+440 WINDOW O6,X,O7,Y
+450 VIEWPORT 0,130 MIN (X-O6)/(Y-O7)*130,0,100 MIN (Y-O7)/(X-O6)*100
+460 PRINT "~L~TO MOVE:~I~Press ANY of the user definable keys on the ";
+470 PRINT "Graphic~_~~I~System ONCE, locate the point using the joystick "
+480 PRINT "~I~on the 4662 and then press CALL on the 4662."
+490 PRINT "TO DRAW:~I~Locate the point using the joystick on the 4662 ";
+500 PRINT "and~_~~I~then press CALL on the 4662."
+510 PRINT "TO TERMINATE:~I~Press ANY of the user definable keys on the";
+520 PRINT " Graphic~_~~I~System TWICE and press CALL on the 4662."
+530 INPUT @1,27:X,Y,Z
+540 PRINT "~G~";
+550 D=(Q9=1)*200000+(Q9>1)*800000
+560 IF X<O6 OR X>O8 OR Y<O7 OR Y>O9 THEN 530
+570 GOSUB 680
+580 WRITE @33:D
+590 IF Q9<1 THEN 610
+600 MOVE X,Y
+610 DRAW X,Y
+620 Q9=0
+630 GO TO 530
+640 INPUT @T,27:X,Y,Z
+650 PRINT "~G~";
+660 GOSUB 680
+670 RETURN
+680 D=D+100000-INT(X*O2+1.0E-10)
+690 D=D+(100000-INT(Y*O2+1.0E-10))/1000000
+700 IF D<800000 THEN 800
+710 WRITE @33:D
+720 PRINT "~L~~_~FILE ";F;" CLOSED"
+730 PRINT "Do you wish to digitize another picture ";
+740 INPUT A$
+750 IF A$="yes" OR A$="y" THEN 100
+760 PRI "PICTURE ENTRY ended--Load SUPPORT TAPE and press ""AUTOLOAD"""
+770 END
+780 PRINT "~_~~G~~G~Target file too small! Remark & rerun."
+790 END
+800 RETURN
