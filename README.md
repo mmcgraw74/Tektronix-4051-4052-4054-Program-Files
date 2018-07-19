@@ -1,6 +1,6 @@
 # Tektronix-4051-4052-4054-Program-Files
 
-This repository is intended to provide a public location to upload Tektronix 4050 series program tapes or disk images.
+This repository is intended to provide a public location to download OR upload Tektronix 4050 series program tapes or disk images.
 *********
 All files are compatible with the entire 4050 series - UNLESS the FOLDER or FILE says only works with one type
 ***********
