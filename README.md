@@ -56,7 +56,8 @@ Press UDK 5 to return to Tek BASIC
 Now you can FIND another file, type CALL "TERMIN", and you are ready to repeat the above steps to capture that file.  Instead of pressing UDK 5 you could press SHIFT UDK 3 and type a file number to FIND.  I like to be in BASIC and also do a CALL "HEADER" (4052 and 4054 only) to check what kind of file it is.  If you do that you need to do the FIND again before CALL "TERMIN" or you will get an error.
 
 *****
-The serial transfer instructions file contains instructions on wiring a 25 pin to 9 pin serial cable from the Tektronix to the PC serial port.  I tried using the serial transfer program to download to my 4054 - and my laptop is sending the characters too fast using PUTTY with software flow control.  It has been 20 years since I had this working - so my laptop is a lot faster than my desktop of 20 years ago.
-
+The serial transfer instructions file contains instructions on wiring a 25 pin to 9 pin serial cable from the Tektronix to the PC serial port.  
+****
+I haven't tested RealTerm transferring programs back to tape.  We could need to add a command to enable XON/XOFF handshaking for the 4051 or RTS/DTS hardware handshake on the 4052/4054
 ******
 If you don't have a serial interface on your Tektronix 4050 series computer - consider sending your tapes to someone who does, so the files can be archived.
