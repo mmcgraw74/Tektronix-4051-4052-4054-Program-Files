@@ -26,9 +26,13 @@ Instead of having to type in my serial transfer program - use the built in CALL 
 Type the following commands and use the User Definable Keys above the keyboard:
 
 CALL "RATE",9600,2                          only on 4052/54 - use 2400 max on 4051
+
 CALL "TSTRIN","",""                         Prevents NULLs and DC3 characters from being transmitted
+
 FIND x                                      find the file on the tape you want to transfer
+
 CALL "TERMIN"                               this puts in the 4050 in terminal mode
+
 press User Definable Key 16 (shift UDK 6)   turns off local echo (you only need to do this once)
 
 get your PC program ready to capture an ASCII file
