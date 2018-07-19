@@ -1,14 +1,19 @@
 # Tektronix-4051-4052-4054-Program-Files
 
 This repository is intended to provide a public location to upload Tektronix 4050 series program tapes or disk images.
+*********
+All files are compatible with the entire 4050 series - UNLESS the FOLDER or FILE says only works with one type
+***********
+You can download a single file, folder with all included files or whole archive.
+*******************************
 
-Start by making a pull request of your uploaded files - including a name for the tape or disk.
+File Upload - Start by making a pull request of your uploaded files - including a name for the tape or disk.
 
 I will then create a folder containing those files.
 
 Since the 4050 series tapes only use file numbers - please use those same file numbers as the filename for each file.
 
-Some tapes have additional program name information stored in the file Header, so also include the output of the TLIST command as a separate file in your submission.
+Some tapes have additional program name information stored in the file Header, so also include the output of the TLIST command as a separate file in your submission.  You can capture the TLIST to serial from BASIC with TLIST @40:
 
 *****
 Updated serial transfer program steps:
