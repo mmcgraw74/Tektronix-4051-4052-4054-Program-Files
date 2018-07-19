@@ -27,7 +27,7 @@ Type the following commands and use the User Definable Keys above the keyboard:
 
 CALL "RATE",9600,2                          only on 4052/54 - use 2400 max on 4051
 
-CALL "TSTRIN","",""                         Prevents NULLs and DC3 characters from being transmitted
+CALL "TSTRIN","","","D"                     Prevents NULLs and DC3 characters, Type Control-D, marks End of Tape transfer
 
 FIND x                                      find the file on the tape you want to transfer
 
