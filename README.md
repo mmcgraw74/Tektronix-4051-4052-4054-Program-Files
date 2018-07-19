@@ -4,7 +4,7 @@ This repository is intended to provide a public location to upload Tektronix 405
 *********
 All files are compatible with the entire 4050 series - UNLESS the FOLDER or FILE says only works with one type
 ***********
-You can download a single file, folder with all included files or whole archive.
+You can download a single file, folder with all included files or whole archive by clicking the Clone or Download button.
 *******************************
 
 File Upload - Start by making a pull request of your uploaded files - including a name for the tape or disk.
