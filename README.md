@@ -19,7 +19,7 @@ Since the 4050 series tapes only use file numbers - please use those same file n
 
 Some tapes have additional program name information stored in the file Header, so also include the output of the TLIST command as a separate file in your submission.  You can capture the TLIST to serial from BASIC with TLIST @40:
 *****
-Updated serial transfer program steps:
+Updated serial transfer from tape to PC steps:
 
 Instead of having to type in my serial transfer program - use the built in CALL "TERMIN" terminal program:
 
