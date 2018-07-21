@@ -39,10 +39,11 @@ get your PC program ready to capture an ASCII file
 
 press UDK 4 Data Send
 
-if the transfer completes without error - the tape stops
-error messages like READ errors will be displayed if they occur
+if the transfer completes without error - the tape stops.
 
-After the tape stops - close the file on the PC transfer program
+Error messages like READ errors will be displayed on the Tektronix screen if they occur.
+
+After the tape stops - close the file on the PC transfer program.
 
 ****
 I really like RealTerm (free download) - which can capture and send files or act as a terminal. To use it with the Tek - configure the Port tab for the same speed as in the RATE command. I use 9600 7E1 with no handshake. Then click the Capture tab - create a filename - click Direct Capture (no echo on the pc) - Start Overwrite.
