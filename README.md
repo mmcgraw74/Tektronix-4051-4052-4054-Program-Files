@@ -58,6 +58,7 @@ Now you can FIND another file, type CALL "TERMIN", and you are ready to repeat t
 
 *****
 The serial transfer instructions file contains instructions on wiring a 25 pin to 9 pin serial cable from the Tektronix to the PC serial port.  
+I cut an old 25-pin PC parallel port cable for the Tektronix side and soldered the wires to a 9-pin solder connector and backshell for the PC side. 
 ****
 I haven't tested RealTerm transferring programs back to tape.  We could need to add a command to enable XON/XOFF handshaking for the 4051 or RTS/DTS hardware handshake on the 4052/4054
 ******
