@@ -1,0 +1,27 @@
+ 1      ASCII   PROG /MATH II,I/  6144   
+ 2      ASCII   PROG /LIN PROGM/  2048   
+ 3      ASCII   PROGRAM     "  /  14080  
+ 4      ASCII   PROG /  "   "  /  14080  
+ 5      BINARY  DATA              35072  
+ 6      ASCII   PROG /SPLINE SM/  2048   
+ 7      ASCII   PROG /  "   "  /  8192   
+ 8      ASCII   PROG /  "   "  /  6144   
+ 9      ASCII   PROG /  "   "  /  8192   
+ 10     ASCII   PROG /POLY REGR/  2304   
+ 11     ASCII   PROG /  "   "  /  5632   
+ 12     ASCII   PROG /  "   "  /  5632   
+ 13     ASCII   PROG /  "   "  /  6400   
+ 14     ASCII   PROG /CHEBY FIT/  2304   
+ 15     ASCII   PROG /  "   "  /  6400   
+ 16     ASCII   PROG /  "   "  /  5888   
+ 17     ASCII   PROG /  "   "  /  6400   
+ 18     ASCII   PROG /PLANE FIT/  2304   
+ 19     ASCII   PROG /  "   "  /  5632   
+ 20     ASCII   PROG /  "   "  /  2816   
+ 21     ASCII   PROG /  "   "  /  4608   
+ 22     ASCII   PROG /  "   "  /  4608   
+ 23     ASCII   PROG /  "   "  /  7424   
+ 24     ASCII   PROG /L EQ-SYMM/  9984   
+ 25     ASCII   PROG /  "  CPLX/  12800  
+ 26     ASCII   PROG /  "  REAL/  11008  
+ 27     LAST                      768    
