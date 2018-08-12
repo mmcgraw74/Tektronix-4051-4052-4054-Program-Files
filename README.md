@@ -60,6 +60,18 @@ Now you can FIND another file, type CALL "TERMIN", and you are ready to repeat t
 The serial transfer instructions file contains instructions on wiring a 25 pin to 9 pin serial cable from the Tektronix to the PC serial port.  
 I cut an old 25-pin PC parallel port cable for the Tektronix side and soldered the wires to a 9-pin solder connector and backshell for the PC side. 
 ****
-I haven't tested RealTerm transferring programs back to tape.  We could need to add a command to enable XON/XOFF handshaking for the 4051 or RTS/DTS hardware handshake on the 4052/4054
+PROGRAM DOWNLOAD FROM PC TO 4050 Instructions:
+- Use RealTerm on your PC, or other serial terminal program with complete configurability of rate and ability to capture and send files
+- Configure PC terminal program for 300 baud, Even Parity, 7 bits
+- On your 4051/4052/4054 with Option 1 Serial, type CALL "PRLIST" to list your Serial Parameters
+- CALL "RATE",300,2,0     to set the rate to 300 baud, Even Parity
+- CALL "TSTRIN","","",""  prevents XON/XOFF characters in the data
+- CALL "RSTRIN","","",""  prevents XON/XOFF characters in the data
+- CALL "TERMIN"           this instantiates all the parameters
+- press the UDK key 5     returns control to BASIC - but with serial enabled
+- OLD@40:                 typing this on the 4050 makes it ready to accept the program from the PC over serial
+- start the file send on the terminal program
+- when the file send is complete, press 4050 Break key twice to stop the transfer
+- type RUN to start the program
 ******
 If you don't have a serial interface on your Tektronix 4050 series computer - consider sending your tapes to someone who does, so the files can be archived.
