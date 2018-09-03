@@ -1,0 +1,45 @@
+ 1      ASCII   PROG /Directory/  1536   
+ 2      ASCII   PROG /Multivar /  6912   
+ 3      ASCII   PROG /Log Axis /  3072   
+ 4      ASCII   PROG /INTERP   /  2304   
+ 5      ASCII   PROG /LORAN-C  /  11776  
+ 6      ASCII   PROG /GPIC Exc /  23808  
+ 7      ASCII   PROG /TV I/F   /  1536   
+ 8      ASCII   PROG /Linker   /  1280   
+ 9      ASCII   PROG /"" One   /  768    
+ 10     ASCII   PROG /"" Resolv/  3840   
+ 11     ASCII   PROG /""Doc/Op /  4608   
+ 12     ASCII   PROG /""Doc/Ovr/  1280   
+ 13     ASCII   PROG /Data Graf/  4608   
+ 14     ASCII   PROG /""Ovrly  /  4864   
+ 15     ASCII   PROG /""Overlay/  4864   
+ 16     ASCII   PROG /""Overlay/  2560   
+ 17     ASCII   PROG /""Overlay/  3840   
+ 18     ASCII   PROG /"" Pie   /  6656   
+ 19     ASCII   PROG /""Slidemk/  3840   
+ 20     ASCII   PROG /Stereonet/  6656   
+ 21     ASCII   PROG /  ""     /  2048   
+ 22     ASCII   PROG /  ""     /  7424   
+ 23     ASCII   PROG /  ""     /  4608   
+ 24     ASCII   PROG MAINSTREAM   16128  
+ 25     ASCII   PROG PSTEN LEGAL  4864   
+ 26     ASCII   PROG DMTEN LEGAL  6144   
+ 27     ASCII   PROG FGTEN LEGAL  6656   
+ 28     ASCII   PROG DCNIN LEGAL  6656   
+ 29     ASCII   PROG DCTEN LEGAL  6144   
+ 30     ASCII   PROG SITEN LEGAL  6400   
+ 31     ASCII   PROG MITEN LEGAL  8704   
+ 32     ASCII   PROG PSTEN ERROR  7424   
+ 33     ASCII   PROG DMTEN ERROR  5120   
+ 34     ASCII   PROG FGTEN ERROR  5376   
+ 35     ASCII   PROG DCNIN ERROR  4352   
+ 36     ASCII   PROG DCTEN ERROR  5632   
+ 37     ASCII   PROG SITEN ERROR  3584   
+ 38     ASCII   PROG MITEN ERROR  7168   
+ 39     ASCII   PROG /TAPEDUMP /  1792   
+ 40     ASCII   PROG /Assembler/  768    
+ 41     ASCII   DATA /  ""     /  11520  
+ 42     ASCII   TEXT /  ""     /  4608   
+ 43     ASCII   TEXT /  ""     /  3328   
+ 44     ASCII   TEXT /  ""     /  768    
+ 45     LAST                      768    
