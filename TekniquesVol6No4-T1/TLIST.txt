@@ -1,0 +1,31 @@
+ 1      ASCII   PROG /Directory/  1792   
+ 2      ASCII   PROG /Assembler/  16128  
+ 3      ASCII   PROG /TECO     /  17664  
+ 4      BINARY  PROG /PCB Lyout/  20992  
+ 5      BINARY  DATA /PCB-Data /  17920  
+ 6      ASCII   PROG /Pipe Cons/  6912   
+ 7      ASCII   PROG /Mom Inert/  19200  
+ 8      ASCII   PROG /FFT      /  1792   
+ 9      ASCII   PROG /IFT      /  2816   
+ 10     ASCII   PROG /Newton   /  6400   
+ 11     ASCII   PROG /Bauer-Rsh/  1280   
+ 12     ASCII   PROG /Ten Util /  9728   
+ 13     ASCII   PROG /"" Smple /  1280   
+ 14     ASCII   PROG /Telex    /  8960   
+ 15     ASCII   PROG /Data Chrt/  22528  
+ 16     ASCII   PROG /SDBAR    /  4864   
+ 17     ASCII   PROG /"" Ex Grf/  1024   
+ 18     ASCII   PROG /UTIL III /  32512  
+ 19     ASCII   PROG /Inventory/  4864   
+ 20     ASCII   TEXT /  "  "   /  1280   
+ 21     ASCII   TEXT /  "  "   /  2048   
+ 22     ASCII   TEXT /  "  "   /  1536   
+ 23     ASCII   P PA /Flowchrtr/  4096   
+ 24     ASCII   P PA /  "  "   /  2560   
+ 25     ASCII   P PA /  "  "   /  3072   
+ 26     ASCII   P PA /  "  "   /  14848  
+ 27     ASCII   P PA /  "  "   /  768    
+ 28     ASCII   PROG /Frdly Gph/  5120   
+ 29     BINARY  PROG /  "   "  /  48128  
+ 30     ASCII   TEXT /  "   "  /  12800  
+ 31     LAST                      768    
