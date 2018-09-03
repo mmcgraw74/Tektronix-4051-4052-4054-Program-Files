@@ -1,223 +1,1 @@
-      MANUFACTURING SEQUENCE FLOWCHARTER       REVISED: 30-DEC-81
-
-  The MANUFACTURING SEQUENCE FLOWCHARTER program allows a non-
-technical person with little 4050 DESK TOP COMPUTER experience
-to easily produce and edit FLOWCHARTS. The MANUFACTURING SEQUENCE
-FLOWCHARTER is specifically designed to be efficient in producing
-and maintaining FLOWCHARTS which describe the processes that sets
-of materials go through to become finished products.
-
-Some of the more important program features are:
-
-  1. FLOWCHARTS can be easily produced, edited, and saved.
-
-  2. FLOWCHARTS can be drawn on the SCREEN, or a PLOTTER.
-
-  3. Two FLOWCHARTS can be merged side by side on a PLOTTER page.
-
-  4. FLOWCHARTS can be transfered between tapes.
-
-  5. In the LARGE BOXES, text is automatically centered.
-     In the SMALL BOXES, SEQUENCE numbers and TIMES can be summed
-     each time the FLOWCHART is drawn, thereby allowing instant
-     SEQUENCE and instrument TIME updates.
-
-  6. "FREE FORM" FLOWCHARTS can be drawn.
-
-  7. FLOWCHARTS can be altered ONLY by those having this program.
-
-
-
-  EQUIPMENT REQUIRED:
-
-  1. 4050 GRAPHIC COMPUTING SYSTEM with OPTION 22(32k memory).
-
-  2. 4631 HARDCOPIER(for normal copies).
-
-  3. 4662 PLOTTER with GPIB cable(for better quality copies).
-
-  GETTING STARTED:
-
- 1. Power up the 4050 DESK TOP COMPUTER, and the HARDCOPIER,
-    if used, or the PLOTTER(set page size) if used.
-
- 2. Insert the MANUFACTURING SEQUENCE FLOWCHARTER tape,
-    then press <AUTOLOAD>.
-
- 3. The tape will load, the SCREEN will erase and the PROMPT:
-    "DATE:" will appear.  Enter today's date, then <RETURN>.
-
- 4. The question "PRINT APPROVED DATE?" comes next.  The
-    approved date is the date previously entered onto the
-    FLOWCHART's upper right corner after it has been approved.
-    Enter <Y> to display it, or anything else to leave it blank.
-
- 5. The question "HARDCOPY AUTOMATICALLY?" is next.  If one
-    answers <Y> to this question, then every time a complete
-    FLOWCHART is drawn on the SCREEN, and a HARDCOPIER
-    is connected, a HARDCOPY is automatically made.
-
-
- 6. Next is "PRINT FLOWCHART # AND DRAW TIC MARKS?".  A <Y> to
-    this question causes the FLOWCHART number to appear in
-    front of the FLOWCHART TITLE on the top of the SCREEN and
-    dots to appear around the SCREEN perimeter which indicate
-    where the BOXES and interconnecting lines can be drawn.
-
- 7. The last question is "SUM SEQUENCES?". A <Y> to this
-    question causes all TIMES to be summed by SEQUENCE and
-    then into the instrument total TIME.  The SEQUENCES and
-    TIMES will be listed on the bottom of the page.  These
-    values are recomputed every time the FLOWCHART is drawn,
-    thus the figures are always current.  Each SEQUENCE on
-    the center line of the BOX and each TIME on the bottom
-    of the BOX must be between 000 and 999. In addition, a
-    decimal point can replace one of the TIME digits.
-    ONLY the values in the small BOXES are checked or summed.
-
- 8. The SCREEN will erase, and the MENU will appear.
-
-UDK FUNCTION
-11 MENU
-12 LIST USER'S MANUAL ON SCREEN/PRINTER(ADDRESS: #51)
- 1 DRAW/REMOVE 3-WIDE BOX
- 2 DRAW/REMOVE BOX
- 3 DRAW/REMOVE HORIZONTAL INTERCONNECT LINE
- 4 DRAW/REMOVE VERTICAL INTERCONNECT LINE
- 5 INPUT DATA(<SPACE><RETURN> ENDS INPUT)
-15 REMOVE DATA WITHIN BOX
- 6 DRAW FLOWCHART FROM TAPE ON SCREEN/PLOTTER(ADDRESS: #1)
-16 SAVE FLOWCHART IN MEMORY ONTO TAPE
- 7 MOVE CURSOR(*) DOWN
- 8 MOVE CURSOR(*) UP
- 9 MOVE CURSOR(*) LEFT
-10 MOVE CURSOR(*) RIGHT
-13 REMOVE FLOWCHART FROM MEMORY
-14 REMOVE FLOWCHART TITLE FROM FLOWCHART DIRECTORY
-17 COPY A FLOWCHART TO ANOTHER FLOWCHART TAPE
-18 HALT FLOWCHART DRAWING
-19 REDRAW FLOWCHART IN MEMORY ON SCREEN/PLOTTER
-20 CREATE A NEW MANUFACTURING SEQUENCE FLOWCHARTER TAPE
-
-Select the appropriate User Definable Key(one of the ten white
-keys in the upper left corner of the keyboard).
-
-
-
-
-
-
-
-
-NOTE: if a PROMPT(QUESTION) ends with a "#", then ONLY a number
-      from 1 to 30 or a <RETURN> is valid. If the PROMPT ends
-      with a "?", then ONLY a <Y>, or <N>(or <RETURN>) is valid.
-      ANY KEY EXCEPT <Y> (INCLUDING <RETURN>) IMPLIES A "NO".
-      IF ONLY <RETURN> IS ENTERED AFTER A "#", AND NO "<RETURN>="
-      PROMPT IS INDICATED, THEN THE PRESENT FUNCTION IS NOT DONE,
-      INSTEAD THE MENU IS DISPLAYED.
-
-
-User Definable Key(UDK) FUNCTIONAL DESCRIPTION:
-
- 1. DRAW/REMOVE 3-WIDE BOX -- Draw a 3-WIDE BOX which will hold
-    3 lines of 13 characters.  They will be automatically cen-
-    tered on each line.  Press UDK #1 again to remove 3-WIDE BOX.
-
- 2. DRAW/REMOVE BOX -- Draw a BOX which will hold three lines of
-    3 characters.  The center and bottom line must be blank
-    or contain numbers between 000 and 999.  This line is pri-
-    marily used for SEQUENCE numbers, and the bottom line is pri-
-    marily used for TIMES.  A DECIMAL POINT(.) can replace one of
-    the bottom line digits. Press UDK #2 again to remove the BOX.
-
- 3. DRAW/REMOVE HORIZONTAL INTERCONNECT LINE -- Draw a 
-    HORIZONTAL LINE which will connect to BOXES and/or other
-    lines.  Press UDK #3 again to remove the HORIZONTAL LINE.
-
- 4. DRAW/REMOVE VERTICAL INTERCONNECT LINE -- Draw a VERTICAL
-    LINE which will connect to BOXES and/or other lines.
-    Press UDK #4 again to remove the VERTICAL LINE.
-
- 5. INPUT DATA(<SPACE><RETURN> ENDS INPUT) -- Input data into 
-    a BOX or anyplace on the page. Data input ends after three
-    lines are entered into a BOX, or after a <SPACE><RETURN>
-    is entered at the beginning of a line.
-
- 6. DRAW FLOWCHART FROM TAPE ON SCREEN/PLOTTER(ADDRESS: #1) --
-    Load the selected FLOWCHART data from tape to memory,
-    then draw it on the SCREEN using the options selected
-    after pressing <AUTOLOAD>(see "GETTING STARTED").
-
-PROMPT:  A. "DRAW: #"  Enter FLOWCHART number to draw.
-         B. "ON PLOTTER?" <Y> will draw FLOWCHART on the PLOTTER.
-            1. "2 FLOWCHARTS?"  <Y> draws two FLOWCHARTS on
-               one PLOTTER page(1st on left, 2nd on right).
-            2. "& FLOWCHART: #"  Enter 2nd FLOWCHART # to merge
-               onto right side of PLOTTER page.
-
- 7. MOVE CURSOR(*) DOWN -- Move the CURSOR down one tic mark(.)
-
- 8. MOVE CURSOR(*) UP -- Move the CURSOR up one tic mark.
-
- 9. MOVE CURSOR(*) LEFT -- Move the CURSOR left one tic mark.
-
-10. MOVE CURSOR(*) RIGHT -- Move the CURSOR right one tic mark.
-
-11. MENU -- List the User Definable Key(UDK) MENU by function.
-
-12. LIST USER'S MANUAL -- List the USER'S MANUAL on the SCREEN
-    or at address #51, the right backpack slot, usually to
-    an OPTION 10 Printer Interface which is connected to a
-    a 4641 LINE PRINTER or equivalent.  If the SCREEN is selected
-    and a HARDCOPIER is connected and powered up, a HARDCOPY
-    will be made at the end of each page automatically.
-
-13. REMOVE FLOWCHART FROM MEMORY -- Remove the present FLOWCHART
-    from the memory.  Use this key ONLY if you want to start 
-    with a clean slate! After the FLOWCHART is removed from
-    memory, it cannot be retrieved!!!
-
-14. REMOVE FLOWCHART TITLE FROM FLOWCHART DIRECTORY -- Remove the
-    TITLE ONLY of a FLOWCHART from the FLOWCHART DIRECTORY on
-    file # 2.  The FLOWCHART can still be retrieved by entering
-    that number to draw from tape to SCREEN/PLOTTER, UDK #6.
-
-15. REMOVE DATA WITHIN BOX -- Remove the data within a BOX.
-    To remove data in an area outside of a BOX, draw a BOX around
-    the data, remove the data in the BOX, then remove the BOX.
-
-16. SAVE FLOWCHART IN MEMORY ONTO TAPE --  Copy the FLOWCHART
-    currently in memory onto the tape(30 FLOWCHARTS MAXIMUM).
-    Enter <0><RETURN> to relist MENU.
-
-PROMPT:  A. "REPLACE: #"  Replace the existing FLOWCHART on
-            the tape with the present FLOWCHART in memory.
-         B. "DESIRED TITLE:"  Enter TITLE of FLOWCHART(40 char.
-            max) or <RETURN> to use "PRESENT TITLE" shown above.
-         C. "ASSIGN/REMOVE/MODIFY APPROVED DATE?"  Add, remove,
-            or change the "approved" date which eventually shows
-            up in the upper right corner of each FLOWCHART.
-
-17. COPY A FLOWCHART TO ANOTHER FLOWCHART TAPE -- COPY a FLOW-
-    CHART from the present MANUFACTURING SEQUENCE FLOWCHARTER
-    tape to another MANUFACTURING SEQUENCE FLOWCHARTER tape.
-   
-PROMPT:  A. "COPY: #"  Enter the number of FLOWCHART to be
-            copied to another FLOWCHARTER tape.
-
-
-
-         B. "REMOVE: #"
-            "AFTER COPYING?"  Remove the FLOWCHART TITLE from the
-            Original FLOWCHART DIRECTORY after COPYING is done.
-
-18. HALT FLOWCHART DRAWING -- Halt the drawing in progress.
-
-19. REDRAW FLOWCHART IN MEMORY -- Redraw the FLOWCHART presently
-    in memory.  After the MENU is listed, this is the normal
-    UDK to press to clear the SCREEN and draw the tic marks
-    useful for drawing a new FLOWCHART from scratch.
-
-20. CREATE A NEW MANUFACTURING SEQUENCE FLOWCHARTER TAPE --
-    Initialize a blank tape for use as a FLOWCHARTER TAPE.
+      MANUFACTURING SEQUENCE FLOWCHARTER       REVISED: 30-DEC-81  The MANUFACTURING SEQUENCE FLOWCHARTER program allows a non-technical person with little 4050 DESK TOP COMPUTER experienceto easily produce and edit FLOWCHARTS. The MANUFACTURING SEQUENCEFLOWCHARTER is specifically designed to be efficient in producingand maintaining FLOWCHARTS which describe the processes that setsof materials go through to become finished products.Some of the more important program features are:  1. FLOWCHARTS can be easily produced, edited, and saved.  2. FLOWCHARTS can be drawn on the SCREEN, or a PLOTTER.  3. Two FLOWCHARTS can be merged side by side on a PLOTTER page.  4. FLOWCHARTS can be transfered between tapes.  5. In the LARGE BOXES, text is automatically centered.     In the SMALL BOXES, SEQUENCE numbers and TIMES can be summed     each time the FLOWCHART is drawn, thereby allowing instant     SEQUENCE and instrument TIME updates.  6. "FREE FORM" FLOWCHARTS can be drawn.  7. FLOWCHARTS can be altered ONLY by those having this program.  EQUIPMENT REQUIRED:  1. 4050 GRAPHIC COMPUTING SYSTEM with OPTION 22(32k memory).  2. 4631 HARDCOPIER(for normal copies).  3. 4662 PLOTTER with GPIB cable(for better quality copies).  GETTING STARTED: 1. Power up the 4050 DESK TOP COMPUTER, and the HARDCOPIER,    if used, or the PLOTTER(set page size) if used. 2. Insert the MANUFACTURING SEQUENCE FLOWCHARTER tape,    then press <AUTOLOAD>. 3. The tape will load, the SCREEN will erase and the PROMPT:    "DATE:" will appear.  Enter today's date, then <RETURN>. 4. The question "PRINT APPROVED DATE?" comes next.  The    approved date is the date previously entered onto the    FLOWCHART's upper right corner after it has been approved.    Enter <Y> to display it, or anything else to leave it blank. 5. The question "HARDCOPY AUTOMATICALLY?" is next.  If one    answers <Y> to this question, then every time a complete    FLOWCHART is drawn on the SCREEN, and a HARDCOPIER    is connected, a HARDCOPY is automatically made. 6. Next is "PRINT FLOWCHART # AND DRAW TIC MARKS?".  A <Y> to    this question causes the FLOWCHART number to appear in    front of the FLOWCHART TITLE on the top of the SCREEN and    dots to appear around the SCREEN perimeter which indicate    where the BOXES and interconnecting lines can be drawn. 7. The last question is "SUM SEQUENCES?". A <Y> to this    question causes all TIMES to be summed by SEQUENCE and    then into the instrument total TIME.  The SEQUENCES and    TIMES will be listed on the bottom of the page.  These    values are recomputed every time the FLOWCHART is drawn,    thus the figures are always current.  Each SEQUENCE on    the center line of the BOX and each TIME on the bottom    of the BOX must be between 000 and 999. In addition, a    decimal point can replace one of the TIME digits.    ONLY the values in the small BOXES are checked or summed. 8. The SCREEN will erase, and the MENU will appear.UDK FUNCTION11 MENU12 LIST USER'S MANUAL ON SCREEN/PRINTER(ADDRESS: #51) 1 DRAW/REMOVE 3-WIDE BOX 2 DRAW/REMOVE BOX 3 DRAW/REMOVE HORIZONTAL INTERCONNECT LINE 4 DRAW/REMOVE VERTICAL INTERCONNECT LINE 5 INPUT DATA(<SPACE><RETURN> ENDS INPUT)15 REMOVE DATA WITHIN BOX 6 DRAW FLOWCHART FROM TAPE ON SCREEN/PLOTTER(ADDRESS: #1)16 SAVE FLOWCHART IN MEMORY ONTO TAPE 7 MOVE CURSOR(*) DOWN 8 MOVE CURSOR(*) UP 9 MOVE CURSOR(*) LEFT10 MOVE CURSOR(*) RIGHT13 REMOVE FLOWCHART FROM MEMORY14 REMOVE FLOWCHART TITLE FROM FLOWCHART DIRECTORY17 COPY A FLOWCHART TO ANOTHER FLOWCHART TAPE18 HALT FLOWCHART DRAWING19 REDRAW FLOWCHART IN MEMORY ON SCREEN/PLOTTER20 CREATE A NEW MANUFACTURING SEQUENCE FLOWCHARTER TAPESelect the appropriate User Definable Key(one of the ten whitekeys in the upper left corner of the keyboard).NOTE: if a PROMPT(QUESTION) ends with a "#", then ONLY a number      from 1 to 30 or a <RETURN> is valid. If the PROMPT ends      with a "?", then ONLY a <Y>, or <N>(or <RETURN>) is valid.      ANY KEY EXCEPT <Y> (INCLUDING <RETURN>) IMPLIES A "NO".      IF ONLY <RETURN> IS ENTERED AFTER A "#", AND NO "<RETURN>="      PROMPT IS INDICATED, THEN THE PRESENT FUNCTION IS NOT DONE,      INSTEAD THE MENU IS DISPLAYED.User Definable Key(UDK) FUNCTIONAL DESCRIPTION: 1. DRAW/REMOVE 3-WIDE BOX -- Draw a 3-WIDE BOX which will hold    3 lines of 13 characters.  They will be automatically cen-    tered on each line.  Press UDK #1 again to remove 3-WIDE BOX. 2. DRAW/REMOVE BOX -- Draw a BOX which will hold three lines of    3 characters.  The center and bottom line must be blank    or contain numbers between 000 and 999.  This line is pri-    marily used for SEQUENCE numbers, and the bottom line is pri-    marily used for TIMES.  A DECIMAL POINT(.) can replace one of    the bottom line digits. Press UDK #2 again to remove the BOX. 3. DRAW/REMOVE HORIZONTAL INTERCONNECT LINE -- Draw a     HORIZONTAL LINE which will connect to BOXES and/or other    lines.  Press UDK #3 again to remove the HORIZONTAL LINE. 4. DRAW/REMOVE VERTICAL INTERCONNECT LINE -- Draw a VERTICAL    LINE which will connect to BOXES and/or other lines.    Press UDK #4 again to remove the VERTICAL LINE. 5. INPUT DATA(<SPACE><RETURN> ENDS INPUT) -- Input data into     a BOX or anyplace on the page. Data input ends after three    lines are entered into a BOX, or after a <SPACE><RETURN>    is entered at the beginning of a line. 6. DRAW FLOWCHART FROM TAPE ON SCREEN/PLOTTER(ADDRESS: #1) --    Load the selected FLOWCHART data from tape to memory,    then draw it on the SCREEN using the options selected    after pressing <AUTOLOAD>(see "GETTING STARTED").PROMPT:  A. "DRAW: #"  Enter FLOWCHART number to draw.         B. "ON PLOTTER?" <Y> will draw FLOWCHART on the PLOTTER.            1. "2 FLOWCHARTS?"  <Y> draws two FLOWCHARTS on               one PLOTTER page(1st on left, 2nd on right).            2. "& FLOWCHART: #"  Enter 2nd FLOWCHART # to merge               onto right side of PLOTTER page. 7. MOVE CURSOR(*) DOWN -- Move the CURSOR down one tic mark(.) 8. MOVE CURSOR(*) UP -- Move the CURSOR up one tic mark. 9. MOVE CURSOR(*) LEFT -- Move the CURSOR left one tic mark.10. MOVE CURSOR(*) RIGHT -- Move the CURSOR right one tic mark.11. MENU -- List the User Definable Key(UDK) MENU by function.12. LIST USER'S MANUAL -- List the USER'S MANUAL on the SCREEN    or at address #51, the right backpack slot, usually to    an OPTION 10 Printer Interface which is connected to a    a 4641 LINE PRINTER or equivalent.  If the SCREEN is selected    and a HARDCOPIER is connected and powered up, a HARDCOPY    will be made at the end of each page automatically.13. REMOVE FLOWCHART FROM MEMORY -- Remove the present FLOWCHART    from the memory.  Use this key ONLY if you want to start     with a clean slate! After the FLOWCHART is removed from    memory, it cannot be retrieved!!!14. REMOVE FLOWCHART TITLE FROM FLOWCHART DIRECTORY -- Remove the    TITLE ONLY of a FLOWCHART from the FLOWCHART DIRECTORY on    file # 2.  The FLOWCHART can still be retrieved by entering    that number to draw from tape to SCREEN/PLOTTER, UDK #6.15. REMOVE DATA WITHIN BOX -- Remove the data within a BOX.    To remove data in an area outside of a BOX, draw a BOX around    the data, remove the data in the BOX, then remove the BOX.16. SAVE FLOWCHART IN MEMORY ONTO TAPE --  Copy the FLOWCHART    currently in memory onto the tape(30 FLOWCHARTS MAXIMUM).    Enter <0><RETURN> to relist MENU.PROMPT:  A. "REPLACE: #"  Replace the existing FLOWCHART on            the tape with the present FLOWCHART in memory.         B. "DESIRED TITLE:"  Enter TITLE of FLOWCHART(40 char.            max) or <RETURN> to use "PRESENT TITLE" shown above.         C. "ASSIGN/REMOVE/MODIFY APPROVED DATE?"  Add, remove,            or change the "approved" date which eventually shows            up in the upper right corner of each FLOWCHART.17. COPY A FLOWCHART TO ANOTHER FLOWCHART TAPE -- COPY a FLOW-    CHART from the present MANUFACTURING SEQUENCE FLOWCHARTER    tape to another MANUFACTURING SEQUENCE FLOWCHARTER tape.   PROMPT:  A. "COPY: #"  Enter the number of FLOWCHART to be            copied to another FLOWCHARTER tape.         B. "REMOVE: #"            "AFTER COPYING?"  Remove the FLOWCHART TITLE from the            Original FLOWCHART DIRECTORY after COPYING is done.18. HALT FLOWCHART DRAWING -- Halt the drawing in progress.19. REDRAW FLOWCHART IN MEMORY -- Redraw the FLOWCHART presently    in memory.  After the MENU is listed, this is the normal    UDK to press to clear the SCREEN and draw the tic marks    useful for drawing a new FLOWCHART from scratch.20. CREATE A NEW MANUFACTURING SEQUENCE FLOWCHARTER TAPE --    Initialize a blank tape for use as a FLOWCHARTER TAPE.
