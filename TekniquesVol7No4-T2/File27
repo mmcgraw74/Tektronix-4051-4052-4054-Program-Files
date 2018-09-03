@@ -1,0 +1,249 @@
+4000 REM **** FILE 4 - FG5010 ****
+4005 F$="FG5010 Settings Test"
+4010 FOR L1=1 TO L
+4015 PRINT @D0:"<<";F$;">>  Loop ";L1;" of ";L;"     Unit ";P(N4)
+4100 REM
+4105 REM                                             **** Verify ID ****
+4110 REM
+4115 A$="ID TEK/FG5010,V"
+4120 GOSUB 2700
+4200 REM
+4205 REM                          **** Verify settings after 'INIT' ****
+4210 REM
+4215 A$="INIT;SET?;"
+4220 GOSUB 500
+4225 GOSUB 600
+4230 I$="FREQ  1.0E+3;AMPL  500.0E-3;OFFS  0.0;SYM  50;PHASE  0;"
+4235 I$=I$&"NBUR  10;FUNC SINE;MODE CONT;SLOPE POS;OUT OFF;COMP OFF;"
+4240 I$=I$&"AM OFF;FM OFF;VCF OFF;HOLD OFF;GATE OFF;PLI OFF;DT OFF;"
+4245 I$=I$&"USER OFF;RQS ON;"
+4250 IF B$=I$ THEN 4300
+4255 GOSUB 5800
+4300 REM
+4305 REM                                                **** 'TEST' ****
+4310 REM
+4315 A$="TEST"
+4320 GOSUB 500
+4325 FOR I=1 TO 500
+4330 REM  Pause to allow sufficient time to complete 'TEST'.
+4335 NEXT I
+4340 GOSUB 600
+4345 REM ^^^ Get results of 'TEST'.
+4350 I$="TEST  0;"
+4355 IF B$=I$ THEN 4400
+4360 REM  Do a 'GETSTA' to check status byte of instrument.
+4365 WBYTE @95,63,24,64+P(N4):
+4370 RBYTE X
+4375 WBYTE @95,25:
+4380 IF X=65 THEN 4395
+4385 PRINT @D0:"***** Status not POWER UP after 'TEST' command."
+4390 PRINT @D0:"Status byte returned was: ";X
+4395 GOSUB 5800
+4400 REM
+4405 REM    **** USER, RQS, PLI, HOLD, AM, FM, VCF, GATE, COMP, OUT ****
+4410 REM
+4415 RESTORE 5915
+4420 V=0
+4425 A$="FREQ  195;MODE GATE;"
+4430 GOSUB 500
+4435 FOR I=1 TO 10
+4440 READ H$
+4445 FOR J=1 TO 3
+4450 GOSUB J OF 5200,5300,5200
+4455 NEXT J
+4460 NEXT I
+4500 REM
+4505 REM                                 **** SLOPE, FUNC, DT, MODE ****
+4510 REM
+4515 V=0
+4520 RESTORE 5935
+4525 FOR I=1 TO 4
+4530 READ H$,K
+4535 FOR J=1 TO K
+4540 READ S$
+4545 GOSUB 5400
+4550 NEXT J
+4555 NEXT I
+4600 REM
+4605 REM                    **** FREQ, AMPL, OFFS, NBUR, PHASE, SYM ****
+4610 REM
+4615 V=1
+4620 DELETE K1,K2,K3
+4625 RESTORE 5970
+4630 FOR I=1 TO 6
+4635 READ H$,K1,K2,K3
+4637 A$="DISP "&H$
+4638 GOSUB 500
+4640 FOR J=K1 TO K2 STEP K3
+4645 GOSUB 5500
+4650 NEXT J
+4655 NEXT I
+4660 A$="DISP FREQ;"
+4665 GOSUB 500
+4700 REM
+4705 REM                                         **** STORE, RECALL ****
+4710 REM
+4715 FOR I=9 TO 1 STEP -1
+4720 A$="INIT;"
+4725 GOSUB 500
+4730 RESTORE 6015
+4735 READ W$,X$,Z$
+4740 A$=W$
+4745 A$=A$&X$
+4750 A$=A$&Z$
+4755 GOSUB 500
+4760 A$="SET?"
+4765 GOSUB 500
+4770 GOSUB 600
+4775 I$=B$
+4780 A$="STORE "
+4785 X$=STR(I)
+4790 A$=A$&X$
+4795 A$=A$&";INIT;RECALL "
+4800 A$=A$&X$
+4805 A$=A$&";SET?;"
+4810 GOSUB 500
+4815 GOSUB 600
+4820 IF B$=I$ THEN 4830
+4825 GOSUB 5800
+4830 NEXT I
+4900 REM
+4905 REM                                                **** LLSET? ****
+4910 REM
+4915 A$="INIT;LLSET?;"
+4920 GOSUB 500
+4925 DELETE K1,K2
+4930 E=0
+4935 DIM K1(50),K2(50)
+4940 WBYTE @64+P(N4):
+4941 REM                                                ON EOI THEN 5050
+4942 REM                                                  FOR I8=1 TO 42
+4945 RBYTE K1
+4947 REM                                                         NEXT I8
+4950 WBYTE @63,95:
+4955 RESTORE 6045
+4960 READ K2
+4962 IF SUM(K1)=SUM(K2) THEN 4985
+4965 FOR I=1 TO 50
+4970 REM              IF I>14 AND I<18 OR I=25 OR I=27 OR I=42 THEN 4980
+4975 IF K1(I)<>K2(I) THEN 4990
+4980 NEXT I
+4985 GO TO 5100
+4990 IF E=1 THEN 5005
+4995 PRINT @D0:"**** ERROR ****"
+5000 PRINT @D0:"INIT;LLSET?; in FG5010 Test."
+5002 PRINT @D0:"Recieved:","Expected:"
+5005 PRINT @D0:"K1(";I;")=";K1(I),"K2(";I;")=";K2(I)
+5010 E=1
+5015 GO TO 4980
+5050 OFF EOI 
+5055 IF I8=>50 THEN 5095
+5060 RBYTE K1(I8)
+5095 RETURN 
+5100 REM
+5105 REM                                                   *** ERR?; ***
+5110 REM
+5115 A$="INIT;ERR?;"
+5120 I$="ERR  0;"
+5125 GOSUB 500
+5130 GOSUB 600
+5135 REM ^^^ Flush out last Error Code 
+5140 GOSUB 500
+5145 GOSUB 600
+5150 REM ^^^ Get up-dated Error Code
+5155 IF B$=I$ THEN 5165
+5160 GOSUB 5805
+5165 REM
+5170 REM                                             *** End of Test ***
+5175 REM
+5180 NEXT L1
+5185 RETURN 
+5200 REM
+5205 REM                                            *** HEADER & OFF ***
+5210 REM
+5215 A$=H$&" OFF"
+5220 GO TO 5600
+5300 REM
+5305 REM                                             *** HEADER & ON ***
+5310 REM
+5315 A$=H$&" ON"
+5320 GO TO 5600
+5400 REM
+5405 REM                                       *** HEADER & ARGUMENT ***
+5410 REM
+5415 A$=H$&" "
+5420 A$=A$&S$
+5425 GO TO 5600
+5500 REM
+5505 REM *** HEADER & STR(J) ***
+5510 REM
+5515 S$=STR(J)
+5520 A$=H$&" "
+5525 A$=A$&S$
+5600 REM
+5605 REM                                                *** BUILD A$ ***
+5610 REM
+5615 A$=A$&";"
+5620 I$=A$
+5625 A$=A$&H$
+5630 A$=A$&"?;"
+5635 GOSUB 5700
+5640 RETURN 
+5700 REM
+5705 REM                                                 *** PUT/GET ***
+5710 REM
+5715 GOSUB 500
+5720 GOSUB 600
+5725 IF V=0 THEN 5775
+5730 X1=POS(B$," ",1)
+5735 X2=POS(B$,";",1)
+5740 Z$=SEG(B$,1,X1-1)
+5745 X$=SEG(B$,X1,X2-X1)
+5750 X=VAL(X$)
+5755 X$=STR(X)
+5760 B$=Z$&" "
+5765 B$=B$&X$
+5770 B$=B$&";"
+5775 IF B$=I$ THEN 5785
+5780 GOSUB 5800
+5785 RETURN 
+5800 REM
+5805 REM                                                  *** SET E$ ***
+5810 REM
+5815 E$="Incorrect response to "
+5820 E$=E$&A$
+5825 GOSUB 2500
+5830 RETURN 
+5900 REM
+5905 REM                                        *** First 10 Headers ***
+5910 REM
+5915 DATA "USER","RQS","PLI","HOLD","AM","FM","VCF","GATE","COMP","OUT"
+5920 REM 
+5925 REM                                          *** Next 4 Headers ***
+5930 REM
+5935 DATA "SLOPE",2,"POS","NEG"
+5940 DATA "FUNC",3,"SQUARE","TRIANGLE","SINE"
+5945 DATA "DT",4,"SET","TRIG","GATE","OFF"
+5950 DATA "MODE",5,"CONT","TRIG","GATE","BURST","LOCK"
+5955 REM
+5960 REM   *** Header, Starting Argument, Ending Argument, Step Size ***
+5965 REM
+5970 DATA "FREQ",2.0E+7,1,-100000
+5975 DATA "AMPL",20,0,-1
+5980 DATA "OFFS",7.5,-7.5,-0.5
+5985 DATA "NBUR",9999,1,-100
+5990 DATA "PHASE",90,-90,-10
+5995 DATA "SYM",90,10,-5
+6000 REM
+6005 REM         *** Non-default Settings for 'STORE', 'RECALL' Test ***
+6010 REM
+6015 DATA "FREQ 250;AMPL 2.0;OFFS 5.0;SYMM 60;PHASE 45;NBUR 100;"
+6020 DATA "FUNC TRI;MODE TRIG; HOLD OFF;SLO NEG;GATE OFF;OUT ON;"
+6025 DATA "AM ON;FM ON;VCF ON;PLI OFF;DT OFF;USER OFF;RQS ON;"
+6030 REM
+6035 REM                                            *** LLSET?; data ***
+6040 REM
+6045 DATA 76,76,83,69,84,32,37,0,40,136,177,211,129,8,0,3,23,232,7,208
+6050 DATA 255,255,246,248,102,128,0,5,191,173,1,244,191,134,63,250,68
+6055 DATA 122,0,0,68,122,0,0,63,0,0,0,249,-59
+

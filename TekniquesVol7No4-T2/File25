@@ -1,0 +1,210 @@
+4000 REM **** FILE 2 - PS5010 ****
+4005 F$="PS5010 Settings Test"
+4010 FOR L1=1 TO L
+4015 PRINT @D0:"<<";F$;">>  Loop ";L1;" of ";L;"     Unit ";P(N4)
+4100 REM
+4105 REM                                               *** VERIFY ID ***
+4110 REM
+4115 A$="ID TEK/PS5010,V"
+4120 GOSUB 2700
+4200 REM
+4205 REM                            *** VERIFY SETTINGS AFTER 'INIT' ***
+4210 REM
+4215 A$="INIT;SET?"
+4220 GOSUB 500
+4225 GOSUB 600
+4230 I$="VNEG  0.0;INEG  0.4;VPOS  0.0;IPOS  0.4;VLOG  5.0;ILOG  1.0;"
+4235 I$=I$&"FSOUT OFF;LSOUT OFF;NRI OFF;PRI OFF;LRI OFF;DT OFF;"
+4240 I$=I$&"USER OFF;RQS ON;"
+4245 IF B$=I$ THEN 4300
+4250 GOSUB 5600
+4300 REM
+4305 REM                                                  *** 'TEST' ***
+4310 REM
+4315 A$="TEST"
+4320 GOSUB 500
+4325 FOR I=1 TO 500
+4330 REM  Pause to allow sufficient time to complete 'TEST'.
+4335 NEXT I
+4340 GOSUB 600
+4345 REM ^^^  Get results of 'TEST'.
+4350 I$="TEST 0;"
+4355 IF B$=I$ THEN 4400
+4360 GOSUB 5600
+4400 REM
+4405 REM              *** FSOUT, LSOUT, USER, RQS, PRI, NRI, LRI, DT ***
+4410 REM
+4415 RESTORE 5715
+4420 K=1
+4425 Q=1
+4430 V=0
+4435 FOR I=1 TO 8
+4440 READ H$
+4445 IF I<8 THEN 4455
+4450 K=3
+4455 FOR J=K TO K+2
+4460 GOSUB J OF 5200,5250,5200,5300,5200
+4465 NEXT J
+4470 NEXT I
+4500 REM
+4505 REM                                      *** VNEG, VPOS, VTRACK ***
+4510 REM
+4515 Q=1
+4520 V=1
+4525 FOR I=1 TO 3
+4530 READ H$
+4535 FOR J=32 TO 0 STEP -2
+4540 IF I<3 THEN 4550
+4545 Q=0
+4550 GOSUB 5350
+4555 NEXT J
+4560 NEXT I
+4600 REM
+4605 REM                                                    *** VLOG ***
+4610 REM
+4615 Q=1
+4620 V=1
+4625 READ H$
+4630 FOR J=5.5 TO 4.5 STEP -0.15
+4635 GOSUB 5350
+4640 NEXT J
+4700 REM
+4705 REM                                      *** INEG, IPOS, ITRACK ***
+4710 REM
+4715 Q=1
+4720 V=1
+4725 FOR I=1 TO 3
+4730 READ H$
+4735 FOR J=0.75 TO 0.05 STEP -0.15
+4740 IF I<3 THEN 4750
+4745 Q=0
+4750 GOSUB 5350
+4755 NEXT J
+4760 NEXT I
+4800 REM
+4805 REM                                                    *** ILOG ***
+4810 REM
+4815 Q=1
+4820 V=1
+4825 READ H$
+4830 FOR J=3 TO 0.1 STEP -0.1
+4835 GOSUB 5350
+4840 NEXT J
+4900 REM
+4905 REM                                                  *** LLSET? ***
+4910 REM
+4915 A$="INIT;LLSET?"
+4920 GOSUB 500
+4925 DELETE K1,K2
+4930 DIM K1(26),K2(26)
+4935 WBYTE @64+P(N4):
+4940 RBYTE K1
+4945 WBYTE @63,95:
+4950 RESTORE 5765
+4955 READ K2
+4960 FOR I=1 TO 26
+4965 IF K1(I)=K2(I) THEN 4977
+4966 I$=""
+4967 B$=""
+4970 FOR I1=1 TO 26
+4971 X$=STR(K1(I1))
+4972 B$=B$&X$
+4973 X$=STR(K2(I1))
+4974 I$=I$&X$
+4975 NEXT I1
+4976 GOSUB 5600
+4977 NEXT I
+5000 REM
+5005 REM                                                    *** ERR? ***
+5010 REM
+5015 I$="ERR  0;"
+5020 A$="INIT;"
+5025 GOSUB 500
+5027 A$="ERR?;"
+5028 GOSUB 500
+5030 GOSUB 600
+5032 GOSUB 500
+5033 GOSUB 600
+5035 IF B$=I$ THEN 5100
+5040 GOSUB 5600
+5100 REM
+5105 REM                                                    *** REG? ***
+5110 REM
+5115 A$="REG?;"
+5120 I$="REG 1,1,1;"
+5125 GOSUB 500
+5130 GOSUB 600
+5135 IF B$=I$ THEN 5145
+5140 GOSUB 5600
+5145 REM
+5150 REM                                             *** End of Test ***
+5155 REM
+5160 NEXT L1
+5165 RETURN 
+5200 REM
+5205 REM                                              *** HEADER OFF ***
+5210 REM
+5215 A$=H$&" OFF"
+5220 GO TO 5400
+5250 REM
+5255 REM *** HEADER ON ***
+5260 REM
+5265 A$=H$&" ON"
+5270 GO TO 5400
+5300 REM
+5305 REM                                              *** HEADER SET ***
+5310 REM
+5315 A$=H$&" SET"
+5320 GO TO 5400
+5350 REM
+5355 REM                                         *** HEADER & STR(J) ***
+5360 REM
+5365 S$=STR(J)
+5370 A$=H$&" "
+5375 A$=A$&S$
+5400 REM
+5405 REM                                                *** BUILD A$ ***
+5410 REM
+5415 A$=A$&";"
+5420 I$=A$
+5425 IF Q=0 THEN 5440
+5430 A$=A$&H$
+5435 A$=A$&"?;"
+5440 GOSUB 5450
+5445 RETURN 
+5450 REM
+5455 REM                                                 *** PUT/GET ***
+5460 REM
+5465 GOSUB 500
+5470 IF Q=0 THEN 5525
+5475 GOSUB 600
+5480 IF V=0 THEN 5515
+5485 X1=POS(B$," ",1)
+5490 X2=POS(B$,";",1)
+5495 X$=SEG(B$,X1+2,X2-(X1+2))
+5500 X=VAL(X$)
+5505 X$=STR(X)
+5510 B$=REP(X$,X1+1,X2-(X1+1))
+5515 IF B$=I$ THEN 5525
+5520 GOSUB 5600
+5525 RETURN 
+5600 REM
+5605 REM                                                  *** SET E$ ***
+5610 REM
+5615 E$="Incorrect response to "
+5620 E$=E$&A$
+5625 GOSUB 2500
+5630 RETURN 
+5700 REM
+5705 REM                                             *** HEADER DATA ***
+5710 REM
+5715 DATA "FSOUT","LSOUT","USER","RQS","PRI","NRI","LRI","DT"
+5720 DATA "VNEG","VPOS","VTRACK","VLOG","INEG","IPOS","ITRACK"
+5725 DATA "ILOG"
+5750 REM 
+5755 REM                                              *** LLSET DATA ***
+5760 REM
+5765 DATA 76,76,83,69,84,32,37,0,16,10,32,0,32,0,50,10,0,0,0,0,0,0,0
+5770 DATA 255,107,-59
+6000 END 
+

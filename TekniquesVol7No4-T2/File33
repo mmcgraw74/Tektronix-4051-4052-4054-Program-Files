@@ -1,0 +1,206 @@
+4000 REM **** FILE 10 - DM5010 Error Code Generation ****4/14/82
+4005 F$="DM5010 Error Code Test"
+4010 FOR L1=1 TO L
+4015 PRINT "<<";F$;">>  Loop ";L1;" of ";L;"     Unit ";P(N4)
+4100 REM
+4105 REM                                               *** VERIFY ID ***
+4110 REM
+4115 A$="ID TEK/DM5010,V"
+4120 GOSUB 2700
+4125 ON SRQ THEN 5500
+4200 REM
+4205 REM                                   *** Initialize instrument ***
+4210 REM
+4215 A$="INIT;"
+4220 GOSUB 500
+4300 REM
+4305 REM                 *** Codes 101, 102, 103, 104, 106, 107, 205 ***
+4310 REM
+4315 Q=1
+4320 RESTORE 5715
+4325 READ K
+4330 FOR J=1 TO K
+4335 READ A$,S1,S2
+4340 GOSUB 5300
+4345 NEXT J
+4400 REM
+4405 REM                                                *** Code 203 ***
+4410 REM
+4412 GO TO 4500
+4415 RESTORE 5740
+4420 READ A$,H$,S1,S2
+4425 A$=A$&H$
+4430 GOSUB 5300
+4500 REM
+4505 REM                                           *** Codes 202,206 ***
+4510 REM
+4515 Q=1
+4520 S1=98
+4525 S2=206
+4530 A$="DT OFF;"
+4535 GOSUB 500
+4540 WBYTE @32+P(N4),8:
+4545 REM  Send G.E.T
+4550 FOR I=1 TO 50
+4555 REM  Give time to field SRQ
+4560 NEXT I
+4565 IF E=S2 AND (S9=S1 OR ABS(S9-16=S1)) THEN 4575
+4570 GOSUB 5400
+4575 S1=98
+4580 S2=202
+4585 Q=10000
+4590 PRINT 
+4595 PRINT "Please attempt to change settings on front-panel."
+4600 E=0
+4605 A$="ACV;AVE 10;FUNC?;SET?;"
+4610 GOSUB 500
+4615 IF E=0 THEN 4610
+4620 IF E=S2 AND (S9=S1 OR ABS(S9-S1)=16) THEN 4700
+4625 GOSUB 5400
+4700 REM
+4705 REM                                                *** Code 402 ***
+4710 REM
+4715 Q=1
+4720 A$="INIT;"
+4725 GOSUB 500
+4730 A$="AVE 5;CALC AVE;DCV;OPC ON;"
+4735 S1=66
+4740 S2=402
+4745 GOSUB 5300
+4800 REM
+4805 REM                                                *** Code 403 ***
+4810 REM
+4815 Q=2
+4820 A$="INIT;"
+4825 GOSUB 500
+4830 A$="USER ON;"
+4835 S1=67
+4840 S2=403
+4845 PRINT 
+4850 PRINT "Press Front-Panel ID Button."
+4855 GOSUB 5300
+4900 REM
+4905 REM                                                *** Code 601 ***
+4910 REM
+4915 Q=1
+4920 A$="INIT;"
+4925 GOSUB 500
+4930 PRINT 
+4935 PRINT "Connect a power supply to the DM5010 and set a voltage of"
+4940 PRINT "less than 2 Vdc."
+4945 PRINT "Hit RETURN when done."
+4950 INPUT Q$
+4955 A$="OVER ON;DCV 2;AVE 20;CALC AVE;"
+4960 S1=102
+4965 S2=601
+4970 PRINT 
+4975 PRINT "Now increase the voltage to greater than 2 Vdc."
+4980 GOSUB 5300
+4981 A$="INIT;"
+4982 GOSUB 500
+4983 E=0
+4984 FOR I=1 TO 50
+4985 REM  Wait until INIT takes affect
+4986 NEXT I
+4987 IF E<>0 THEN 4983
+5000 REM
+5005 REM                                          *** Codes 701, 703 ***
+5010 REM
+5015 Q=1
+5020 A$="INIT;"
+5025 GOSUB 500
+5030 PRINT 
+5035 PRINT "Set the voltage source to +11 Vdc."
+5040 PRINT "Hit RETURN when done.";
+5045 INPUT Q$
+5050 A$="DCV;LIMITS 10,12;MON ON;AVE 20;CALC AVE;"
+5055 S1=193
+5060 S2=703
+5065 PRINT 
+5070 PRINT "Now increase the voltage source to greater than 12 Volts."
+5075 GOSUB 5300
+5080 A$="INIT;"
+5085 GOSUB 500
+5090 PRINT "Return the voltage to 11 Vdc."
+5095 PRINT "Hit RETURN when done.";
+5100 INPUT Q$
+5105 PRINT "Now reduce the voltage source to less than 10 Volts."
+5110 A$="DCV;LIMITS 10,12;MON ON;AVE 10;CALC AVE;"
+5115 S1=195
+5120 S2=701
+5125 GOSUB 5300
+5130 A$="INIT;"
+5135 GOSUB 500
+5140 PRINT 
+5145 PRINT "Disconnect voltage source from DM5010."
+5150 PRINT "Hit RETURN when done.";
+5155 INPUT Q$
+5200 REM
+5205 REM                                             *** END OF TEST ***
+5210 REM
+5215 A$="INIT;"
+5220 GOSUB 500
+5225 NEXT L1
+5230 ON SRQ THEN 2900
+5235 RETURN 
+5300 REM
+5305 REM                                           *** PUT/WAIT/TEST ***
+5310 REM
+5315 E=0
+5320 GOSUB 500
+5325 IF E=0 THEN 5325
+5330 IF E=S2 AND (S9=S1 OR ABS(S9-S1)=16) THEN 5340
+5335 GOSUB 5400
+5340 RETURN 
+5400 REM
+5405 REM                                                  *** SET E$ ***
+5410 REM
+5415 E$="Incorrect Error Code or Status returned after "
+5420 E$=E$&A$
+5425 B$="Status"
+5430 S$=STR(S9)
+5435 B$=B$&S$
+5440 B$=B$&", Error Code"
+5445 S$=STR(E)
+5450 B$=B$&S$
+5455 I$="Status"
+5460 S$=STR(S1)
+5465 I$=I$&S$
+5470 I$=I$&", Error Code"
+5475 S$=STR(S2)
+5480 I$=I$&S$
+5485 GOSUB 2500
+5490 RETURN 
+5500 REM
+5505 REM                                       *** Local SRQ Handler ***
+5510 REM
+5515 S$=" "
+5520 FOR I1=1 TO N1
+5525 IF T(I1)=0 THEN 5545
+5530 POLL D,S9;P(I1)
+5535 IF D<>0 AND P(I1)<>P(N4) THEN 2955
+5540 IF D<>0 AND P(I1)=P(N4) THEN 5560
+5545 NEXT I1
+5550 GO TO 5620
+5560 FOR I=1 TO Q
+5565 IF Q=1 OR (Q<>1 AND I<>2) THEN 5580
+5570 PRINT "Front Panel Interrupt Seen."
+5575 PRINT "Now in FOR-NEXT loop of ";Q;" counts."
+5580 NEXT I
+5585 PRINT @P(N4):"ERR?;"
+5590 INPUT @P(N4):B$
+5610 B$=SEG(B$,5,LEN(B$))
+5615 E=VAL(B$)
+5635 RETURN 
+5700 REM
+5705 REM                                  ***ERRONEOUS COMMAND DATA ***
+5710 REM
+5715 DATA 7
+5720 DATA "DVV;",97,101,"RAT;",97,102,"CALC ON;",97,103
+5725 DATA "RATIO 0 1;",97,104,"AVE ",97,106
+5730 DATA "DCV.FUNC?;",97,107
+5735 DATA "AVE 20000;",98,205
+5740 DATA "SET?;SET?;"
+5745 DATA "AVE 1.0000000000000000000000000000000000000000000000000000;"
+5750 DATA 98,203
+
