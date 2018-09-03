@@ -1,0 +1,425 @@
+100 INIT 
+110 PAGE 
+120 X$="***************************************************************"
+130 PRINT X$
+140 PRINT 
+150 PRINT "               PC COMPONENT MECHANICAL ANALYSIS             "
+160 PRINT 
+170 PRINT X$
+179 PRINT 
+180 PRINT 
+181 PRINT "                    ----------------------                  "
+182 PRINT "                   |                      |                 "
+183 PRINT "                   |   25 FEBRUARY 1980   |                 "
+184 PRINT "                   |                      |                 "
+185 PRINT "                   |     TOM SATTLER      |                 "
+186 PRINT "                   |     ME ANALYSIS      |                 "
+187 PRINT "                    ----------------------                  "
+190 PRINT 
+191 FOR I=1 TO 600
+192 NEXT I
+200 PAGE 
+210 PRINT 
+220 PRINT "DO YOU WISH TO:  "
+230 PRINT "              1)  examine leadless/leaded components ?      "
+240 PRINT "              2)  printout leadless parameters ?            "
+250 PRINT "              3)  printout leaded parameters ?              "
+260 PRINT "              4)  stop ?                                    "
+270 PRINT 
+280 INPUT Q
+290 GO TO Q OF 295,1810,2410,2490
+295 PAGE 
+300 PRINT "The following values for yield strength of solder are only  "
+310 PRINT "applicable for dynamic and short duration static loads.     "
+320 PRINT "Static loads applied over a period of time longer than TEN  "
+330 PRINT "MINUTES require using a yield strength very much smaller    "
+340 PRINT "than this, because of its susceptibility to creep.  See     "
+341 PRINT "users manuel.                                               "
+350 PRINT 
+360 PRINT 
+370 PRINT 
+380 PRINT 
+390 PRINT "Enter the yield strength of solder, in tension (psi)        "
+400 INPUT S1
+410 PRINT 
+420 PRINT "Enter the yield strength os solder, in shear (psi)          "
+430 INPUT S2
+440 PRINT 
+450 PRINT "Enter the thickness of solder pad, after reflow  (in)       "
+460 INPUT T
+470 PRINT 
+480 PRINT "Enter the maximum allowable elongation of solder, in percent"
+490 INPUT E1
+500 PRINT 
+510 PRINT "Enter the PC board length, between end supports  (in)       "
+520 INPUT L3
+530 PRINT 
+540 PRINT "Enter the maximum deflection of the PC board  (in)          "
+550 INPUT D1
+560 PRINT 
+561 PRINT "Which boundary conditions apply to the PC board ?           "
+562 PRINT "                            1) pinned - pinned              "
+563 PRINT "                            2) clamped - clamped            "
+564 INPUT M3
+565 PRINT 
+570 PRINT "Enter the title of your part                                "
+580 INPUT T$
+590 D3=T*E1/100
+600 PAGE 
+610 PRINT ""
+620 PRINT "           SECTION 1:    CHIP RESISTORS                     "
+630 PRINT 
+640 PRINT 
+650 PRINT 
+660 PRINT 
+670 PRINT 
+680 Z1=2
+690 R$="chip resistors "
+700 K$=R$
+710 Z=Z1
+720 GOSUB 5000
+730 N1=N
+740 IF N1=0 THEN 780
+750 DIM R(N1,16)
+760 GOSUB 5050
+770 R=K
+780 PAGE 
+790 PRINT ""
+800 PRINT "         SECTION 2:    CHIP CAPACITORS                      "
+810 PRINT 
+820 PRINT 
+830 PRINT 
+840 PRINT 
+850 PRINT 
+860 Z2=2
+870 Z=Z2
+880 P$="chip capacitors"
+890 K$=P$
+900 GOSUB 5000
+910 N2=N
+920 IF N2=0 THEN 960
+930 DIM C(N2,16)
+940 GOSUB 5050
+950 C=K
+960 PAGE 
+970 PRINT ""
+980 PRINT "       SECTION 3:   CHIP INDUCTORS                          "
+990 PRINT 
+1000 PRINT 
+1010 PRINT 
+1020 PRINT 
+1030 PRINT 
+1040 Z3=2
+1050 Z=Z3
+1060 I$="chip inductors "
+1070 K$=I$
+1080 GOSUB 5000
+1090 N3=N
+1100 IF N3=0 THEN 1140
+1110 DIM B(N3,16)
+1120 GOSUB 5050
+1130 B=K
+1140 PAGE 
+1150 PRINT ""
+1160 PRI "        SECTION 4:     SEMICONDUCTORS                       "
+1170 PRINT 
+1180 PRINT 
+1190 PRINT 
+1200 PRINT 
+1210 PRINT 
+1220 Z4=3
+1230 Z=Z4
+1240 S$="semiconductors"
+1250 K$=S$
+1260 GOSUB 5000
+1270 N4=N
+1280 IF N4=0 THEN 1320
+1290 DIM F(N4,16)
+1300 GOSUB 5050
+1310 F=K
+1320 PAGE 
+1330 PRINT ""
+1340 PRINT "       SECTION 5:     INTEGRATED CIRCUITS                  "
+1350 PRINT 
+1360 PRINT 
+1370 PRINT 
+1380 PRINT 
+1390 PRINT 
+1400 E$="integrated circuits"
+1410 K$=E$
+1420 GOSUB 5000
+1430 N5=N
+1440 IF N5=0 THEN 1480
+1450 GOSUB 6000
+1460 DIM G(N5,16)
+1470 G=K
+1480 PRINT 
+1490 PAGE 
+1500 PRINT ""
+1510 PRINT "            PART II:     LEADED COMPONENTS                 "
+1520 PRINT 
+1530 PRINT 
+1540 PRINT 
+1550 PRINT 
+1560 PRINT 
+1570 L$="leaded components"
+1580 K$=L$
+1590 GOSUB 5000
+1600 N6=N
+1610 IF N6=0 THEN 1800
+1620 PRINT "Enter the approx. height of solder meniscus (after reflow) "
+1630 INPUT H1
+1640 PRINT 
+1650 PRINT "Enter the PC board thickness"
+1660 INPUT T1
+1670 PRINT 
+1680 PRINT "For each component, enter its part no., lead diameter, # of"
+1690 PRINT "leads that are flush mounted, and the # of leads that are "
+1700 PRINT "soldered through "
+1710 DIM O(N6,7)
+1720 FOR I=1 TO N6
+1730 INPUT O(I,1),O(I,2),O(I,3),O(I,4)
+1740 NEXT I
+1750 FOR I=1 TO N6
+1760 O(I,5)=O(I,3)*S2*PI*O(I,2)*H1
+1770 O(I,6)=O(I,4)*S2*PI*O(I,2)*(H1+T1)
+1780 O(I,7)=O(I,5)+O(I,6)
+1790 NEXT I
+1800 GO TO 200
+1810 PAGE 
+1820 PRINT "Has data been previously saved for this part ?             "
+1830 PRINT "                                             1) yes        "
+1840 PRINT "                                             2) no         "
+1850 INPUT Q1
+1860 IF Q1=2 THEN 2050
+1870 PRINT 
+1880 PRINT "Which file should it be retrieved from ?                   "
+1890 INPUT A2
+1900 FIND A2
+1910 INPUT @33:R$
+1920 INPUT @33:P$
+1930 INPUT @33:I$
+1940 INPUT @33:S$
+1950 INPUT @33:E$
+1970 INPUT @33:T$
+1980 INPUT @33:N1,N2,N3,N4,N5,N6,T,E1
+1990 DIM R(N1,16),C(N2,16),B(N3,16),F(N4,16),G(N5,16)
+2000 INPUT @33:R,C,B
+2010 INPUT @33:F,G
+2020 IF N6=0 THEN 2050
+2025 INPUT @33:L$
+2030 DIM O(N6,7)
+2040 INPUT @33:O
+2050 K$=R$
+2060 DELETE K,N
+2070 N=N1
+2080 IF N1=0 THEN 2120
+2090 DIM K(N1,16)
+2100 K=R
+2110 GOSUB 7000
+2120 K$=P$
+2130 DELETE K,N
+2140 N=N2
+2150 IF N2=0 THEN 2190
+2160 DIM K(N2,16)
+2170 K=C
+2180 GOSUB 7000
+2190 K$=I$
+2200 DELETE K,N
+2210 N=N3
+2220 IF N3=0 THEN 2260
+2230 DIM K(N3,16)
+2240 K=B
+2250 GOSUB 7000
+2260 K$=S$
+2270 DELETE K,N
+2280 N=N4
+2290 IF N4=0 THEN 2330
+2300 DIM K(N4,16)
+2310 K=F
+2320 GOSUB 7000
+2330 K$=E$
+2340 DELETE K,N
+2350 N=N5
+2360 IF N5=0 THEN 2410
+2370 DIM K(N5,16)
+2380 K=G
+2390 GOSUB 7000
+2400 GO TO 200
+2410 K$=L$
+2420 DELETE K,N
+2430 N=N6
+2440 IF N6=0 THEN 2480
+2450 DIM K(N6,7)
+2460 K=O
+2470 GOSUB 8000
+2480 GO TO 200
+2490 PAGE 
+2500 PRINT "Which file do you wish to store data on ? "
+2510 INPUT A1
+2515 IF A1=0 THEN 2660
+2520 FIND A1
+2530 PRINT @33:R$
+2540 PRINT @33:P$
+2550 PRINT @33:I$
+2560 PRINT @33:S$
+2570 PRINT @33:E$
+2590 PRINT @33:T$
+2600 PRINT @33:N1,N2,N3,N4,N5,N6,T,E1
+2610 PRINT @33:R,C,B
+2620 PRINT @33:F,G
+2640 IF N6=0 THEN 2660
+2645 PRINT @33:L$
+2650 PRINT @33:O
+2655 FIND A1
+2660 MOVE 0,40
+2670 PRINT "                      PROGRAM EXITED                       "
+2680 PRINT "            RESULTS SAVED ON MAGNETIC TAPE, FILE ";A1
+2690 END 
+5000 REMARK:  SUBROUTINE 1 --- NO. OF COMPONENTS
+5010 DELETE K,N
+5020 PRINT "Enter the number of ";K$
+5030 INPUT N
+5040 RETURN 
+5050 REMARK:  SUBROUTINE 2 --- COMPONENT PARAMETERS
+5055 PRINT "For each of the ";K$;", enter part no., L1, L2, W and L4   "
+5060 DIM K(N,16)
+5070 FOR I=1 TO N
+5080 INPUT K(I,1),K(I,2),K(I,3),K(I,4),K(I,5)
+5090 NEXT I
+5100 FOR I=1 TO N
+5110 K(I,6)=K(I,3)*K(I,4)
+5120 K(I,7)=Z*S1*K(I,6)
+5130 K(I,8)=Z*S2*K(I,6)
+5140 NEXT I
+5150 PRINT 
+5160 PRINT "How many ";K$;" are mounted perpendicular to the axis of   "
+5170 PRINT "the PC board ?"
+5180 INPUT N7
+5190 IF N7=0 THEN 5330
+5200 PRINT 
+5210 PRINT "Enter part no. of these ";K$;" and hit the return key after"
+5220 PRINT "each one "
+5230 FOR J=1 TO N7
+5240 INPUT M1
+5250 FOR I=1 TO N
+5260 IF K(I,1)=M1 THEN 5290
+5270 NEXT I
+5280 GO TO 5330
+5290 M2=K(I,4)
+5300 K(I,4)=K(I,2)
+5310 K(I,2)=M2
+5320 NEXT J
+5325 IF M3=2 THEN 5440
+5330 FOR I=1 TO N
+5340 K(I,9)=K(I,5)+K(I,2)/2
+5350 K(I,10)=K(I,5)+K(I,2)
+5360 K(I,11)=3.2*D1*(L3^3-6*L3*K(I,9)^2+4*K(I,9)^3)/L3^4
+5370 K(I,12)=3.2*D1*K(I,9)*(L3^3-2*L3*K(I,9)^2+K(I,9)^3)/L3^4
+5380 K(I,13)=3.2*D1*K(I,5)*(L3^3-2*L3*K(I,5)^2+K(I,5)^3)/L3^4
+5390 K(I,14)=3.2*D1*K(I,10)*(L3^3-2*L3*K(I,10)^2+K(I,10)^3)/L3^4
+5400 K(I,15)=K(I,12)-K(I,11)*K(I,2)/2-K(I,13)
+5410 K(I,16)=K(I,12)+K(I,11)*K(I,2)/2-K(I,14)
+5420 NEXT I
+5430 GO TO 5540
+5440 FOR I=1 TO N
+5450 K(I,9)=K(I,5)+K(I,2)/2
+5460 K(I,10)=K(I,5)+K(I,2)
+5470 K(I,11)=16*D1*(2*K(I,9)*L3^2-6*L3*K(I,9)^2+4*K(I,9)^3)/L3^4
+5480 K(I,12)=16*D1*K(I,9)^2*(L3-K(I,9))^2/L3^4
+5490 K(I,13)=16*D1*K(I,5)^2*(L3-K(I,5))^2/L3^4
+5500 K(I,14)=16*D1*K(I,10)^2*(L3-K(I,10))^2/L3^4
+5510 K(I,15)=K(I,12)-K(I,11)*K(I,2)/2-K(I,13)
+5520 K(I,16)=K(I,12)+K(I,11)*K(I,2)/2-K(I,14)
+5530 NEXT I
+5540 RETURN 
+6000 REMARK:  SUBROUTINE 3 --- IC PARAMETERS
+6010 PRINT "For each IC, enter its part no., L1, A, Z5 (# of pads), L4 "
+6020 DIM K(N,16)
+6030 FOR I=1 TO N
+6040 INPUT K(I,1),K(I,2),K(I,3),K(I,4),K(I,5)
+6050 NEXT I
+6060 FOR I=1 TO N
+6070 K(I,6)=K(I,4)*S1*K(I,3)
+6080 K(I,7)=K(I,6)
+6090 K(I,8)=K(I,4)*S2*K(I,3)
+6100 K(I,9)=K(I,5)+K(I,2)/2
+6110 K(I,10)=K(I,5)+K(I,2)
+6120 NEXT I
+6125 IF M3=2 THEN 6220
+6130 FOR I=1 TO N
+6140 K(I,11)=3.2*D1*(L3^3-6*L3*K(I,9)^2+4*K(I,9)^3)/L3^4
+6150 K(I,12)=3.2*D1*K(I,9)*(L3^3-2*L3*K(I,9)^2+K(I,9)^3)/L3^4
+6160 K(I,13)=3.2*D1*K(I,5)*(L3^3-2*L3*K(I,5)^2+K(I,5)^3)/L3^4
+6170 K(I,14)=3.2*D1*K(I,10)*(L3^3-2*L3*K(I,10)^2+K(I,10)^3)/L3^4
+6180 K(I,15)=K(I,12)-K(I,11)*K(I,2)/2-K(I,13)
+6190 K(I,16)=K(I,12)+K(I,11)*K(I,2)/2-K(I,14)
+6200 NEXT I
+6210 GO TO 6300
+6220 FOR I=1 TO N
+6230 K(I,11)=16*D1*(2*K(I,9)*L3^2-6*L3*K(I,9)^2+4*K(I,9)^3)/L3^4
+6240 K(I,12)=16*D1*K(I,9)^2*(L3-K(I,9))^2/L3^4
+6250 K(I,13)=16*D1*K(I,5)^2*(L3-K(I,5))^2/L3^4
+6260 K(I,14)=16*D1*K(I,10)^2*(L3-K(I,10))^2/L3^4
+6270 K(I,15)=K(I,12)-K(I,11)*K(I,2)/2-K(I,13)
+6280 K(I,16)=K(I,12)+K(I,11)*K(I,2)/2-K(I,14)
+6290 NEXT I
+6300 RETURN 
+7000 REMARK:  SUBROUTINE 4 --- PRINTOUT (LEADLESS)
+7010 PAGE 
+7020 PRINT USING 7030:T$
+7030 IMAGE 25T, 55A
+7040 PRINT USING 7030:"(STATIC LOADING)"
+7050 PRINT 
+7060 PRINT 
+7070 PRINT 
+7080 PRINT USING 7090:K$
+7090 IMAGE 25T,55A
+7100 PRINT 
+7110 A$="PART NO."
+7120 B$="TENSILE FORCE (LB)"
+7130 C$="SHEAR FORCE (LB)"
+7140 D$="BENDING FAILURE?"
+7150 Y$="YES"
+7160 PRINT USING 7170:A$,B$,C$,D$
+7170 IMAGE 8A,4X,18A,4X,16A,4X,16A
+7180 PRINT 
+7185 D3=T*E1/100
+7190 FOR I=1 TO N
+7200 IF K(I,16)>D3 THEN 7250
+7210 PRINT USING 7220:K(I,1),K(I,7),K(I,8)
+7220 IMAGE 5D,6X,5D.2D,14X,5D.2D
+7230 NEXT I
+7240 GO TO 7280
+7250 PRINT USING 7260:K(I,1),K(I,7),K(I,8),Y$
+7260 IMAGE 5D,6X,5D.2D,14X,5D.2D,15X,4A
+7270 NEXT I
+7280 MOVE 85,0
+7290 PRINT "Hit page to continue "
+7300 RETURN 
+8000 REMARK:  SUBROUTINE 5 --- PRINTOUT (LEADED)
+8010 PAGE 
+8020 PRINT USING 7030:T$
+8030 PRINT USING 7030:"(STATIC LOADING)"
+8040 PRINT 
+8050 PRINT 
+8060 PRINT 
+8070 PRINT 
+8080 PRINT 
+8090 PRINT USING 7090:K$
+8100 PRINT 
+8110 A$="PART NO."
+8120 C$="NORMAL FORCE (LB)"
+8130 PRINT 
+8140 F$="NO. OF LEADS"
+8150 PRINT USING 8160:A$,F$,C$
+8160 IMAGE 8A,4X,12A,4X,17A
+8170 PRINT 
+8180 FOR I=1 TO N
+8190 PRINT USING 8200:K(I,1),K(I,3)+K(I,4),K(I,7)
+8200 IMAGE 5D,7X,5D,14X,5D.2D
+8210 NEXT I
+8220 MOVE 85,0
+8230 PRINT "Hit page to continue "
+8240 RETURN 
+
