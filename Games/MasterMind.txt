@@ -1,0 +1,92 @@
+100 PRINT "Master Mind Game"
+110 PRINT "     In this game the computer will select four colors at"
+120 PRINT "random from the table below, and place them in a row.  Your"
+130 PRINT "job is to determine what colors the computer has chosen, and"
+140 PRINT "their position in the row.  However, the computer may place"
+150 PRINT "the same color in more than one position in the row."
+160 PRINT "     In the advanced version, the computer may substitute a"
+170 PRINT "blank space for any color or colors in the row, otherwise"
+180 PRINT "the game is the same.The colors and their abbreviations";
+190 PRINT " are:Blue - BL	Brown - BR	Red - R	White - W	Green - G	";
+200 PRINT "Yellow - Y	Space - SPlease enter your colors in the ";
+210 PRINT "abbreviated formwith at least one space between colors."
+220 PRINT "Do you want to Make or Break the Code? (M or B) ";
+230 INPUT C$
+240 IF C$="B" THEN 270
+250 PRINT "add code breaker"
+260 END
+270 DIM E$(14),R$(2),U$(2),B1(4),C1(4),D1(4)
+280 E$="R BLG Y BRW S "
+290 PRINT "Which Version? (Basic=1, Advanced=2) ";
+300 INPUT R
+310 PAGE
+320 R=R+4
+330 REM R USED IN SUBSCRIPT COMPUTATIONS
+340 REM CODE SELECTION
+350 FOR J=1 TO 4
+360 D1(J)=INT(R*RND(-1))+1
+370 REM SAME COLOR IN MORE THAN 1 POSITION IS LEGAL
+380 NEXT J
+390 REM GAME PLAY BEGINS, I IS ROW COUNTER
+400 FOR I=1 TO 10
+410 N=0
+420 M=0
+430 PRINT "	          Your choice for Row ";I;"   ";
+440 INPUT C$
+450 C$=C$&" "
+460 J=1
+470 B1=D1
+480 FOR J9=1 TO 72
+490 R$=SEG(C$,J9,1)
+500 IF R$=" " THEN 610
+510 R$=SEG(C$,J9,2)
+520 FOR J8=1 TO 7
+530 U$=SEG(E$,J8*2-1,2)
+540 IF R$=U$ THEN 570
+550 NEXT J8
+560 GO TO 950
+570 C1(J)=J8
+580 J9=J9+1
+590 IF J=4 THEN 630
+600 J=J+1
+610 NEXT J9
+620 GO TO 950
+630 GOSUB 750
+640 IF N<>4 THEN 670
+650 PRINT "Congratulations--Code broken in ";I;" Rows"
+660 GO TO 970
+670 IF I<10 then 740
+680 PRINT "Correct solution was ";
+690 FOR I=1 TO 4
+700 R$=SEG(E$,D1(I)*2-1,2)
+710 PRINT R$
+720 NEXT I
+730 GO TO 970
+740 NEXT I
+750 REM SUBROUTINE TO EVALUATE RESONSE - BLACK FIRST
+760 FOR K1=1 TO 4
+770 IF C1(K1)<>B1(K1) THEN 790
+780 N=N+1
+790 NEXT K1
+800 REM WHITE COUNT
+810 FOR K1=1 TO 4
+820 FOR K2=1 TO 4
+830 IF K1=K2 THEN 910
+840 IF C1(K1)=B1(K1) THEN 910
+850 IF C1(K2)=B1(K2) THEN 910
+860 IF C1(K1)<>B1(K2) THEN 910
+870 M=M+1
+880 B1(K2)=0
+890 GO TO 920
+900 REM 0 IS DUMMY WRONG VALUE
+910 NEXT K2
+920 NEXT K1
+930 PRI "You get";N;" Black and ";M;" White pegs on Row ";I;"-------";
+940 RETURN
+950 PRINT "Error on code entry # ";J
+960 GO TO 430
+970 PRINT "Another Game? (Y or N) ";
+980 INPUT R$
+990 IF R$<>"N" THEN 290
+1000 PRINT "	Return to Master Menu"
+1010 END
