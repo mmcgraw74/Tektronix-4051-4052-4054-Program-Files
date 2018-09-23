@@ -6,7 +6,7 @@ I also captured all the DATA files in HEX using RealTerm on the PC connected to 
 
 All these FastGraphics files REQUIRE the 4051 FastGraphics ROM PACK to run directly.
 
-On my 4054A with 4052R14 Graphics Expansion ROM Pack the R2D2 picture in file 4 was cropped at the top of the dome.  I created a slightly downscaled version "scaled" using the ROM Pack RSCALE command and saved it in a "scaled" file 4 separate from the original version.
+On my 4054A with 4052R14 Graphics Expansion ROM Pack the R2D2 picture in file 4 was cropped at the top of the dome.  I created a slightly downscaled version using the ROM Pack RSCALE command and saved it in a "scaled" file 4 separate from the original version.
 
 If you have the 4051R14 or 4052/4054R14 Graphics Enhancement ROM Pack, you can see the pictures by doing the following steps:
 - dimension A$(20000)
