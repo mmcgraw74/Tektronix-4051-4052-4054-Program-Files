@@ -2,7 +2,7 @@ These files were recovered from a tape using my 4052R14 Graphices Expansion ROM 
 
 All the DATA TEXT files contain the full 7-bit ASCII character set including 32 control characters.
 
-I also captured all the DATA files in HEX using RealTerm on the PC connected to RS-232 - these files are saved in a HEX folder.
+I also captured all the DATA files in HEX using RealTerm on the PC connected to RS-232 - these files are saved in a HEX subfolder.
 
 All these FastGraphics files REQUIRE the 4051 FastGraphics ROM PACK to run directly
 
@@ -11,3 +11,7 @@ If you have the 4051R14 or 4052/4054R14 Graphics Enhancement ROM Pack, you can s
 - FIND the data file you want to view on tape
 - CALL "IMAGES",A$
 - CALL "RDRAW",A$,1,0,0
+
+I also created Tek BASIC programs that can view the pictures - on any 4051/4052/4054 computer - without a FastGraphics or Graphics Expansion ROM PACK.  These programs are saved in a BASIC subfolder.
+
+A Screenshots subfolder contains screen captures running the BASIC programs on the 4051 web-based emulator.
