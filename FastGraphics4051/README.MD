@@ -14,6 +14,6 @@ If you have the 4051R12 or 4052/4054R12 Graphics Enhancement ROM Pack, you can s
 - CALL "IMAGES",A$
 - CALL "RDRAW",A$,1,0,0
 
-I also created Tek BASIC programs that can view the pictures - on any 4051/4052/4054 computer - or 4051 emulator - without a FastGraphics or Graphics Expansion ROM PACK.  These programs are saved in a BASIC subfolder.
+I also created Tek BASIC programs that can view the pictures - on any 4051/4052/4054 computer - or 4051 emulator - without a FastGraphics or Graphics Expansion ROM PACK.  These programs are saved in a BASIC subfolder.  If you are running any of my BASIC programs on a 4052 or 4054, you will need to edit the program to remove the LF after each CR - or you will get errors when using OLD to load the program.  I recommend using Notepad++ for this edit.  I added LF after each CR to the programs I capture - so they are readable on github.  They appear to work fine on the 4051 web-based emulator with the extra LF - but not on my 4054.
 
 A Screenshots subfolder contains screen captures running the BASIC programs on the 4051 web-based emulator.
