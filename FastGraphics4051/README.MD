@@ -14,6 +14,6 @@ If you have the 4051R14 or 4052/4054R14 Graphics Enhancement ROM Pack, you can s
 - CALL "IMAGES",A$
 - CALL "RDRAW",A$,1,0,0
 
-I also created Tek BASIC programs that can view the pictures - on any 4051/4052/4054 computer - without a FastGraphics or Graphics Expansion ROM PACK.  These programs are saved in a BASIC subfolder.
+I also created Tek BASIC programs that can view the pictures - on any 4051/4052/4054 computer - or 4051 emulator - without a FastGraphics or Graphics Expansion ROM PACK.  These programs are saved in a BASIC subfolder.
 
 A Screenshots subfolder contains screen captures running the BASIC programs on the 4051 web-based emulator.
