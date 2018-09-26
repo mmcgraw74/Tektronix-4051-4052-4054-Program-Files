@@ -1,0 +1,323 @@
+     :
+     :            **************************************************
+     :            ***                                            ***
+     :            ***           CALL "EXEC" - Documentation      ***
+     :            ***                                            ***
+     :            ************************************************** 
+     :
+     :
+     : Preliminary remarks:
+     : -------------
+     :
+     : This documentation is only intended for users who intend to
+     : to program the TEKTRONIX 4051 computer in machine language.
+     : The use of the machine software available in ROMs is impossible
+     : without Documentation. A comprehensive description or even a complete
+     : permanent documentation of the operating system is not intended.
+     :
+     : It is assumed that the reader is familiar with the Motorola 6800
+     : CPU instruction set and machine language programming.
+     : 
+     :
+     :
+     : (I) 				The 'CALL "exec"' command
+     : 					==========================
+     :
+     : The CALL "exec" command calls the 4051 machine language
+     : level. This command is not documented by TEKTRONIX. That has
+     : its good reason: a wrong application can cause considerable damage
+     : to the hardware.
+     :
+     : 		The syntax of CALL "exec":
+     : 		----------------------------
+     :
+     : 				CALL "exec" [, {Var1} [, {Var2} {, ...]]], {Loaderstring}
+     :
+     : The loader string is a string variable with a maximum length of 512.
+     : It contains a machine program in a kind of hexadecimal writing
+     : style.  Namely, the hex 'A' to 'F' are replaced by the ASCII codes ':'
+     : to '?'. The hex numbers are replaced by the ASCII codes '0' to '9'.
+     : No spaces are added between bytes in the loader string.
+     :
+     : When calling CALL "exec" the translation of the loader
+     : strings in bytes, which are stored in memory from the address $02B5.
+     : The machine program must not exceed the length of 256 bytes
+     : otherwise they would overwrite other important memory locations.
+     : Finally, the operating system calls the transmitted program
+     : by JSR $02B5, and the return should be done by the command RTS.
+     :
+     : EXAMPLE: Making visible again a SECRET
+     : (BASIC) program. All you have to do is clear memory 80h. The
+     : Program is very simple:
+     :
+     : 				02B5 7F 0080 	  CLR	 $80
+     : 				02B8 39 		  RTS
+     :
+     : The loader string is: L$ = "7?008039". 
+	 : Executing 'CALL "EXEC",L$'
+     : the BASIC program is again 'unsecret'.
+     :
+     : The CALL EXEC Loader string program can access memory and ROM.
+     : accessing these variables requires a minimum of knowledge
+     : of the memory structure of the 4051.
+     :
+     : (II) 				The 4051 memory structure
+     : 						=========================
+     :
+     : The maximum available 32kByte RAM is split into the following
+     : regions:
+     :
+     : First comes the system memory (includes about 7 pages).
+     : It contains all the parameters, intermediate results, buffers, etc. that are
+     : used by the Basic interpreter. After that, the
+     : Backpack (eg EDITOR ROM) RAM usage memory areas follow. 
+     : Then follows the free memory, which is structured as follows:
+     :
+     : 1. User Area: It is program line, text and variable field
+     : Storage. In the following we limit ourselves to text variables only, because
+     : discussing the internal program line format with its pointer systems,
+     : Tokens, internal number formats and much more, would be require much more
+     : space. The pointer to the beginning of the User Aread is in [$47,$48].
+     :
+     : 2. The Free-Space, the free storage space whose length you use
+     : MEMORY can query. Its lower limit (= end of the user area) is
+     : in [$45,$46], the upper limit is the stack pointer.
+     :
+     : 3. The Stack Space. It gets through the stack pointer and the address
+     : limited to [$43,$44] and includes return addresses as well as current
+     : required variables, constants, FOR-NEXT variables, etc.
+     :
+     : 4. The Nametable. There are the names of all (sometime after one
+     : DEL ALL used) Variables listed alphabetically. Numerical
+     : variables also store their value there; for text or array variables
+     : assigns a pointer to the user area.
+     :
+     :
+     : The management of string variables
+     : ----------------------------------
+     :
+     : The first time a (string) variable is called, it becomes irrevocably
+     : entered by name into the nametable, i.e. it will be an item of 13 bytes
+     : length containing the variable name. But only at the
+     : initial dimensioning (or initial allocation = dimensioning to 72) becomes
+     : reserved in the user area, which with a 5
+     : byte header is flagged as belonging to a string variable
+     : (to distinguish it from program lines, fields, etc.). The
+     : Start address of the header is stored in the variable item in the name table
+     : Noted. Deleting a variable only leads to the release of the area
+     : in the user memory, you can not delete the item in the symbol table.
+     : Therefore, some storage space is also freed when a numeric variable
+     : is deleted.
+     :
+     : Structure of a text variable Items in the nametable:
+     : ----------------------------------------------
+     :
+     : Byte 	    (H, L stands i.f. for the higher or lower byte
+     : ----- 	    a 16 bit value)
+     : | 0 |  H |   Pointer to the next item in the nametable (or 0 if end)
+     : -----    |
+     : | 1 |  L |
+     : -----
+     : | 2 | 'A'| - name of the text variable (e.g., A $)
+     : -----    |
+     : | 3 | '$'|
+     : -----
+     : | 4 |      - Status: indicates that it is a string, whether defined and
+     : -----        if header exists (s.u.)
+     : | 5 |  H | - current dimensioning (<= initial dimensioning)
+     : -----    |
+     : | 6 |  L |
+     : -----
+     : | 7 |  H | - current length (<= current dimensioning);
+     : -----    |   that is the value that LEN (A $) returns
+     : | 8 |  L |
+     : -----
+     : | 9 |    | - unused in case of text variables (fields here would be the
+     : -----    |   Number of columns - as well as under byte 7 u. 8 the number of
+     : | 10|    |   series)
+     : -----
+     : | 11|  H | - Pointer to variable header in the user area (or 0
+     : -----    |   if not existing), so before the initial dimensioning,
+     : | 12|  L |   or after DEL string).
+     : -----
+     :
+     : Structure of the String Content in the User Memory:
+     : -----------------------------------------
+     :
+     : -----
+     : | 0 |  H | - total length of the memory used for the string
+     : -----    |  (results from dimensioned size + 5 byte header)
+     : | 1 |  L |
+     : -----
+     : | 2 |      - Status: i.e., that the header belongs to a string
+     : -----
+     : | 3 |  H | - Pointer to the corresponding item in the nametable
+     : -----    |
+     : | 4 |  L |
+     : -----
+     : | 5 | ' '  - first character of the string
+     : -----
+     :.
+     :. etc.
+     :.
+     :
+     : A string variable that occurs in a program line becomes through initialization 
+	 : byte B1h followed by the address of this item in the nametable
+     : shown internally. For a program statement like CALL "EXEC",A$,B$,C$,L$
+     : that means:
+     :
+     : |Byte 0...6    | 7 | 8 |  9  | 10 | 11 | 12| 13| 14| 15|
+     : |--------------+---+---+-----+----+----+---+---+---+---+-
+     : |.. [Header] ..| H | L |[$B5]|[00]|[04]|'e'|'x'|'e'|'c'|
+     : 				   Line Text Length ASCII Text: Callname
+     :                 number  Token of the text
+     :
+     :
+     : |  16 | 17| 18| 19  | 20| 21| 22  | 23| 24| 25  | 26| 27| 28  | 29  |
+     : +-----+---+---+-----+---+---+-----+---+---+-----+---+---+-----+-----|
+     : |[B1h]| H | L |[B1h]| H | L |[B1h]| H | L |[B1h]| H | L |[6Ah]|[94h]|
+     :          L$            C$            B$            A$    Token   End of
+     :          -------------------------------------------- CALL Line
+     :          Pointer to Variable Items (note
+     :          their reverse order)
+     :
+     : Now it's easy to access the contents of a variable:
+     : One reads from memory [4Dh,4Eh] the address of the just edited
+     : Line, i. the line with the CALL command. This value plus 26 delivers
+     : the address of the item of A$ in the nametable (for B$ or C$
+     : corresponding to plus 23 or plus 20). The address in the nametable plus 11
+     : returns the address of the address of the header in the user area. This
+     : Address plus 5 is the address of the character of the string A$!
+     : So:                                       | the IX-register shows:
+     :    02B5  DE 4D       LDX      $4D         ; current program line
+     :    02B7  EE 1A       LDX      26,X        ; Item in the nametable
+     :    02B9  EE 0B       LDX      11,X        ; Header in User Area
+     :    02BB  BD XXXX     JSR      $xxxx       ; IX: = IX + 5
+     :    02BE  A6 00       LDA      X           ; Pointer A: = 1st character from A $
+     :     .                 .
+     :     .                 .
+     : *** IMPORTANT: It is assumed that A $ is dimensioned! ***
+     :
+     : Note: You can also access the content of the variable via the
+     : Stack access. However, the above method is easier.
+	 :
+     : With this knowledge, e.g. be written a program
+     : that a hex dump of a certain memory area into one (previously large
+     : enough defined) string is copied. (If you print such a string,
+     : results in character values> 127 on the screen 'Chinese characters'.
+     : This is because the ASCII character set of the screen at CHR (127)
+     : stops and are now interpreted the following program as a dot matrix
+	 : becomes.)
+     :
+     : The file SYSROM.TXT contains a list of the most important addresses in the
+     : System memory.
+     :
+     :
+     : (III)                    The Switchable Bank
+     :                          ==================+
+     :
+     : The ROM memory area between $8800 and $A7FF, which is 8 Kbytes, 
+     : is not permanent, but can be hardware bank switched with another ROM
+     : (or RAM) area. Based on this technique, all the backpack ROMS
+     : can be accessed: 
+     : This technique gives the Computer new functions.
+     :
+     : By default, the 4051 contains an additional ROM:
+     : the graphic ROM (4K long, at $ 9800). It always gets
+     : turned on when the calculator receives graphics commands from the high level 
+	 : language (e.g.
+     : WINDOW, DRAW, POINTER, etc.). All machine-related
+     : Drawing routines serving the GDT are out of this range.
+     :
+     : The switchable bank is selected via the routine A9D5h with
+     : Help of a code number:
+     :
+     :   2x   Turn on the Graphic-ROM
+     :   20   Turn on the right back ROM pack (seen from the front)
+     :   28   Turning On the Left ROM pack
+     :   20 + x or 28 + x with x = {0; 1; ...; 7} switching on the xth back pack in
+     : right or left ROM expander
+     :
+     : Routine $A9D5 returns to the standard bank, i. the BASIC
+     :Interpreter.
+     :
+     :(IV)            Construction of the backpack RAM content
+     :                 ====================================
+     :
+     : As the owner of a 4051 BACKPACK RAM, you can create your own
+     : and store machine programs in this ram and by yourself
+     : call defined callnames from BASIC.
+     :
+     : For this it is necessary to the understand the exact structure of the
+     : backpack beginning with the entry point of the callnames.
+     :
+     : Address in         function
+     : Back Pack
+     :
+     : 8800-8801          here must be (in the form '@q') $4051, it serves
+     :                    to identify the back pack
+     : 8802-8803          RESTART (s.u.)
+     : 8804-8805          INIT       "
+     : 8806-8807          DELETE ALL "
+     : 8808-8809          CLOSE      "
+     : 880A-880B          Pointer to a jump table for external
+     :                    Functions (e.g., MPY, TRN, etc. in MATRIX ROM)
+     : 880C
+     : 880D-8812          1. Callname (6 bytes, possibly filled with blanks)
+     : 8813-8814          Address of the associated routine
+     : 8815-881A          2. Call name etc.
+     :                       or: 0 -> call name table over
+     :
+     : The following memory space is fully available to the user.
+     :
+     : For RESTART, INIT, DELETE ALL and CLOSE the addresses of
+     : Routines entered when RESTART is executed (i.e. of the calculator or calling 
+	 : routine $BC30) or the corresponding one
+     : BASIC commands should be called. This can be a
+     : Initialization performed on all connected backpacks
+     : be, e.g. INIT sets up WINDOW, VIEWPORT and ROTATE in the graphic ROM
+     : restoring the default parameters. In the fewest applications these become
+     : However, vectors are needed so they can be set to 0000.
+     :
+     : With this information, the user should be able to
+     : developing programs yourself and making them available via CALL.
+     :
+     : To transfer machine programs to BACK RAM, use the
+     : Routine "getrom". It assumes that the ROM contents in up to 4
+     : Strings per 2048 bytes of length in Binary format on tape or disk file
+     : saved.
+     :
+     : (V)                       The PIA's
+     :                           =========
+     :
+     : The address range from $8780 to $87FF is not ROM, but is with
+     : the PIA's connecting to the periphery.
+     : By default, 6 PIA's are built in, partly by combination of two, 
+	 : have the following tasks:
+     :
+     : - reading a key code from the keyboard
+     :
+     : - switching on and off the lamps BUSY, I / O and BREAK, as well as through
+     : Triggering of BUSY, generating a sound in the loudspeaker connected to the
+     : Lamp is coupled
+     :
+     : - Operating the IEC Bus (GPIB)
+     :
+     : - Operation of the internal tape drive and the memory screen tube
+     :
+     : ********************
+     : ****** WARNING ******
+     : ********************
+     :
+     : The direct access to the Display / screen PIA's should be 
+     : avoided. Wrong operation can cause severe
+     : issues. Handling or deleting a tape, stains
+     : or destruction of the picture tube. Asserting the bits VECTOR ENABLE
+     : (Electron beam should draw) and DOT ENABLE (electron beam should
+     : paint a pressure point) at the same time, doubles the
+     : Voltage at the anode and any point from this energetic
+     : Electron beam is hit, is and remains burned.
+     : To draw in machine language should only the use graphics
+     : called subroutines, but never control the PIAs directly.
+     :
+     :                        ***  THE END  ***
