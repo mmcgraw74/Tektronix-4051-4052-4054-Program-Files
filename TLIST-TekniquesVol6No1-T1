@@ -1,0 +1,29 @@
+ 1      ASCII   PROG /MENU     /   ??  File unreadable     
+ 2      ASCII   PROG /FTCPU    /   21504     
+ 3      ASCII   PROG / " "     /   8182      
+ 4      ASCII   PROG / " "     /   19968     
+ 5      ASCII   PROG /MicroMeas/   18944     
+ 6      ASCII   PROG /Dynmc Grf/   17408     
+ 7      BINARY  DATA               25088     
+ 8      ASCII   PROG /Data Alin/   2816      
+ 9      ASCII   PROG /Pie w/Fil/   15104     
+ 10     ASCII   PROG /Spider   /   3328      
+ 11     ASCII   PROG /PROGVARLI/   6656      
+ 12     ASCII   PROG /Rank Sum /   5632      
+ 13     ASCII   PROG /Two Factr/   9984      
+ 14     ASCII   PROG /CDC I/F  /   3328      
+ 15     ASCII   PROG /Utilty II/   25856     
+ 16     ASCII   PROG /PC Comp  /   11008     
+ 17     ASCII   PROG /CU-SUM   /   3840      
+ 19     ASCII   PROG /Labels   /   18176     
+ 20     ASCII   PROG /FUND Dir /   768       
+ 21     ASCII   PROG / "" Four /   12032     
+ 22     ASCII   PROG / "" One  /   12032     
+ 23     BINARY  DATA /"" #/Titl/   768       
+ 24     BINARY  DATA /"" #/Indx/   768       
+ 25     BINARY  DATA /"" Data  /   768       
+ 26     ASCII   PROG /Mfg Flow /   18944     
+ 27     ASCII   DATA / "   "   /   8960      
+ 28     ASCII   PROG /Air Def  /   11008     
+ 29     ASCII   PROG / "  "    /   6144      
+ 30     LAST                       768       
