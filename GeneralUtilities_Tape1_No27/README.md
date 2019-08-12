@@ -29,3 +29,6 @@ the CR terminating some of the ASCII programs.
 
 These are remnants from previous recordings.
 
+****************
+Just added a zip of all the BASIC programs.  Not sure github supports Line Feeds in text files.
+
