@@ -1,4 +1,4 @@
-# New tapedump of a different General Utilites Vol1 Tape1 - with a "27" sticker
+# New tapedump of a different General Utilities Vol1 Tape1 - with a "27" sticker
 
 I can't read all the files on my original General Utilities tape.
 
