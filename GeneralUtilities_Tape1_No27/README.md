@@ -16,4 +16,14 @@ Please use the other General Utilities folder with the 405x web based Emulator p
 The SECRET files on the tapes were captured in ASCII HEX characters.
 I have used an online HEX to binary converter to create the binary file versions
 *******************************
+Note:
+My tapedump program prints a Carriage Return after a tape header block.
+Otherwise it does not add a CR.
+
+Binary and SECRET files are terminated with a CR
+
+You will notice some left over garbage within the 256 byte header and after 
+the CR terminating some of the ASCII programs.
+
+These are remnants from previous recordings.
 
