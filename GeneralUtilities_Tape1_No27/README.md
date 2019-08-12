@@ -2,8 +2,10 @@
 
 I can't read all the files on my original General Utilities tape.
 
+This folder contains files from a second General Utilities tape I received.
+
 I have written a tapedump program using my TransEra Super Utilites ROM Pack
-to capture every 256 byte block on the tape.
+to capture every 256 byte block on any tape.
 
 The tapedump file contains the complete tape capture including file headers.
 SECRET and BINARY files were captured by encoding each byte as two ASCII HEX characters
