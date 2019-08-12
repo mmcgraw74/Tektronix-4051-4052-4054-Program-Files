@@ -1,0 +1,20 @@
+ 1      ASCII   PROGRAM   SECRET  3072   
+ 2      ASCII   PROGRAM   SECRET  2560   
+ 3      ASCII   PROGRAM   SECRET  7424   
+ 4      ASCII   PROGRAM   SECRET  6656   
+ 5      ASCII   PROG /DUPL ASCI/  4608   
+ 6      ASCII   PROG /  "  GEN./  8448   
+ 7      ASCII   PROG /LIST-F.FD/  7680   
+ 8      ASCII   PROG /  "  NO F/  5120   
+ 9      ASCII   PROG /NAME FILE/  3584   
+ 10     ASCII   PROGRAM   SECRET  3072   
+ 11     ASCII   PROG /TLIST EXT/  3840   
+ 12     ASCII   PROGRAM   SECRET  3328   
+ 13     ASCII   PROG /STRN SORT/  3328   
+ 14     ASCII   PROG /BUBL  "  /  3072   
+ 15     ASCII   PROG /QUIK  "  /  3584   
+ 16     ASCII   PROG /MED-UNSOR/  3840   
+ 17     ASCII   PROG /  "  SORT/  2816   
+ 18     ASCII   PROG /TABLED t /  3840   
+ 19     LAST                      768    
+
