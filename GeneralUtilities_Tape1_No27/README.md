@@ -22,7 +22,7 @@ Otherwise it does not add a CR.
 
 Binary and SECRET files are terminated with a CR
 
-You will notice some left over garbage within the 256 byte header and after 
+You will notice some left over garbage within the 256 byte file header block and after 
 the CR terminating some of the ASCII programs.
 
 These are remnants from previous recordings.
