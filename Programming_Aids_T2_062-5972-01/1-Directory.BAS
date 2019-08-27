@@ -1,0 +1,8 @@
+1 REM AUTOLOAD DIRECTORY2 GO TO 1004 GO TO 160100 INIT 110 DATA 15,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16120 READ N130 IMAGE 10T,2D,5X,FA140 DIM F(N)150 READ F160 PRINT "       4050 APPLICATIONS LIBRARY PROGRAMS
+"170 PRINT "            PROGRAMMING AIDS T2 Tape
+"180 PRINT "       PROGRAM  TITLE
+"190 PRINT USING 130:1,"Flowcharter"200 PRINT USING 130:2,"Automatic Tape Directory"210 PRINT USING 130:3,"Tape File Header Expander"220 PRINT USING 130:4,"List Program's Statement Types"230 PRINT USING 130:5,"Sort & List Program Variables"240 PRINT USING 130:6,"Change & List Program Variables"250 PRINT USING 130:7,"Variable Name Changer"260 PRINT USING 130:8,"Program Module Cross Reference"270 PRINT USING 130:9,"Program Module Map"280 PRINT USING 130:10,"Dash, Dot, Dash-Dot Routine"290 PRINT USING 130:11,"Neat Tics & Axis Labeling"300 PRINT USING 130:12,"Linear Axis Labeling"310 PRINT USING 130:13,"Hexadecimal Operations"320 PRINT USING 130:14,"File Identifier"330 PRINT "
+Caution:  The following program must be transferred"340 PRINT "to disk to work properly.
+"350 PRINT USING 130:15,"Disk Directory"360 PRINT "
+ENTER THE PROGRAM OF YOUR CHOICE OR 0 TO END. ";370 INPUT P380 P=INT(P)390 IF P=0 THEN 480400 IF P<1 OR P>N THEN 160410 FIND F(P)420 T=TYP(0)430 IF T>2 THEN 460440 FIND F(P)450 OLD 460 FIND F(P)470 CALL "BOLD"480 PRINT "
+Goodbye.  If you change your mind, press UDK #1"490 END 
