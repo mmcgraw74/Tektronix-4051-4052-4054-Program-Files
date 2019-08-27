@@ -7,5 +7,6 @@ File Headers are included in the dump file
 Documentation and Abstracts are included
 -------
 BASIC files extracted from the dump are ready to run on 4051/4052/4054 computers
+The first number in the filename is the Tape file number - the text is from the file header label or from the program comments.
 For the 405x emulator - the Tek 4050 BASIC control characters must be replaced with underscore followed by the ASCII character using a text editor like Notepad++
 Example: control-J character must be replaced with _J
