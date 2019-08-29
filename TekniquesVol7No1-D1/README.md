@@ -2,6 +2,9 @@ Tekniques Vol. 7 No. 1 D1  062-6715-01
 ----
 These program files were captured from an 8 inch floppy disk.
 
+An important program not listed in the Abstract but documented in the full PDF is BACKUP - which can backup all the files on a floppy disk to one or more tapes (since the tapes are typically lower capacity than the floppy disk).  This program can also restore the files from tape back to a new floppy - including the original file paths!
+---------------
+
 The dump file is from a complete backup of the floppy to tape, that I then ran my Complete Tape Dump program to capture as a single file.
 
 The dump file is all ASCII characters - and includes the file headers and complete copy of each 256 byte tape block.
