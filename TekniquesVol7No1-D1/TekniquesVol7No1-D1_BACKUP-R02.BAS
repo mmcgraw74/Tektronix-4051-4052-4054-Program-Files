@@ -1,0 +1,10 @@
+100 REM --------------- File $BACKUP.R02 ---------------110 REM ##### Append in the file manipulation routines #####120 N=MEMORY130 APPEND "@SYSLIB/BACKUP.R03";10000,0140 PRINT @32,26:3150 PRINT "
+
+"160 REM ##### Prepare the disk for use #####170 PRINT "
+   Insert the disk to be restored in drive ";D;180 PRINT " and press RETURN: ";190 INPUT Z$200 CALL "MOUNT",D,Z$210 PRINT "
+
+"220 REM ##### Ask for a backup tape #####230 PRINT "   Insert the appropriate tape and press RETURN: ";240 INPUT Z$250 FIND 1260 REM ##### Prepare the directory file on disk #####270 KILL "$BACKUP.DIR"280 CREATE "$BACKUP.DIR","A";1000,0290 OPEN "$BACKUP.DIR";1,"F",Z$300 REM ##### Is it really a backup tape? #####310 INPUT @33:A$320 IF A$="***Disk Backup Tape***" THEN 380330 REM ##### Not really a backup tape: ask for a real one #####340 PRINT "        ***This is not a backup tape.***"350 CLOSE 1360 GO TO 230370 REM ##### Real backup tape: copy directory to disk #####380 E=0390 INPUT @33:A$400 IF E THEN 440410 PRINT #1:A$420 GO TO 390430 REM ##### Prepare for the file copies #####440 CALL "REWIND",1450 F=1460 E=0470 REM ##### Get the directory entry #####480 INPUT #1:Z$490 IF E THEN 570500 F=F+1510 REM ##### Ignore if deleted file #####520 IF Z$="" THEN 480530 REM ##### Copy the file from tape to disk #####540 GOSUB 10000550 GO TO 480560 REM ##### Done with this tape: any more? #####570 COPY 580 CLOSE 590 FIND 0600 PRINT "
+   Do you have another tape to restore ";610 PRINT "to this disk (Y/N_)? ";620 INPUT Z$630 IF Z$="Y" THEN 230640 REM ##### How about doing another disk? #####650 PRINT "
+   Do you want to restore another disk (Y/N_)? ";660 INPUT Z$670 IF Z$="Y" THEN 170680 REM ##### That's all, folks! #####690 KILL "$BACKUP.DIR"700 PRINT @32,26:0710 PRINT "
+
+   Disk restore completed."720 END 10000 REM ##### Target line for append #####
