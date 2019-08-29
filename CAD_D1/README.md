@@ -8,7 +8,9 @@ The abstract for these programs and the full user documentation files are also i
 Be sure to look at the hardware requirements - some of the programs require 4052 or 4054 computers, some require 64KB RAM, etc.
 
 -------------
-The dump file is from a complete backup of the floppy to tape, that I then ran my Complete Tape Dump program to capture as a single file.
+The dump file is from a complete backup of the floppy to tape.
+Since this disk had more data than could backup to a single tape - it took two tapes.
+I then ran my Complete Tape Dump program to capture tape 1 and tape 2 as single files.
 
 The dump file is all ASCII characters - and includes the file headers and complete copy of each 256 byte tape block.
 
