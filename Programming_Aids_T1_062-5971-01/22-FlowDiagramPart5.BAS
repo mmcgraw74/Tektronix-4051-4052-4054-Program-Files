@@ -1,0 +1,12 @@
+101 REM .....phase 5.....111 DIM L$(1000)121 L$=""131 H$="                                                  "141 PAGE 151 FIND 6160 T6=TYP(0)161 IF T6<>0 THEN 191171 PRINT "
+
+No current diagram"181 GO TO 211191 READ @33:H$,T,Z,Z1201 PRINT "
+
+Current diagram: ";H$211 L$=H$221 PRINT "
+Stored diagrams:"231 FOR I=43 TO 62241 FIND I251 IF TYP(0)=0 THEN 301261 READ @33:H$271 K$=STR(I-42)281 PRINT K$;" ";H$291 NEXT I301 H$=L$311 L$=""321 IF I<>43 THEN 341331 PRINT "...none"341 IF K<>1 THEN 711351 PRINT "
+Enter 1 to store current diagram,0 to destroy: ";361 INPUT K1371 IF K1=0 THEN 651381 IF I=>62 THEN 401391 PRINT "
+Enter 0 to save on available space,"401 PRINT "Enter number to replace stored diagram: ";411 INPUT K1421 L$=""431 FIND 6441 READ @33:H$,T,Z,Z1451 FOR I=7 TO 42461 FIND I462 IF TYP(0)<>0 THEN 471463 Z$="\\\\\\\\"464 GO TO 481471 READ @33:Z$481 Z$=Z$&"~"491 IF LEN(Z$)+LEN(L$)=>1000 THEN 631501 L$=L$&Z$511 NEXT I521 IF K1=0 THEN 551531 FIND K1+42541 GO TO 591551 FOR I=43 TO 62561 FIND I571 J=TYP(0)581 IF J>0 THEN 611591 WRITE H$,T,Z,Z1,L$601 GO TO 651611 NEXT I621 GO TO 141631 PRINT "
+Diagram too big to store"641 STOP 651 FIND 6661 KILL 6671 Z=0681 Z1=0691 T=0692 K=9701 GO TO 94711 IF K=5 THEN 901712 IF T6=0 THEN 751721 PRINT "
+WARNING--The current diagram will be destroyed."731 PRI "Press 'return' to proceed or key 18 to save current diagram."741 INPUT Z$751 PRINT "
+Enter number of diagram to retrieve: ";761 INPUT K1771 FIND K1+42781 READ @33:H$,T,Z,Z1,L$791 FIND 6801 WRITE H$,T,Z,Z1811 FOR I=7 TO 42821 J=POS(L$,"~",1)831 Z$=SEG(L$,1,J-1)841 L$=SEG(L$,J+1,LEN(L$)-J+1)851 FIND I861 WRITE Z$871 NEXT I881 GO TO 692901 PRINT "
+Enter 0 to retain all stored diagrams,"911 PRINT "      diagram number to delete a specific diagram,"921 PRINT "      or 99 to destroy all stored diagrams: ";931 INPUT K1932 K=9941 IF K1=0 THEN 72951 FOR I=43 TO 62961 IF K1<>99 THEN 991971 KILL I981 GO TO 1071991 IF K1=>I-42 THEN 10711001 FIND I1002 IF TYP(0)=0 AND I=43 THEN 721011 IF TYP(0)=0 THEN 10611021 READ @33:H$,T,Z,Z1,L$1031 IF I=43 THEN 10711032 FIND I-11041 WRITE H$,T,Z,Z1,L$1051 GO TO 10711061 FIND I-11062 IF TYP(0)=0 THEN 721063 KILL I-11071 NEXT I1081 GO TO 72
