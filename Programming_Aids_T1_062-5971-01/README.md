@@ -4,6 +4,8 @@ The dump file is a complete list of all the tape records.
 Binary files are saved as HEX ASCII character files with extension ASC.  
 Program files are saved as .BAS files - and will directly load into 4050 computers.
 
+Also includes a screenshot of the file 1 menu: ProgrammingAidsMENU.jpg
+
 The dump file contains everything including headers and all contents of each tape file block.
 - you will notice extra data in the header block, and extra data after the end of the program or data files.
 - this extra data is left over from previous tape use as the MARK command and SAVE commands do not clear out previous data
