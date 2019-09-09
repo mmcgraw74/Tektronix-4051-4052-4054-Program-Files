@@ -2,8 +2,8 @@ This tape included 4050 programs for the 4662 plotter
 ------
 Here is a list of the programs from the autoload file 1:
 
- 1      DATA ENTRY-KEYBOARD
- 2      DATA ENTRY-DIGITIZER
+ 1      DATA ENTRY-KEYBOARD 
+ 2      DATA ENTRY-DIGITIZER 
  3      DATA EDIT FROM TAPE_
  4      CARTESIAN DATA PLOT
  5      CARTESIAN LINEAR CURVE FIT
