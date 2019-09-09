@@ -2,7 +2,8 @@ This tape included 4050 programs for the 4662 plotter
 ------
 Here is a list of the programs from the autoload file 1:
 
- 1      DATA ENTRY-KEYBOARD 
+[CODE]
+1      DATA ENTRY-KEYBOARD 
  2      DATA ENTRY-DIGITIZER 
  3      DATA EDIT FROM TAPE_
  4      CARTESIAN DATA PLOT
@@ -23,3 +24,4 @@ Here is a list of the programs from the autoload file 1:
 19      PICTURE INDEX MAPPING_
 20      PICTURE TO STAT-IV FILE CONVERT
 21      DATA TO STAT-IV FILE CONVERT
+[/CODE]
