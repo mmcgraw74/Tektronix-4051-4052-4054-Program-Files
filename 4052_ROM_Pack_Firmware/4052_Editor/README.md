@@ -6,6 +6,6 @@ I used a second ZIF socket - and carefully bent pin 21 of the socket out and use
 
 I included photos of capturing each half - and the verified checksum is on the Data I/O display.
 
-[Front of Editor ROM PCB](./Editor%20label%20and%20front%20of%20board.jpg)
+![Front of Editor ROM PCB](./Editor%20label%20and%20front%20of%20board.jpg)
 
 I used HxD to import the .MOT (Motorola format 82), and save the file as a .BIN file.  Then I used HxD to concatenate the two files into a single 8KB .BIN file
