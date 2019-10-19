@@ -10,4 +10,4 @@ Photos of each of my ROM Packs including the outside label and circuit boards ar
 
 I captured each ROM on my DATA I/O with Unipak 2B in Motorola format (82).
 
-I used HxD to import the MOT file, and then used HxD to save the .BIN file.
+I used HxD to import the .MOT file, and then used HxD to save the .BIN file.
