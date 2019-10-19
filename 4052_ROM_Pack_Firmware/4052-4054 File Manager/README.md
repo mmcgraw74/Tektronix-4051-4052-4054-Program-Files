@@ -7,3 +7,5 @@ I used a second ZIF socket - and carefully bent pin 21 of the socket out and use
 See the 4052 Editor photos for capturing the two halves of a MOSTEK ROM.
 
 I used HxD to import the .MOT (Motorola format 82), and save the file as a .BIN file.  Then I used HxD to concatenate the two files into a single 8KB .BIN file
+
+![4052 File Manager label and PCB](./4052%20File%20Manager-00.jpg)
