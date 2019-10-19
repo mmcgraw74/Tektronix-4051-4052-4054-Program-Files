@@ -1,4 +1,4 @@
-My 4052R06 Editor ROM Pack contained a single 8Kx8 MOSTEK 36xxx mask ROM
+My [U]4052R06[/U] Editor ROM Pack contained a single 8Kx8 MOSTEK 36xxx mask ROM
 
 To read the MOSTEK 36xxx mask ROMs - I found you can use the Data I/O Unipak and Unipak 2B FAMILY/PINOUT 27 50 with pin 21 pulled low or high to read a 4KB chunk.
 
