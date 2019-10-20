@@ -4,6 +4,4 @@ This is the File Manager ROM I am using with my 4907.
 
 I used HxD to import the .MOT (Motorola format 82), and save each of the three files as a .BIN file.  
 
-The U13 EPROM has a tape label - I dropped the original part after I captured the data.  U13 is now a NOS Intel 2732A that I programmed from the U13 file.
-
 ![Label and PCB front](./FileManager-01Front.jpg)
