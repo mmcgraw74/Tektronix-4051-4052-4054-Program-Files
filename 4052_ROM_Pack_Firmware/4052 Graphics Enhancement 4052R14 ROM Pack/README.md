@@ -1,4 +1,5 @@
-*** the three 2732A ROM binaries are on bitsavers - see link below **
+*** the 4052R14 Graphics Enhancement ROM Pack has three 2732A EPROMs.  The ROM binaries are on bitsavers - see link below **
+----
 
 http://bitsavers.trailing-edge.com/bits/Tektronix/405x/cartridges/4052R12_Graphics_Enhancement_ROM_Pack/
 
