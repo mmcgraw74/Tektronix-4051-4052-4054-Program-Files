@@ -1,4 +1,4 @@
-My **4052A/4054A GPIB Enhancement 4052R14 -1A ROM Pack** contained two Intel 2732A 4KB EPROMs. 
+My **4052A/4054A GPIB Enhancement 4052R14 -1A ROM Pack** contained three Intel 2732A 4KB EPROMs. 
 ---
 This ROM Pack does not work in a 4052 or 4054  - see my firmware for the 4052R14 -00 ROM Pack for the 4052/4054 
 ---
