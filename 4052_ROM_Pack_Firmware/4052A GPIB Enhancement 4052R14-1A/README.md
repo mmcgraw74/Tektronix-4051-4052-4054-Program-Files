@@ -7,4 +7,4 @@ This folder also includes the user document and the small booklet
 
 I used HxD to import the .MOT (Motorola format 82), and save each of the three files as a .BIN file.  
 
-![Label and PCB front](./4052%20Character%20and%20Symbol%20Front.jpg)
+![Label and PCB front](./4052A%20GPIB%20Enhancement%204052R14-1A/GPIBEnh1AFront.jpg)
