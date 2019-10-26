@@ -6,6 +6,6 @@ See my document http://../../Read%20MCM6832%20ROMs.pdf
 I included photos of end of the ROM case and front of the case with front and back sides of the circuit board.
 Each BIN file has the verified checksum at the end of the filename.
 
-![Front of Editor ROM PCB](./4051%20Editor%20Front.jpg)
+![Front of Editor ROM PCB](./4051%20Binary%20Program%20Loader%20Front.jpg)
 
 I used HxD to import the .MOT (Motorola format 82), and save the file as a .BIN file.  Then I used HxD to concatenate the two files into a single 8KB .BIN file
