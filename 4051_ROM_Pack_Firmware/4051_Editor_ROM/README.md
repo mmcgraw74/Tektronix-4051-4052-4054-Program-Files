@@ -1,0 +1,10 @@
+My **4051R06 Editor ROM Pack** contained four 2Kx8 MOTOROLA MCM6832 mask ROMs
+
+To read the MOTOROLA MCM6832 mask ROMs - I found you can use the Data I/O Unipak and Unipak 2B FAMILY/PINOUT 23/28 for a TMS2716 EPROM.
+See my document ../../Read%20MCM6832%20ROMs.pdf
+
+I included photos of capturing each half - and the verified checksum is on the Data I/O display.
+
+![Front of Editor ROM PCB](./4052%20Editor%20Front.jpg)
+
+I used HxD to import the .MOT (Motorola format 82), and save the file as a .BIN file.  Then I used HxD to concatenate the two files into a single 8KB .BIN file
