@@ -10,5 +10,5 @@ I included photos of end of the ROM case and front of the case with front and ba
 
 there are no ROM files.
 
-![Front of Editor ROM PCB](./4051%20Editor%20Front.jpg)
+![Front of Editor ROM PCB](./4051%20Printer%20Interface%20Front.jpg)
 
