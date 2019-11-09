@@ -4,6 +4,8 @@ All these ROM Packs only work on the 4052/4054 and 4052A/4054A Tektronix compute
 
 Each set of ROM PACK firmware images and photos are in separate folders
 -------
+There are TransEra ROM Pack manuals for most of these on http://www.bitsavers.org/pdf/transEra/
+-------
 For ROM Packs with more than one ROM or EPROM, there are binary images for each ROM.  Each binary image filename includes the CHECKSUM-16 for that file.
 
 Photos of each of my ROM Packs including the outside label and circuit boards are also included
