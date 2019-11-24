@@ -22,4 +22,4 @@ T1 is the RND(-1) first returned value, which is model specific
 240 DATA "4054  ",1805,0.505007490939,"4054A ",1516,0.590965583259
 250 READ I$,S9,T1
 
-![Label and PCB front](./4662and4054.jpg)
+![Label and PCB front](./4050A_CYCLE_Tape.jpg)
