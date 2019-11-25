@@ -33,7 +33,8 @@ File 2 indicates this tape was run on a 4052A that failed on PASS 16
 The test program included checking BASIC ROM CRC values - apparently provided from a Factory Memory Test ROMPACK - as CALL "MEMORY" in the program is not standard in the 4052/4054 or my 4054A.
 
 The program provides 4052/4054 v4.4 and 4052A/4054A v1.4 CRC tables - but I don't understand all the values.
-I've commented after the data statements which ROMs match the DATA statements - from the Diagnostic ROM Pack CRC tables
+I've commented after the data statements which ROMs match the DATA statements - from the Diagnostic ROM Pack CRC tables.
+Apparently the first two parameters are starting and ending addresses for either the EVEN ROM or the ODD ROM (0 or 1 as last address nibble).
 
 ```
 2930 REM ***4052/54 V4.4 CRCS*** With patch
