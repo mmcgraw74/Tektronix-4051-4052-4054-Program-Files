@@ -23,3 +23,10 @@ T1 is the RND(-1) first returned value, which is model specific
 250 READ I$,S9,T1
 
 ![Label and PCB front](./4050A_CYCLE_Tape.jpg)
+
+The complete tapedump of the four files on this tape is also in this folder.
+
+File 2 indicates this tape was run on a 4052A that failed on PASS 16
+4052A SERIAL: # B045936  IN: 14.3.15   PASS:  16   FAILED
+
+The test program included checking BASIC ROM CRC values - apparently provided from a Factory Memory Test ROMPACK - as CALL "MEMORY" in the program is not standard in the 4052/4054 or my 4054A.
