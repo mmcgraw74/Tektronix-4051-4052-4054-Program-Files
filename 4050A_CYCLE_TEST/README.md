@@ -10,6 +10,7 @@ The recovered program would only work on a Tektronix 4052A or 4054A as it made a
 ----
 My youtube video running the modified program with display tests is here:
 https://www.youtube.com/watch?v=0oTmPI5YaJU
+![cool 3D image](./CYCLEtest9.jpg)
 ---
 
 Interestingly the program includes a set of BASIC statements to detect the specific model (4051/4052 or 4054) and sets a parameter to scale a FOR/NEXT loop time delay to 1 second.
