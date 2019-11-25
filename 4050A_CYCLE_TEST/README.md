@@ -35,7 +35,8 @@ The test program included checking BASIC ROM CRC values - apparently provided fr
 The program provides 4052/4054 v4.4 and 4052A/4054A v1.4 CRC tables - but I don't understand all the values.
 I've commented after the data statements which ROMs match the DATA statements - from the Diagnostic ROM Pack CRC tables
 
-```2930 REM ***4052/54 V4.4 CRCS*** With patch
+```
+2930 REM ***4052/54 V4.4 CRCS*** With patch
 2940 RESTORE 2950
 2950 DATA "C N 4601 4801 5440"
 2960 DATA "C N 4600 4800 B0DB"
