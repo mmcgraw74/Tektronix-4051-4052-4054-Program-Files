@@ -15,13 +15,13 @@ These data statements indicate the relative timing of the 4052/4054 FOR/NEXT is 
 I$ is the model name which is used in the print statements and written to the tape
 S9 in the data is the time constant used in the program for a 1 second delay.
 T1 is the RND(-1) first returned value, which is model specific
-
+[CODE]
 210 DATA "4051  ",217,0.196324846518
 220 DATA "4052  ",1805,0.706280095237,"4052A ",1516,0.796364876486
 230 DATA "4054  ",1805,0.88093139039,"4054A ",1516,0.894514130768
 240 DATA "4054  ",1805,0.505007490939,"4054A ",1516,0.590965583259
 250 READ I$,S9,T1
-
+[/CODE]
 ![Label and PCB front](./4050A_CYCLE_Tape.jpg)
 
 The complete tapedump of the four files on this tape is also in this folder.
