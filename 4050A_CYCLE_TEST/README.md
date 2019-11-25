@@ -9,7 +9,8 @@ The recovered program would only work on a Tektronix 4052A or 4054A as it made a
 **This folder includes the original program and my modified program which runs on all 4050 computers and only runs the 9 display tests.**
 ----
 My youtube video running the modified program with display tests is here:
-https://www.youtube.com/watch?v=0oTmPI5YaJU
+
+***https://www.youtube.com/watch?v=0oTmPI5YaJU
 
 ![cool 3D image](./CYCLEtest9.jpg)
 ---
