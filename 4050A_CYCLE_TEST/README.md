@@ -7,6 +7,10 @@ The comments in the program indicate these tapes were used to test 4050 computer
 The recovered program would only work on a Tektronix 4052A or 4054A as it made a CALL MTPACK command to the tape and that call is only built into the 4052/4054 and A-series computers.
 
 **This folder includes the original program and my modified program which runs on all 4050 computers and only runs the 9 display tests.**
+----
+My youtube video running the modified program with display tests is here:
+https://www.youtube.com/watch?v=0oTmPI5YaJU
+---
 
 Interestingly the program includes a set of BASIC statements to detect the specific model (4051/4052 or 4054) and sets a parameter to scale a FOR/NEXT loop time delay to 1 second.
 ---------
