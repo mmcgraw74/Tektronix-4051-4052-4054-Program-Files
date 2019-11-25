@@ -57,6 +57,7 @@ Apparently the first two parameters are starting and ending addresses for either
 3100 DATA "C O 0000 2000 844A"
 3110 DATA "C O 2000 4000 21D8"
 3120 DATA "END"
+
 3130 REM ***4052A/54A V1.4 CRCS***
 3140 RESTORE 3150
 3150 DATA "C G E000 FF00 68DF"  U810
