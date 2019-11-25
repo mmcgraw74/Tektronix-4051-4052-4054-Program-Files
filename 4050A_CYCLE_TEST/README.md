@@ -25,6 +25,7 @@ T1 is the RND(-1) first returned value, which is model specific
 ![Label and PCB front](./4050A_CYCLE_Tape.jpg)
 
 The complete tapedump of the four files on this tape is also in this folder.
+The dump includes all the Tektronix control characters - so use Notepad++ to view the entire file.
 
 File 2 indicates this tape was run on a 4052A that failed on PASS 16
 ```
