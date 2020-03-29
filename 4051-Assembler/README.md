@@ -6,4 +6,6 @@ The assembler includes a DDT debugger assembly program
 --- 
 The documentation includes 4051 BASIC ROM Entry points and other 4051 assembly instructions
 
+Screenshot below is output from Tek 4051 web-browser emulator running my 4051 Memory Dump program displaying page FF which is the last page in the 4051 BASIC ROM.
+
 ![Label and PCB front](./4051MemDumpFF.png)
