@@ -5,3 +5,5 @@ I've posted the documentation file and the program files in this folder with sam
 The assembler includes a DDT debugger assembly program
 --- 
 The documentation includes 4051 BASIC ROM Entry points and other 4051 assembly instructions
+
+![Label and PCB front](./GPIBEnhFront.jpg)
