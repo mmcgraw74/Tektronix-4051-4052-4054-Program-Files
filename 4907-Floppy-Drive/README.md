@@ -4,4 +4,5 @@ A total of four drives 0,1,2 and 3 were supported by the controller.
 
 ![Three 4907 and one Option 30 dual drive enclosure](./Three%204907%20and%20one%20dual%20drive%20slave.jpeg)
 
+The latest ROM firmware in these units was V1.2 as shown on a label on an Intel 2716 EPROM
 ![4907 ROM board v3 with 1.2 Firmware](./4907%20ROM%20board%20v3%20with%20Firmware%20v1dot2.jpeg)
