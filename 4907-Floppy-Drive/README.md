@@ -6,4 +6,6 @@ A total of four drives 0,1,2 and 3 were supported by the controller.
 
 The latest ROM firmware in these units was V1.2 as shown on a version 3 ROM board with a label on an Intel 2716 EPROM, and V1.2 was noted on a sticker on the back of the 4907.
 
+I captured the patched ROMs and uploaded them in the ROM folder.
+
 ![4907 ROM board v3 with 1.2 Firmware](./4907%20ROM%20board%20v3%20with%20Firmware%20v1dot2.jpeg)
