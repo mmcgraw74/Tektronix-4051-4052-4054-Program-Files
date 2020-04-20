@@ -1,0 +1,164 @@
+100 PRINT "L_ *** LIFE from Dec 78 Byte page 76 ***"
+101 INIT
+102 PRINT "__INPUT GRID SIZE (max 100): ";
+103 INPUT M
+104 REM  Make room outside of grid for neighbor calc
+105 W=60/M
+106 M=M+2
+110 DIM L$(M*M),N$(M*M),C$(102),C(4),D(4),E(4),F(4)
+111 REM init RDRAW variables for live cell and thumbnail input cell
+112 C(1)=0
+113 C(2)=W
+114 C(3)=0
+115 C(4)=-W
+116 D(1)=W
+117 D(2)=0
+118 D(3)=-W
+119 D(4)=0
+122 E(1)=0
+123 E(2)=W/1.8
+124 E(3)=0
+125 E(4)=-W/1.8
+126 F(1)=W/1.8
+127 F(2)=0
+128 F(3)=-W/1.8
+129 F(4)=0
+130 C$="0"
+131 FOR I=2 TO M
+132 C$=C$&"0"
+133 NEXT I
+134 REM INITIALIZE rest of L$ to "0" 
+136 L$=C$
+140 FOR I=2 to M
+142 L$=L$&C$
+144 NEXT I
+150 N$=L$
+240 PRINT "L_I_Game of LIFE - Dec 78 Byte Magazine"
+241 PRINT "    Rewritten by Monty McGraw April 2018 for Tektronix 4051__"
+242 PRINT "RULES:"  
+243 PRINT "1. Any live cell with fewer than two live neighbors dies."
+244 PRINT "2. Any live cell with two or three neighbors lives on."
+246 PRINT "3. Any live cell with three or more neighbors dies."
+248 PRINT "4. Any empty cell with exactly three live neighbors lives."
+250 PRINT "__Enter initial number of ITERATIONS: ";
+251 INPUT T
+252 REM  DRAW THE THUMBNAIL AS 52 x 52
+253 MOVE 52,58
+254 PRINT "LIFE Grid: ";M-2;"x";M-2
+255 MOVE 40,4
+256 RDRAW 0,52
+257 RDRAW 52,0
+258 RDRAW 0,-52
+259 RDRAW -52,0
+260 R=0
+261 G=0
+262 H=64
+263 Q=1
+264 MOVE 0,70
+265 PRINT "__Enter initial Live Cell Coordinates__(0,0 to run pgm):"
+270 MOVE R*12,H-Q*3
+271 INPUT X,Y
+272 IF Q<20 THEN 276
+273 Q=1
+274 R=R+1
+275 GO TO 296
+276 Q=Q+1
+296 IF X+Y=0 THEN 470
+298 IF X<1 OR X>M-2 OR Y<1 OR Y>M-2 THEN 310
+300 GO TO 330
+310 PRINT "__Coordinate ERROR, X and Y must range from 1 to ";M-2
+320 GO TO 262
+325 REM put "1" in A$ for live cell at location x,y
+330 L$ = REP("1",X*M+Y+1,1)
+331 G=G+1
+332 REM NOW DRAW CELL IN THUMBNAIL VIEW
+334 MOVE (X-1)*52/(M-2)+40.2,(Y-1)*52/(M-2)+4.2
+336 RDRAW E,F
+340 GO TO 270
+460 REM RUN THE PROGRAM
+470 L1=0
+480 FOR P=L1 TO T
+490 PRINT "L_LIFE Program Iteration Number ";P,"Cells = ";G
+495 REM  DRAW THE OUTLINE AS 92X92
+496 G=0
+500 MOVE 4,96
+510 DRAW 96,96
+520 DRAW 96,4
+530 DRAW 4,4
+540 DRAW 4,96
+550 REM  NOW DRAW THE LIVE CELLS AS SQUARES
+560 FOR I=1 TO M-2
+566 C$=SEG(L$,(I)*M+2,M-2)
+567 IF VAL(C$)=0 THEN 600
+568 FOR J=1 TO M-2
+570 C$=SEG(L$,(I)*M+J+1,1)
+580 IF C$="0" THEN 590
+582 MOVE (I-1)*89.1/(M-2)+6,(J-1)*89.1/(M-2)+6
+583 RDRAW C,D
+590 NEXT J
+600 NEXT I
+602 MOVE 97,2
+604 PRINT "Working";
+608 REM FIND NUMBER OF NEIGHBORS
+609 J=1
+610 FOR I=1 TO M-2 
+612 MOVE (I-1)*91/(M-2)+5,2
+614 RDRAW 1,0
+615 IF J=<(M-2) THEN 618
+616 J=1
+618 C$=SEG(L$,(I-1)*M+J+1,M-2)
+620 N=VAL(C$)
+622 C$=SEG(L$,(I)*M+J+1,M-2)
+624 N=VAL(C$)+N
+625 C$=SEG(L$,(I+1)*M+J+2,M-2)
+626 N=VAL(C$)+N
+627 IF N<>0 THEN 630
+628 N$=REP(C$,I*M+J+2,M-2)
+629 GO TO 870
+630 FOR J=1 TO M-2
+635 C$=SEG(L$,(I)*M+J+1,1)
+640 W=VAL(C$)
+650 C$=SEG(L$,(I-1)*M+(J),1)
+652 N=VAL(C$)
+654 C$=SEG(L$,(I-1)*M+(J+1),1)
+656 N=N+VAL(C$)
+658 C$=SEG(L$,(I-1)*M+(J+2),1)
+660 N=N+VAL(C$)
+662 C$=SEG(L$,(I)*M+(J),1)
+664 N=N+VAL(C$)
+666 C$=SEG(L$,(I)*M+(J+2),1)
+668 N=N+VAL(C$)
+670 C$=SEG(L$,(I+1)*M+(J),1)
+672 N=N+VAL(C$)
+674 C$=SEG(L$,(I+1)*M+(J+1),1)
+676 N=N+VAL(C$)
+678 C$=SEG(L$,(I+1)*M+(J+2),1)
+680 N=N+VAL(C$)
+730 IF W=0 THEN 750
+740 GO TO 800
+750 IF N=3 THEN 780
+760 N=0
+770 GO TO 850
+780 N=1
+785 G=G+1
+790 GO TO 850
+800 IF N=3 OR N=2 THEN 830
+810 N=0
+820 GO TO 850
+830 N=1
+840 G=G+1
+850 C$=STR(N)
+852 C$=SEG(C$,2,1)
+855 N$=REP(C$,I*M+J+1,1)
+860 NEXT J
+870 NEXT I
+880 L$=N$
+920 NEXT P
+960 MOVE 97,7
+965 PRINT "# of Iterations:";
+970 INPUT L2
+980 IF L2=0 THEN 1020
+990 T=P+L2-1
+1000 L1=P
+1010 GO TO 480
+1020 END

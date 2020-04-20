@@ -1,0 +1,50 @@
+10 INIT
+11 PAGE
+12 PRINT "GUMOWSKI by John Lansdown - written for Tektronix 4051"
+13 PRINT "   based on paper by J Gumowski and C Mira"
+14 PRINT
+20 PRINT "Creative Computing v04 n05 1978 Sept-Oct pages 88-89"
+30 PRINT "   Example graphs:    A=1    C=-0.9"
+40 PRINT "                      A=0.8  C=-0.9"
+50 PRINT "                      A=1    C=-0.925"
+60 PRINT "                      A=1    C=-0.3"
+70 PRINT "                      A=1    C=-0.89"
+80 PRINT "                      A=0.9  C=-0.5"
+90 PRINT "  Varying A changes the shape and C alters details"
+95 PRINT "  A should be less than or equal 1. F scales the output"
+96 PRINT "  The more points plotted the better, try experimenting"
+100 PRINT
+105 PRINT "  Graph takes a couple of minutes to complete"
+106 PRINT "  Press BREAK key below screen to stop program early"
+107 PRINT
+120 F=0.8
+130 READ W1,W2,W3,W4
+140 DATA -65,65,-50,50
+150 WINDOW W1*F,W2*F,W3*F,W4*F
+160 I=1
+170 X=1
+180 Y=1
+190 PRINT "INPUT A and C :";
+200 INPUT A,C
+202 PAGE
+204 PRINT "    GUMOWSKI"
+210 PRINT "A = ";A;" C= ";C
+220 S=X
+230 X=A*Y+C*X+2*X*X*(1-C)/(1+X*X)
+240 Y=-S+C*X+2*X*X*(1-C)/(1+X*X)
+250 MOVE X,Y
+260 RMOVE 0,0.1
+270 RDRAW -0.1,-0.2
+280 RDRAW 0.2,0
+290 RDRAW -0.1,0.2
+300 I=I+1
+310 IF I>1500 THEN 330
+320 GO TO 220
+330 HOME
+331 PRINT
+332 PRINT
+333 PRINT
+334 PRINT "Type Y to run again";
+335 INPUT A$
+336 IF A$ = "Y" THEN 10
+340 END
