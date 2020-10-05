@@ -11,3 +11,5 @@ CRCDUMP7.txt runs with Jos' Diagnostic ROM pack in the left slot and 4050E01 ROM
 This adds the CRC checks for the ROM Expander slots 51 through 58 - warning this only seemed to work in my 4054A.
 ---
 My hypothesis is the 4052 Opt1 Comm Backpack has BSX reversed between left and right slots
+MFM16.BIN contains Jos' Diagnostic ROM image in MFM slot 1.  I have run it with CRCDUMP6 successfully
+CRCDUMP7 breaks with MFM16.  I suspect because the Diag ROM hardcodes itself to bankswitch to the LEFT slot NOT the Slot 1 in an expander.
