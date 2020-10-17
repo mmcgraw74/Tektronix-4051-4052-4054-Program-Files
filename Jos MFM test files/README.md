@@ -13,7 +13,8 @@ This adds the CRC checks for MFM or ROM Expander slots.
 ![Label and PCB front](./4052%20CRC18%20closeup%20column%20descriptions.jpg)
 ---
 My hypothesis on why the MFM in 4052 right slot is reported in the left slot is the 4052 Opt1 Comm Backpack has BSX reversed between left and right slots
-MFM18.BIN is my latest ROM image including the corrected File Manager-01 ROMs.
+
+MFM18.BIN is my latest MFM ROM image including the corrected File Manager-01 ROMs.
 
 If you put the Diag ROM in the MFM slot 1 - you can only use it with the CRCDUMP6 to display your BASIC ROM CRCs.
 
