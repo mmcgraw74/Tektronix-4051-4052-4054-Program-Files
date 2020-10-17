@@ -1,7 +1,17 @@
 Directory with test ROM images and screenshots from Jos Dreesen's Multifunction ROM Pack
 ---
-This screenshot is Realterm software, showing connection baud rate
-I have several crossover cables connecting the MFM to PC USB Serial converter and haven't reproduced this success yet (as of Oct 5 2020)
+This screenshot is Realterm software, showing connection baud rate.
+I rewired my MFM DB-9 connector:
+
+ - to disconnect pin 1 from the board and connect the board to pin 7
+ - and disconnect pin 4 from the board and connect the board to pin 8.
+ 
+ These two changes modify the board to use RTS/CTS hardware handshake instead of DTR/CD.
+ 
+ I was successful in using an old "Laplink" red serial cable with DB-9 to DB-9 crossover connectors
+ 
+ NOTE: for the 4052 with MFM I had to address the RS-232 Printer Interface in Expander slot 43 if the MFM is installed in the right slot.  Use 53 if the MFM is in the left slot
+
 
 ![Label and PCB front](./4054aRS232captureOfMFMprotoWithJumperPrinting.jpeg)
 ---
