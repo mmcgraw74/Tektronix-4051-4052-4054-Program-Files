@@ -1,0 +1,5 @@
+100 PAGE 101 PRINT "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"102 PRINT "+        Tek 4051 to Hp 9810a should be interfaced via     +"103 PRINT "+               Hp 11205A serial I/O interface             +"104 PRINT "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"110 INIT 120 CALL "cminit"130 CALL "rate",1200,0,2140 CALL "rcrlf",3,0,0150 CALL "eolchr",20,"",0160 ON EOI THEN 340170 T1=6180 REM - t1 is the starting file number.190 PRINT "
+
+Data files start at File ";T1200 PRINT "
+
+     Input number of files to be REMARKED."210 F1=3000220 INPUT L1230 PAGE 240 IF L1=0 THEN 270250 FIND T1260 MARK L1,F1270 FOR I1=1 TO L1280 FIND T1290 CALL "dtrecv"300 PAGE 310 PRINT "Next file being written NOW is ";T1+1320 T1=T1+1330 NEXT I1340 END 

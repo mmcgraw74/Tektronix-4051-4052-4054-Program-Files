@@ -1,0 +1,16 @@
+200 REM ***** HP INTERFACE INSTRUCTIONS210 REM  File 13220 PAGE 230 PRINT "                 Tektronix/HP Interface Instructions
+
+"240 PRINT "                                 Menu____
+
+"250 PRINT "1. Storing HP Programs on Tape"260 PRINT "2. Restoring HP Programs from Tape"270 PRINT "3. Storing HP Files on Tape"280 PRINT "4. Restoring HP Files to Disc"290 PRINT "5. Interfacing utilities"300 PRINT "6. KSR Lineprinter Interface"310 PRINT "7. Return to Interface Program"320 PRINT "8. Storing and Restoring $EDITOR Files on Tape."330 PRINT "
+
+Enter number or ""M"" for new Menu:";340 INPUT N$350 IF POS(N$,"M",1) THEN 220360 FOR J=1 TO LEN(N$)370 X$=SEG(N$,J,1)380 IF X$=" " THEN 410390 IF X$>"9" THEN 440400 IF X$<"0" THEN 440410 NEXT J420 N2=VAL(N$)430 GO TO 460440 PRINT "Wrong.  Try again."450 GO TO 330460 GO TO N2 OF 470,750,900,1180,1450,1660,200,1880470 REM  *****  STORE PROGRAMS480 PAGE 490 PRINT "                    Storing Programs on Tek Tapes
+
+"500 PRINT "1. Make sure the tape you are going to use to store is"510 PRINT "   properly formatted.  (Refer to the Tektronix Reference"520 PRINT "   Manual for detailed instructions.)  The file should be"530 PRINT "   MARked to 7+(record length of program*256) bytes."540 PRINT "2. Logon to the HP System using Option 1 of the main"550 PRINT "   program."560 PRINT "3. SCR and GET the program you wish to store.  (Do not"570 PRINT "   RUN, LIS, or PUN.)"580 PRINT "4. Return to the Tek Program by pressing Overlay Key 5"590 PRINT "   (RETURN TO BASIC)."600 PRINT "5. Run Option 3 (Store Program), following the prompts."610 PRINT "   For the prompt ""File Number?"", enter the file"620 PRINT "   you just formatted."630 PRINT "
+The Tektronix will store the program in the tape and"640 PRINT "inform you when the operation is finished."650 PRINT "
+   NOTE: If you receive an error message, such as ""MT"660 PRINT "at EOF"", you will have to return to the Tek program"670 PRINT "(Key 5-RETURN TO BASIC) and begin again."680 PRINT "
+   NOTE: Your program is stored without a name.  When"690 PRINT "restoring the program, you will have to append a name"700 PRINT "before SAVing or CSAVing it in your HP library."710 PRINT "
+   NOTE: Because oTURN TO BASIC) and begin again."680 PRINT "
+   NOC, the program is stored as a file, and cannot be"730 PRINT "loaded or run in the Tektronix in any way."740 GO TO 330750 REM *****  RESTORE PROGRAM760 PAGE 770 PRINT "                  Restoring Programs from Tek Tapes
+
+"780 PRINT "1. Logon to the HP System using Option 1 (Logon HP) of"790 PRINT "   the main program."800 PRINT "2. Return to the Tek program by presing Overlay Key 5"810 PRINT "   (RETURN TO BASIC)."820 PRINT "3. Follow the program instructions.  For the prompt"830 PRINT "   ""File Number?"", enter the tape file that contains"840 PRINT "   the program you want."850 PRINT "4. The Tek program will then load the program into your"860 PRINT "   HP workspace.  When finished, go to Terminal Mode"870 PRINT "   (Option 2) and type ""KEY"".  You may then work with"880 PRINT "   the program."890 GO TO 650

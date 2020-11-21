@@ -1,0 +1,2 @@
+100 INIT 101 PAGE 110 PRINT "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"120 PRINT "+ You should have 1st signed-on to TCP before passing    +"130 PRINT "+               Tek-files to TCP-workfiles               +"140 PRINT "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"150 M$=CHR(13)160 A$=""170 J$="
+"180 T1=9
