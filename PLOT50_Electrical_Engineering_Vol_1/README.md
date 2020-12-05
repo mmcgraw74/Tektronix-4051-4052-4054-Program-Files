@@ -2,7 +2,7 @@ This folder contains files I recovered from a **PLOT50 Electrical Engineering Vo
 
 All these files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
 
-On a blank DC300 tape, mark each file with the number of blocks = file size listed in the TLIST file in this folder:
+On a blank DC300 tape, mark each file with the number of blocks = file size listed in the TLIST file below and in this folder:
 
 ```
  1      ASCII   PROGRAM           4608   
