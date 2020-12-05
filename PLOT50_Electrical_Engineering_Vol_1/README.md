@@ -44,7 +44,7 @@ Example:
 To prepare the tape for file 1:
 ```
 FIND 1
-MARK 1, 4608
+MARK 1,4608
 ```
 Now use the serial interface to transfer ElecEngFILE1.UNI into 4051 memory:
 ```
