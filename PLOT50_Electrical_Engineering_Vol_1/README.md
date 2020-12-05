@@ -4,7 +4,7 @@ All these files are in my "Universal" (.UNI) BASIC text format which will load a
 
 On a blank DC300 tape, mark each file with the number of blocks = file size listed in the TLIST file in this folder:
 
-''' 1      ASCII   PROGRAM           4608   
+``` 1      ASCII   PROGRAM           4608   
  2      ASCII   PROGRAM           10240  
  3      ASCII   PROGRAM           6912   
  4      ASCII   PROGRAM           2048   
@@ -37,7 +37,7 @@ On a blank DC300 tape, mark each file with the number of blocks = file size list
  31     NEW                       2816   
  32     NEW                       2816   
  33     LAST                      768    
-'''
+```
 
 Example:
 To prepare the tape for file 1:
