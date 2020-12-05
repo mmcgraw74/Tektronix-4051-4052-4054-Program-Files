@@ -1,4 +1,13 @@
 This folder contains files I recovered from a **PLOT50 Electrical Engineering Volume 1 tape**
+***********
+This program makes heavy use of a UDK overlay, here is what I see in the two menu screenshots:
+
+|:---:|:---:|:---:|
+| EDIT Code | Code on TAPE | EDIT Data | Data on TAPE | Results on TAPE |
+| **1** | **2** | **3** | **4** | **5** |
+| ENTER Code | LIST Code | ENTER Data | LIST Data | RUN |
+
+| zebra stripes | are neat      |    $1 |
 
 All these files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
 
