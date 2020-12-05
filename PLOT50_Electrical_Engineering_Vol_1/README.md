@@ -56,12 +56,14 @@ OLD@40:
 FIND 1
 SAVE
 ``` 
-For files 19 through 38:
+Repeat the three steps above for each of the 12 program files in file number order.
+
+Then, for 'NEW' files 19 through 38, you only need one MARK command to create them:
 ```
 FIND 13
 MARK 20,2816
 ```
-These are placeholders for you to save temporary DATA files - don't save programs here.
+These 'NEW' files are placeholders for you to use to save CODE and DATA files - don't save programs here.
  
 No need to MARK the LAST file - it is always created as the file after the last one MARKed.
 
