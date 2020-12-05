@@ -58,7 +58,7 @@ SAVE
 ``` 
 Repeat the three steps above for each of the 12 program files in file number order.
 
-Then, for 'NEW' files 19 through 38, you only need one MARK command to create them:
+Then, for 'NEW' files 19 through 38, you only need one MARK command to create all 20 'NEW' files:
 ```
 FIND 13
 MARK 20,2816
