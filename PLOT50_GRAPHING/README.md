@@ -48,10 +48,21 @@ Then, for ASCII PROGRAM files 5 through 7:
 ```
 FIND 5
 MARK 1,17152
+OLD@40: ! transfer FILE 5 into 4051 memory
+FIND 5
+SAVE    ! save FILE 5 to tape
+
 FIND 6
 MARK 1,16128
+OLD@40: ! transfer FILE 6 into 4051 memory
+FIND 6
+SAVE    ! save FILE 6 to tape
+
 FIND 7
 MARK 1,15104
+OLD@40: ! transfer FILE 7 into 4051 memory
+FIND 7
+SAVE    ! save FILE 7 to tape
 ```
 
 Then, for 'NEW' file 8:
