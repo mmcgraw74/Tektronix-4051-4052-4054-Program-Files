@@ -43,11 +43,18 @@ To prepare the tape for file 1:
 
 **FIND 1**
 **MARK 1, 4608**
+
+Now use the serial interface to transfer ElecEngFILE1.UNI into 4051 memory:
+**OLD@40:**
+**FIND 1**
+**SAVE**
  
 For files 19 through 38:
 
 **FIND 13**
 **MARK 20,2816**
+
+These are placeholders for you to save temporary DATA files - don't save programs here.
  
 No need to MARK the LAST file - it is always created as the file after the last one MARKed.
 
