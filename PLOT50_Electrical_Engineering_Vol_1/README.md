@@ -3,7 +3,7 @@ This folder contains files I recovered from a **PLOT50 Electrical Engineering Vo
 This program makes heavy use of a UDK overlay, here is what I see in the two menu screenshots:
 
 | EDIT Code | Code on TAPE | EDIT Data | Data on TAPE | Results on TAPE |
-|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|
 | **1** | **2** | **3** | **4** | **5** |
 | ENTER Code | LIST Code | ENTER Data | LIST Data | RUN |
 
