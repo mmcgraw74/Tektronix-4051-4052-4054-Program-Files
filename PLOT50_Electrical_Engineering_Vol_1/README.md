@@ -8,7 +8,11 @@ This program makes heavy use of a UDK overlay, here is what I see in the two men
 | **1** | **2** | **3** | **4** | **5** |
 | ENTER Code | LIST Code | ENTER Data | LIST Data | RUN |
 
-| zebra stripes | are neat      |    $1 |
+|   |   |   |   |    |
+|:---:|:---:|:---:|:---:|:---:|
+|   |   |   |   |    |
+| **6** | **7** | **8** | **9** | **10** |
+| LIST Results | PLOT 2-Ports | PLOT Output | MAPPING | UTILITY |
 
 All these files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
 
