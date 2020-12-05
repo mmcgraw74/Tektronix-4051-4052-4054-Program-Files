@@ -4,7 +4,7 @@ This program makes heavy use of a UDK (User Definable Key) overlay, I created th
 
 ![EE V1 UDK Overlay](./Electrical%20Engineering%20Vol%201%20UDK%20overlay.jpg)
 
-All these files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
+All these PROGRAM files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
 
 On a blank DC300 tape, mark each file with the file size listed in the TLIST file below and in this folder:
 
