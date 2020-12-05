@@ -1,69 +1,65 @@
-This folder contains files I recovered from a **PLOT50 Electrical Engineering Volume 1 tape**
+This folder contains files I recovered from a **PLOT50 GRAPHING tape**
 ***********
 This program makes heavy use of a UDK (User Definable Key) overlay, I created the UDK overlay file below from the Blank overlay in the root of this repository using PAINT to add the text, by examining the instructions in the two menu screenshots for the ten UDK keys and SHIFT UDK keys:
 
 ![EE V1 UDK Overlay](./Electrical%20Engineering%20Vol%201%20UDK%20overlay.jpg)
 
-All these PROGRAM files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
+ASCII PROGRAM files 1,5,6 and 7 are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence.
+
+FILE1 is the Menu program and asks if you have the BINARY PROGRAM LOADER, answer NO, and this program will load ASCII PROGRAM 5.
+At this point the three ASCII programs are the entire GRAPHICs library.
+
+I have not written a program to create the BINARY files on tape from the tape dump file - but you won't need them.
 
 On a blank DC300 tape, mark each file with the file size listed in the TLIST file below and in this folder:
 
 ```
- 1      ASCII   PROGRAM           4608   
- 2      ASCII   PROGRAM           10240  
- 3      ASCII   PROGRAM           6912   
- 4      ASCII   PROGRAM           2048   
- 5      ASCII   PROGRAM           7168   
- 6      ASCII   PROGRAM           5888   
- 7      ASCII   PROGRAM           14848  
- 8      ASCII   PROGRAM           14848  
- 9      ASCII   PROGRAM           14848  
- 10     ASCII   PROGRAM           14848  
- 11     ASCII   PROGRAM           14848  
- 12     ASCII   PROGRAM           14848  
- 13     NEW                       2816   
- 14     NEW                       2816   
- 15     NEW                       2816   
- 16     NEW                       2816   
- 17     NEW                       2816   
- 18     NEW                       2816   
- 19     NEW                       2816   
- 20     NEW                       2816   
- 21     NEW                       2816   
- 22     NEW                       2816   
- 23     NEW                       2816   
- 24     NEW                       2816   
- 25     NEW                       2816   
- 26     NEW                       2816   
- 27     NEW                       2816   
- 28     NEW                       2816   
- 29     NEW                       2816   
- 30     NEW                       2816   
- 31     NEW                       2816   
- 32     NEW                       2816   
- 33     LAST                      768    
+ 1      ASCII   PROGRAM            1536   
+ 2      BINARY  PROGRAM            20224  
+ 3      BINARY  PROGRAM            20224  
+ 4      BINARY  PROGRAM            20224  
+ 5      ASCII   PROGRAM            17152  
+ 6      ASCII   PROGRAM            16128  
+ 7      ASCII   PROGRAM            15104  
+ 8      NEW                        10240  
+ 9      LAST                       768    
 ```
 
 Example:
 To prepare the tape for file 1:
 ```
 FIND 1
-MARK 1,4608
+MARK 1,1536
 ```
-Now use the serial interface to transfer ElecEngFILE1.UNI into 4051 memory, then SAVE the program to FILE 1 on your tape:
+Now use the serial interface to transfer ASCII PROGRAM FILE1.UNI into 4051 memory, then SAVE the program to FILE 1 on your tape:
 ```
 OLD@40:
 FIND 1
 SAVE
 ``` 
-Repeat the three steps above for each of the 12 program files in file number order.
+Then, for 'BINARY' files 2 through 4, you only need one MARK command to create all 3 'NEW' files:
+```
+FIND 2
+MARK 3, 20224
+```
+These 'NEW' files are placeholders for later, if I create a program to restore BINARY files.
 
-Then, for 'NEW' files 19 through 38, you only need one MARK command to create all 20 'NEW' files:
+Then, for ASCII PROGRAM files 5 through 7:
 ```
-FIND 13
-MARK 20,2816
+FIND 5
+MARK 1,17152
+FIND 6
+MARK 1,16128
+FIND 7
+MARK 1,15104
 ```
-These 'NEW' files are placeholders for you to use to save CODE and DATA files - don't save programs here.
+
+Then, for 'NEW' file 8:
+```
+FIND 8
+MARK 1,10240
+```
+This 'NEW' file is a placeholder for you to use to save GRAPHING files - don't save programs here.
  
 No need to MARK the LAST file - it is always created as the file after the last one MARKed.
 
