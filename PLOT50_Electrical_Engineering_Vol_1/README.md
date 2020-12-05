@@ -2,17 +2,7 @@ This folder contains files I recovered from a **PLOT50 Electrical Engineering Vo
 ***********
 This program makes heavy use of a UDK overlay, here is what I see in the two menu screenshots for the ten UDK keys and SHIFT UDK keys:
 
-|   |   |   |   |    |
-|:---:|:---:|:---:|:---:|:---:|
-| EDIT Code | Code on TAPE | EDIT Data | Data on TAPE | Results on TAPE |
-| **1** | **2** | **3** | **4** | **5** |
-| ENTER Code | LIST Code | ENTER Data | LIST Data | RUN |
-
-|   |   |   |   |    |
-|:---:|:---:|:---:|:---:|:---:|
-|       |       |       |       |        |
-| **6** | **7** | **8** | **9** | **10** |
-| LIST Results | PLOT 2-Ports | PLOT Output | MAPPING | UTILITY |
+![EE V1 UDK Overlay](./Electrical%20Engineering%20Vol%201%20UDK%20overlay.jpg)
 
 All these files are in my "Universal" (.UNI) BASIC text format which will load and run on any 4050 series computer after all the programs have been stored on tape in file number sequence:
 
