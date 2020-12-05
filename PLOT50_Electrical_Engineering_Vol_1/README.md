@@ -1,6 +1,6 @@
 This folder contains files I recovered from a **PLOT50 Electrical Engineering Volume 1 tape**
 ***********
-This program makes heavy use of a UDK overlay, here is what I see in the two menu screenshots:
+This program makes heavy use of a UDK overlay, here is what I see in the two menu screenshots for the ten UDK keys and SHIFT UDK keys:
 
 |   |   |   |   |    |
 |:---:|:---:|:---:|:---:|:---:|
