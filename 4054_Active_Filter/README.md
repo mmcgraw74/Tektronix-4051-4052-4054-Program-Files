@@ -14,8 +14,5 @@ This program can be changed to plot this image by changing one BASIC statement f
 
 I recovered all the files from this 40 year old tape - see more details in my Tektronix 4051 / 4052 / 4054 thread on vcfed dot org: 
 
-http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives
+http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives&p=646432#post646432
 
-I also created a repository for the dozens of Tektronix 4050 program tapes I have recovered on github:
-
-https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files
