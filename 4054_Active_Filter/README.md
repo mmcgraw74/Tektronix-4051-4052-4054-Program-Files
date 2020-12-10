@@ -1,6 +1,6 @@
 My Tektronix 4054A graphics computer running a 40 year old DC300 program tape I recovered that contained an Active Filter program in BASIC.
 
-![Label and PCB front](./4052%20Character%20and%20Symbol%20Front.jpg)
+![screenshot](./4054%20with%20Active%20Filter.JPG)
 
 The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  The 4051 and 4052 had 12" flat screen storage tube CRTs with addressable vector resolution of 1024 by 780.   
 
