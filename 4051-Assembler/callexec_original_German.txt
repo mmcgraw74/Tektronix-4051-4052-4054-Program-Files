@@ -1,0 +1,325 @@
+     :
+     :          ***************************************************
+     :          ***                                             ***
+     :          ***          CALL "EXEC" - Dokumentation        ***
+     :          ***                                             ***
+     :          ***************************************************
+     :
+     :
+     :     Vorbemerkung:
+     :     -------------
+     :
+     :     Diese Dokumentation ist nur fuer Benutzer gedacht,  die beabsichti-
+     :gen,  den  Rechner TEKTRONIX 4051 in Maschinensprache zu  programmieren. 
+     :Die  Benutzung der in ROMs verfuegbaren Maschinensoftware ist ohne diese 
+     :Dokumentation moeglich. Eine umfassende Beschreibung oder gar eine voll-
+     :staendige Dokumentation des Betriebssystems ist nicht beabsichtigt.
+     :
+     :     Es  wird vorausgesetzt,  dass der Leser mit dem Befehlssatz der CPU 
+     :6800  von Motorola vertraut ist und Maschinenprogrammierung  als  solche 
+     :beherrscht.
+     :
+     :
+     :(I)                     Der 'CALL "exec"' Befehl
+     :                        ========================
+     :
+     :     Der  CALL "exec" Befehl dient als Einstieg in die Maschinensprache-
+     :Ebene des 4051.  Er ist von TEKTRONIX selbst nicht dokumentiert. Das hat 
+     :seinen guten Grund:  eine falsche Anwendung kann erhebliche Schaeden  an 
+     :der Hardware hervorrufen.
+     :
+     :     Die Syntax von CALL "exec" :
+     :     ----------------------------
+     :
+     :            CALL "exec" [,{Var1} [,{Var2} {,...]]], {Loaderstring}
+     :
+     :     Der Loaderstring ist eine Stringvariable mit der Maximallaenge 512.
+     :In  ihm steht ein Maschinenprogramm in einer Art hexadezimaler  Schreib-
+     :weise.  Und zwar sind die ueblichen Buchstaben 'A' bis 'F' durch die  im 
+     :ASCII-Code  den  Ziffern  folgenden Zeichen ':' bis '?'  ersetzt  (siehe 
+     :ASCII-Code  Tabelle).  Die  hex Zahlen werden  jeweils  zweistellig  und 
+     :o h n e Zwischenraum aneiandergefuegt und dem Loaderstring zugewiesen.
+     :
+     :     Bei  Aufruf  von CALL "exec" erfolgt die Uebersetzung  des  Loader-
+     :strings in Bytes,  die ab der Adresse $02B5 im Speicher abgelegt werden. 
+     :Dabei  darf  das Maschinenprogramm die Laenge 256 Byte auf  keinen  Fall 
+     :ueberschreiten,  da sonst andere wichtige Speicherstellen ueberschrieben 
+     :wuerden.  Schliesslich ruft das Betriebssystem das uebertragene Programm 
+     :durch JSR $02B5 auf,  d.h., der Ruecksprung sollte i.a. durch den Befehl 
+     :RTS erfolgen.
+     :
+     :BEISPIEL:    Das    wieder   verfuegbar   machen   eines    SECRET-
+     :(BASIC)Programms. Dazu muss man lediglich den Speicher 80h loeschen. Das 
+     :Programm ist denkbar einfach:
+     :
+     :              02B5  7F 0080      CLR       $80
+     :              02B8  39           RTS
+     :
+     :     Der Loaderstring ist damit:  L$="7?008039".  Durch 'CALL "exec",L$' 
+     :ist das BASIC-Programm wieder 'unsecret'.
+     :
+     :     Zwischen  "exec"  und  Loaderstring koennen nun  Variablen  stehen, 
+     :deren  Inhalt  durch ein Maschinenprogramm veraendert  werden  kann.  Um 
+     :auf diese Variablen zugreifen zu koennen, sind gewisse Mindestkenntnisse 
+     :vom Speicheraufbau des 4051 erforderlich.
+     :
+     :(II)                       Der Speicheraufbau
+     :                           ==================
+     :
+     :     Die  maximal  zu  Verfuegung stehenden 32kByte RAM  sind  folgender 
+     :massen aufgeteilt:
+     :
+     :     Als erstes kommt der Systemarbeitesspeicher (umfasst etwa 7 Pages). 
+     :In ihm stehen alle Parameter,  Zwischenergebnisse,  Puffer usw.  die das 
+     :Basicinterpreter-Betirebssystem  benoetigt.  Danach kann ein  von  einem 
+     :Backpack  (z.  B.  EDITOR ROM) genutzter Speicherbereich folgen.  Hieran 
+     :schliesst sich dann der freie Speicher an, der wie folgt gegliedert ist: 
+     :
+     :     1. User  Area:  Er  ist  Programmzeilen-,  Text- und  Variablenfeld 
+     :Speicher.  Wir beschraenken uns im folgenden nur auf Textvariablen, denn 
+     :alleine  das  interne Programmzeilenformat mit  seinen  Pointersystemen, 
+     :Tokens, internen Zahlenformaten uvm. wuerde den Rahmen dieser Abhandlung 
+     :sprengen. Der Pointer auf den Anfang der User Aread steht in [$47,$48].
+     :
+     :     2. Der Free-Space,  der freie Speicherraum,  dessen Laenge man  mit 
+     :MEMORY  abfragen kann.  Seine untere Grenze (= Ende der User Area) steht 
+     :in[$45,$46], die obere Grenze bildet des Stackpointer.
+     :
+     :     3. Der Stack-Breich. Er wird durch den Stackpointer und der Adresse 
+     :in [$43,$44] begrenzt und beinhaltet Return-Adressen genauso wie aktuell 
+     :benoetigte Variablen, Konstanten, FOR-NEXT Laufvariablen uvam..
+     :
+     :     4. Der Nametable.  Dort sind die Namen aller (irgendwann nach einem 
+     :DEL ALL  verwendeten) Variablen alphabetisch  verzeichnet.  Bei  Zahlen-
+     :variablen  steht auch ihr Wert dort;  bei Text- oder Feldvariablen  ver-
+     :weist ein Pointer in den User-Bereich.
+     :
+     :
+     :     Die Verwaltung von Stringvariablen
+     :     ----------------------------------
+     :
+     :     Beim  ersten  Nennen einer (String)-Variablen wird  diese  unwider-
+     :ruflich in den Nametable eingetragen,  d.h. es wird ein Item von 13 Byte 
+     :Laenge  erzeugt,  das  den Variablennamen enthaelt.  Aber erst  bei  der 
+     :Erstdimensionierung  (bzw.  Erstzuweisung = Dimensionierung auf 72) wird 
+     :im Userbereich auch ein entsprechender Platz reserviert, der mit einem 5 
+     :Byte  Header als zu einer Stringvariablen gehoerend gekennzeichnet  wird 
+     :(um  ihn  von  Programmzeilen,   Feldern  usw.  zu  unterscheiden).  Die 
+     :Anfangsadresse  des  Headers wird im Variablen-Item im Name  Table  ver-
+     :merkt. Das Loeschen einer Variablen fuehrt nur zur Freigabe des Bereichs 
+     :im  User-Memory,  n i c h t  zur Loeschung des  Items  im  Symbol-Table. 
+     :Deshalb wird auch keim Speicherplatz frei, wenn eine numerische Variable 
+     :geloescht wird.
+     :
+     :     Aufbau eines Textvariablen Items im Nametable:
+     :     ----------------------------------------------
+     :
+     : Byte      (H,L steht i.f. fuer das hoeher- bzw. niederwertiges Byte
+     :-----      eines 16 Bit Wertes)
+     :| 0 |  H | Pointer auf naechstes Item im Nametable (bzw. 0, wenn Ende)
+     :-----    |
+     :| 1 |  L |
+     :-----
+     :| 2 | 'A'|- Name der Textvariablen (z.B. A$)
+     :-----    |
+     :| 3 | '$'|
+     :-----
+     :| 4 |     - Status: gibt an, dass es ein String ist, ob definiert und
+     :-----      ob Header existiert (s.u.)
+     :| 5 |  H |- aktuelle Dimensionierung (<= Erstdimensionierung)
+     :-----    |
+     :| 6 |  L |
+     :-----
+     :| 7 |  H |- aktuelle Laenge (<= aktuelle Dimensionierung);
+     :-----    | das ist der Wert, den LEN(A$) liefert
+     :| 8 |  L |
+     :-----
+     :| 9 |    |- unbenutzt bei Textvariablen (bei Feldern stuende hier die
+     :-----    | Anzahl der Spalten - sowie unter Byte 7 u. 8 die Anzahl der
+     :| 10|    | Reihen)
+     :-----
+     :| 11|  H |- Pointer auf Variablenheader im User-Bereich (bzw. 0
+     :-----    | wenn nicht existierend),so vor der Erstdimensionierung,
+     :| 12|  L | oder nach DEL String).
+     :-----
+     :
+     :     Aufbau des String Inhalts im User Memory:
+     :     -----------------------------------------
+     :
+     :-----
+     :| 0 |  H |- Gesamtlaenge des fuer den String belegten Speichers
+     :-----    | (ergibt sich aus Erstdimensionierung + 5 Byte Header)
+     :| 1 |  L |
+     :----- 
+     :| 2 |     - Status: sagt u.a., dass der Header zu einem String gehoert
+     :----- 
+     :| 3 |  H |- Pointer zum dazugehoerigen Item im Nametable
+     :-----    |
+     :| 4 |  L |
+     :----- 
+     :| 5 | ' ' - erstes Zeichen des Strings
+     :-----
+     :  .
+     :  .       usw.
+     :  .
+     :
+     :     Eine  Stringvariable,  die  in einer Programmzeile  vorkommt,  wird 
+     :durch  das Kennbyte B1h gefolgt von der Adresse ihres Items im Nametable 
+     :intern dargestellt.  Fuer eine Programmzeile wie CALL "EXEC",A$,B$,C$,L$ 
+     :bedeutet das:
+     :
+     :|Byte 0...6    | 7 | 8 |  9  | 10 | 11 | 12| 13| 14| 15|
+     :|--------------+---+---+-----+----+----+---+---+---+---+-
+     :|.. [Header] ..| H | L |[$B5]|[00]|[04]|'e'|'x'|'e'|'c'|
+     :                Zeilen- Text-  Laenge     ASCII-Text: hier Callname
+     :                nummer  Token  des Textes
+     :
+     :
+     :|  16 | 17| 18| 19  | 20| 21| 22  | 23| 24| 25  | 26| 27| 28  | 29  |
+     :+-----+---+---+-----+---+---+-----+---+---+-----+---+---+-----+-----|
+     :|[B1h]| H | L |[B1h]| H | L |[B1h]| H | L |[B1h]| H | L |[6Ah]|[94h]|
+     :         L$            C$            B$            A$    Token   End of
+     :         --------------------------------------------  fuer CALL Line
+     :          Pointer  auf Variablen Items (man  beachte 
+     :          deren umgekehrte Reihenfolge)
+     :
+     :     Jetzt ist es einfach,  auf den Inhalt einer Variablen  zuzugreifen: 
+     :Man  liest  aus Speicher [4Dh,4Eh] die Adresse der  gerade  bearbeiteten 
+     :Zeile,  d.h.  die Zeile mit dem CALL-Befehl. Dieser Wert plus 26 liefert 
+     :die  Adresse der Adresse des Items von A$ im Nametable (fuer B$ bzw.  C$ 
+     :entsprechend  plus 23 bzw.  plus 20).  Die Adresse im Nametable plus  11 
+     :liefert  die  Adresse der Adresse des  Headers  im  User-Bereich.  Diese 
+     :Adresse plus 5 ist die Adresse des  e r s t e n  Zeichens des Strings A$!
+     : Also:                                     |das IX-Register zeigt auf:
+     :   02B5  DE 4D        LDX       $4D        ;aktuelle Programmzeile
+     :   02B7  EE 1A        LDX       26,X       ;Item im Nametable
+     :   02B9  EE 0B        LDX       11,X       ;Header in User Area
+     :   02BB  BD XXXX      JSR       $xxxx      ;IX := IX+5
+     :   02BE  A6 00        LDA       X          ;Akku A := 1. Zeichen aus A$
+     :    .                  .
+     :    .                  .
+     :   ***  WICHTIG: Es wird vorausgesetzt, das A$ dimensioniert ist!  ***
+     :
+     :     Anmerkung:  Man  kann  auf den Inhalt der Variablen auch ueber  den 
+     :Stack zugreifen. Die zuvor genannte Methode ist jedoch einfacher.
+     :
+     :     Mit  diesen Kenntnissen kann z.B.  ein Programm geschrieben werden, 
+     :das ein Hexdump eines bestimmten Speicherbereichs in einen (vorher gross 
+     :genug  definierten) String kopiert. (Druckt man einen  solchen  String, 
+     :ergeben  Characterwerte > 127 auf dem Bildschirm 'chinesische  Zeichen'. 
+     :Das  liegt  daran,  dass  der Zeichensatz des Bildschirms  bei  CHR(127) 
+     :aufhoert und nun das nachfolgende Programm als Punktmatrix interpretiert 
+     :wird.)
+     :
+     :     Das File SYSROM.TXT enthaelt eine Liste der wichtigsten Adressen im 
+     :Systemspeicher.
+     :
+     :
+     : (III)                    Die Switchable Bank
+     :                          ===================
+     :
+     :     Der  ROM Speicherbereich zw.  $8800 und $A7FF,  also 8  KByte,  ist 
+     :nicht  festgelegt,  sondern kann per Hardware gegen einen  anderen  ROM- 
+     :(oder  RAM-)  Bereich ausgetauscht werden.  Auf dieser Technik  basieren 
+     :alle  Back  Packs:  Sie  setzen sich an diese Stelle und  geben  so  dem 
+     :Computer neue Funktionen.
+     :
+     :     Bereits  standartmaessig enthaelt der 4051 ein  zusaetzliches  ROM: 
+     :das   Graphic-ROM  (4K  lang,   ab  $9800  unbelegt).   Es  wird   stets 
+     :eingeschaltet,  wenn der Rechner Grafikbefehle von der Hochsprache (z.B. 
+     :WINDOW,    DRAW,    POINTER   usw.)   ausfuehrt.   Alle   maschinennahen 
+     :Zeichenroutinen, die die GDT bedienen, liegen nicht in diesem Bereich.
+     :
+     :     Die Auswahl der Switchable Bank erfolgt ueber die Routine A9D5h mit 
+     :Hilfe einer Codenummer:
+     :
+     :   2x   einschalten des Graphic-ROM
+     :   20   einschalten des rechten Back Packs (von vorn gesehen)
+     :   28   einschalten des linken Back Packs
+     :   20+x bzw. 28+x mit x={0;1;...;7} einschalten des x-ten Back Packs im
+     :        rechten bzw. linken ROM Expanders
+     :
+     :   Routine $A9D5 schaltet wieder auf die standard Bank,  d.h.  den BASIC 
+     :Interpreter.
+     :
+     :(IV)                   Aufbau des Backpackinhalts
+     :                       ==========================
+     :
+     :   Als   Besitzer   eines   BACK   RAM,   koennen   Sie   ihre   eigenen 
+     :Maschinenprogramme   in   diesem  RAM  unterbringen  und  durch   selbst 
+     :definierte Callnames von BASIC aus aufrufen.
+     :
+     :   Dazu  ist es notwendig,  den genauen Aufbau des Backpack Anfangs  zu 
+     :kennen, in dem u.a. die Callnames verzeichnet sind.
+     :
+     :Adresse im         Funktion
+     :Back Pack 
+     :
+     :8800-8801          hier muss (in der Form '@q') $4051 stehen, sie dient
+     :                   zur Identifizierung des Back Packs
+     :8802-8803          RESTART (s.u.)
+     :8804-8805          INIT       "
+     :8806-8807          DELETE ALL "
+     :8808-8809          CLOSE      "
+     :880A-880B          Pointer auf eine Sprungtabelle fuer externe
+     :                   Funktionen (z.B. MPY, TRN usw. im MATRIX ROM)
+     :880C               
+     :880D-8812          1. Callname (6 Byte, evtl. mit Blanks auffuellen)
+     :8813-8814          Adresse der dazugehoerigen Routine
+     :8815-881A          2. Callname usw. 
+     :                      oder: 0 -> Callnametabelle zu Ende 
+     :
+     :     Der folgende Speicherplatz steht voll dem Anwender zur Verfuegung.
+     :
+     :     Bei  RESTART,  INIT,  DELETE ALL und CLOSE werden die Adressen  von 
+     :Routinen eingetragen,  die bei Ausfuehren von RESTART (d.h.  Einschalten 
+     :des  Rechners  oder  Aufruf von Routine $BC30) oder  der  entsprechenden 
+     :BASIC   Befehle   aufgerufen   werden   sollen.    Dadurch   kann   eine 
+     :Initialisierung   auf  allen  angeschlossenen  Backpacks   durchgefuehrt 
+     :werden,  z.B.  setzt INIT im Graphic ROM WINDOW,  VIEPORT und ROTATE auf 
+     :die Default Parameter zurueck. In den wenigsten Anwendungen werden diese 
+     :Vektoren jedoch benoetigt, sodass sie auf 0000 gesetzt werden koennen.
+     :
+     :     Mit  diesen  Informationen sollte der Anwender in  der  Lage  sein, 
+     :selbst  Programme zu entwickeln und sie ueber CALL verfuegbar zu machen. 
+     :
+     :     Zur  Uebertragung  von Maschinprogrammen in das BACK RAM dient  die 
+     :Routine  "getrom".  Sie setzt vorraus,  dass der ROM-Inhalt in bis zu  4 
+     :Strings  je  2048 Byte Laenge im Binaerformat auf  Tape- oder  Disk-File 
+     :gespeichert vorliegt.
+     :
+     :(V)                            Die PIA's
+     :                               =========
+     :
+     :     Der Adressbereich von $8780 bis $87FF ist kein ROM, sondern ist mit 
+     :den  PIA's  belegt,   die  die  Verbindung  zur  Peripherie  herstellen. 
+     :Standartmaessig sind 6 PIA's eingebaut, die, teilweise durch Kombination 
+     :von zweien, folgende Aufgaben haben:
+     :
+     :- Einlesen eines Tastencodes von der Tastatur
+     :
+     :- Ein- und  Ausschalten  der Lampen BUSY,  I/O und  BREAK,  sowie  durch 
+     :triggern von BUSY, das Erzeugen eines Tones im Lautsprecher, der mit der 
+     :Lampe gekoppelt ist
+     :
+     :- Bedienen des IEC Bus (GPIB)
+     :
+     :- Bedienung des internen Bandlaufwerks und der Speicherbildroehre
+     :
+     :     *********************
+     :     ****** WARNUNG ******
+     :     *********************
+     :
+     :     Der  direkte  Zugriff auf die Band/Bildschirm PIA's  sollte  a u f
+     :k e i n e n   F a l l  erfolgen.  Bei falscher Bedienung koennen schwere 
+     :Fehler entstehen.  Abwicklung oder Loeschen eines Tapes, Einbrennflecken 
+     :oder  Zerstoerung  der  Bildroehre.   Werden  die  Bits  VECTOR   ENABLE 
+     :(Elektronenstrahl  soll zeichnen) und DOT ENABEL (Elektronenstrahl  soll 
+     :einen  Druckpunkt  malen)  gleichzeitig  gesetzt,  verdoppelt  sich  die 
+     :Spannung  an  der Anode und jede Stelle,  die von diesem  energiereichen 
+     :Elektronenstrahl getroffen wird, ist und bleibt verbrannt. 
+     :     Zum  Zeichnen  in  Maschinensprache sollten nur  die  ensprechenden 
+     :Unterroutinen  aufgerufen,  aber n i e  die PIAs  unmittelbar  gesteuert 
+     :werden.
+     :
+     :                        ***  E N D E  ***
