@@ -1,0 +1,320 @@
+     : THE TEKTRONIX GRAPHIC SYSTEMS 4 0 5 1
+     : ------------------------------------------------- -----------------------
+     :
+     : HEX ADDRESSES IN THE ROM OPERATING SYSTEM.
+     : THEIR ENTRY POINTS FOR 
+     : 6800 MACHINE PROGRAMS (EXCERPT).
+     :
+     : ------------------------------------------------- -----------------------
+     :
+     : Addr.   Function
+     : ----    --------------------------------------------- --------------------
+     : 8000    data for routine 8033 in 17 blocks of 3 bytes.
+     :         Byte 1: Key value
+     :         Bytes 2/3: jump address in case the pressed key
+     :         agrees with byte 1.
+     : ------------------------------------------------- ----------------
+     : 8033    Storing pressed keys in the line buffer (and printout).
+     :         If key value is identical to one of "bytes 1" from data field
+     :         8000, then instead jump to one of the following
+     :         Special routines:
+     :         ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     :         8070    CTRL-M and [RETURN] key
+     :         80B0    [RUBOUT] forward
+     :         80BC    Blank and [SPACE] key
+     :         80C5    [RUBOUT] forward    (both in the keypad, as well
+     :                                      Editing button)
+     :         80D1    [BACK SPACE] button (both in the keypad, as well
+     :                                      Editing button)
+     :         8125    [AUTOLOAD] key
+     :         8132    [CLEAR] key
+     :         813B    [REPRINT] key
+     :         8174    [EXPAND] button
+     :         818A    [COMPRESS] key
+     :         81B3    [RECALL-NEXT-LINE] key (check if Pgm SECRET)
+     :         81C3    [RECALL-LINE] key (check if Pgm SECRET)
+     :         8238    [AUTONUMBER] key (check if Pgm SECRET)
+     : ------------------------------------------------- ----------------
+     : 8358    Data field 1 for error messages.
+     :         Data indicates indexed start point in data field 2.
+     :         (Same data means same error message)
+     : 83B8    Printout of an error message.
+     :         [4B], other than 0, indicates the MESSAGE NUMBER 01-60.
+               If [4B] is greater than 60, the error message will be displayed
+     :         reset to 60.
+     : 8495    Beginning of 8 extra routines, either at
+     :         many error messages occur or separate
+     :         must be treated. The meanings are as follows:
+     :         ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     :         8495     Distinction:         IN LINE # / IN IMMEDIATE LINE
+     :         84A8     PRIOR TO LINE #
+     :         84BD     EOF ON UNIT # (Unit # 0-9 is in 0434)
+     :         84C8
+     :         84DE     Print SYNTAX ERROR (Mn 94) and then REPRINT.
+     :         8538     Expression of "MESSAGE NUMBER" and decimal content
+     :                  from [4B].
+     :         8546     ASCII expression of a binary number.
+     :         8561     End of error message.
+     : ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     : 8564 Data field with indexed start addresses to above routines.
+     : 856C Data field 2 for error messages.
+     :      Gives information about the structure of the error message.
+     :      Either indexed address to word (words) from data field 3
+     :      or indicating that one of the 8 above routines is to be started.
+     :      (Then this is the byte F0-F7 to be handled).
+     : 8637 Data field 3 for error messages.
+     :      Contains all required words in coded form.
+     :      To distinguish between all capital letters and some
+     :      Special characters (such as blank, "-", or "/") are not more than
+     :      32 characters are needed, you get from 2 characters A and B
+     :      of the data field 3 exactly 3 letters (characters) for the expression.
+     :
+     :      Letter 1:     0 0 1 A6 A5 A4 A3 A2
+     :      Letter 2:     0 0 1 A1 A0 B7 B6 B5
+     :      Letter 3:     0 0 1 B4 B3 B2 B1 B0
+     :      Special characters:  91="-"    92="/"    93-95=" "
+     :      A7 serves as a signal if the word (s) is finished
+     :      (A7 = 1) or can be read on. (A7 = 0)
+     :
+     :      ------------------------------------------------- ----------------
+     : 8780
+     :  -   PIA - Address - Space (see extra sheet)
+     : 87ff
+     :
+     :      ------------------------------------------------- ----------------
+     : 8800
+     :  -   SWITCHABLE BANK
+     : A800
+     :
+     :        ------------------------------------------------- ----------------
+     : A840   treatment of a USING format
+     : A9D5   Switching on a connected "Switchable Bank" unit
+     :        in the range of 8800-A800.
+     :        Bankswitch (00-3F) is located in ACC A.
+     :        Return to bank switch 00 through routine A9D4.
+     : A9E7   Stores last return address on stack after [49].
+     :        (important for routines with stack handling)
+     : A9FD   inverse routine to A9E7. Get return address from [49]-2
+     :        and jump there.
+     : AA33   index register can be increased 1-16 times.
+     : AA44   index register can be lowered 1-13 times.
+     : AA52   Lowercase letters become capital letters in SET CASE.
+     :        {And [ becomes  (.
+     :        Off } and ] become ).
+     : AA7F   Execution of RESTART (IX = 8802), INIT (IX = 8804),
+     :        DELALL (IX = 8806) or CLOSE (IX = 8808) on all connected
+     :        Bankswitch units.
+     :        If [IX] <> 0000, this routine is skipped.
+     :        AA7F is e.g. at the RESTART to the memory reservation of the
+     :        EDITOR-ROM-Packs or at INIT to reset the
+     :        used graphical parameters in the built-in graphic ROM.
+     : AAB6   END command (automatically CLOSE)
+     :        ------------------------------------------------- ----------------
+     :        Mathematical operations:
+     :        ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     : B014  Conversion of a number from MF to ASCII format.
+     : B05D  Conversion of a number from ASCII format to MF.
+     : B09C  Identical routine B1A2, but operand remains.
+     : B0C2  Converting a number from binary to ASCII format.
+     : B0D6  This routine has different ones depending on [35]
+     :       Functions. Either becomes numeric, field or string variable
+     :       searched or a variable not yet present in the name table
+     :       is filled up there.
+     : B1A2  Converting a number from the MF to the binary format.
+     : B1FB  Converting a number from binary format to MF.
+     : B23E  Subtract the last two MF numbers on stack.
+     : B245  Addition of the last two MF numbers on stack.
+     : B359  Normalization of the last MF number on stack.
+     :       (The mantissa is moved to the left to the maximum)
+     : B3D3  Division of the last two MF numbers on stack.
+     : B4AE  Multiplication of the last two MF numbers on stack.
+     : B6EB  MF number in RAM / ROM (address in IX) comes on stack.
+     : B70F  reverse function to B6EB. The last MF number on stack
+     :       comes to RAM (destination address in IX).
+     :       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     : B9D2  List of precoded MF numbers. (Powers of ten)
+     : BAA2  2 bytes each for each internal code character 00-B6,
+     :       either directly a jump address to be handled
+     :       Representing Routines When The Coding Sign Appears
+     :       or give information about whether the command routine
+     :       is located in the Graphic ROM or in the Matrix ROM and where they are
+     :       located there.
+     :
+     :       ------------------------------------------------- ----------------
+     : BC30  Start of the software interrupt (=> RESET + System ERROR 0).
+     : BC4B  RESET: Clear the ROM, Determine the Memory Capacity,
+     :       Initial assignment of the SYSTEM RAM.
+     :       Subroutines Included:
+     :       BD46   expression "SYSTEM ERROR - MESSAGE NUMBER 0"
+     :       BD8C   Hexadecimal expression of the ACC A with the following blank
+     :       BD93       "           "       "  "   "    without following blank
+     :       Data   required for:
+     :       BDAC   text "SYSTEM ERROR - MESSAGE NUMBER 0"
+     :       BDCE   initial assignment of the system RAM
+     :       BE30   Initial assignment of the interrupt addresses
+     :
+     :       ------------------------------------------------- ----------------
+     :       Discussion of variables and constants:
+     :       BE56 number in MF
+     :       BE69 text
+     :       BE84 binary number or line number
+     :       BE99 numeric variable
+     :       BEB1 string variable
+     :       BEC1 field variable
+     : BEE1  assignment (coding character 51)
+     : BF65  RESTORE command
+     : C003  assignment (8C coding character)
+     :
+     :       ------------------------------------------------- ----------------
+     :       Occurrence of ON ... THEN - Interrupts
+     : C0AC  EOF
+     : C100  SIZE, SRQ, EOI (distinction by [53])
+     : C107  ON command
+     : C11B  OFF command
+     : C12C  End of Line (code 94)
+     :
+     :       ------------------------------------------------- ----------------
+     : C143  INIT command (=> AA7F)
+     : C1A6  DELALL command (=> AA7F)
+     : C1D5  SPACE function
+     : C1F3  precoded MF number: 72
+     : C1FB  MEMORY function (always 500 units reserved)
+     :
+     :       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     : C221  SET RADIANS
+     : C228  SET DEGREES
+     : C22D  SET DEGREE
+     : C232  SET TRACE
+     : C239  SET NORMAL
+     : C240 ​​ SET KEY
+     : C244  SET NOKEY
+     : C248  SET CASE
+     : C24C  SET NOCASE
+     :
+     :       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     : C250  WAIT command
+     : C410  SECRET command
+     : C479  Separator for INP, OLD, APP
+     : C49D  I / O - Delimiter
+     : C4CD  (De-) Coding of the Tape Buffer Content by SECRET Method
+     :
+     :       ------------------------------------------------- ----------------
+     : C4DE  Interrupt of Keyboard:
+     :          Including:
+     :       ----------------------
+     :       C4F2 Page Button (EA)
+     :       C4FA Home Button (CA)
+     :       C503 Copy Button (ED)
+     :       C546 Break Button (EB)
+     :       C59D Rewind Button (EC)
+     :       C5B2 Resting on the device
+     :       C69A Populating the text buffer and CTRL-G when full
+     :
+     :       ------------------------------------------------- ----------------
+     : C6B4  wait loop until [8794'2] = 1 and [8794'3] = 0
+     :
+     : C6BE  part of the PRINT routine; separate treatment of the control,
+     :       and the special characters (PRI @ 32,18:       x) and blanks;
+     :       Control character routines can be jumped directly:
+     :       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     :       C6BE CTRL-L
+     :       C6C8 CTRL- ^
+     :       C6EF CTRL-J
+     :       C727 CTRL-G
+     :       C74F CTRL-H
+     :       C76C CTRL-K
+     :       C78D CTRL-I
+     :       C7C0 CTRL-M and CTRL-RUBOUT
+     :       C7C9 RUBOUT (no CR)
+     :       C920 blank
+     :       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+     : C85F  Expression of the character in ACC A with data from the definition table
+     :       (5x8 dot matrix)
+     : C935  Definition table of ASCII characters (5 bytes each
+     :       - per character from CHR.33 to CHR.127) + special characters (from CB10).
+     : CB80  Note: The "Chinese characters" are not extra
+     :       defined, but result from the constellation
+     :       of the following program part.
+     : CB81  MOVE routine (if [A5] = 00, then DRAW)
+     :       X position in AA / AB (0000-03FF)
+     :       Y position in A8 / A9 (0000-02FF)
+     : CBEE  Interrupt Routine for PRINT Command
+     :
+     : ------------------------------------------------- ----------------
+     : CE00  TYPE function
+     : D13E  length of stack information bytes (00-19)
+     : D25F  data for PRINT USING (3 bytes each)
+     :       Byte 1: Character in format
+     :       Bytes 2/3: Incremental addresses, in the event of "Byte 1"
+     : D9DA  KILL command
+     : DA1E  tape words (NEW, BINARY, ASCII, LAST, PROGRAM, SECRET)
+     : DBDD  subroutine FIND
+     : DFBB  Tape Status (PRI @ 33.0: A, B, C)
+     : E00C  Band Routine (???)
+     : E207  TLIST command (not in non-header format)
+     : E286  CALL command
+     : E34A  DIM command
+     : E61E  DELETE command (=> C1A6)
+     : E8DE  routine for calculation schedules (see extra sheet)
+     : E918  PI on stack
+     : E91E  precoded numbers (PI, 0, 1, 2, some logarithms,
+     :       Conversion factors for angular mass)
+     : E9EA  Logical comparisons
+     : EA2C  SIN, COS, TAN function (differentiated by [53])
+     : EBAA  returns to stack at last MF count, other than 0,
+     :       the sign around
+     : EBDF  SQR function
+     : EC4D  EXP function
+     : ED27  LOG, LGT function (distinction by [53])
+     : EDE7  SIG function
+     : EE06  ABS function
+     : EE25  AND, OR function (differentiated by [53])
+     : EE3E  Compares the last two MF numbers on stack
+     : EE6E  Potentiate
+     : EF1B  MIN function
+     : EF2C  MAX function
+     : EF3C  INT function
+     : EFA3  RND (0)
+     : EFB0  start value for RND (A): 0.52899 ...
+     : EFB8  HDW Interrupt !!!
+     : F077  Paying Dummy Data (0123456789 + -.)
+     : F188  WBYTE command
+     : F1BF  RBYTE command
+     : F22E  PRINT routine I (execution of the control character;
+     :       character to be printed in ACC A)
+     : F2A6  PRINT routine II (as in LIST;
+     :       character to be printed in ACC A)
+     : F2C2  flashing "F" at PAGE-FULL
+     : F34B  Copy
+     : F36F  PRINT routine III (Refresh character;
+     :       character to be printed in (B2))
+     : F3AE  Character routine: X or Y position in MF;
+     :                          Initial position of the coordinate in (9C) '2;
+     :                          [A4] must be at the beginning 00;
+     :                          Routine is to start twice.
+     :       Accordingly, F3A8 is MOVE.
+     : F423  precoded MF number: 7.8125 (conversion for drawing
+     :                                   on screen)
+     : F42B  Setting Alphafonts (PRI @ 32,18: x)
+     : F434  Setting "PAGE-FULL" (PRI @ 32,26: x)
+     : F45C  CALL "EXEC" routine (IX points to header of Loaderstring)
+     : F6A2  POLL command
+     : F7AA  CLOSE command (=> AA7F)
+     : F7C8  Determine if and which key is pressed;
+     :       Character comes after (76) (80 => nothing pressed)
+     : F9AA  Memory Compress
+     : FDBC  NM Interrupt
+     : FEB0  holding pattern
+     :
+     :       ------------------------------------------------- ----------------
+     :       Interrupt Vectors:
+     :       FFF8 HDW Interrupt
+     :       FFFA SW interrupt
+     :       FFFC NM Interrupt
+     :       FFFE RESET (Restart)
+     :
+     :       ==================================================================
+     :
+     :
+     :
+     :
