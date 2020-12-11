@@ -21,9 +21,9 @@ Labeler, 4924 Tape Copy and Flowchart are duplicates of programs posted in other
 
 The other programs appear to be unique.
 
-The **TAPETEST program is very interesting - it uses the CALL "EXEC" assembly language and adds CALL "MTPACK", "MTFWD", "MTBACK", and "MTREAD", in the short assembly language program for the 4051!
+The **TAPETEST program is very interesting - it uses the CALL "EXEC" assembly language and adds CALL "MTPACK", "MTFWD", "MTBACK", and "MTREAD", in the short assembly language program for the 4051!**
 
 I don't have a 4051 to test this TAPETEST program, but the program loads and runs on the 405x javascript emulator and then errors due to no tape drive.
 ******************
-**Someone (hint, hint) should disassemble the 4051 Assembly program to see how they added those CALLs :)
+**Someone (hint, hint) should disassemble the 4051 Assembly program to see how they added those CALLs :)**
 ****************
