@@ -1,0 +1,89 @@
+
+I have finished the assembly coded 4051 program that can read any system ROM including the ROM PACKs.  Be aware that any ROM PACK that does I/O (including the RAMPACK) may get messed up when the 8800H to A7FFH ROM memory space is being read.  This is because any I/O that is mapped into the region of memory is likely to get it’s state changed.  Thus far, only the RAMPACK is confirmed to have that specific problem so you should avoid reading the RAMPACK using this utility since it will suddenly change Page Addresses during the reads.
+There is one known anomaly at this time.  The 2KB ROM at 8000H through 87FFH will not return reliable checksums because the bytes starting at 87A8 are not repeatable.  A check of the firmware listings shows that the ROM locations after 8780H do *not* have any code in them. The ROM memory region just prior to 8780H has code patch routines, so this might vary with firmware revisions.  As a result, I haven’t restricted the checksum for the code free region.  Since the 2KB of ROM HEX code is stored in the B$ string, it will be easy enough for comparing that
+ROM between different Tek 4051 computers.
+The 4051 BASIC program to perform firmware ROM reads is included below.  Note that the Bank Address will only be requested when you are reading the ROMs from 8800H through A7FFH since other locations are not dependent on the ROM PACK Bank Address. The valid Bank Addresses are 00H, 08H, 10H, 28H … 2FH, and 30H … 37H.  Other Bank Addresses will generally alias into this shown range.
+BANK Addresses:
+00H  System ROMs
+08H  System ROMs
+10H  Option 1 Communications (built-in RS-232)
+28H  Right rear ROM PACK slot
+28H…2FH  Right rear ROM Expander
+30H  Left rear ROM PACK slot
+30H…37H  Left rear ROM Expander
+
+Note that the MULTI-PACK (8 in 1) and MAXIPACK (10 in 1) act just like ROM Expanders.  I will send you my checksums in a later email.
+
+Here are the Fletcher 16 Checksums for the 4051 firmware.
+The format is: @<Bank>:@<ROM START ADDRESS>:<Fletcher 16 checksum>
+Let me know what your checksums are and I will enter them into a globally available spreadsheet.
+@00:@8000:F5C9    System ROM (Checksum is unreliable since some nonexistent ROM areas get read)
+@00:@8800:0CE5    System ROM (ROM PACK)
+@00:@9000:023F    System ROM (ROM PACK)
+@00:@9800:47E4    System ROM (ROM PACK)
+@00:@A000:4B29    System ROM (ROM PACK)
+@08:@8800:E1EF    System Overflow ROM (ROM PACK)
+@08:@9000:B6B3    System Overflow ROM (ROM PACK)
+@08:@9800:FFFF    No ROM present      (ROM PACK)
+@08:@A000:FFFF    No ROM present      (ROM PACK)
+@10:@8800:D948    Option 1 COMM (ROM PACK)
+@10:@9000:5AD6    Option 1 COMM (ROM PACK)
+@10:@9800:6155    Option 1 COMM (ROM PACK)
+@10:@A000:186F    Option 1 COMM (ROM PACK)
+@00:@A800:BEC3    System ROM
+@00:@B000:0581    System ROM
+@00:@B800:70A5    System ROM
+@00:@C000:6B55    System ROM
+@00:@C800:93CE    System ROM
+@00:@D000:5F7C    System ROM
+@00:@D800:EE00    System ROM
+@00:@E000:A171    System ROM
+@00:@E800:02FD    System ROM
+@00:@F000:1A8A    System ROM
+@00:@F800:77DE    System ROM
+
+
+
+*********************************************************************************************************
+1 REMARKABLE    4051 ROM READER AND CHECKSUM (MDC)
+2 REM A$=CALL "EXEC" STRING, B$=ARGUMENT/RESULT STRING
+3 REM H$=HEX ADDRESS STRING, C$=HEX ADDRESS CHARACTER
+4 RUN 100
+8 RUN 220
+100 INIT 
+110 PAGE 
+120 DIM A$(512),B$(4111),C$(1),H$(64)
+130 A$=""
+140 A$=A$&"967<3686109735<>4224=?06;=;0=67?0035=>06:6042;72>>058<10"
+150 A$=A$&"0?266?=>06>>078<000:2666=>06>>0;:60281202658;=::3>:600>6"
+160 A$=A$&"038=59;=0388;=:9=5:600>6058=4=97188=539719;=0388<>????=?"
+170 A$=A$&"02=>41=?008=5;=;038=78=703=;028=72=702=>00088<080026>886"
+180 A$=A$&"3:8=5<<>00028=408=3<=>068610<60?:707>70832843?7>:9=5<624"
+190 A$=A$&"2002<61;=74;20?0814026?6<13:26?28=355?8=054848484816:600"
+200 A$=A$&"8=2981392?0280078030840?1;39=>18:60008=?1816444444448=01"
+210 A$=A$&"17840?8;3081392?028;07=>16:70008=?16392504<1??2602<0??39"
+220 B$="@00:@8000:"
+230 PRINT "INPUT A 2KB ALIGNED ROM ADDRESS (UPPER 2 HEX DIGITS): ";
+240 INPUT H$
+250 IF LEN(H$)<>2 THEN 230
+260 GOSUB 380
+270 B$=REP(H$,6,2)
+280 IF NOT(H$="88" OR H$="90" OR H$="98" OR H$="A0") THEN 340
+290 PRINT "INPUT ROM PACK BANK (2 HEX DIGITS): ";
+300 INPUT H$
+310 IF LEN(H$)<>2 THEN 290
+320 GOSUB 380
+330 B$=REP(H$,2,2)
+340 CALL "EXEC",A$
+350 H$=SEG(B$,LEN(B$)-3,4)
+360 PRINT "FLETCHER 16 CHECKSUM: ";H$
+370 END 
+380 REM  CHECK FOR VALID UPPER CASE HEXIDECIMAL
+390 FOR I=1 TO 2
+400 C$=SEG(H$,I,1)
+410 IF C$=>"0" AND C$<="9" OR (C$=>"A" AND C$<="F") THEN 440
+420 PRINT "INVALID ENTRY, HEX DIGITS MUST BE IN [0..9] OR [A..F]"
+430 END 
+440 NEXT I
+450 RETURN
+*********************************************************************************************************
