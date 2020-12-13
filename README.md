@@ -26,18 +26,20 @@ PROGRAM DOWNLOAD FROM PC TO 4051 Instructions:
 - Configure PC terminal program to delay 500 msec after each line is transmitted
 - Configure PC terminal program to delay 10 msec after each character is transmitted
 - Type the following commands on the 4051:
-
+```
 CALL "RATE",2400,2,0      | to set the rate to 2400 baud, Even Parity
 CALL "TSTRIN","","",""    | stops the 4051 from modifying control characters on transmit
 CALL "RSTRIN","","",""    | stops the 4051 from modifying control characters on receive
-
+```
 - Now you can send and receive the programs on this site that are in Universal format (.UNI extension)
 
 - SEND from PC terminal program to 4051
+```
                           | Select PC Univeral file to transmit
 OLD@40:                   | this starts the 4051 listening for the program on the RS-232 interface
                           | now start sending the file from the terminal program to the 4051
 Hit 4051 BREAK key twice  | when the transfer is complete from the PC terminal program
+```
 now you can type RUN to execute this program
                           
 - when the file send is complete, press 4050 Break key twice to stop the transfer
@@ -45,17 +47,19 @@ now you can type RUN to execute this program
 ******
 
 For 4052/4054 computers with v5.1 firmware or 4052A/4054A computers - no need to delay the lines or characters:
-
+```
 CALL "RATE",9400,2,0      | to set the rate to 9600 baud, Even Parity
 CALL "TSTRIN","","",""    | stops the 4050 from modifying control characters on transmit
 CALL "RSTRIN","","",""    | stops the 4050 from modifying control characters on receive
 CALL "CMFLAG",3           | set XON/XOFF protocol for TX and RX
-
+```
 - SEND from PC terminal program to 4052/4054 or 4052A/4054A
+```
                           | Select PC Univeral file to transmit
 OLD@40:                   | this starts the 4051 listening for the program on the RS-232 interface
                           | now start sending the file from the terminal program to the 4051
 Hit 4050 BREAK key twice  | when the transfer is complete from the PC terminal program
+```
 now you can type RUN to execute this program
 
 ***********
