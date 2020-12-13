@@ -19,59 +19,44 @@ Since the 4050 series tapes only use file numbers - please use those same file n
 
 Some tapes have additional program name information stored in the file Header, so also include the output of the TLIST command as a separate file in your submission.  You can capture the TLIST to serial from BASIC with TLIST @40:
 *****
-Updated serial transfer from tape to PC steps:
+PROGRAM DOWNLOAD FROM PC TO 4051 Instructions:
 
-Instead of having to type in my serial transfer program - use the built in CALL "TERMIN" terminal program:
+- Use Hyperterminal or PUTTY on your PC, or other serial terminal program with complete configurability of rate and ability to capture and send files
+- Configure PC terminal program for 2400 baud, Even Parity, 7 bits
+- Configure PC terminal program to delay 500 msec after each line is transmitted
+- Configure PC terminal program to delay 10 msec after each character is transmitted
+- Type the following commands on the 4051:
 
-Type the following commands and use the User Definable Keys above the keyboard:
+CALL "RATE",2400,2,0      | to set the rate to 2400 baud, Even Parity
+CALL "TSTRIN","","",""    | stops the 4051 from modifying control characters on transmit
+CALL "RSTRIN","","",""    | stops the 4051 from modifying control characters on receive
 
-CALL "RATE",9600,2                          Only on 4052/54 - use 2400 max on 4051
+- Now you can send and receive the programs on this site that are in Universal format (.UNI extension)
 
-CALL "TSTRIN","","","D"                     Prevents NULLs and DC3 characters, Type Control-D, marks End of Tape transfer
-
-FIND x                                      Find the file on the tape you want to transfer
-
-CALL "TERMIN"                               This puts in the 4050 in terminal mode
-
-press User Definable Key 16 (shift UDK 6)   turns off local echo (you only need to do this once)
-
-get your PC program ready to capture an ASCII file
-
-press UDK 4 Data Send
-
-if the transfer completes without error - the tape stops.
-
-Error messages like READ errors will be displayed on the Tektronix screen if they occur.
-
-After the tape stops - close the file on the PC transfer program.
-
-****
-I really like RealTerm (free download) - which can capture and send files or act as a terminal. To use it with the Tek - configure the Port tab for the same speed as in the RATE command. I use 9600 7E1 with no handshake. Then click the Capture tab - create a filename - click Direct Capture (no echo on the pc) - Start Overwrite.
-
-Now Press UDK 4
-
-after the transfer stops - click Stop on RealTerm
-
-Press UDK 5 to return to Tek BASIC
-
-Now you can FIND another file, type CALL "TERMIN", and you are ready to repeat the above steps to capture that file.  Instead of pressing UDK 5 you could press SHIFT UDK 3 and type a file number to FIND.  I like to be in BASIC and also do a CALL "HEADER" (4052 and 4054 only) to check what kind of file it is.  If you do that you need to do the FIND again before CALL "TERMIN" or you will get an error.
-
-*****
-The serial transfer instructions file contains instructions on wiring a 25 pin to 9 pin serial cable from the Tektronix to the PC serial port.  
-I cut an old 25-pin PC parallel port cable for the Tektronix side and soldered the wires to a 9-pin solder connector and backshell for the PC side. 
-****
-PROGRAM DOWNLOAD FROM PC TO 4050 Instructions:
-- Use RealTerm on your PC, or other serial terminal program with complete configurability of rate and ability to capture and send files
-- Configure PC terminal program for 300 baud, Even Parity, 7 bits
-- On your 4051/4052/4054 with Option 1 Serial, type CALL "PRLIST" to list your Serial Parameters
-- CALL "RATE",300,2,0     to set the rate to 300 baud, Even Parity
-- CALL "TSTRIN","","",""  prevents XON/XOFF characters in the data
-- CALL "RSTRIN","","",""  prevents XON/XOFF characters in the data
-- CALL "TERMIN"           this instantiates all the parameters
-- press the UDK key 5     returns control to BASIC - but with serial enabled
-- OLD@40:                 typing this on the 4050 makes it ready to accept the program from the PC over serial
-- start the file send on the terminal program
+- SEND from PC terminal program to 4051
+                          | Select PC Univeral file to transmit
+OLD@40:                   | this starts the 4051 listening for the program on the RS-232 interface
+                          | now start sending the file from the terminal program to the 4051
+Hit 4051 BREAK key twice  | when the transfer is complete from the PC terminal program
+now you can type RUN to execute this program
+                          
 - when the file send is complete, press 4050 Break key twice to stop the transfer
 - type RUN to start the program
 ******
+
+For 4052/4054 computers with v5.1 firmware or 4052A/4054A computers - no need to delay the lines or characters:
+
+CALL "RATE",9400,2,0      | to set the rate to 9600 baud, Even Parity
+CALL "TSTRIN","","",""    | stops the 4050 from modifying control characters on transmit
+CALL "RSTRIN","","",""    | stops the 4050 from modifying control characters on receive
+CALL "CMFLAG",3           | set XON/XOFF protocol for TX and RX
+
+- SEND from PC terminal program to 4052/4054 or 4052A/4054A
+                          | Select PC Univeral file to transmit
+OLD@40:                   | this starts the 4051 listening for the program on the RS-232 interface
+                          | now start sending the file from the terminal program to the 4051
+Hit 4050 BREAK key twice  | when the transfer is complete from the PC terminal program
+now you can type RUN to execute this program
+
+***********
 If you don't have a serial interface on your Tektronix 4050 series computer - consider sending your tapes to someone who does, so the files can be archived.
