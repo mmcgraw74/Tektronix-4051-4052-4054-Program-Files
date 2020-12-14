@@ -12,7 +12,7 @@ https://www.youtube.com/user/mmcgraw1974/videos
 Older program files (.txt or .BAS) are only compatible with the 405x (4051) javascript emulator, download from https://github.com/jonbstanley/Tek405xEmulator
 
 
-Files with .UNI or marked Universal are compatible with 4051/4052 or 4054 computers AND the 405x javascript _universal_ emulator, unless they require special instructions or higher resolution and memory of the 4052 and 4054.
+Files with .UNI or marked Universal are compatible with 4051/4052 or 4054 computers AND the 405x javascript **_universal_** emulator, unless they require special instructions or higher resolution and memory of the 4052 and 4054.
 ***********
 You can download a single file, folder with all included files or whole archive by clicking the Clone or Download button.
 
