@@ -4,7 +4,7 @@ This repository is intended to provide a public location to download OR upload T
 **************
 The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  
 
-The 4051 and 4052 had 12" flat screen storage tube CRTs with addressable vector resolution of 1024 by 780.   
+The 4051 and 4052 had a 12" flat screen storage tube CRT with addressable vector resolution of 1024 by 780.   
 
 
 The 4054 had a 19" curved screen storage tube CRT with 4096 by 3072 addressable vector resolution!
