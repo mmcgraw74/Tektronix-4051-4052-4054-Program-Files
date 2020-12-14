@@ -4,12 +4,12 @@ This repository is intended to provide a public location to download OR upload T
 **************
 More details about individual programs and how I was able to recover them from 40 year old DC300 tapes on my vcfed dot org forum thread:
 
-http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives
+**http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives**
 
 A couple of YouTube videos running my 4052 and 4054A:
-https://www.youtube.com/user/mmcgraw1974/videos
+**https://www.youtube.com/user/mmcgraw1974/videos**
 *********
-Older program files (.txt or .BAS) are only compatible with the 405x (4051) javascript emulator, download from https://github.com/jonbstanley/Tek405xEmulator
+Older program files (.txt or .BAS) are only compatible with the 405x (4051) javascript emulator, download from **https://github.com/jonbstanley/Tek405xEmulator**
 
 
 **TODO: I am uploading .UNI versions of new programs and I plan to convert and upload .UNI versions of the older programs over time**
