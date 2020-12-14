@@ -47,9 +47,6 @@ OLD@40:                   | this starts the 4051 listening for the program on th
                           | now start sending the file from the terminal program to the 4051
 Hit 4051 BREAK key twice  | when the transfer is complete from the PC terminal program
 ```
-now you can type RUN to execute this program
-                          
-- when the file send is complete, press 4050 Break key twice to stop the transfer
 - type RUN to start the program
 ******
 
