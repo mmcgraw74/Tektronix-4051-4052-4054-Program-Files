@@ -9,7 +9,10 @@ http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4
 A couple of YouTube videos running my 4052 and 4054A:
 https://www.youtube.com/user/mmcgraw1974/videos
 *********
-All files are compatible with the entire 4050 series - UNLESS the FOLDER or FILE says only works with one type
+Older program files (.txt or .BAS) are only compatible with the 405x (4051) javascript emulator, download from https://github.com/jonbstanley/Tek405xEmulator
+
+
+Files with .UNI or marked Universal are compatible with 4051/4052 or 4054 computers AND the 405x javascript emulator, unless they require special instructions or higher resolution and memory of the 4052 and 4054.
 ***********
 You can download a single file, folder with all included files or whole archive by clicking the Clone or Download button.
 
