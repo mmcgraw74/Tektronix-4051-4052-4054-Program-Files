@@ -2,6 +2,21 @@
 
 This repository is intended to provide a public location to download OR upload Tektronix 4050 series program tapes or disk images.
 **************
+The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  
+
+The 4051 and 4052 had 12" flat screen storage tube CRTs with addressable vector resolution of 1024 by 780.   
+
+
+The 4054 had a 19" curved screen storage tube CRT with 4096 by 3072 addressable vector resolution!
+
+![4050 Family Photo](./4052%20and%204054%20highlighted.jpg)
+
+Since the 4050 series graphics computers were limited to a maximum of 64K bytes of RAM memory (4052 and 4054, 4051 was limited to 32K bytes of RAM) - the programs made heavy use of the tape drive or external GPIB floppy or hard disk storage for many programs like the one in the video.  You can hear the tape drive being accessed to get the curves drawn for each of the three graphs on the right of the screen.  The DC300 tape drive in the Tektronix computers provided about 300K bytes of storage, with a file system that numbered each file and provided error checking to protect the information in each file.
+
+Tektronix 4050 series computers had BASIC in ROM that included support not only for the internal screen, tape and keyboard, but also GPIB devices like external graphics printers, plotters, tape drives, floppy drives, hard drives, digitizers, and joysticks.
+
+
+
 More details about individual programs and how I was able to recover them from 40 year old DC300 tapes on my vcfed dot org forum thread:
 
 **http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives**
