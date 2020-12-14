@@ -4,7 +4,10 @@ This repository is intended to provide a public location to download OR upload T
 
 More details about individual programs and how I was able to recover them from 40 year old DC300 tapes on my vcfed dot org forum thread:
 
-[I'm an inline-style link](http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives)
+http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives
+
+A couple of YouTube videos running my 4052 and 4054A:
+https://www.youtube.com/user/mmcgraw1974/videos
 *********
 All files are compatible with the entire 4050 series - UNLESS the FOLDER or FILE says only works with one type
 ***********
