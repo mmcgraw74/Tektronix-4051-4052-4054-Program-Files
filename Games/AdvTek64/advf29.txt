@@ -1,0 +1,1 @@
+10 DATA "8"11 DATA "You are near a large pit beside a large orange stalactite"12 DATA "in the maze.  The stalactite is about 30 feet long, allowing"13 DATA "you to descend it.  However, due to the smoothness of the"14 DATA "stalactite, you will probably be unable to climb back up"15 DATA "again."16 DATA "Z"
