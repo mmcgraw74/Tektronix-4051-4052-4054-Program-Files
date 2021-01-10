@@ -1,0 +1,35 @@
+C64 advf syntax rules
+
+file 0 has four screens of instructions
+up to ten subfiles 0-9 in each advf file
+File read character by character
+only first character in sentence is capitalized
+0 is first character in every file
+# followed by number 1,2... is next SCREEN (room?)
+# at end signifies end of file
+l insert period and space.  Next character is capitalized
+lines autowrap after 40 characters
+{ inserts graphical +
+CR control character or ASC(141) forces carriage return without period, not a new sentence
+2nd " adds a trailing space?
+. ends a sentence
+DC1 ? ASC 17 (File2)
+GS ?  ASC 29
+] adds FOR/NEXT 1000 delay (approximately 1 second)
+
+Tektronix 4050 advf syntax rules
+
+Text reformatted for upper&lower case and ~62 characters per line.
+US control character inserted into text for additional line feeds
+# plus number 0-9 for each screen. # alone for end of file
+Read whole string and evaluate - not character at a time
+No need for character reformatting code.
+
+Tek 4050 BASIC evaluates upper and lower case characters as equivalent.
+
+C64 design could be modified to support tape files
+
+stretch goal after Tek 4907 disk support - port to 4050 tape:
+- change all file names to numbers
+- init files accessed after program is loaded
+- followed by renumbered advf files

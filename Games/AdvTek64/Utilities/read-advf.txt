@@ -1,0 +1,1 @@
+708 REM Create data file by WRITE statements to 4907. MCM Dec8,2019709 REM Read filename, then write file incl "Z", then next710 REM add "LAST" after last file to stop program711 PRINT "read ADVENTURE advf files.INPUT FILE NUMBER: ";712 INPUT E$715 E$=REP("@SCRATCHLIB/advf",1,0)716 PRINT "File: ";E$717 OPEN E$;6,"F",M$718 READ #6:Z$719 PRINT Z$720 GO TO 718
