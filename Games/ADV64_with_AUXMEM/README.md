@@ -9,3 +9,7 @@ His AUXMEM module design fits in a single ROM slot and contains 512KB of static 
 
 
 ![Jos Dreesen's AUXMEM module](./AMM_top.jpg)
+
+In order to use the AUXMEM Module, you need Jos' modified TransEra 764MEM ROM pack image installed in his Multi-Function ROM Pack that can hold up to 8 Tektronix option ROM Packs.  Here is a photo of my assembled MFM module - which also contains a TransEra 741RTC real-time-clock and Tektronix RS-232 Printer option.
+
+![My assembled MFM module](./My%20MFM%20assembly.jpeg)
