@@ -19,3 +19,5 @@ To list the files in the AUXMEM module type:
 or after **CALL "MUNIT"** is typed you can shorten the command to:
 
 **DIR**
+
+The ReadAUXMEM-advf.txt and ReadAUXMEM-DataFiles.txt are only needed for debug.
