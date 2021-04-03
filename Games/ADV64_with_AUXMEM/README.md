@@ -19,3 +19,7 @@ Follow my directions in the README in the UTILITIES folder to transfer all the A
 Then load and run the Adventure program with these commands:
 **CALL "MOLD",51
 RUN
+
+
+See my post in vcfed.org forum for more details on how I created this program for the AUXMEM module:
+http://www.vcfed.org/forum/showthread.php?70193-TransEra-764-RAM-Auxiliary-Memory-for-Tektronix-4052-4054-Computers&p=661244#post661244
