@@ -1,0 +1,8 @@
+1 REM AUTOLOAD DIRECTORY2 GO TO 1004 GO TO 160100 INIT 110 DATA 16,2,5,6,7,9,10,11,12,13,14,15,23,24,25,16,18120 READ N130 IMAGE 10T,2D,5X,FA140 DIM F(N)150 READ F160 PRINT "        4050 APPLICATIONS LIBRARY PROGRAMS
+"170 PRINT "            PROGRAMMING AIDS T1 Tape
+"180 PRINT "       PROGRAM  TITLE
+"190 PRINT USING 130:1,"Overlay Drawing"200 PRINT USING 130:2,"Enhanced Program Listings"210 PRINT USING 130:3,"REMark Outliner Program"220 PRINT USING 130:4,"Tape Directory"230 PRINT USING 130:5,"List Program's Variables"240 PRINT USING 130:6,"Cross-Reference & List Program Variables"250 PRINT USING 130:7,"Device Address Adding Program"260 PRINT USING 130:8,"Log/Linear Axis Labeling Routine"270 PRINT USING 130:9,"Dashed Lines"280 PRINT USING 130:10,"Calendar Routines (7 Day)"290 PRINT USING 130:11,"Calendar Routines (5 Day)"300 PRINT USING 130:12,"Flow Diagrammer (disk version)"310 PRINT USING 130:13,"Segmented Data Base & Windowing Routine 1"320 PRINT USING 130:14,"Segmented Data Base & Windowing Routine 2
+"330 PRINT "CAUTION: The following two programs must be transferred"340 PRINT "to other tapes prior to using.  See the documentation!
+"350 PRINT USING 130:15,"FORTRAN to BASIC Converter"360 PRINT USING 130:16,"Flow Diagrammer (tape)"370 PRINT "
+ENTER THE PROGRAM OF YOUR CHOICE OR 0 TO END. ";380 INPUT P390 P=INT(P)400 IF P=0 THEN 500410 IF P<1 OR P>N THEN 160420 IF P>14 THEN 520430 FIND F(P)440 T=TYP(0)450 IF T>2 THEN 480460 FIND F(P)470 OLD 480 FIND F(P)490 CALL "BOLD"500 PRINT "
+Goodbye.  If you change your mind, press UDK #1"510 END 520 PRINT "You can't run that program from this tape!"530 GO TO 370
