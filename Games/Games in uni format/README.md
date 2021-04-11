@@ -11,7 +11,7 @@ or Press **User Definable Key 10       to Double-down** your bet on two 10 point
 
 ![Blackjack](./Screenshots/Blackjack.png)
 
-Results graph is displayed after everyone quits the game:
+Resulting Balances for all players is displayed after everyone quits the game:
 
 ![Blackjack results graph](./Screenshots/Blackjack%20results%20graph.png)
 
