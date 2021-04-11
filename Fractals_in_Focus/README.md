@@ -1,5 +1,7 @@
 FRACTALS in FOCUS
 -------
+![Fractal Screenshot](./Screenshots/Fractal_4-Sides%2C3-Levels_Both.jpg)
+
 Jack Miller ported the program he found in 80-Micro magazine May 1985 issue on FRACTALS in FOCUS to run on a Tektronix 4052A computer and take advantage of the 1024x780 vector resolution of the Tektronix 4050 computers.
 
 The program in that magazine article was written for a Tandy Model 3 computer with the high resolution 640x240 graphics option board.
