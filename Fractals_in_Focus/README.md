@@ -14,7 +14,9 @@ Requesting more levels means more time to complete the graphic.  The May article
 
 The 4052/4054 have hardware floating point, so a 5-sided, 4-level, Both fractal only takes 5 minutes to complete the drawing!  The 4051 computer has an 800MHz Motorola 6800 CPU and will likely be similar to the performance of the Model III.
 
-Several screenshots were taken from running Fractals in Focus on the 405x emulator, showing the different patterns for 4-sided just the fractal, and 4-Sided 1/2/3/4 Levels, with Both fractal and inverse fractal.
+Several screenshots were taken from running Fractals in Focus on the 405x emulator, showing the different patterns for 4-sided just the fractal, and 4-Sided 1/2/3/4 Levels, with Both fractal and inverse fractal.  
+
+The screenshot above shows that the 4050 version of the program also displays the Fractal data pattern, "A" means alternate left and right, "L" means left and "R" means right.  Both Fractal pattern and/or Inverse are displayed based on your selection of fractal, inverse or both.
 
 The photos are of my 4054A showing 5-Sided, 4-Levels,Both, and a closeup of the details of that fractal.
 
