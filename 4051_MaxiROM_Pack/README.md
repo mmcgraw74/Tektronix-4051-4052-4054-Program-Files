@@ -1,10 +1,10 @@
-new vintageTEK.org MaxiROM Pack
+**New** vintageTEK.org MaxiROM Pack
 -------
-This new Tektronix 4051 ROM Pack was first offered for sale on EBAY in April 2021
+This **New** Tektronix 4051 ROM Pack was first offered for sale on EBAY in April 2021
 
 ![vintageTEK.org MaxiROM Pack](./VintageTek%204051%20MaxiRom%20pack.jpg)
 
-MaxiROM is a 10 in 1 multi-function 4051 ROM Pack that contains:
+MaxiROM is a 10 in 1 multi-function Tektronix 4051 ROM Pack that contains:
 
 * 4051R01 Matrix Functions
 * 4051R05 Binary Program Loader
