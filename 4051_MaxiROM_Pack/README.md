@@ -6,16 +6,16 @@ This new Tektronix 4051 ROM Pack was first offered for sale on EBAY in April 202
 
 MaxiROM is a 10 in 1 multi-function 4051 ROM Pack that contains:
 
-*4051R01 Matrix Functions
-*4051R05 Binary Program Loader
-*4051R06 Editor
-*4051R07 Signal Processing I
-*4051R08 Signal Processing II
-*4051R12 Graphics Enhancement
-*4051R14 GPIB Enhancement
-*4051 DDT51.8 6800 Assembly language Debugger
-*4051 Extended BASIC
-*4051 Extended Fonts
+* 4051R01 Matrix Functions
+* 4051R05 Binary Program Loader
+* 4051R06 Editor
+* 4051R07 Signal Processing I
+* 4051R08 Signal Processing II
+* 4051R12 Graphics Enhancement
+* 4051R14 GPIB Enhancement
+* 4051 DDT51.8 6800 Assembly language Debugger
+* 4051 Extended BASIC
+* 4051 Extended Fonts
 
 
 You also get a documentation CD-ROM with all the ROM Pack User Guides!
