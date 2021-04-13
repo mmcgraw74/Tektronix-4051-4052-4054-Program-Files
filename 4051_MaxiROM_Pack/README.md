@@ -59,4 +59,3 @@ See the two CLIST photos in this folder for all the new 4051 function CALLs in t
 
 
 There are some very interesting new commands in the Extended BASIC ROM including QDRAW (which I imagine may be similar to the Fast Graphics ROM call?), structured BASIC calls like WHILE and CASE, VLIST and a couple of different CLIST, PEEK and POKE, MTPACK and TNAME.
-
