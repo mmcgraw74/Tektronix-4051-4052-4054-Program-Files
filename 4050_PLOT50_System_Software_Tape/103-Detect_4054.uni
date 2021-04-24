@@ -1,0 +1,1 @@
+100 INIT 105 PAGE 110 IF RND(0)<>0.88093139039 AND RND(0)<>0.505007490939 THEN 140120 FIND 104130 OLD 140 PRINT "The features in this program are available on the 4054 only."150 FIND 1160 OLD 
