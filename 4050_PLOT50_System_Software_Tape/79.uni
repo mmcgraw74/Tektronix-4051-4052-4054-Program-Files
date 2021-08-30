@@ -1,0 +1,21 @@
+200 PAGE 206 N6=1207 N7=1210 PRINT "                    MOVE"
+220 PRINT "
+
+
+   The MOVE statement causes the location of the graphic"230 PRINT "point to move to the point corresponding to the data values"240 PRINT "given in the MOVE statement.  The WINDOW and VIEWPORT"250 PRINT "determine where this point is on the screen."260 PRINT "
+
+        MOVE horizontal data value, vertical data value"270 PRINT "
+
+
+
+
+
+                    DRAW"280 PRINT "
+
+
+   The DRAW statement causes a line to be drawn from the"290 PRINT "present position of the graphic point to the point"300 PRINT "corresponding to the data values given in the DRAW ";302 PRINT "statement"310 PRINT "The graphic point is updated to correspond to the point"320 PRINT "indicated by the DRAW statement.
+
+"330 PRINT "           DRAW horizontal data value, vertical data value"340 PRINT "
+
+
+                Press RETURN to go on";350 GOSUB 150355 GO TO K0 OF 360,360,360,175,156,163,156,181,179360 GO TO 107

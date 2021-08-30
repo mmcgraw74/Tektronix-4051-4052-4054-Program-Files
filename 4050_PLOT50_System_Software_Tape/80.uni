@@ -1,0 +1,20 @@
+200 PAGE 206 N6=1207 N7=1210 PRINT "                        RMOVE"220 PRINT "
+
+
+  The RMOVE statement causes the location of the graphic"230 PRINT "point to move horizontally and vertically by the "240 PRINT "increments specified in the RMOVE statement.  ";250 PRINT "The increments are inuser data values."260 PRINT "
+
+       RMOVE horizontal increment, vertical increment"270 PRINT "
+
+
+
+
+
+
+                         RDRAW"280 PRINT "
+
+
+  The RDRAW statement causes a line to be drawn from the"290 PRINT "present position of the graphic point to a point which is"300 PRINT "located by moving horizontally and vertically by the incre";310 PRINT "mentsspecified in the RDRAW statement.  The location ";315 PRINT "of the"320 PRINT "graphic point is updated to this point.  The increments are"330 PRINT "in user data values."340 PRINT "
+
+       RDRAW horizontal increment, vertical increment"350 PRINT "
+
+                    Press RETURN to go on";360 GOSUB 150365 GO TO K0 OF 370,370,370,175,156,163,156,181,179370 GO TO 107
