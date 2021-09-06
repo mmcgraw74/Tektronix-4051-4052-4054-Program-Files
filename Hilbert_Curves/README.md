@@ -19,4 +19,4 @@ Then I edited the data file to create the separate program files for each Order.
 | HilbertOrder5.uni   | runs on any Tek 4051/4052/4054 computer /w 32KB RAM or 405x emulator |
 | HilbertOrder6.uni   | runs on any Tek 4051/4052/4054 computer /w 32KB RAM or 405x emulator |
 |                     |                                                                      |
-| HilbertOrder3-5.png | Screenshots from running pgms on 405x emulator                       |
+| HilbertOrder3-6.png | Screenshots from running pgms on 405x emulator                       |
