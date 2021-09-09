@@ -19,8 +19,11 @@ Then I edited the data file to create the separate program files for each Order.
 | HilbertOrder5.uni   | runs on any Tek 4051/4052/4054 computer /w 32KB RAM or 405x emulator |
 | HilbertOrder6.uni   | runs on any Tek 4051/4052/4054 computer /w 32KB RAM or 405x emulator |
 |                     |                                                                      |
+| HilbertOrder6sm.uni | runs on any Tek 4050 computer with 16KB RAM or 405x emulator                                                                     |
+|                     |                                                                      |
 | HilbertOrder3-6.png | Screenshots from running pgms on 405x emulator                       |
 
+HilbertOrder6sm.uni encodes X and Y as single characters to save space in RAM, versus 8 bytes of RAM for X or Y as numeric variables since Tek 4050 BASIC encodes all numbers as double-precision floating point.
 
 The program files can be easily edited to plot the curve on a Tektronix 4662 or 4663 plotter.
 Just add @x: to the MOVE and DRAW commands where x is the GPIB address of the plotter.
