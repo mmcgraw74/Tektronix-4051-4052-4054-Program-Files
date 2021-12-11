@@ -1,32 +1,23 @@
 # Tektronix 4051 / 4052 / 4054 graphics computers
 convert SVG to Fast Graphics with 4051 RAMPACK or 4051R12 or 4052R12 Graphics Enhancement ROM Pack
 *******
-
+Photo of my 4052 running program 17, displaying C-3PO, BB-8 and R2-D2 
 ![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/C-3PO%20BB-8%20and%20R2-D2.jpeg)
 
-
+Photo of the latest 405x emulator running program 17, displaying C-3PO, BB-8 and R2-D2
 ![405x C3PO-BB8-R2D2](./Screenshots-and-photos/405x%20C3PO%20BB8%20R2D2.png)
 
-1 - Replace all semicolons with ;\r (extended expression)
+I was interested in getting new vector images to display on my Tektronix 4052 and 4054A computers.
+Many of the original 4050 vector images were manually digitized.
 
-2 - Replace all PD with PD\r
+I did not want to manually digitize images and was interested in trying to convert SVG images to run on the Tektronix graphics computers.
 
-3 - Regex (regular expression) to replace all HPGL 2nd comma with L
-          -------
-     Find: (.*?\,.*?)[\L]
-     Replace with: \1L
+After writing a PLOT50 BASIC program to INPUT SVG and convert the SVG commands to PLOT50 MOVE and DRAW commands, I found that many of the SVG files contained not only vector lines but vector curves and circles.  Looking for a way to get those images converted to just MOVE and DRAW commands, I found that Inkscape could SaveAs HPGL files for plotters - or CNC machines and the files only contained HPGL commands PU (PenUp) and PD (PenDown) commands.
 
-4 - Replace all L with spaceLspace (extended expression)
+I was able to use Notepad++ to edit the HPGL files and replace PU with M and PD with L so I could use my SVG to FG program 10 to convert those commands to PLOT50 MOVE and DRAW commands, and then convert each of those commands to Fast Graphics/R12 format.  
 
-6 - Replace ;\rPD\r with spaceLspace
+The Fast Graphics format was developed by Micheal D. Cranford at Tektronix.  Micheal developed a MAXIROM Pack for the 4051 which included his Fast Graphics which included his 6800 assembly language code to speed up the MOVEs and DRAWs by 10x! Micheal also developed a RAMPACK for the 4051 computers which provides solid-state file storage replacing the need to use the DC300 tape cartridges - which are long obsolete and typically have broken drive belts in the cartridge.  VintageTek.org is currently offering Michael's RAMPACK and MAXIROM for sale on EBAY.
 
-6 - Replace PU with Mspace
+I don't have a 4051 computer, I have the 'newer' (1979) 4052 and 4054A computers and the 4051 ROM Packs are not compatible since those computers have a custom bit-slice CPU :(
 
-7 - Delete beginning lines with IN; M ; and SP1;
-
-8 - Delete ending lines with SP0; M 0 0; and IN;
-
-9 - Add END/r as last line
-
-10 - Save as "FILENAMEmod.SVG" file for processing to FG format
-
+However, I have designed a 4050 GPIB Flash Drive that works with 4051, 4052 and 4054 computers and uses the Tektronix 4924 external GPIB DC300 Tape Drive commands, so it does not require an option ROM.  My design adds two commands not in the 4924, Change Directory - which allows different folders to contain entire "tapes", and Read Header - which returns the SdFAT filename to the computer.
