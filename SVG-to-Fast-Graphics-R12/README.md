@@ -1,5 +1,5 @@
 # Tektronix 4051 / 4052 / 4054 graphics computers
-convert SVG to Fast Graphics with 4051 RAMPACK or 4052R12 Graphics Enhancement ROM Pack
+convert SVG to Fast Graphics with 4051 RAMPACK or 4051R12 or 4052R12 Graphics Enhancement ROM Pack
 *******
 
 ![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/C-3PO%20BB-8%20and%20R2-D2.jpeg)
