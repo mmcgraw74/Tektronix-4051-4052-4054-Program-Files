@@ -30,7 +30,7 @@ CALL "RDRAW",S$,1,X,Y          | Will perform all the MOVEs and DRAWs contained 
                                | The "1" indicates to draw persistent to the display
                                | X and Y are offsets for the image
 
-CALL "RSCALE",S$,H,V,X,Y     | Will scale S$ and replace S$ with the scaled image
+CALL "RSCALE",S$,H,V,X,Y      | Will scale S$ and replace S$ with the scaled image
                                | H is the horizontal scale factor, V is the vertical scale factor
                                | X and Y are the relative position for the scaled image
 
