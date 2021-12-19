@@ -1,11 +1,14 @@
 # Tektronix 4051 / 4052 / 4054 graphics computers
-convert SVG to Fast Graphics with 4051 RAMPACK or 4051R12 or 4052R12 Graphics Enhancement ROM Pack
+# convert SVG to Fast Graphics with 4051 RAMPACK or 4051R12 or 4052R12 Graphics Enhancement ROM Pack
 *******
 The Fast Graphics format was developed by Micheal D. Cranford at Tektronix.  Micheal developed a MAXIROM Pack for the 4051 which included his Fast Graphics which included his 6800 assembly language code to speed up the MOVEs and DRAWs by 10x! Micheal also developed a RAMPACK for the 4051 computers which provides solid-state file storage replacing the need to use the DC300 tape cartridges - which are long obsolete and typically have broken drive belts in the cartridge.  VintageTek.org is currently offering Michael's RAMPACK and MAXIROM for sale on EBAY.
 
 I don't have a 4051 computer, I have the 'newer' (1979) 4052 and 4054A computers and the 4051 ROM Packs are not compatible since those computers have a custom bit-slice CPU :(
 
 However, I have designed a 4050 GPIB Flash Drive that works with 4051, 4052 and 4054 computers and uses the Tektronix 4924 external GPIB DC300 Tape Drive commands, so it does not require an option ROM.  My design adds two commands not in the 4924, Change Directory - which allows different folders to contain entire "tapes", and Read Header - which returns the SdFAT filename to the computer.
+
+Photo of my 4054A displaying my new FG image of the Utah Teapot 
+![4054A Utah Teapot](./Screenshots-and-photos/4054%20Teapot.jpeg)
 
 Photo of my 4052 running program 17, displaying C-3PO, BB-8 and R2-D2 
 ![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/C-3PO%20BB-8%20and%20R2-D2.jpeg)
