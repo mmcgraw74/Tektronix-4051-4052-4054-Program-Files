@@ -4,7 +4,7 @@
 
 3 - Regex (regular expression) to replace all HPGL 2nd comma with L
           -------
-     Find: (.*?\,.*?)[\L]
+     Find: (.*?\,.*?)[\,]
      Replace with: \1L
 
 4 - Replace all L with spaceLspace (extended expression)
