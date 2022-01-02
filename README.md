@@ -25,7 +25,7 @@ The Tektronix 4052 and 4054 computers used a custom AMD 2901 bit-slice 16-bit pr
 
 More details about individual programs and how I was able to recover them from 40 year old DC300 tapes on my vcfed dot org forum thread:
 
-**http://www.vcfed.org/forum/showthread.php?64726-Tektronix-4051-4052-4052A-4054-4054A-Program-Archives**
+**https://forum.vcfed.org/index.php?threads/tektronix-4051-4052-4052a-4054-4054a-program-archives.65705/**
 
 A couple of YouTube videos running my 4052 and 4054A:
 **https://www.youtube.com/user/mmcgraw1974/videos**
