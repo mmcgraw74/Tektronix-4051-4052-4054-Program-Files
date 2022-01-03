@@ -1,0 +1,119 @@
+MAXIPACK EXTENDED BASIC CALL SYNTAX:
+
+NOTES:
+Some EXTENDED BASIC CALLs have aliased name versions that do the identical operation.
+4051 BASIC does not allow for, and will usually fail, any conditional string comparisons unless they are enclosed in (parentheses).
+EXTENDED BASIC programs do not exhibit the string comparison parsing error and they do not catch loop termination type errors.
+
+Logical Statements also include AND and OR used in any combination.
+The vertical bar "|" means OR; select one the choices shown.
+Numeric means a Numeric Constant or Numeric Variable.
+Literal means a Quoted String not a String Variable.
+String means a Quoted String or String Variable.
+Constant means a Numeric Constant.
+HHHH means a 4 hex digit address.
+
+There are multiple identical CALL names among the MAXIPACK ROM PACKs. Thus as a
+result some EXTENDED BASIC CALL routines can never be executed since other ROM
+PACKs happen to use the same CALL name; meaning that they always get executed
+instead of the EXTENDED BASIC version since the latter is at the end of the
+CALL list in the MAXIPACK. This document shows the MAXIPACK CALL syntax so
+non-MAXIPACK EXTENDED BASIC CALLs may have a different syntax or usage.
+
+The current list of duplicate ROM PACK CALL names is shown below:
+DISPLAY: VIEWTO
+UTILITY: CLIST VLIST PEEK POKE PWRON
+MAG TAPE: IGHEAD MTFWD MTBACK MTREAD MTBUFF MTPACK NEWTAP TAPEIN TNAME
+
+
+WHILE LOOP:
+CALL "WHILE",<Constant>|<Numeric>|<String>|<Logical Statements> Starts the WHILE loop.
+<execute these lines>
+CALL "EXITWH" Early exits the enclosing WHILE Loop.
+CALL "ENDWHI"|"ENDW" Terminates the WHILE Loop.
+
+
+REPEAT LOOP:
+CALL "REPEAT" Starts the REPEAT loop.
+<execute these lines>
+CALL "EXITRE"|"EXITR" Early exits the enclosing REPEAT Loop.
+CALL "UNTIL",<Constant>|<Numeric>|<String>|<Logical Statements> Terminates the REPEAT Loop.
+
+
+CASE BLOCK:
+The CASE type and WHEN types must be consistent; i.e. WHEN cannot be a number if CASE is a string. 
+After a WHEN match is found no GOTO is required; all remaining WHENs will be skipped even if they match.
+CALL "CASE", <Constant>|<Numeric>|String> Starts the CASE Block.
+CALL "WHEN", <Constant>|<Numeric>|String> Selects a matching CASE entry.
+<execute these lines>
+CALL "ENDCAS"|"ENDC" Terminates the CASE Block.
+
+
+IF THEN ELSE BLOCK:
+CALL "IF",<Constant>|<Numeric>|<String>|<Logical Statements> Starts the IF THEN ELSE block (THEN is implicit).
+<execute these lines>
+CALL "ELSE" Starts the ELSE alternative.
+<execute these lines>
+CALL "ENDIF"|"ENDI" Terminates the IF THEN ELSE block.
+
+
+NAMED SUBROUTINES:
+CALL "GOSUB", "<Literal>" CALLs a named Subroutine.
+CALL "BEGINSUB", "<Literal>" Names a Subroutine. Note that all 8 characters must be used even though only 6 are required for CALL name match!
+
+
+ASSERT MODE:
+CALL "ASSERT",<Constant>|<Numeric>|<String>|<Logical Statements> Aborts the running program if the expression is false.
+CALL "DISASS" Disables ASSERT MODE.
+CALL "ENASSE" Enables ASSERT MODE.
+
+
+NAMED GOTO:
+CALL "GOTO", <Literal> Jumps to a named program line.
+CALL "LABEL", <Literal> Names a program line.
+
+
+DISPLAY:
+CALL "ENINDE" Enables LIST loop and block indenting.
+CALL "DISEND" Disables LIST loop and block indenting.
+CALL "ONEMAR"|"CLRMAR" LIST does normal 72 character lines with wrapping, PAGE FULL after 35 lines; default 4051 behavior.
+CALL "TWOMAR" Does normal 72 character lines with wrapping, wraps mid screen half lines after 35th line, PAGE FULL after 70 lines.
+CALL "TWOCOL" LIST wraps lines after 35 characters using 2 columns. PRINT uses 2 columns but no 35 character limit on left column, PAGE FULL after 70 lines.
+CALL "QDRAW" Draws a Fast Graphics Image string, but slower than the equivalent Fast Graphics version.
+CALL "VIEWTO" Maximizes the CRT flood gun current for a brief time.
+
+
+UTILITY:
+CALL "EBDEBU" Enables EXTENDED BASIC debug mode; prints PC,SP,CC,X,A,B, and some stack contents before executing PWRON (fatal error).
+CALL "EBVERS" Displays the EXTENDED BASIC version and author.
+CALL "CLIST"|"CLIS" Lists all ROM PACK CALL names.
+CALL "VLIST"|"VLIS" Lists all user BASIC variables, their types, and values.
+CALL "HEXEC",<String> Loads hexidecimal code into SCRATCH memory with error checking, appends RTS and then jumps to the code start.
+CALL "PEEK",<String>,<String Variable> Copies memory at HHHH String address into a String Variable.
+CALL "POKE",<String>,<String Variable> Copies String Variable into memory at HHHH String address.
+CALL "LOADGO"|"POKEGO",<String Variable> Copies Hex String (FORMAT:"@HHHH;<hex code>") to memory and executes it. Executes at HHHH if no <hex code>.
+CALL "FIXCPY" I don't know what this does, it is quite strange.
+CALL "PWRON" Executes the 4051 firmware POWER ON routine without requiring a power cycle.
+CALL "STK@CL",<String Variable>,<Constant>|<Numeric>|<String>|<Logical Statements> Copies the CPU stack into the String Variable. The String Variable must have a current length >0! Does NOT match detailed listing description; destination String Variable must be the first rather than the last parameter.
+
+
+MAG TAPE:
+CALL "FIXTAP" Does a subset of CALL "NEWTAP", skipping the check for an already existing mag tape.
+CALL "HEADER" Displays the current file number and many file header bytes.
+CALL "IGHEAD" Skips past the current file header.
+CALL "LASTFL"|"LAST" Finds the LAST mag tape file and prints that file number on the screen.
+CALL "MTFWD" Moves the mag tape forward one block (usually 256 bytes).
+CALL "MTBACK" Moves the mag tape backward one block (usually 256 bytes).
+CALL "MTREAD" Reads the mag tape?
+CALL "MTBUFF" Displays the current file mag tape buffer, substituting periods (".") for non-ASCII bytes.
+CALL "MTPACK" Spools the mag tape to the end and back to the beginning to repack the tape on the flangless spools.
+CALL "NEWTAP" Finds the previous mag tape file when a mag tape is first accessed after being inserted. Not using this call results in a full rewind.
+CALL "TAPEIN",<String Variable> Reads a mag tape block into a String Variable.
+CALL "TNAME", <String> Names a mag tape file with up to 11 characters, with no "S" in position 6. The S restriction is due to the fact that the 4051 mag tape file header has an S in that location for SECRET files.
+
+
+SOUNDS:
+CALL "SLIDE" Plays a specific sound on the speaker.
+CALL "CHIMES" Plays a specific sound on the speaker.
+
+
