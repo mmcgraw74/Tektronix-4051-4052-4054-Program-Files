@@ -1,0 +1,22 @@
+Instructions for using MAXIROM DDT assembly language debugger:
+
+More documentation for DDT is in the 4051 Assembler documentation here:
+https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/4051-Assembler/Tek%204051%20Assembler%20Program%20Instructions%20Tekniques%20Vol%207%20No4%20062-7456-01.pdf
+
+*******************
+
+Type the short program below into the 4051 with MAXIROM to CALL the debugger:
+
+100 INIT
+110 PAGE
+130 DIM A$(5632)
+140 CALL “DEBUG”,A$
+******************
+Notes: 
+
+UDF Key #5 gets you back to BASIC, but only if you didn’t mess anything up when using the debugger.  Otherwise mayhem will ensue.
+
+The CALL relocates the debugger into string A$.  Since A$ holds BINARY data you should never try to print it or define anything in it as a string.  This hides the BINARY data from BASIC which would otherwise be a bad thing if BASIC found out that there was anything in it. I have shown the minimal length for A$, I think larger is fine but smaller will be bad and the CALL may even check the dimensioned size (I don’t recall).  I have also, upon occasion, hot patched the debugger to allow for disassembled data going to the screen to also echo out the COMM PORT.
+
+
+
