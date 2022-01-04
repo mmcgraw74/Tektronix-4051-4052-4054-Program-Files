@@ -59,3 +59,19 @@ See the two CLIST photos in this folder for all the new 4051 function CALLs in t
 
 
 There are some very interesting new commands in the Extended BASIC ROM including QDRAW (which I imagine may be similar to the Fast Graphics ROM call?), structured BASIC calls like WHILE and CASE, VLIST and a couple of different CLIST, PEEK and POKE, MTPACK and TNAME.
+
+****************
+Extended BASIC list of instructions has been added.
+Refer to the 4052A/4054A BASIC and GPIB Enhancements document for more details, although the A-Series commands are integrated into the A-Series BASIC ROM so they are not "CALLs".
+https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/Documentation/4052A-4054A%20BASIC%20and%20GPIB%20Enhancements%20Programmers%20Reference.pdf
+******************
+Text file with instructions for using the MAXIROM DDT debugger has been added.
+Refer to the 4051 Assembly manual for details on using DDT:
+https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/4051-Assembler/Tek%204051%20Assembler%20Program%20Instructions%20Tekniques%20Vol%207%20No4%20062-7456-01.pdf
+************************
+
+screenshot of using DDT to dump memory from 0000 to 0100:
+![DDT screenshot](./DDT_example%20screenshot.png)
+
+************************
+
