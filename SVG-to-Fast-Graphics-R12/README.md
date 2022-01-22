@@ -14,6 +14,7 @@ Photo of my 4052 running program 17, displaying C-3PO, BB-8 and R2-D2
 ![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/C-3PO%20BB-8%20and%20R2-D2.jpeg)
 
 Photo of my 4054A running program 60, displaying C-3PO, BB-8 and R2-D2
+Excuse the tilted angle of this photo - I was trying to eliminate glare at the top of the screen.
 Note the increased detail - even though the save image file is displayed at 1024x800.
 This is because the 4054 beam size is narrower to accomodate the max resolution of 4096x3072
 ![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/4054A%20StarWars%20Droids.png)
@@ -43,3 +44,16 @@ CALL "RSCALE",S$,H,V,X,Y       | Will scale S$ and replace S$ with the scaled im
                                | X and Y are the relative position for the scaled image
 
 ```
+Program file 60 and the accompanying BINARY data files 54-59 are slightly different than my previous data files for the droids.
+- File 60 program adds displaying a title and playing Star Wars music before displaying the Droids.  The program also removes the scaling commands for faster performance.
+- File 54 is a new data file I created with three "RTAPER"ed SVG text images to simulate the movie intro scrolling text.
+- File 55 is the same Star Wars vector text file as before
+- File 56 is the same DROIDS vector text file as before
+- File 57 is the same C3-PO full-size vector file as before
+- File 58 is a scaled BB-8 vector file
+- File 59 is a scaled R2-D2 vector file
+
+```
+I posted a video of running Program file 60 on youtube: https://www.youtube.com/watch?v=co8I-_uM2yI
+
+This 573 byte BASIC program 60 completes running in only 36 seconds, displaying over 25000 vectors and plays 8 seconds of music!
