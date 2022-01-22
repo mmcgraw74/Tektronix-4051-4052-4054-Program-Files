@@ -56,4 +56,4 @@ Program file 60 and the accompanying BINARY data files 54-59 are slightly differ
 ```
 I posted a video of running Program file 60 on youtube: https://www.youtube.com/watch?v=co8I-_uM2yI
 
-This 573 byte BASIC program 60 completes running in only 36 seconds, displaying over 25000 vectors and plays 8 seconds of music!
+This 573 byte BASIC program 60 completes running in only 36 seconds, loading all the image files from my GPIB Flash Drive, displaying over 25000 vectors, and plays 8 seconds of music!
