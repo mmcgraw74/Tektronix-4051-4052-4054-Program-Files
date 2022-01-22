@@ -16,7 +16,7 @@ Photo of my 4052 running program 17, displaying C-3PO, BB-8 and R2-D2
 Photo of my 4054A running program 60, displaying C-3PO, BB-8 and R2-D2
 Note the increased detail - even though the save image file is displayed at 1024x800.
 This is because the 4054 beam size is narrower to accomodate the max resolution of 4096x3072
-![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/C-3PO%20BB-8%20and%20R2-D2.jpeg)
+![4052 C3PO-BB8-R2D2](./Screenshots-and-photos/4054A%20StarWars%20Droids.png)
 
 Photo of the latest 405x emulator running program 17, displaying C-3PO, BB-8 and R2-D2
 ![405x C3PO-BB8-R2D2](./Screenshots-and-photos/405x%20C3PO%20BB8%20R2D2.png)
