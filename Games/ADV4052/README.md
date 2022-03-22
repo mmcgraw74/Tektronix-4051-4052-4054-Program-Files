@@ -1,11 +1,7 @@
 **Adventure for the Tektronix 4052 and 4054**
 ----------------
 Credits: 
-
-Adventure tape recovered from estate of Jack Everson
-Jack was a Tektronix sales engineer in Long Island, NY.
-
-Kurt Rosenfeld was instrumental in the recovery - contacting me, supplying lists of Tektronix 4050 tape and 8-inch floppy disk labels, and shipping the tapes I selected for recovery.
+Adventure tape recovered from estate of Jack Everson.  Jack was a Tektronix sales engineer in Long Island, NY.  Kurt Rosenfeld was instrumental in the recovery - contacting me, supplying lists of over 100 Tektronix 4050 tape and 8-inch floppy disk labels, and shipping the tapes I selected for recovery.
 ----
 Remarks in the Adventure program indicate the author was Chuck Smith - Tektronix Graphics Computing Systems (GCS) Marketing.
 Chuck indicated he modified a BASIC Adventure program he found in Creative Computing November 1979 magazine.  
