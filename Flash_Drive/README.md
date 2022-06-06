@@ -4,6 +4,8 @@ My 4050 GPIB Flash Drive for all the Tektronix 4050 computers is now ready for o
 --------------------
 This Flash Drive replaces your 4050 internal tape drive and allows you to enjoy all your programs - plus my github repository programs, without requiring any 4050 ROM Pack.
 --------------
+Flash Drive PCB https://oshpark.com/shared_projects/HIeNjLBF
+--------------
 See my Flash Drive thread on vcfed.org for more details: 
 https://forum.vcfed.org/index.php?threads/tektronix-405x-gpib-flash-drive.64990/post-1259989
 
