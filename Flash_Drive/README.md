@@ -1,5 +1,7 @@
 My Flash Drive for all the Tektronix 4050 computers is now ready for ordering!!
 ------------------
+![Pictures Menu](./Tape%20Emulator%20enhanced-sm.jpg)
+--------------------
 This Flash Drive replaces your 4050 internal tape drive and allows you to enjoy all your programs - plus my github repository programs, without requiring any 4050 ROM Pack.
 --------------
 See my Flash Drive thread on vcfed.org for more details: 
