@@ -1,4 +1,4 @@
-My Flash Drive for all the Tektronix 4050 computers is now ready for ordering!!
+My 4050 GPIB Flash Drive for all the Tektronix 4050 computers is now ready for ordering!!
 ------------------
 ![Pictures Menu](./Tape%20Emulator%20enhanced-sm.jpg)
 --------------------
