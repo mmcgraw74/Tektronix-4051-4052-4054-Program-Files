@@ -2,7 +2,21 @@ My 4050 GPIB Flash Drive for all the Tektronix 4050 computers is now ready for o
 ------------------
 ![Flash Drive](./Tektronix%204050%20Flash%20Drive-labeled.jpg)
 --------------------
-This Flash Drive replaces your 4050 internal tape drive and allows you to enjoy all your programs - plus my github repository programs, without requiring any 4050 ROM Pack.
+**4050 GPIB Flash Drive Features**
+
+1. Completely replaces 4050 internal tape drive for ALL program and data storage
+2. Ready to run with 35 games and 33 R12/Fast Graphics pictures pre-installed on MicroSD card
+3. MicroSD card provides Gigabytes of program data and storage
+a. Plug MicroSD into USB-MicroSD adapter (not supplied) to transfer program & data files to/from your PC
+4. Faster access and loading of all files than internal tape
+5. Stores each ‘tape’ in separate folder – 100’s of tapes can be stored on same Flash Drive
+6. Compatible with all Tektronix 4051, 4052, 4052A, 4054 and 4054A computers
+7. Supports all 4050 BASIC GPIB tape commands:
+a. FIND, MARK, KILL, OLD, BOLD, APPEND, PRINT, INPUT, READ, WRITE
+8. Plugs into 4050 GPIB connector – no ROM backpack slots required
+9. Flash Drive Micro-USB power cord included
+
+You can build it yourself or I can assemble it.
 --------------
 Flash Drive PCB https://oshpark.com/shared_projects/HIeNjLBF
 --------------
