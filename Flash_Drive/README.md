@@ -21,7 +21,7 @@ You can build it yourself or I can assemble it.
 Flash Drive GPIB interface PCB https://oshpark.com/shared_projects/HIeNjLBF
 --------------
 See my Flash Drive thread on vcfed.org for more details: 
-https://forum.vcfed.org/index.php?threads/tektronix-405x-gpib-flash-drive.64990/post-1259989
+https://forum.vcfed.org/index.php?threads/tektronix-4050-gpib-flash-drive-now-available.1238891/
 
 My 4050 Flash Drive does NOT require any ROM Pack for use, but does require minor modifications to programs that were designed for the internal tape drive.
 
