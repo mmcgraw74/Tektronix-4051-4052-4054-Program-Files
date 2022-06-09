@@ -18,7 +18,7 @@ a. FIND, MARK, KILL, OLD, BOLD, APPEND, PRINT, INPUT, READ, WRITE
 
 You can build it yourself or I can assemble it.
 --------------
-Flash Drive PCB https://oshpark.com/shared_projects/HIeNjLBF
+Flash Drive GPIB interface PCB https://oshpark.com/shared_projects/HIeNjLBF
 --------------
 See my Flash Drive thread on vcfed.org for more details: 
 https://forum.vcfed.org/index.php?threads/tektronix-405x-gpib-flash-drive.64990/post-1259989
