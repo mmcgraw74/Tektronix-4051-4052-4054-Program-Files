@@ -4,7 +4,8 @@ This tape is from estate of Jack Everson.  Jack was a Tektronix sales engineer i
 ----
 Tektronix 4054 Option 30 is a Dynamic Graphics board with a 7.4MHz 8X300 Microprocessor and 32KB of DRAM.  This board increases the number of refresh vectors (Dynamic Graphics) displayable without flicker to over 2500 depending upon the vector length, as the 4054 vector generator has a constant 45 cm/second vector drawing speed.
 
-Here is a photo of a Tektronix 4054A with the Option 31 Display
+Here is a photo of a Tektronix 4054A with the Option 31 Display.  Option 31 is the "orange" DVST tube which adds multi-color Dynamic Graphics!
+Dynamic Graphics (refresh graphics on Option 30) displayed on Option 31 display are displayed in Orange phosphor, while stored graphics are displayed in Green phosphor. 
 
 ![4050A with Opt30 and Opt31](./4054A%20with%20Refresh%20Graphics.jpg)
 
