@@ -14,7 +14,7 @@ Here is a photo of a Tektronix 4054A with the Option 30 Dynamic Graphics board i
 
 Here is a video of the Helicopter Simulation program.
 Note the entire helicopter is drawn in "orange" refresh vectors, while the title text is stored and displayed in green!
-https://youtu.be/BU_z3UciKVA?t=5 helicopter video
+![4054 with Opt30 and Opt31 helicopter simulation](https://youtu.be/BU_z3UciKVA?t=5)
 
 Same goes for this Green Eye video.  When a key is pressed, the Green Eye is stored and displayed in green.
 But the refresh Green Eye is in orange and can be moved around on the screen with the two thumbwheel knobs on the keyboard!
