@@ -8,7 +8,7 @@
 
 
 /***** Firmware version *****/
-#define FWVER "AR488 GPIB storage, ver. 0.05.74, 04/05/2022"
+#define FWVER "AR488 GPIB storage, ver. 0.05.82, 27/06/2022"
 
 
 /***** BOARD CONFIGURATION *****/
@@ -77,11 +77,11 @@
  * AR_SERIAL_PORT portname - e.g. AR_SERIAL_PORT Serial
  * or when using SoftwareSerial:
  * AR_SERIAL_SWPORT
- * Only ONE of the above should be uncommented!
+ * Only ONE of the below should be uncommented!
  * The pins being used for the SoftwareSerial port should be configured in the 'Configure 
  * SoftwareSerial Port' section.
  * 
- * Note: On most boards the default serial device is named 'Serial'. Where boards that have 
+ * Note: On most boards the default serial device is named 'Serial'. Where boards have 
  *       a secondary UART port this will have a numerical suffix, e.g.'Serial1'. The Mega2560 
  *       also supports 'Serial3' and 'Serial4'
  */
@@ -205,9 +205,9 @@
 /***** Debug options *****/
 
 // Configure debug level
-#ifdef DB_SERIAL_ENABLE
+#ifdef DEBUG_ENABLE
   //#define DEBUG_SERIAL_INPUT    // serialIn_h(), parseInput_h()
-  #define DEBUG_CMD_PARSER      // getCmd
+  //#define DEBUG_CMD_PARSER      // getCmd
   //#define DEBUG_SEND_TO_INSTR   // sendToInstrument();
   //#define DEBUG_DEVICE_ATN      // attnRequired
 
@@ -221,8 +221,9 @@
 
   // Store Module - General
   //#define DEBUG_STORE_EXEC
-  //#define DEBUG_STORE_BINARYCOPY
   //#define DEBUG_STORE_COMMANDS
+  //#define DEBUG_STORE_BINARYCOPY
+  //#define DEBUG_STORE_BINARYREAD
   //#define DEBUG_STORE_FILESEARCH
   //#define DEBUG_STORE_GETLAST
   //#define DEBUG_STORE_RENAME

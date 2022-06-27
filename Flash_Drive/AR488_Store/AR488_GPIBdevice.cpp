@@ -2,7 +2,7 @@
 #include "AR488_Config.h"
 #include "AR488_GPIBdevice.h"
 
-/***** AR488_GPIB.cpp, ver. 0.05.74, 04/05/2022 *****/
+/***** AR488_GPIB.cpp, ver. 0.05.81, 26/06/2022 *****/
 
 
 /****** Process status values *****/
@@ -280,7 +280,7 @@ void GPIBbus::sendData(char *databuffer, size_t dsize, bool lastChunk) {
 #ifdef DEBUG_GPIBbus_SEND
   DB_PRINT(F("<-End."),"");
   if (err) {
-    DB_PRINT("Error: ", err);
+    DB_PRINT(F("Error: "), err);
   }
 #endif
 
@@ -410,7 +410,7 @@ uint8_t GPIBbus::receiveParams(bool detectEoi, char * receiveBuffer, uint8_t buf
   // Detected that EOI has been asserted
   if (eoiDetected) {
 #ifdef DEBUG_GPIBbus_RECEIVE
-    DB_PRINT(F("receiveParams: EOI detected!"),"");
+    DB_PRINT(F("EOI detected!"),"");
 #endif
     // If eot_enabled then add EOT character
 //    if (cfg.eot_en) output.print(cfg.eot_ch);
@@ -419,7 +419,7 @@ uint8_t GPIBbus::receiveParams(bool detectEoi, char * receiveBuffer, uint8_t buf
   // Verbose timeout error
 #ifdef DEBUG_GPIBbus_RECEIVE
   if (r > 0) {
-    DB_PRINT(F("receiveParams: Timeout waiting for sender!"),"");
+    DB_PRINT(F("Timeout waiting for sender!"),"");
     DB_PRINT(F("Timeout waiting for transfer to complete!"),"");
   }
 #endif
@@ -866,20 +866,6 @@ uint8_t GPIBbus::writeByte(uint8_t db, bool isLastByte) {
 
 
 /***** Set device addressing state *****/
-/*
- * NOTE: this is a flag. It does not set the state of the GPIB controls
- */
-/*
-void GPIBbus::setDeviceAddressedState(uint8_t state){
-  // Valid state supplied
-  if (state==DLAS || state==DTAS) {
-    deviceAddressedState = state;
-    return;
-  }
-  // Otherwise set to idle
-  deviceAddressedState = DIDS;
-}
-*/
 
 /***** Device is addressed to listen? *****/
 bool GPIBbus::isDeviceAddressedToListen(){
