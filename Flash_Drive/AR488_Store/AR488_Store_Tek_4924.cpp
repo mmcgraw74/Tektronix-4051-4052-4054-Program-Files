@@ -4,7 +4,7 @@
 
 
 
-/***** AR488_Store_Tek_4924.cpp, ver. 0.05.82, 27/06/2022 *****/
+/***** AR488_Store_Tek_4924.cpp, ver. 0.05.83, 28/06/2022 *****/
 /*
  * Tektronix 4924 Tape Storage functions implementation
  */
@@ -515,9 +515,9 @@ uint8_t SDstorage::binaryRead() {
 
   // Actual file size on disk
   filesize = sdinout.fileSize();
+  
   // Calculate padding required to fill up to the next 256-byte block
   padding = (256 - (filesize % 256));
-  
   
   while (sdinout.available()) {
 
@@ -1533,92 +1533,6 @@ void SDstorage::stgc_0x6F_h() {
 }
 
 
-/*  
- * WRITE alt
- * 
-void SDstorage::stgc_0x6F_h() {
-  uint16_t dlen = 2;
-  uint16_t hval = 0;
-  uint8_t hmode = 0;
-  uint16_t cnt = 0;
-  uint8_t db;
-  uint8_t r = 0;
-  bool readWithEoi = false;
-  bool eoiDetected = false;
-#ifdef DEBUG_STORE_WRITE
-  debugStream.println(F("stgc_0x6F_h: started WRITE handler..."));
-#endif
-  if ( (f_type == 'N') || (f_type == 'H') ) {
-    while (cnt < dlen) {
-      r = gpibBus.readByte(&db, readWithEoi, &eoiDetected);
-      if (r>0) break;
-      if (cnt == 0) {
-        hmode = db & 0xE0;
-        hval = db & 0x1F;
-      }
-      if (cnt == 1) {
-        dlen = (hval>>8) + db + 2;
-        if (hmode&0x40) dlen++;
-      }
-
-debugStream.print(F("\nCnt: "));
-debugStream.print(cnt);
-debugStream.print(F("  Hmode: "));
-debugStream.print(hmode);
-debugStream.print(F("  Dlen: "));
-debugStream.println(dlen);
-
-      sdinout.write(db);
-#ifdef DEBUG_STORE_WRITE
-      char x[4] = {0};
-      sprintf(x,"%02X ",db);    
-      debugStream.print(x);
-#endif   
-      cnt++;
-    }
-*/
-/* 
-  }
-    r = gpibBus.readByte(&db, readWithEoi, &eoiDetected);
-    if (r==0) dlen = hb1 = (db & 0x1F) << 8;
-    r = gpibBus.readByte(&db, readWithEoi, &eoiDetected);
-    if (r==0) {
-      dlen = dlen + db;
-      for (uint16_t i=0; i<dlen; i++) {
-        r = gpibBus.readByte(&db, readWithEoi, &eoiDetected);
-        if (r>0) break;
-        sdinout.write(db);
-
-#ifdef DEBUG_STORE_WRITE
-      char x[4] = {0};
-      sprintf(x,"%02X ",db);    
-      debugStream.print(x);
-#endif
-
-    }
-*/
-/*
-    if (r==0) {
-      // Make sure file is makrked as BINARY DATA, with appropriate length and rename
-      if (f_type == 'N') renameFile(sdinout, 'B', 'D');
-#ifdef DEBUG_STORE_WRITE
-    }else{
-      debugStream.print("   Error: ");
-      debugStream.println(r);
-#endif
-    }
-#ifdef DEBUG_STORE_WRITE
-  }else{
-    debugStream.println(F("stgc_0x6F_h: incorrect file type!"));
-#endif
-  }
-#ifdef DEBUG_STORE_WRITE
-    debugStream.println(F("stgc_0x6F_h: done."));
-#endif
-}
-*/
-
-
 /***** BSAVE / BOLD command *****/
 /*
  * 4051 binary program loader
@@ -1631,6 +1545,8 @@ void SDstorage::stgc_0x71_h() {
   TekFileInfo fileinfo;
   uint8_t r = 0;
   uint8_t err = 0;
+  uint32_t filesize;
+  uint8_t padding = 0;
 
 #ifdef DEBUG_STORE_BINARYIO
   DB_PRINT(F("started BSAVE/BOLD handler..."),"");
@@ -1646,6 +1562,19 @@ void SDstorage::stgc_0x71_h() {
 #endif
       r = binaryWrite();
       if (r==0) { // No errors
+        // Get the current file size
+        filesize = sdinout.fileSize();
+        // Calculate padding required to round up to the next 256-byte block
+        padding = (256 - (uint8_t)(filesize % 256));
+        if (padding>0){   // File length is not an exact multiple of 256
+          // Allow one character and write 0xFF
+          padding--;            // One character required for FF
+          sdinout.write(0xFF);  // Write FF
+          // Pad to 256-byte block with 0x20 characters
+          for (uint8_t i=0; i<padding; i++) {
+            sdinout.write(0x20);  
+          }
+        }
         // End the file here
         sdinout.truncate();
         if (fileinfo.getFtype() == 'N') {
@@ -1657,6 +1586,10 @@ void SDstorage::stgc_0x71_h() {
       errorCode = 6;
     }
   }
+
+
+  
+
 
   // If addressed to talk read (BOLD) the file  
   if (gpibBus.isDeviceAddressedToTalk()){
