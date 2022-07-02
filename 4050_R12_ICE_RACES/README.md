@@ -3,6 +3,7 @@
 ![My 4054A running ICE RACES](./Screenshots/4054A%20ICE%20RACES%201.jpg)
 --------------------
 ICE RACES was a
+https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/tree/master/4054_Opt30_GAMES
 
 ![4 different cars](./Screenshots/all%204%20types%20of%20ICE%20RACE%20CARS.png)
 
