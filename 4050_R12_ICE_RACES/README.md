@@ -4,7 +4,7 @@
 --------------------
 ICE RACES was a
 
-![4 different cars](./all%204%20types%20of%20ICE%20RACE%20CARS.png)
+![4 different cars](./Screenshots/all%204%20types%20of%20ICE%20RACE%20CARS.png)
 
 ![4051 Emulator running ICE RACES](./Screenshots/R12%20ICE%20on%20Emulator%20x10.png)
 
