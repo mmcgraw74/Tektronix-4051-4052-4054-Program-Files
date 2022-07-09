@@ -44,6 +44,9 @@ Here are screenshots of the new Main Menu and new First Time Setup Option ROM De
 
 ![Main Menu](./4050%20GPIB%20Flash%20Drive%20-%20Main%20Menu%204052%20dark.jpeg)
 
+Main Menu now uses First Time Setup to discover installed option ROMs.
+Main Menu items that are incompatible due to lack of required option ROM are marked with / characters to indicate they cannot be selected.
+
 ![First Time Setup](./First%20Time%20Setup%20Discovery%20Complete%204052%20dark.jpeg)
 
 ![Pictures Menu](./FlashDrive-Pictures.png)
