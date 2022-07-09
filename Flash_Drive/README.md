@@ -5,16 +5,20 @@ My 4050 GPIB Flash Drive for all the Tektronix 4050 computers is now ready for o
 **4050 GPIB Flash Drive Features**
 
 1. Completely replaces 4050 internal tape drive for ALL program and data storage
-2. Ready to run with 35 games and 33 R12/Fast Graphics pictures pre-installed on MicroSD card
+2. Ready to run with 500 or more files in 15 ‘tape’ directories including 35 games and 33 R12/Fast Graphics pictures on the MicroSD card
 3. MicroSD card provides Gigabytes of program data and storage
-a. Plug MicroSD into USB-MicroSD adapter (not supplied) to transfer program & data files to/from your PC
+a. Plug MicroSD into USB-MicroSD adapter to transfer program & data files to/from your PC
 4. Faster access and loading of all files than internal tape
-5. Stores each ‘tape’ in separate folder – 100’s of tapes can be stored on same Flash Drive
-6. Compatible with all Tektronix 4051, 4052, 4052A, 4054 and 4054A computers
+5. Stores each ‘tape’ in separate directory – 100’s of tapes can be stored on same Flash Drive
+6. Compatible with ALL Tektronix 4051, 4052, 4052A, 4054 and 4054A computers
 7. Supports all 4050 BASIC GPIB tape commands:
-a. FIND, MARK, KILL, OLD, BOLD, APPEND, PRINT, INPUT, READ, WRITE
-8. Plugs into 4050 GPIB connector – no ROM backpack slots required
-9. Flash Drive Micro-USB power cord included
+a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ, WRITE
+8. Plugs into 4050 GPIB connector – no Option ROM needed to use the Flash Drive
+9. First Time Setup – discovers your 4050 computer model and installed option ROMs
+10. Main Menu – organizes access to all installed directories and programs and uses First Time Setup discovery of installed Option ROMs to only allow you to select and run programs compatible with your 4050 computer detected configuration.
+11. Flash Drive AUTO LOAD – uses the RTC (Real-Time-Clock) Option (included in the 4052/4054 Multi-Function Option ROM available separately) to AUTO LOAD your 4050 computer at power-on to your Favorite Directory which is the last directory you selected from the Main Menu
+12. Flash Drive Micro-USB power cord included. USB 5V 1A power adapter is not included as it requires a country specific power connector.
+13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
 
 You can build it yourself or I can assemble it.
 --------------
@@ -36,7 +40,11 @@ Tektronix 4051 MaxiRom is currently available on EBAY from its developer: vintag
 Jos' MFM ROM Pack for the 4052/4054 emulates an 8-slot 4050E01 ROM Expander and includes a TransEra-741 Real-Time-Clock plus a 4052 RS-232 Printer Interface!  I have used the Real-Time-Clock to automatically boot my 4052 into the Pictures Menu (you can easily pick your own program for boot).  Jos' MFM ROM Pack for the 4052/4054 is available - contact him on his vcfed.org thread: 
 https://forum.vcfed.org/index.php?threads/tektronix-4052-4054-multifunction-modules-available.76192/post-76192
 
-Here are screenshots of the Picture Menu and the Games Menu.
+Here are screenshots of the new Main Menu and new First Time Setup Option ROM Detect, Pictures Menu and the Games Menu.
+
+![Main Menu](./4050%20GPIB%20Flash%20Drive%20-%20Main%20Menu%204052%20dark.jpeg)
+
+![First Time Setup](./First%20Time%20Setup%20Discovery%20Complete%204052%20dark.jpeg)
 
 ![Pictures Menu](./FlashDrive-Pictures.png)
 
