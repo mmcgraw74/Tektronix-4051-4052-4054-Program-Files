@@ -19,5 +19,4 @@ In 1982 Tektronix introduced the 4054 Option 31 - a new 19" DVST display with Co
 
 ![4054A Option 31 Color Enhanced DVST display](./4054A%20with%20Option%2030%20and%2031%20Refresh%20Graphics.jpg)
 
-![4054A Opt30 and Opt31 Sea Dog Option 30 Game](./Sea%20Dog%20Option%2030%20Game.jpg)
-
+![4054A Opt30 and Opt31 Sea Dog Option 30 Game](./Sea%20Dog%20Option%2030%20Game-cropped.jpg)
