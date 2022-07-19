@@ -6,14 +6,15 @@ Tektronix also introduced a Dynamic Graphics - Option 30 for the 4054 in 1979.  
 
 ![4054 Option 30 board](./4054A%20Refresh%20Graphics%20board%20front%20-%20with%20labels.jpg)
 
-This board accelerated the vector graphics performance of the 4054 computer more than 100x the performance of BASIC vector MOVE/DRAW commands and more than 10x the performance of the 4052R12 Graphics Enhancement ROM Pack vector MOVE/DRAW commands.  
-
-The next two photos show the 4054 with the original green 19" DVST display, and a photo of my 4054 running my Star Wars Droids display program.
+This board accelerated the vector graphics performance of the 4054 computer more than 100x the performance of BASIC vector MOVE/DRAW commands and more than 10x the performance of the 4052R12 Graphics Enhancement ROM Pack vector MOVE/DRAW commands.  Option 30 supported multiple dynamic graphics objects (up to 32K) which could be displayed in storage mode (persistent on the display screen - without needing to be refreshed) and refresh mode (not stored, but refreshed over 30 times a second).
+************
+The next two photos show the 4054 with the original green 19" DVST display, and a photo of my 4054 running my Star Wars Droids display program.  The DVST stored vectors were in bright green.  However refresh mode vectors were drawn with less energy and were harder to see on the green display.
 
 ![4054 Green DVST display](./tek-4054%20green%20CRT.jpg)
 
 ![4054 Star Wars Droids](./4054A%20StarWars%20Droids.png)
 
-Option 30 supported multiple dynamic graphics objects (up to 32K) which could be displayed in storage mode (persistent on the display screen - without needing to be refreshed) and refresh mode (not stored, but refreshed over 30 times a second).
+****************
+In 1982 Tektronix introduced the 4054 Option 31 - a new 19" DVST display with Color Enhanced Dynamic Graphics.  This display had both green and red phosphors and displayed stored graphics in green and refreshed or just drawn vectors in RED+GREEN= ORANGE, that were much brighter than refresh vectors on the original green display as show in the following two photos.
 
-In 1982 Tektronix introduced the 4054 Option 31 - a new 19" DVST display with Color Enhanced Dynamic Graphics.
+
