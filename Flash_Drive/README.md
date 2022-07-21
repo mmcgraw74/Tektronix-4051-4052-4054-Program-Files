@@ -28,6 +28,7 @@ New Features:
 - Added Option30 Games to Main Menu
 - Added File Browser to Main Menu, UDK support for TLIST, Directory List and Change Directory
 - Updated Flash Drive User Guide
+- Updated Flash Drive Arduino firmware in AR488_Store to July 12 2022 version 0.05.85
 
 Fixes:
 - RTC Auto Load feature is now selectable during first time setup
