@@ -19,7 +19,22 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 11. Flash Drive AUTO LOAD – uses the RTC (Real-Time-Clock) Option (included in the 4052/4054 Multi-Function Option ROM available separately) to AUTO LOAD your 4050 computer at power-on to your Favorite Directory which is the last directory you selected from the Main Menu
 12. Flash Drive Micro-USB power cord included. USB 5V 1A power adapter is not included as it requires a country specific power connector.
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
+************
+July 20B 2022 Flash Drive update - New Features and Fixes:
 
+New Features:
+- Picture menu automatically selects R12 Menu if R12 ROM detected or **NEW** pure software Picture menu
+- Adventure (64KB only) from Main Menu loads BINARY program - 7x speedup over ASCII program load
+- Added Option30 Games to Main Menu
+- Added File Browser to Main Menu, UDK support for TLIST, Directory List and Change Directory
+- Updated Flash Drive User Guide
+
+Fixes:
+- RTC Auto Load feature is now selectable during first time setup
+- Fixed menu links to Pictures, SVG>FG
+- Fixed R12 ICE RACES countdown clock for 4054
+
+************
 You can build it yourself or I can assemble it.
 --------------
 Flash Drive GPIB interface PCB https://oshpark.com/shared_projects/HIeNjLBF
