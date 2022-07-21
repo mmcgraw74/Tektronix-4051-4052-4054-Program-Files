@@ -4,7 +4,7 @@
 
 
 
-/***** AR488_Store_Tek_4924.cpp, ver. 0.05.83, 28/06/2022 *****/
+/***** AR488_Store_Tek_4924.cpp, ver. 0.05.85, 12/07/2022 *****/
 /*
  * Tektronix 4924 Tape Storage functions implementation
  */
@@ -146,11 +146,11 @@ void TekFileInfo::getFusageStr(char * usagestr){
 
 /***** Return the file description *****/
 void TekFileInfo::getFdescStr(char * description){
-  uint8_t dl = (file_header_size-30);
+  const uint8_t dl = (file_header_size-30);
   uint8_t scnt = 0;
   uint8_t i = 0;
 
-  // Is description contain only spaces (dl = scnt) ?  
+  // Does the description contain only spaces (dl = scnt) ?  
   for (i=0; i<dl; i++) {
     if (fdesc[i]==0x20) {
       scnt++;
@@ -158,10 +158,10 @@ void TekFileInfo::getFdescStr(char * description){
       break;
     }
   }
-
+  // First character is NULL or space - count equal to the number of read characters
   if ( (fdesc[0]==0) || (scnt==i) ) {
     // NULL or full of spaces
-    memset(description, '-', dl); // Blank string returns '----------------'
+    memset(description, ' ', dl); // Blank string returns spaces
   }else{
     // Valid data
     strncpy(description, fdesc, dl);
@@ -198,12 +198,12 @@ void TekFileInfo::getFilename(char * filename){
   filenameptr = filenameptr + 5;
   // File description
   getFdescStr(filenameptr);
-  filenameptr = filenameptr + ((file_header_size-30)+1);  // +1 for the space
-  *filenameptr = ' ';
+  filenameptr = filenameptr + (file_header_size-30);
+  *filenameptr = ' '; // Add space
   filenameptr++;
   // File size
   getFsize(filenameptr);
-  // Up to char pos (file_header_size - 7) replace NULL with space
+  // Check each character up to char pos (file_header_size - 7) and replace any NULLs with a space
   for (uint8_t i=0; i<(file_header_size-7); i++) {
     if (filename[i] == 0x00) filename[i] = 0x20;
   }
@@ -511,13 +511,13 @@ uint8_t SDstorage::binaryRead() {
   int16_t c;
   uint8_t err = 0;
   uint32_t filesize;
-  uint32_t padding = 0;
+  uint16_t padding = 0;
 
   // Actual file size on disk
   filesize = sdinout.fileSize();
   
   // Calculate padding required to fill up to the next 256-byte block
-  padding = (256 - (filesize % 256));
+  padding = (256 - (uint16_t)(filesize % 256));
   
   while (sdinout.available()) {
 
@@ -566,7 +566,7 @@ uint8_t SDstorage::binaryRead() {
   if (padding > 0) {
     err = gpibBus.writeByte(0xFF, SEND_DATA_ONLY);    // Signal end of data
     padding--;
-    for (uint32_t p=0; p<padding; p++) {
+    for (uint16_t p=0; p<padding; p++) {
       err = gpibBus.writeByte(0x20, SEND_DATA_ONLY);  // Pad with 0x20 to 256-byte boundary
       if (err) break;      
     }
@@ -1546,7 +1546,7 @@ void SDstorage::stgc_0x71_h() {
   uint8_t r = 0;
   uint8_t err = 0;
   uint32_t filesize;
-  uint8_t padding = 0;
+  uint16_t padding = 0;
 
 #ifdef DEBUG_STORE_BINARYIO
   DB_PRINT(F("started BSAVE/BOLD handler..."),"");
@@ -1565,13 +1565,13 @@ void SDstorage::stgc_0x71_h() {
         // Get the current file size
         filesize = sdinout.fileSize();
         // Calculate padding required to round up to the next 256-byte block
-        padding = (256 - (uint8_t)(filesize % 256));
+        padding = (256 - (uint16_t)(filesize % 256));
         if (padding>0){   // File length is not an exact multiple of 256
           // Allow one character and write 0xFF
           padding--;            // One character required for FF
           sdinout.write(0xFF);  // Write FF
           // Pad to 256-byte block with 0x20 characters
-          for (uint8_t i=0; i<padding; i++) {
+          for (uint16_t i=0; i<padding; i++) {
             sdinout.write(0x20);  
           }
         }
