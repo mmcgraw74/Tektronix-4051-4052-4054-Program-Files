@@ -1,6 +1,9 @@
 # Tektronix 4052-4054 Extended Memory File Manager
 
-This was an Option 27 (256KB) or Option 28 (512KB) Extended Memory File Manager for the 4052A and 4054A graphics computers.   
+This was an Option 27 (256KB) or Option 28 (512KB) Extended Memory File Manager for the 4052, 4052A, 4054 and 4054A graphics computers.   
+
+The 4052A/4054A had data access speed up to 400KB per second!
+The 4052 and 4054 with this option achieved memory access speed up to 50KB per second.
 
 ![Extended Memory File Manager](./Extended%20Memory%20File%20Manager%20photo.jpg)
 
