@@ -5,7 +5,7 @@ This was an Option 27 (256KB) or Option 28 (512KB) Extended Memory File Manager 
 The 4052A/4054A had data access speed up to 400KB per second!
 The 4052 and 4054 with this option achieved memory access speed up to 50KB per second.
 
-![Extended Memory File Manager](./Extended%20Memory%20File%20Manager%20photo.jpg)
+![Extended Memory File Manager](./Extended%20Memory%20photo.jpg)
 
 This option required the 4-slot ROM Backpack and also included the RS-232 Data Communications interface.
 
@@ -17,3 +17,7 @@ Built-in Diagnostic commands provide a power-up test and more thorough Extended 
 This folder includes the three Extended Memory File Manager ROM images.
 
 ![Extended Memory File Manager ROM Labels](./minitoaster2.JPG)
+
+The Extended Memory battery backup standby power supply is located under the keyboard!
+
+![Extended Memory standby power supply](./Stand%20by%20PS%20under%20the%20keyboard.jpg)
