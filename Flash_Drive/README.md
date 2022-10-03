@@ -20,20 +20,15 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 12. Flash Drive Micro-USB power cord included. USB 5V 1A power adapter is not included as it requires a country specific power connector.
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
 ************
-July 20B 2022 Flash Drive update - New Features and Fixes:
+Oct 2 2022 Flash Drive update - New Features and Fixes:
 
 New Features:
-- Picture menu automatically selects R12 Menu if R12 ROM detected or **NEW** pure software Picture menu
-- Adventure (64KB only) from Main Menu loads BINARY program - 7x speedup over ASCII program load
-- Added Option30 Games to Main Menu
-- Added File Browser to Main Menu, UDK support for TLIST, Directory List and Change Directory
-- Updated Flash Drive User Guide
+- New Work-in-Progress Spacelab folder, not in main menu yet but can be manually accessed
+- Added WIP PLOT10 viewer and creator program and ASCII Plot10 and BINARY R12 files to SVG2FG folder - manual access
 - Updated Flash Drive Arduino firmware in AR488_Store to July 12 2022 version 0.05.85
 
 Fixes:
-- RTC Auto Load feature is now selectable during first time setup
-- Fixed menu links to Pictures, SVG>FG
-- Fixed R12 ICE RACES countdown clock for 4054
+- fixed 4054 Option 30 files so demo runs to completion
 
 ************
 You can build it yourself or I can assemble it.
