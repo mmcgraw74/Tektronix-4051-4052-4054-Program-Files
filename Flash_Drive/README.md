@@ -23,6 +23,7 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 Oct 2 2022 Flash Drive update - New Features and Fixes:
 
 New Features:
+- Latest version that I exhibited at VCF West 2022 in August plus couple of new pictures like B2EMO
 - New Work-in-Progress Spacelab folder, not in main menu yet but can be manually accessed
 - Added WIP PLOT10 viewer and creator program and ASCII Plot10 and BINARY R12 files to SVG2FG folder - manual access
 - Updated Flash Drive Arduino firmware in AR488_Store to July 12 2022 version 0.05.85
