@@ -5,7 +5,7 @@
 #include <DEVNULL.h>
 #include "AR488_Config.h"
 
-/***** AR488_SerialPort.cpp, ver. 0.05.85, 12/07/2022 *****/
+/***** AR488_SerialPort.cpp, ver. 0.05.86, 13/07/2022 *****/
 /*
  * Serial Port definition
  */

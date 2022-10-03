@@ -4,7 +4,7 @@
 
 
 
-/***** AR488_Store_Tek_4924.cpp, ver. 0.05.85, 12/07/2022 *****/
+/***** AR488_Store_Tek_4924.cpp, ver. 0.05.88, 27/09/2022 *****/
 /*
  * Tektronix 4924 Tape Storage functions implementation
  */
@@ -511,14 +511,15 @@ uint8_t SDstorage::binaryRead() {
   int16_t c;
   uint8_t err = 0;
   uint32_t filesize;
-  uint16_t padding = 0;
+  uint8_t padding = 0;
 
   // Actual file size on disk
   filesize = sdinout.fileSize();
   
   // Calculate padding required to fill up to the next 256-byte block
-  padding = (256 - (uint16_t)(filesize % 256));
-  
+  padding = (uint8_t)(filesize % 256);
+  if (padding > 0) padding = 256 - padding;
+
   while (sdinout.available()) {
 
     // Read a byte
@@ -530,25 +531,8 @@ uint8_t SDstorage::binaryRead() {
     }
 #endif
 
-/*
-    if (sdinout.peek() < 0) {  // Look ahead for EOF
-      // Reached EOF - send last byte and 0xFF with EOI
-//      err = gpibBus.writeByte(c, SEND_DATA_ONLY);
-//      err = gpibBus.writeByte(0xFF, SEND_WITH_EOI);
-
-      err = gpibBus.writeByte(c, SEND_WITH_EOI);
-
-      return(0);
-
-    }else{
-      // Send byte to the GPIB bus
-      err = gpibBus.writeByte(c, SEND_DATA_ONLY);
-    }
-*/
-
-      // Send byte to the GPIB bus
-      err = gpibBus.writeByte(c, SEND_DATA_ONLY);
-
+    // Send byte to the GPIB bus
+    err = gpibBus.writeByte(c, SEND_DATA_ONLY);
 
     // Exit on ATN or receiver request to stop (NDAC HIGH)
     if (err) {
@@ -904,6 +888,39 @@ bool SDstorage::makeNewFile(File& fileObj, uint16_t filelength) {
 }
 
 
+/***** Check whether directory contains any Tek files *****/
+/*
+ * Returns the number of Tek files (files beggining with a number) found
+ */
+uint8_t SDstorage::dirContainsTekFiles(char * directory){
+  uint8_t filecnt = 0;
+  char fname[file_header_size];
+  File fileObj;
+  File dirObj;
+  
+  if (dirObj.open(directory, O_RDONLY)) {
+    while(fileObj.openNext(&dirObj, O_RDONLY)) {
+      // Skip directories, hidden files, and null files
+      if (!fileObj.isSubDir() && !fileObj.isHidden()) {
+        // Retrieve file name
+        fileObj.getName(fname, file_header_size);
+        // Where file name begins with a number, extract the file number
+        int num = atoi(fname);
+        fileObj.close();        
+        if (num>0) filecnt++;
+      }      
+    }
+    dirObj.close();
+  }
+  
+  return filecnt;
+}
+
+
+/***** Close the file *****/
+/*
+ * Closes the file and clears filename buffer and file type flag
+ */
 void SDstorage::closeFile(){
   // Close file handle
   sdinout.close();
@@ -1588,9 +1605,6 @@ void SDstorage::stgc_0x71_h() {
   }
 
 
-  
-
-
   // If addressed to talk read (BOLD) the file  
   if (gpibBus.isDeviceAddressedToTalk()){
     sdinout.getName(fname, file_header_size);
@@ -1600,6 +1614,8 @@ void SDstorage::stgc_0x71_h() {
       DB_PRINT(F("reading file..."),"");
 #endif
       err = binaryRead();
+      // On error or interrupt reset the bus to listening state    
+      if (err) gpibBus.setControls(DLAS);
     }else{
       err = 5;
       errorCode = 6;
@@ -1607,8 +1623,11 @@ void SDstorage::stgc_0x71_h() {
     }
   }
 
+
 #ifdef DEBUG_STORE_BINARYIO
   if (err==5) DB_PRINT(F("incorrect file type!"),"");
+//  DB_PRINT("Filetype: ", fileinfo.getFtype());
+//  DB_PRINT("Fileusage: ", fileinfo.getFusage()); 
   DB_PRINT(F("done."),"");
 #endif
 
@@ -1698,9 +1717,11 @@ void SDstorage::stgc_0x73_h(){
 /***** FIND command *****/
 /*
  * FINDs and OPENs file (num)
- * Returns: string result= "A" for ASCII, "H" for HEX (Binary or Secret file), "N" for Not Found
+ * The currently open file is closed.
+ * If file is found sets F_Name and F_Type to file name and type letter
+ * If file is not found F_Name and F_Type remain unset
+ * Since SdFat file list is not neccessarily sequential with Tek 4050 file names, 
  * FIND iterates through each file in a directory until filenumber matches num
- * since SdFat file index is not sequential with Tek 4050 filenames 
  */
 void SDstorage::stgc_0x7B_h(){
   char receiveBuffer[83] = {0};   // *0 chars + CR/LF + NULL
@@ -1730,9 +1751,9 @@ void SDstorage::stgc_0x7B_h(){
 
 #ifdef DEBUG_STORE_FIND
 
-    bool found = findFile(num);
+//    bool found = findFile(num);
 
-    if (found) {
+    if (findFile(num)) {
       DB_PRINT(F("found: "), f_name);
       DB_PRINT(F("type:  "), f_type);
     }else{
@@ -1767,6 +1788,7 @@ void SDstorage::stgc_0x7C_h(){
   File dirObj;
   File markFile;
   TekFileInfo fileinfo;
+  bool isEmptyDir = false;
 
 #ifdef DEBUG_STORE_MARK
   DB_PRINT(F("started MARK handler..."),"");
@@ -1775,7 +1797,7 @@ void SDstorage::stgc_0x7C_h(){
   // Read the requested number of files
   gpibBus.receiveParams(false, mpbuffer, 12);   // Limit to 12 characters
   numfiles = atoi(mpbuffer);
-  // read the requested file size
+  // Read the requested file size
   gpibBus.receiveParams(false, mpbuffer, 12);   // Limit to 12 characters
   flen = atoi(mpbuffer);
 
@@ -1785,51 +1807,76 @@ void SDstorage::stgc_0x7C_h(){
 #endif
 
   // Get the number of the current file
-  sdinout.getName(fname, file_header_size);
-  curfilenum = atoi(fname);
+  if (sdinout.isOpen()) {
+    sdinout.getName(fname, file_header_size);
+    curfilenum = atoi(fname);
+  }else{
+    // Directory contains no Tek files so set first file to 1
+    if (dirContainsTekFiles(directory)==0) {
+      curfilenum = 1;
+      isEmptyDir = true;
+    }
+  } 
 
 #ifdef DEBUG_STORE_MARK
   DB_PRINT(F("current file: "), curfilenum);
+  if (isEmptyDir) {
+    DB_PRINT(F("Directory empty."), curfilenum);
+  }else{
+    DB_PRINT(F("Directory contains files: "), dirContainsTekFiles(directory) );   
+  }
 #endif
 
-  // Get the number of the LAST file
-  lastfilenum = getLastFile(markFile);
+  // If we have a starting file number
+  if (curfilenum > 0) {   
+
+    // Get the number of the LAST file
+    lastfilenum = getLastFile(markFile);
 
 #ifdef DEBUG_STORE_MARK
-  DB_PRINT(F("LAST file: "), lastfilenum);
+    DB_PRINT(F("LAST file: "), lastfilenum);
 #endif
 
-  if (dirObj.open(directory, O_RDONLY)) {
+    if (dirObj.open(directory, O_RDONLY)) {
 
-    // Adding 'numfiles' cannot exceed files_per_directory - 1 (i.e. excluding LAST) so reduce 'numfiles' accordingly if required
-    if (numfiles > (files_per_directory - (curfilenum + 1))) numfiles = files_per_directory - (curfilenum + 1);
+      // Adding 'numfiles' cannot exceed files_per_directory - 1 (i.e. excluding LAST) so reduce 'numfiles' accordingly if required
+      if (numfiles > (files_per_directory - (curfilenum + 1))) numfiles = files_per_directory - (curfilenum + 1);
 
-    if (numfiles > 0) {
+      if ( (numfiles > 0) && !isEmptyDir ){
 
 #ifdef DEBUG_STORE_MARK
-      DB_PRINT(F("files to MARK: "), numfiles);
+        DB_PRINT(F("files to MARK: "), numfiles);
 #endif
 
-      // Delete everything from the current file to the last file
-      for (i=curfilenum; i<=lastfilenum; i++) {
-        if (searchForFile(i, markFile)){
+        // Delete everything from the current file to the last file
+        for (i=curfilenum; i<=lastfilenum; i++) {
+          if (searchForFile(i, markFile)){
 #ifdef DEBUG_STORE_MARK
-          bool r = false;
-          r = markFile.remove();
+            bool r = false;
+            r = markFile.remove();
 #else
-          markFile.remove();
+            markFile.remove();
 #endif
-          markFile.close();
+            markFile.close();
 #ifdef DEBUG_STORE_MARK
-          if (!r) {
-            DB_PRINT(F("failed to delete file "), i);
+            if (!r) {
+              DB_PRINT(F("failed to delete file "), i);
+            }
+#endif
+#ifdef DEBUG_STORE_MARK
+          }else{
+            DB_PRINT(F("Unable to find file: "), i);
+#endif
           }
-#endif
-#ifdef DEBUG_STORE_MARK
-        }else{
-          DB_PRINT(F("Unable to find file: "), i);
-#endif
         }
+#ifdef DEBUG_STORE_MARK        
+      }else{
+        if (isEmptyDir) {
+          DB_PRINT(F("Directory is empty.","");
+        }else{
+          DB_PRINT(F("Invalid start file number!","");          
+        }
+#endif
       }
 
       // Generate 'numfiles' number of NEW files starting at the current file position
@@ -1848,8 +1895,8 @@ void SDstorage::stgc_0x7C_h(){
 #ifdef DEBUG_STORE_MARK
           DB_PRINT(F("created: "),(String(directory)+fname));
 #endif
-        }else{
 #ifdef DEBUG_STORE_MARK
+        }else{
           DB_PRINT(F("Failed to create: "), fname);
 #endif
         }
@@ -1867,25 +1914,34 @@ void SDstorage::stgc_0x7C_h(){
         markFile.close();
 #ifdef DEBUG_STORE_MARK
         DB_PRINT(F("created LAST file"),"");
-#endif
       }else{
-#ifdef DEBUG_STORE_MARK
         DB_PRINT(F("Failed to create LAST file!"),"");
 #endif
       }
-      dirObj.close();
-    }else{
-      errorCode = 2;
-#ifdef DEBUG_STORE_MARK
-      DB_PRINT(F("LAST not found!"),"");
-#endif
-    }  
 
-  }else{
-    errorCode = 3;
+      dirObj.close();    
+
+/*
+    }else{
+        errorCode = 2;
 #ifdef DEBUG_STORE_MARK
-    DB_PRINT(F("failed to open directory: "), directory);
+        DB_PRINT(F("LAST not found!"),"");
 #endif
+      }  
+*/
+
+    }else{
+      errorCode = 3;
+#ifdef DEBUG_STORE_MARK
+      DB_PRINT(F("failed to open directory: "), directory);
+#endif
+    }
+    
+  }else{
+    errorCode = 4;
+#ifdef DEBUG_STORE_MARK
+    DB_PRINT(F("Invalid FIND!"));
+#endif    
   }
 
 #ifdef DEBUG_STORE_MARK

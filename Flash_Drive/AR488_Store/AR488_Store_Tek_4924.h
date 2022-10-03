@@ -13,7 +13,7 @@
 
 
 
-/***** AR488_Storage_Tek_4924.h, ver. 0.05.85, 12/07/2022 *****/
+/***** AR488_Storage_Tek_4924.h, ver. 0.05.88, 27/09/2022 *****/
 
 // Default chip select pin number is defined on some cards as SDCARD_SS_PIN
 // If its not defined and its not been set in config then we use pin 4
@@ -217,6 +217,7 @@ class SDstorage {
     void setFileInfo(File filehandle);
     void stripLineEnd(char * buf, uint8_t buflen);
     void closeFile();
+    uint8_t dirContainsTekFiles(char * directory);
 };
 
 

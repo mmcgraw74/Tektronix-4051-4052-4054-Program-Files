@@ -2,7 +2,7 @@
 #include "AR488_Config.h"
 #include "AR488_GPIBdevice.h"
 
-/***** AR488_GPIB.cpp, ver. 0.05.85, 12/07/2022 *****/
+/***** AR488_GPIB.cpp, ver. 0.05.88, 27/09/2022 *****/
 
 
 /****** Process status values *****/
@@ -279,32 +279,38 @@ void GPIBbus::sendData(char *databuffer, size_t dsize, bool lastChunk) {
 
 #ifdef DEBUG_GPIBbus_SEND
   DB_PRINT(F("<-End."),"");
+#endif
+
   if (err) {
+//    setControls(DIDS);
+//    readyGpibDbus();
+#ifdef DEBUG_GPIBbus_SEND
+    // On error or interrupt reset bus to listening state
     DB_PRINT(F("Error: "), err);
-  }
 #endif
-
-  if (!err  && !cfg.eoi) {
-    // Write terminators according to EOS setting
-    // Do we need to write a CR?
-    if ((cfg.eos & 0x2) == 0) {
-      writeByte(CR, false);
+  }else{
+    if (!cfg.eoi) {
+      // Write terminators according to EOS setting
+      // Do we need to write a CR?
+      if ((cfg.eos & 0x2) == 0) {
+        writeByte(CR, false);
 #ifdef DEBUG_GPIBbus_SEND
-      DB_PRINT(F("Appended CR"),);
+        DB_PRINT(F("Appended CR"),);
 #endif
-    }
-    // Do we need to write an LF?
-    if ((cfg.eos & 0x1) == 0) {
-      writeByte(LF, false);
+      }
+      // Do we need to write an LF?
+      if ((cfg.eos & 0x1) == 0) {
+        writeByte(LF, false);
 #ifdef DEBUG_GPIBbus_SEND
-      DB_PRINT(F("Appended LF"),"");
+        DB_PRINT(F("Appended LF"),"");
 #endif
+      }
     }
-  }
 
-  if (lastChunk){
-    if (lastChunk) setControls(DIDS);
-    readyGpibDbus();
+    if (lastChunk){
+      setControls(DIDS);
+      readyGpibDbus();
+    }
   }
 
 #ifdef DEBUG_GPIBbus_SEND
