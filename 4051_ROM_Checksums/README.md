@@ -16,9 +16,6 @@ you can see that the emulator is using the same ROMs as in MDC's 4051, with the 
 
 I run the **jsTEKTRONIX4051_universal.html** file with Chrome web browser.  The emulator is configured to run at a similar speed to the original 4051.  I edit the mc6800.js file line 64 and replace "408" with "40" to speed up the emulator to approximately the speed of the 4052 and 4054, and then launch the emulator.  All of the older programs (.txt or .BAS) in this 4050 repository should be run with the regular file, which has modified control characters and line delimiters unless the readme in that folder indicates they require the universal format emulator.
 
-![screenshot](./4051%20Javascript%20Emulator%20ROM%20Checksums%20screenshot.png)
+![screenshot](./4051_ROM_Checksums/4051_ROM_Checksums.png)
 
-This screenshot includes the list of MDC ROM checksums to the left of the emulator screen:
-
-
-![screenshot](./4051%20emulator%20ROM%20Checksums%20compared%20to%20MDC%204051%20checksums.jpg)
+This screenshot is from my Sept 2021 program and includes not only System ROMs (at the bottom) but also Option ROMs:
