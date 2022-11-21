@@ -1,4 +1,6 @@
 This BASIC program requires the 4052/4054 Diagnostic ROM Pack.
+This ROM Pack diagnoses bad memory and bad ROMs so you can repair your computer.
+
 Jos Dreesen has designed a replacement since this ROM Pack is so rare.
 See Jos' post if you would like to purchase his ROM Pack:
 
@@ -14,4 +16,4 @@ Each 4052/4054 Option ROM Pack can contain up to four 4KB EPROMs, so my program 
 
 ![screenshot](./my-4052_ROM_Checksums.png)
 
-![screenshot](./my-4052A_ROM_Checksums.png)
+![screenshot](./my-4054A_ROM_Checksums.png)
