@@ -11,3 +11,5 @@ I also discovered how to set the bank address and length to display the 4050 ROM
 Each 4052/4054 Option ROM Pack can contain up to four 4KB EPROMs, so my program calculates and displays 4KB checksums for each of those ROMs.
 
 ![screenshot](./my-4052_ROM_Checksums.png)
+
+![screenshot](./my-4052A_ROM_Checksums.png)
