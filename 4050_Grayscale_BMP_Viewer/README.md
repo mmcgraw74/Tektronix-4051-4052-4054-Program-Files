@@ -12,4 +12,14 @@ Then edit the BMP with HxD binary editor, find the sixteen grayscale values and 
 Run my Grayscale BASIC program on the 4051 Emulator or 4052 or 4054 program which reads the S19 file, error checks that the file is an S19 containings a BMP image, extracts image width and height and uses that to center the image on the display (max width 256, max height 200).  Then read S19 image data converting pair of ASCII HEX to decimal number, divide by sixteen to get grayscale value of a 'pixel'.  Convert and draw 4x4 dot pattern at X,Y location for each pixel until done!
 Here is the resulting image from the 4051 emulator based on the darkened BMP and the 'original' grayscale image - all at 256x144 resolution.
 
+![4051 Emulator](./One%20Giant%20Leap%20for%20Mankind%20(3).png)
+
+
 Next step is to save the resulting image to my Tektronix 4050 GPIB Flash Drive file for quick display on the 4051/4052/4054 computer or emulator in seconds - not tens of minutes!
+
+-------------------------------------
+Scaled grayscale 'original' BMP image
+![Scaled image](./one%20small%20step%20for%20man%20grayscale%20256x144.bmp)
+-------------------------------------
+Darkened grayscale BMP image
+![Scaled image](./one%20small%20step%20for%20man%20grayscale%20leveled%20dark6%20256x144.bmp)
