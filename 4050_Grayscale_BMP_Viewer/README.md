@@ -23,3 +23,4 @@ Scaled grayscale 'original' BMP image
 -------------------------------------
 Darkened grayscale BMP image
 ![Scaled image](./one%20small%20step%20for%20man%20grayscale%20leveled%20dark6%20256x144.bmp)
+-------------------------------------
