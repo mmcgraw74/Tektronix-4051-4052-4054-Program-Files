@@ -13,6 +13,9 @@ The photo below is my 4054, 4052 and 4631 screen printer.
 
 ![4050 Family Photo](./4052%20and%204054%20highlighted.jpg)
 
+and this photo shows both computers running a hidden line program posted in BYTE Magazine
+![4054 and 4052 running hidden line program](./Tektronix%204052%20and%204054%20running%20hidden%20line%20program.png)
+
 Since the 4050 series graphics computers were limited to a maximum of 64K bytes of RAM memory (4052 and 4054, 4051 was limited to 32K bytes of RAM) - the programs made heavy use of the tape drive or external GPIB floppy or hard disk storage for many programs.  The DC300 tape drive in the Tektronix computers provided about 300K bytes of storage, with a file system that numbered each file and provided error checking to protect the information in each file.
 
 Tektronix 4050 series computers had BASIC in ROM that included support not only for the internal screen, tape and keyboard, but also GPIB devices like external graphics printers, plotters, tape drives, floppy drives, hard drives, digitizers, and joysticks.
