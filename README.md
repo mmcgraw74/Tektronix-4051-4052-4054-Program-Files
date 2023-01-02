@@ -16,6 +16,24 @@ The photo below is my 4054, 4052 and 4631 screen printer.
 and this photo shows both computers running a hidden line program posted in BYTE Magazine
 ![4054 and 4052 running hidden line program](./Tektronix%204052%20and%204054%20running%20hidden%20line%20program.png)
 
+************************
+The Tektronix 4050 series of vector graphics computers were first introduced in 1975 with the 4051 using a Motorola 6800 CPU with 32KB of BASIC ROMs and 32KB RAM integrated with a 1024x780 vector graphics display, DC-300 quarter-inch tape drive, full keyboard, two option ROM slots and GPIB interface for attaching options like plotters, digitizing tablets, floppy and hard disk systems and other GPIB peripherals from Tektronix.
+
+The 4052 and 4054 computers were second generation systems both introduced in 1979 with 10x performance over the 4051 through a custom 16-bit bit-slice CPU architecture which added hardware floating point and doubled the program memory capacity to 64KB and included 64KB of BASIC ROMs.
+
+The Tektronix 4050 computers targeted scientific and business applications that could take advantage of the high resolution vector graphics and text of these computers.  Since there were no BASIC programs available for those applications - Tektronix developed a series of PLOT 50 Software packages that included DC-300 tapes with programs targeting Mathematics, Statistics, Electrical Engineering, Graph Plot, Business Planning and Analysis, Modeling and Reporting Software and General Utility programs for editing and sorting strings or data as shown in this photo:
+
+![Tektronix PLOT 50 Software Library](./Tektronix%20PLOT%2050%20Software.png)
+
+In addition to the Software Library, Tektronix encourage submission of application programs from users, and began publishing a newsletter with customer use cases and abstracts of these user application programs.  I submitted one of my application programs (Cubic Spline Interpolation) to this program and received a tape with three user application programs that I selected from this library.
+
+Here is the cover of one of the PLOT 50 user application library booklets Tektronix published:
+
+![Tektronix PLOT 50 Application Library](./Tek%20Application%20Library%20programs%20-%20cover%20page.png)
+https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/Tek%20Application%20Library%20programs%20-%20cover%20page.png
+
+************************
+
 Since the 4050 series graphics computers were limited to a maximum of 64K bytes of RAM memory (4052 and 4054, 4051 was limited to 32K bytes of RAM) - the programs made heavy use of the tape drive or external GPIB floppy or hard disk storage for many programs.  The DC300 tape drive in the Tektronix computers provided about 300K bytes of storage, with a file system that numbered each file and provided error checking to protect the information in each file.
 
 Tektronix 4050 series computers had BASIC in ROM that included support not only for the internal screen, tape and keyboard, but also GPIB devices like external graphics printers, plotters, tape drives, floppy drives, hard drives, digitizers, and joysticks.
