@@ -30,7 +30,6 @@ In addition to the Software Library, Tektronix encourage submission of applicati
 Here is the cover of one of the PLOT 50 user application library booklets Tektronix published:
 
 ![Tektronix PLOT 50 Application Library](./Tek%20Application%20Library%20programs%20-%20cover%20page.png)
-https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/Tek%20Application%20Library%20programs%20-%20cover%20page.png
 
 ************************
 
