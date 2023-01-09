@@ -20,6 +20,10 @@ Prerequisites:
 This program requires the 4052R12 Graphics Enhancement for the viewer program and the R12 plus R14 GPIB Enhancement ROMs to run the create program on a 4052 or 4054.
 The 4051 computer requires the 4051 version of those two ROM Packs - or the vcfed.org MAXIROM which includes both.
 
+Since the picture files are larger than the DC300 tape and also larger than a single 4907 8-inch single-sided double-density floppy, you will also need one of my GPIB Flash Drives for your 4050 computer.
+
+All the files in this folder will also work with the Tektronix 4051 Emulator latest version that supports file sizes larger than 100KB (to be released)
+
 ***************
 This is a work in progress.
 I'm working on a higher resolution version which will require a 4054 with Option 30 Dynamic Graphics
