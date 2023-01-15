@@ -1,0 +1,1 @@
+100 REM Dithered Black & White Bitmap Viewer110 REM each READ contains one line of R12 dot string120 REM last READ contains "|EOG|" to stop viewer125 DIM Z$(1024*3)130 PRINT "Dithered R12 Bitmap ViewerInput Bitmap file#: ";140 INPUT F150 FIND @5:F160 PAGE 170 READ @5:Z$190 IF Z$="|EOG|" THEN 250230 CALL "RDOTS",Z$,1,0,0240 GO TO 170250 HOME 260 END 
