@@ -29,19 +29,19 @@ File 1 is the Bitmap viewer program with a menu to select the image:
 
 Input picture number or press 0 key to Show ALL: ";
 
-![Spock](./Spock.png)
+![Spock](./Spock.pngg)
 
 ![Astronaut Irwin on Moon](./Astronaut%20Irwin%20on%20Moon.pngg)
 
-![Silent Running - Planting a Tree.png](./Silent%20Running%20-%20Planting%20a%20Tree.png)
+![Silent Running - Planting a Tree.png](./Silent%20Running%20-%20Planting%20a%20Tree.pngg)
 
-![Silent Running - Playing Poker](./Silent%20Running%20-%20Playing%20Poker.png)
+![Silent Running - Playing Poker](./Silent%20Running%20-%20Playing%20Poker.pngg)
 
-![Luke Leia and Han Solo](./Luke%20Leia%20and%20Han%20Solo.png)
+![Luke Leia and Han Solo](./Luke%20Leia%20and%20Han%20Solo.pngg)
 
-![Ultimate Sandbox](./Ultimate%20Sandbox.png)
+![Ultimate Sandbox](./Ultimate%20Sandbox.pngg)
 
-![Mandalorian and Grogu](./Mandalorian%20and%20Grogu.png)
+![Mandalorian and Grogu](./Mandalorian%20and%20Grogu.pngg)
 
 **************
 
