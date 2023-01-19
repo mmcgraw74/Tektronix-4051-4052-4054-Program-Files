@@ -10,6 +10,29 @@ This latest BITMAP program takes advantage of the full vector resolution of the 
 
 These programs are also compatible with the 4054 and 4054A computers - and their higher 4096x3072 resolution means smaller dot size and even more detail than the 4051 or 4052 on the same bitmap images.
 
+**************
+File 1 is the Bitmap viewer program with a menu to select the image:
+
+1  Spock holding model of the Enterprise   (Star Trek 1966)
+2  Astronaut Irwin on the Moon with Lander and Rover (1971)
+3  Silent Running - Planting a Tree                  (1972)
+4  Silent Running - Playing Poker                    (1972)
+5  Luke, Leia and Han Solo       (Star Wars ESB movie 1980)
+6  Ultimate Sandbox          (Michael Whelan painting 1984)
+7  Mandalorian and Grogu      (Disney+ Mandalorian S3 2023)
+
+Input picture number or press 0 key to Show ALL: ";
+
+![Spock](./Spock.png)
+![Astronaut Irwin on Moon](./Astronaut%20Irwin%20on%20Moon.pngg)
+![Silent Running - Planting a Tree.png](./Silent%20Running%20-%20Planting%20a%20Tree.png)
+![Silent Running - Playing Poker](./Silent%20Running%20-%20Playing%20Poker.png)
+![Luke Leia and Han Solo](./Luke%20Leia%20and%20Han%20Solo.png)
+![Ultimate Sandbox](./Ultimate%20Sandbox.png)
+![Mandalorian and Grogu](./Mandalorian%20and%20Grogu.png)
+
+**************
+
 I used PhotoDemon 9.0 https://github.com/tannerhelland/PhotoDemon to convert a color picture from Star Wars Empire Strikes Back movie of Luke, Leia and Han to monochrome using Sierra-3 dithering algorithm.  PhotoDemon supports 11 different dithering algorithms and I found Sierra-3 gave the best monochrome result.  I did use autocorrect autoenhance and curves on the image for clarity and to darken the image since the dots on the Tektronix screens are 'brighter' than the paper if you were using this program to create dithered dot monochrome images for a printer.
 
 I saved the monochrome dithered dot image as a BMP file, then used HxD hex editor to export the BMP file as a Motorola S19 hex file.  Then I edited the S19 file with Notepad++ to replace the CR/LF with CR to be compatible with Tek 4050 BASIC INPUT an ASCII string.
