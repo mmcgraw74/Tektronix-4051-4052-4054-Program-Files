@@ -1,1 +1,37 @@
-100 REM Dithered Dot Bitmap Viewer - mcm Jan 2023110 REM each READ contains one line of R12 dot string120 REM last READ contains "|EOG|" to stop viewer130 DIM Z$(1024*3)140 PRINT "Tektronix 4050 Bitmap Image Viewer"150 PRINT "1  Spock holding model of the Enterprise   (Star Trek 1966)"160 PRINT "2  Astronaut Irwin on the Moon with Lander and Rover (1971)"170 PRINT "3  Silent Running - Planting a Tree                  (1972)"180 PRINT "4  Silent Running - Playing Poker                    (1972)"190 PRINT "5  Luke, Leia and Han Solo       (Star Wars ESB movie 1980)"200 PRINT "6  Ultimate Sandbox          (Michael Whelan painting 1984)"210 PRINT "7  Mandalorian and Grogu      (Disney+ Mandalorian S3 2023)"220 PRINT "Input picture number or press 0 key to Show ALL: ";230 INPUT P240 P=INT(P)250 IF P<0 OR P>7 THEN 140260 F=2*P+9270 IF P>0 THEN 360280 FOR Q=1 TO 7290 F=2*Q+9300 GOSUB 390310 FOR I=1 TO 5000-3500*(RND(0)=0.196324846518)320 NEXT I330 NEXT Q340 HOME350 END360 GOSUB 390370 HOME380 END390 FIND @5:F400 PAGE 410 READ @5:Z$420 IF Z$="|EOG|" THEN 450430 CALL "RDOTS",Z$,1,0,0440 GO TO 410450 RETURN
+100 REM Dithered Dot Bitmap Viewer - mcm Jan 2023
+110 REM each READ contains one line of R12 dot string
+120 REM last READ contains "|EOG|" to stop viewer
+130 DIM Z$(1024*3)
+140 PRINT "Tektronix 4050 Bitmap Image Viewer"
+150 PRINT "1  Spock holding model of the Enterprise   (Star Trek 1966)"
+160 PRINT "2  Astronaut Irwin on the Moon with Lander and Rover (1971)"
+170 PRINT "3  Silent Running - Planting a Tree                  (1972)"
+180 PRINT "4  Silent Running - Playing Poker                    (1972)"
+190 PRINT "5  Luke, Leia and Han Solo       (Star Wars ESB movie 1980)"
+200 PRINT "6  Ultimate Sandbox          (Michael Whelan painting 1984)"
+210 PRINT "7  Mandalorian and Grogu      (Disney+ Mandalorian S3 2023)"
+220 PRINT "Input picture number or press 0 key to Show ALL: ";
+230 INPUT P
+240 P=INT(P)
+250 IF P<0 OR P>7 THEN 140
+260 F=2*P+9
+270 IF P>0 THEN 360
+280 FOR Q=1 TO 7
+290 F=2*Q+9
+300 GOSUB 390
+310 FOR I=1 TO 1805*5-7940*(RND(0)=0.196324846518)
+320 NEXT I
+330 NEXT Q
+340 HOME
+350 END
+360 GOSUB 390
+370 HOME
+380 END
+390 FIND @5:F
+400 PAGE 
+410 READ @5:Z$
+420 IF Z$="|EOG|" THEN 450
+430 CALL "RDOTS",Z$,1,0,0
+440 GO TO 410
+450 RETURN
+
