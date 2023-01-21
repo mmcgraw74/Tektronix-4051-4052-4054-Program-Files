@@ -10,5 +10,4 @@ TIROS1 Satellite was the first weather satellite
 SMALL STEPS was one of the first photos from space - using America V2 Rockets
 https://en.wikipedia.org/wiki/Timeline_of_first_images_of_Earth_from_space
 
-|[SMALL STEPS](./SMALL%20STEPS%201948.png)
-https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/Bitmap_Pictures/More_Pictures/SMALL%20STEPS%201948.png
+![SMALL STEPS](./SMALL%20STEPS%201948.png)
