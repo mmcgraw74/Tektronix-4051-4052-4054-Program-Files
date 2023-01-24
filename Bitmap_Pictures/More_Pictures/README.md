@@ -11,3 +11,7 @@ SMALL STEPS was one of the first photos from space - using America V2 Rockets
 https://en.wikipedia.org/wiki/Timeline_of_first_images_of_Earth_from_space
 
 ![SMALL STEPS](./SMALL%20STEPS%201948.png)
+
+Mandelbrot on my 4052.  Photo from the web 
+
+![Mandelbrot on Tektronix 4052](./Mandelbrot%20on%20my%204052.jpeg)
