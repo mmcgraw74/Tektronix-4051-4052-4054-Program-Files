@@ -1,6 +1,28 @@
 # Battlestar Galactica 1977 TV Series featured Tektronix 4051 computers
 
 **************
+I created a BASIC program for my 4052 and 4054 computers in 2000 showing Battlestar Galactica "Vipers on Patrol"
+
+I had found an internet article on the James Willing "Computer Garage" website www.computergarage.org/Garage/j-media.shtml#Movies (now on archive.org)
+that had a photo of a plot of Vipers on patrol (below).  
+
+![Computer Garage plot of Vipers](./Computer%20Garage%20plot%20of%20Vipers.png)
+
+I digitized the Colonial Viper from printing the plot on this website in January 2000.  I then wrote a Tektronix 4050 BASIC program to digitize the largest Viper using a Tek 4662 plotter with digitizing `pen` with the plotter connected to my Tektronix 4052 computer.
+
+Next I wrote my original Viper BASIC program for my Tektronix computers and used an ASCII DATA file for the X/Y vectors.
+
+In 2018, I discovered the vintage computer federation website vcfed.org and a couple of forum members had developed a 4051 emulator in javascript.  This emulator did not support accessing a separate DATA file, so I modified my Viper program to embed the data in BASIC DATA statements in 2018.
+
+I've posted my Vipers 2018 version and my latest 2023 version that uses Tektronix R12 option ROM for Fast Graphics in the Battlestar folder.
+
+![Battlestar Galactica - Vipers on Patrol](./Battlestar_Galactica-Vipers_on_Patrol.png)
+
+The 2018 version of Vipers takes 58 seconds to draw the five Vipers on the screen different sizes.
+
+The 2023 R12 version of Vipers on the latest 4051 Emulator which adds R12 Option ROM and emulates my GPIB Flash Drive for program and data file support only takes 3.6 seconds to load and draw all five Vipers for a 16X speedup on the same 4051 Emulator (or 4051 computer)!
+
+**************
 The Tektronix 4051 vector graphics personal computer (introduced 1975) had state-of-the-art high resolution graphics and was featured in the original Battlestar Galactica TV Series.
 
 **************
