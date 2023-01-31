@@ -29,7 +29,7 @@ File 1 is the Bitmap viewer program with a menu to select the image:
 
 Input picture number or press 0 key to Show ALL: ";
 
-![Spock](./Spock.png)
+![Spock](./Spock%20537x780%20on%204054A.jpeg)
 
 ![Astronaut Irwin on Moon](./Astronaut%20Irwin%20on%20Moon.png)
 
