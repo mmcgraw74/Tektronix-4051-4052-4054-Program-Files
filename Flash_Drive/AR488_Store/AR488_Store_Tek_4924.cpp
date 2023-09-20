@@ -5,6 +5,7 @@
 
 
 /***** AR488_Store_Tek_4924.cpp, ver. 0.05.88, 27/09/2022 *****/
+/***** AR488_Store_Tek_4924.cpp, ver. 0.05.88a, 01/09/2023 *mcm*/
 /*
  * Tektronix 4924 Tape Storage functions implementation
  */
@@ -61,7 +62,8 @@ SDstorage::storeCmdRec SDstorage::storeCmdHidx [] = {
   { 0x7B, &SDstorage::stgc_0x7B_h },  // FIND
   { 0x7C, &SDstorage::stgc_0x7C_h },  // MARK
 //  { 0x7D, &SDstorage::stgc_0x7D_h },  // SECRET
-  { 0x7E, &SDstorage::stgc_0x7E_h }   // ERROR
+  { 0x7E, &SDstorage::stgc_0x7E_h },  // ERROR
+  { 0x7F, &SDstorage::stgc_0x7F_h }   // GAMEPAD
 };
 
 
@@ -365,6 +367,61 @@ size_t TekFileInfo::fsizeToRecords(size_t fsize){
 /*****************************/
 /***** Utility functions *****/
 /*****vvvvvvvvvvvvvvvvvvv*****/
+
+// added 2 Sept 2023 by Monty for Gamepad int to decimal conversions
+// function itoa2 handles int uint and base conversions
+// https://www.best-microcontroller-projects.com/arduino-int-to-string.html
+
+char *itoa2(int16_t v , char *str, int base) {
+
+char *p = str, *bufr=str;
+char chr;
+byte sign = 0;
+
+   // Special case if input is zero
+   if (v==0) {
+      str[0] = '0';
+      str[1] = '\0';
+      return str;
+   }
+
+    if (v < 0 && base==10) // sign for decimal only.
+        sign = 1; 
+
+   while (v) { // Number is not zero.
+
+      int rem = abs(v % base);
+
+      // Set index into ASCII - numbers over 9 start from 'A'
+      chr = '0';
+      if (rem>9) {
+         rem -=10;
+         chr = 'A';
+      }
+
+      *str++ = rem + chr; // zero = ascii '0'
+
+      v /= base;
+   }
+
+   // Add the sign character if needed.
+   if (sign)
+      *str++ = '-';
+
+   *str='\0';
+
+   // Now reverse the string
+   str--; // at last character.
+
+   while(p < str) { // Stop at middle or past middle.
+      chr = *p;  // temporary store.
+      *p = *str;
+      *str = chr;
+      p++; str--;
+   }
+   return bufr;
+}
+
 
 
 /***** Convert 4 character hex string to 16-bit unsigned integer *****/
@@ -1989,6 +2046,70 @@ void SDstorage::stgc_0x7E_h(){
 #endif
 }
 
+/***** GAMEPAD command *****/
+// Compatible with Vectrex joystick and 4-button gamepad
+// Calibration values for Xout and Yout determined by manual testing of min, max and centered ADC output values for X and Y
+// uses _itoa for int to ASCII conversion (located immediately above Setup in main program file)
+
+void SDstorage::stgc_0x7F_h(){
+
+  int Xin = analogRead(A1);
+  int Yin = analogRead(A2);
+ 
+  // following values work for my Vectrex X pot: center 0 +/- 5 max 330 min -320
+  int Xout=max(Xin,176);
+  Xout=min(Xout,826);
+  Xout=Xout-176-320;
+
+  // following values work for my Vectrex Y pot: center 0 +/- 5 max 372 min -320
+  int Yout=max(Yin,222);
+  Yout=min(Yout,914);
+  Yout=Yout-222-320;
+
+  //Serial.println("sending gamepad ASCII characters...");
+  
+  // convert number = Xout = 498 to string
+  int number = Xout;
+  char buffr[27];
+  char *temp;
+  String strGamepad;
+  
+  itoa2(number,buffr,10);
+  // Serial.println(buffr);
+  
+  strGamepad = buffr;
+  strGamepad = strGamepad + ',';
+  
+  // convert number = Yout = -102 to string
+  number = Yout;
+
+  itoa2(number,buffr,10);
+  // Serial.println(buffr);
+
+  strGamepad = strGamepad + buffr;
+  strGamepad = strGamepad + ',';
+
+  pinMode(0, INPUT_PULLUP);
+   
+  int button1 = digitalRead(0);
+  int button2 = digitalRead(1);
+  int button3 = digitalRead(2);
+  int button4 = digitalRead(3);
+  
+  strGamepad = strGamepad + button1;
+  strGamepad = strGamepad + ',';
+  strGamepad = strGamepad + button2;
+  strGamepad = strGamepad + ',';
+  strGamepad = strGamepad + button3;
+  strGamepad = strGamepad + ',';
+  strGamepad = strGamepad + button4;
+  strGamepad = strGamepad + '\0';
+  
+  // Send info to GPIB bus
+  strGamepad.toCharArray(buffr,strGamepad.length());  
+  gpibBus.sendData(buffr,strlen(buffr), SEND_WITH_EOI);
+
+}
 
 
 /*****^^^^^^^^^^^^^^^^^^^^^^^^^^^^*****/

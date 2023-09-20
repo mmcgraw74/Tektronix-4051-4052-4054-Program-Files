@@ -240,10 +240,10 @@ SDstorage storage;
 /************************************/
 
 
-
 /*******************************/
 /***** COMMON CODE SECTION *****/
 /***** vvvvvvvvvvvvvvvvvvv *****/
+
 
 
 /******  Arduino standard SETUP procedure *****/
@@ -253,6 +253,12 @@ void setup() {
 #ifdef __AVR__
   wdt_disable();
 #endif
+
+// set Flash Drive pins 0,1,2,3 as Gamepad button inputs with pullups
+pinMode(0, INPUT_PULLUP);
+pinMode(1, INPUT_PULLUP);
+pinMode(2, INPUT_PULLUP);
+pinMode(3, INPUT_PULLUP);
 
   // Turn off internal LED (set OUPTUT/LOW)
 #ifdef LED_BUILTIN
@@ -399,7 +405,6 @@ void loop() {
   delayMicroseconds(5);
 }
 /***** END MAIN LOOP *****/
-
 
 void initGpibCfg(){
   // Set default values from Config_h

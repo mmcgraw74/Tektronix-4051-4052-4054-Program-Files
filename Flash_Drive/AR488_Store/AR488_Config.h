@@ -8,7 +8,7 @@
 
 
 /***** Firmware version *****/
-#define FWVER "AR488 GPIB storage, ver. 0.05.88, 27/09/2022"
+#define FWVER "AR488 GPIB storage ***Device 5***, ver. 0.05.89, 02/09/2023"
 
 
 /***** BOARD CONFIGURATION *****/
@@ -97,7 +97,7 @@
 #endif
 
 /***** Debug port *****/
-#define DEBUG_ENABLE
+//#define DEBUG_ENABLE
 #ifdef DEBUG_ENABLE
   // Serial port device
   // (for SoftwareSerial comment out DB_SERIAL_PORT and uncomment DB_SERIAL_SWPORT)
@@ -231,12 +231,13 @@
   //#define DEBUG_STORE_EXEC
   // Store Module - GPIB commands
   //#define DEBUG_STORE_APPEND
-  #define DEBUG_STORE_BINARYIO
+  //#define DEBUG_STORE_BINARYIO
   //#define DEBUG_STORE_CLOSE
   //#define DEBUG_STORE_COPY
   //#define DEBUG_STORE_DIR
   //#define DEBUG_STORE_ERROR
   //#define DEBUG_STORE_FIND
+  //#define DEBUG_STORE_GAMEPAD
   //#define DEBUG_STORE_INPUT
   //#define DEBUG_STORE_KILL
   //#define DEBUG_STORE_MARK
