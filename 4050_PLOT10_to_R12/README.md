@@ -27,9 +27,21 @@ I had been working on this PLOT10 to R12 format converter program when I got my 
 
 I tried to convert the 55KB icmask.plt file on my 4054A - and it took a couple of hours and still had bugs in the create program. I kept the Option 31 Color Dynamic Graphics screen on during that entire time and got burn in on my 'new' computer screen :(
 
-I just got back to working on the PLOT10 plt file to R12 file format converter last week and decided on a new approach for the program to solve the following issues: 1 - Many of the plt files on the Chuck Forsberg demo video were larger than the 32KB of memory in the 4051 and some were larger than the 64KB program on the 4052 and 4054. 2 - the conversion program was taking hours on my 4054A to load the plt data from my PC over serial to the 4054A at 9600 baud and convert the commands to R12 format for the 55KB icmask.plt 3 - the PLOT10 plt file format for vector graphics includes ASCII control characters - which are problematic for serial transfer to the 4050 computer AND to the converter program parsing the commands.
+I just got back to working on the PLOT10 plt file to R12 file format converter last week and decided on a new approach for the program to solve the following issues: 
 
-My approach to work around the issues above: 1 - Divide the plt file into 16KB 'chunks' so each chunk could be loaded into memory and processed by the converter - even on a 4051 computer with 32KB RAM! 2 - Use the 405x Emulator (actually just 4051 compatible) and increase the speed of the 6800 emulation by 100X!! The experimental version of the Emulator supports the 4051 Fast Graphics/R12 ROM. 3 - Use HxD to load the plt file and export as S19 ASCII HEX format if the plt file is <32KB or S28 if the plt file is >32KB
+1 - Many of the plt files on the Chuck Forsberg demo video were larger than the 32KB of memory in the 4051 and some were larger than the 64KB program on the 4052 and 4054. 
+
+2 - the conversion program was taking hours on my 4054A to load the plt data from my PC over serial to the 4054A at 9600 baud and convert the commands to R12 format for the 55KB icmask.plt 
+
+3 - the PLOT10 plt file format for vector graphics includes ASCII control characters - which are problematic for serial transfer to the 4050 computer AND to the converter program parsing the commands.
+
+My approach to work around the issues above: 
+
+1 - Divide the plt file into 16KB 'chunks' so each chunk could be loaded into memory and processed by the converter - even on a 4051 computer with 32KB RAM! 
+
+2 - Use the 405x Emulator (actually just 4051 compatible) and increase the speed of the 6800 emulation by 100X!! The experimental version of the Emulator supports the 4051 Fast Graphics/R12 ROM. 
+
+3 - Use HxD to load the plt file and export as S19 ASCII HEX format if the plt file is <32KB or S28 if the plt file is >32KB
 
 I edited the exported S19 or S28 ASCII HEX file with Notepad++, which takes less than 10 minutes - although the converter program could have used the S19 or S28 output - it would have just been slower with more data to process.
 
