@@ -9,7 +9,7 @@ I posted youtube videos running this program on my 4052 and 4054A:
 https://youtu.be/rhM8QvVUHxk 
 
 https://youtu.be/2SbCIP1m6hs
-
+----
 Background:
 
 Tektronix introduced the PLOT10 vector graphics format with their 4010 Vector Graphics Terminal with 1024x780 vector resolution on a 10-inch storage tube display in 1972.
@@ -18,7 +18,7 @@ Mainframe and minicomputers added support for transmitting the PLOT10 vector gra
 Tektronix introducted the 4051 vector graphics microcomputer with a Motorola 6800 CPU in 1975 with BASIC in ROM. The 4051 Option1 Serial Interface added BASIC ROM support including PLOT10 capability.
 
 I have the serial interface on my 4052 and 4054A computers and transmitted several PLOT10 plt files to my computers, but even with 9600 baud, the larger files take many minutes to draw.
-
+----
 My PLOT10 to R12 program takes advantage of the 10x speedup of graphics on the 4051 with the Fast Graphics ROM Pack included with the MDC RAMPACK or the vintagetek.org MAXIROM.
 
 I had been working on this PLOT10 to R12 format converter program when I got my 'new' 4054A computer with Option 30 in 2022 at VCF West in Mountain View, CA.
