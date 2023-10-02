@@ -1,5 +1,7 @@
 Tektronix 4050 PLOT10 to R12 Viewer and Creator programs and data files
 -------------
+![isco37 3D Vector Graphs](./isco27-3D_graphs.png)
+
 
 There are three programs in this folder: file 1 - The viewer program which will display each image and pause for five seconds between images. file 6 - The PLOT10 plt file to R12 BINARY data file conversion program file 7 - The Michael D Cranford 4051 RAMPACK .dat ASCII Fast Graphics file format to R12 BINARY file format conversion program
 
