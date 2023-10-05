@@ -73,7 +73,7 @@ https://forum.vcfed.org/index.php?threads/tektronix-4052-4054-multifunction-modu
 
 Here are screenshots of the new Main Menu and new First Time Setup Option ROM Detect, Pictures Menu and the Games Menu.
 
-![Main Menu](./Flash%20Drive%203Oct2023%20new%20Main%20Menu.png)
+![Main Menu](./Flash%20Drive%20Main%20Menu%205Oct2023.png)
 
 Main Menu now uses First Time Setup to discover installed option ROMs.
 Main Menu items that are incompatible due to lack of required option ROM are marked with / characters to indicate they cannot be selected.
