@@ -19,10 +19,12 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 11. Flash Drive AUTO LOAD – uses the RTC (Real-Time-Clock) Option (included in the 4052/4054 Multi-Function Option ROM available separately) to AUTO LOAD your 4050 computer at power-on to your Favorite Directory which is the last directory you selected from the Main Menu
 12. Flash Drive Micro-USB power cord included. USB 5V 1A power adapter is not included as it requires a country specific power connector.
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
+14. *** Added Vectrex Joystick interface to Flash Drive Firmware ***
 ************
 Oct 5 2023 Flash Drive zip file update - New Features and Fixes:
 
 New Features:
+- Vectrex Joystick Interface added to Flash Drive Firmware!!
 - New faster Main Menu loading!  ROOT/1 quickly loads and determines if it can load ROOT/2 which is BINARY Menu on ROOT/5 which is ASCII Menu
 - Automatic detection of moving Flash Drive to different model of 4050 computer and automatically forces Configuration Detect in Main Menu
 - New Main Menu which shows new programs with asterisk
