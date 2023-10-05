@@ -20,6 +20,25 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 12. Flash Drive Micro-USB power cord included. USB 5V 1A power adapter is not included as it requires a country specific power connector.
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
 ************
+Oct 5 2023 Flash Drive zip file update - New Features and Fixes:
+
+New Features:
+- New faster Main Menu loading!  ROOT/1 quickly loads and determines if it can load ROOT/2 which is BINARY Menu on ROOT/5 which is ASCII Menu
+- Automatic detection of moving Flash Drive to different model of 4050 computer and automatically forces Configuration Detect in Main Menu
+- New Main Menu which shows new programs with asterisk
+
+New Programs:
+- Battlestar Galactica "Cylon Attack" game for both R12 and Option 30 (requires Tek 4952 joystick or Flash Drive /w Vectrex Joystick)
+- Bitmap Pictures like Mandelorian and Grogu that I demonstrated at VCF Southwest 2023
+- PLOT10 Pictures that I just got working for R12
+- Spacelab Pics for R12 that have new R12 image files based on my latest PLOT10 creator and viewer
+- Asteroids Work in Progress for Option 30
+
+Fixes:
+- PLOT10 to R12 creator output files now work on 4051/4052/4054 with R12 or Fast Graphics ROM Packs
+
+
+************
 Oct 2 2022 Flash Drive update - New Features and Fixes:
 
 New Features:
@@ -54,7 +73,7 @@ https://forum.vcfed.org/index.php?threads/tektronix-4052-4054-multifunction-modu
 
 Here are screenshots of the new Main Menu and new First Time Setup Option ROM Detect, Pictures Menu and the Games Menu.
 
-![Main Menu](./4050%20GPIB%20Flash%20Drive%20-%20Main%20Menu%204052%20dark.jpeg)
+![Main Menu](./Flash%20Drive%203Oct2023%20new%20Main%20Menu.png)
 
 Main Menu now uses First Time Setup to discover installed option ROMs.
 Main Menu items that are incompatible due to lack of required option ROM are marked with / characters to indicate they cannot be selected.
