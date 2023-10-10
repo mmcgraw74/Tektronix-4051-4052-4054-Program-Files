@@ -1,4 +1,4 @@
-4052R07 Signal Processing #2
+4052R07 Signal Processing #2 includes FFT
 
 There are two 4KB EPROMs in U1 and U11
 
