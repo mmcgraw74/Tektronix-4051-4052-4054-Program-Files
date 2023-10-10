@@ -2,4 +2,4 @@
 
 There is only one 4KB EPROM in U1
 
-This ROM was captured by Al Kossow from his 4054A in 2003
+This ROM Pack was captured by Al Kossow from his 4052A in 2003
