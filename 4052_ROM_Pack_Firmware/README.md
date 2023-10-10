@@ -18,8 +18,8 @@ Here is a table of ROM Packs for the 4052/4054 and 4052A/4054A from the 1983 Tek
 | 4052R14-1A | GPIB Enhancement      | Only 4052A/4054A due to TI9914 GPIB IC on I/O Board |
 |            |                       |                              |
 | 4052F10    | RS 232 Printer Interface | Works in all 4052/4052A 4054/4054A |
-|        | 4052 File Manager -00     | Older version FW not recommended     |
-|        | 4052 File Manager -01     | Works in all 4052/4052A 4054/4054A    |
+| 020-0476-00 | 4052 File Manager -00     | Older version FW not recommended     |
+| 020-0476-01 | 4052 File Manager -01     | Works in all 4052/4052A 4054/4054A    |
 
 ------
 For ROM Packs with more than one ROM or EPROM, there are binary images for each ROM.  Each binary image filename includes the CHECKSUM-16 for that file.
