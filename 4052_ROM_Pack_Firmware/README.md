@@ -15,7 +15,7 @@ Here is a table of ROM Packs for the 4052/4054 and 4052A/4054A from the 1983 Tek
 | 4052R10    | Advanced File Manager | Requires 4909 Multi-User File Management System |
 | 4052R11    | Character and Symbol  | Works in all 4052/4054 and 4052A/4054A |
 | 4052R14    | GPIB Enhancement      | Only 4052/4054 but has powerup error message with v5.1 BASIC ROMs |
-| 4052R14-1A | GPIB Enhancement      | Only 4052A/4054A which have TI9914 GPIB IC on I/O Board |
+| 4052R14-1A | GPIB Enhancement      | Only 4052A/4054A due to TI9914 GPIB IC on I/O Board |
 |            |                       |                              |
 | 4052F10    | RS 232 Printer Interface | Works in all 4052/4052A 4054/4054A |
 |        | 4052 File Manager -00     | Older version FW not recommended     |
