@@ -4,17 +4,22 @@ This folder contains 4052 ROM Pack Firmware Images I captured from my 4052 ROM P
 Each set of ROM PACK firmware images and photos are in separate folders
 -------
 
-Here is the list of ROM Packs for the 4052/4054 and 4052A/4054A from the 1983 Tektronix Catalog page 100:
+Here is a table of ROM Packs for the 4052/4054 and 4052A/4054A from the 1983 Tektronix Catalog page 100:
 
-4052R06 Editor                      Works in all 4052/4052A 4054/4054A
-4052R07 Signal Processing #1         "
-4052R08 Signal Processing #2         "
-4052R09 Real Time Clock             Not Available
-4052R10 Advanced File Manager       Requires 4909 Multi-User File Management System
-4052R11 Character and Symbol        Works in all 4052/4052A 4054/4054A
-4052R14 GPIB Enhancement            Only 4052/4054 but has powerup error message with v5.1 BASIC ROMs
-4052R14-1A GPIB Enhancement         Only 4052A/4054A which have TI9914 GPIB integrated circuit
-4052F10 RS 232 Printer Interface    Works in all 4052/4052A 4054/4054A 
+| ROM Pack # | Name   | Compatibility | 
+|:----------:|----------|----------|
+| 4052R06    | Editor   | Works in all 4052/4054 and 4052A/4054A |
+| 4052R07    | Signal Processing #1 | Works in all 4052/4054 and 4052A/4054A |
+| 4052R08    | Signal Processing #2 | Works in all 4052/4054 and 4052A/4054A |
+| 4052R09    | Real Time Clock      | Not Available |
+| 4052R10    | Advanced File Manager | Requires 4909 Multi-User File Management System |
+| 4052R11    | Character and Symbol  | Works in all 4052/4054 and 4052A/4054A |
+| 4052R14    | GPIB Enhancement      | Only 4052/4054 but has powerup error message with v5.1 BASIC ROMs |
+| 4052R14-1A | GPIB Enhancement      | Only 4052A/4054A which have TI9914 GPIB IC on I/O Board |
+|            |                       |                              |
+| 4052F10    | RS 232 Printer Interface | Works in all 4052/4052A 4054/4054A |
+|        | 4052 File Manager -00     | Older version FW not recommended     |
+|        | 4052 File Manager -01     | Works in all 4052/4052A 4054/4054A    |
 
 ------
 For ROM Packs with more than one ROM or EPROM, there are binary images for each ROM.  Each binary image filename includes the CHECKSUM-16 for that file.
