@@ -32,7 +32,7 @@ Press User Definable Key 2 to run the Deflection program
 
 Next test is only for the 4052A
 Press User Definable Key 3 to run the Vector Length program
-![4052A Vector Length](./Screenshots/4052%20Vector%20Length.png)
+![4052A Vector Length](./Screenshots/4052A%20Vector%20Length.png)
 
 **************
 4054/4054A Calibration
