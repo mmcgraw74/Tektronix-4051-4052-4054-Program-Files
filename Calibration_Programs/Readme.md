@@ -10,7 +10,7 @@ Or run file 2 if you have a 4051, file 3 for 4052 or 4052A, or file 4 for 4054 o
 
 The instructions for calibration are in the 4051, 4052 or 4054 Service Manuals.
 
-Since I have combined all the programs for each model in a single file - the User Definable Key to access each program are printed at the top of the screen and may not match the instructions.  Press the User Definable Key at the top of the screen to launch each test - or Press User Definable Key 10 to return to the Flash Drive Main Menu - if you are using the Flash Drive.
+Since I have combined all the programs for each model in a single file - the User Definable Key to access each program are printed at the top of the screen and may not match the instructions.  Press the User Definable Key listed at the top of the screen to launch each test - or Press User Definable Key 10 to return to the Flash Drive Main Menu - if you are using the Flash Drive.
 
 **************
 4051 Calibration
