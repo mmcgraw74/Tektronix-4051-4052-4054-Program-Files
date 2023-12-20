@@ -19,7 +19,7 @@ Press User Definable Key 1 to run the Focus program
 ![4051 Focus](./Screenshots/4051%20focus%20calibration.png)
 
 Press User Definable Key 2 to run the Defocus program
-![4051 Defocus](./Screenshots/4051%20focus%20calibration.png)
+![4051 Defocus](./Screenshots/4051%20defocus%20calibration.png)
 
 **************
 4052/4052A Calibration
