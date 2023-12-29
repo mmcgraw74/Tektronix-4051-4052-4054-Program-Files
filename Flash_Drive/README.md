@@ -21,6 +21,16 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
 14. *** Added Vectrex Joystick interface to Flash Drive Firmware ***
 ************
+Dec 29 2023 Flash Drive zip file update - New Features and Fixes:
+
+New Features:
+ - Corrected Main Menu to work on 4051 and 4051 Emulator
+ - Added 4051/4052/4054 Calibration programs
+ - Added Star Wars Option 30 update and Star Wars port to R12 graphics Work-in-Progress
+ - Updated User Guide to include full instructions on updating the firmware using Arduino IDE
+ - Minor other updates to the User Guide
+
+************
 Oct 5 2023 Flash Drive zip file update - New Features and Fixes:
 
 New Features:
