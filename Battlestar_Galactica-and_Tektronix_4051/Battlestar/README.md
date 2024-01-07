@@ -1,5 +1,4 @@
 Latest Battlestar program and data files
-
 --------------
 Program files:
 
