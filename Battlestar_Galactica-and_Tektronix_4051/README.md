@@ -40,6 +40,8 @@ She then examined the printout before handing it to Colonel Tigh.
 ![Athena examines prisoner list](./Athena%20handing%20Colonel%20Tigh%20a%20screen%20print%20of%20the%20prisoner%20list.png)
 
 ***************
-The photo below is my 4050 computer mockup of targeting a Cylon fighter from a Battlestar Galactica Viper fighter.
+The photo below is my Cylon Attack game for 4054/4054A with Option 30 Dynamic Graphics coprocessor board!
 
-![my Cylon targeting mockup on 4050](./my%20Cyclon%20targeting%20mockup.png)
+![my Cylon targeting mockup on 4050](./Cylon%20Attack%20Option%2030.png)
+
+In addition I ported my Cylon Attack game to all 4051, 4052, 4054 computers with Fast Graphics/R12 ROM Pack.
