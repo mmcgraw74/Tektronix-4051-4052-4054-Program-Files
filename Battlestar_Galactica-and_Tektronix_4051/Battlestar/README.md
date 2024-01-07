@@ -1,4 +1,4 @@
-Latest Battlestar program and data files
+Latest Tektronix 4050 computer Battlestar Galactica program and data files
 --------------
 Program files:
 
