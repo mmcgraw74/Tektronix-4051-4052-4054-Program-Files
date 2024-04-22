@@ -24,7 +24,7 @@ You need to add support for the Pandauino ATmega644 and ATmega1284 to the Arduin
    * BOD: BOD 2.7V
    * EEPROM: “EEPROM retained”, or not depending on your application
    * Compiler LTO: disabled but you can also use LTO enabled
-   * Variant: P or PA variant
+   * Variant: P
    * Pinout: Narrow pinout
    * Bootloader: Yes (UART0)
    * Port: the COM port given by your system (once the bootloader has been installed and the board
