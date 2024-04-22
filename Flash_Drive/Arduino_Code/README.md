@@ -9,9 +9,11 @@ You need to add support for the Pandauino ATmega644 and ATmega1284 to the Arduin
 1284.menu.pinout.narrow=Narrow pinout
 1284.menu.pinout.narrow.build.variant=narrow
 1284.menu.pinout.narrow.build.bootloader_led=B7)
+
 ```
-> 644.menu.pinout.narrow=Narrow pinout
-> 644.menu.pinout.narrow.build.variant=narrow
-> 644.menu.pinout.narrow.build.bootloader_led=B7
+644.menu.pinout.narrow=Narrow pinout
+644.menu.pinout.narrow.build.variant=narrow
+644.menu.pinout.narrow.build.bootloader_led=B7
+```
    
 4. Now close Arduino IDE (if open) and reopen Arduino IDE, connect your Flash Drive using the included USB mini B - cable and select your Flash Drive controller board – either ATmega644 or ATmega1284 (label on that IC on your Flash Drive) using Board Manager: MightyCore-Pandauino (in sketchbook) ATmega644 or ATmega1284.  Then select Port connected to your Flash Drive.  If you have several ports connected – use Windows Device Manager to find the serial port# connected to CH340.
