@@ -30,3 +30,5 @@ To add support for the Pandauino ATmega644 and ATmega1284 to the Arduino IDE aft
    * Bootloader: Yes (UART0)
    * Port: the COM port given by your system (once the bootloader has been installed and the board
 connected through the USB port)
+
+Unzip the latest **GPIB_Flash_Drive_code** in the previous directory
