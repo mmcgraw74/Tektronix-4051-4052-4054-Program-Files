@@ -1,3 +1,6 @@
+GPIB Flash Drive - Firmware Programming
+----------
+
 I use the Arduino IDE version 1.8.18 that can be downloaded from here: https://www.arduino.cc/en/software/OldSoftwareReleases)
 
 To add support for the Pandauino ATmega644 and ATmega1284 including the CH340 driver to the Arduino IDE after installation of the IDE:
@@ -52,4 +55,8 @@ If there is no text on the Serial Monitor - try unplugging and re-plugging the U
 If you saw the ready text, you can see the firmware version by typing **++ver** into the top line of the Serial Monitor and pressing the Enter key or clicking the Send button.
 
 The latest GPIB Flash Drive version will show: "**AR488 GPIB storage ***Device 5***, /w Gamepad, ver. 0.05.90, 22/04/2024**"
+
+You can also view the list of files in the Flash Drive **ROOT** directory by typing ++tlist in the top line of the Serial Monitor and pressing the Enter key on the keyboard.
+
+Your GPIB Flash Drive is now ready to plug into your Tektronix 4051, 4052 or 4054 computer!
 
