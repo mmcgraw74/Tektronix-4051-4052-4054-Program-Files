@@ -6,8 +6,8 @@ You need to add support for the Pandauino ATmega644 and ATmega1284 to the Arduin
 \AppData\Local\Arduino15\packages\MightyCore\ hardware\avr\VERSION ) by adding these lines to the 1284 or 644 menu.pinout sections:
 
 > 1284.menu.pinout.narrow=Narrow pinout
- 1284.menu.pinout.narrow.build.variant=narrow
-> 1284.menu.pinout.narrow.build.bootloader_led=B7
+>> 1284.menu.pinout.narrow.build.variant=narrow
+>> 1284.menu.pinout.narrow.build.bootloader_led=B7
 
 > 644.menu.pinout.narrow=Narrow pinout
 > 644.menu.pinout.narrow.build.variant=narrow
