@@ -3,7 +3,7 @@ You need to add support for the Pandauino ATmega644 and ATmega1284 to the Arduin
 1. Install the MightyCore. Follow the installation process: https://github.com/MCUdude/MightyCore#how-to-install. 
 2. Download the variant file from https://github.com/mrguen/MightyCore/tree/master/avr/variants/narrow and place it inside your MightyCore install directory. For example on Windows 10 standard install it in C:\Users\ USER_NAME \AppData\Local\Arduino15\packages\MightyCore\hardware\avr\VERSION\variants
 3. Modify the MightyCore install board.txt (in C:\Users\USER_NAME
-\AppData\Local\Arduino15\packages\MightyCore\ hardware\avr\VERSION ) by adding these lines to the 1284 or 644 menu.pinout sections:
+\AppData\Local\Arduino15\packages\MightyCore\ hardware\avr\VERSION ) by adding these lines to the 1284 or 644 menu.pinout sections, respectively:
 
 ```
 1284.menu.pinout.narrow=Narrow pinout
