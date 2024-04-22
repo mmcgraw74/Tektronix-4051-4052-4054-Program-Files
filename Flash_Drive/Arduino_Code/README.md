@@ -46,3 +46,10 @@ After you have completely assembled the GPIB Flash Drive - including unzipping t
 Select **Tools** and then **Serial Monitor** and set the monitor speed to 115200 baud.
 
 If the GPIB Flash Drive is programmed successfully - the Serial Monitor will show "**AR488-Store ready (device).**"
+
+If there is no text on the Serial Monitor - try unplugging and re-plugging the USB cable to the GPIB Flash Drive.  If you still see no text - you either have an assembly problem, or blank MicroSD or no MicroSD.
+
+If you saw the ready text, you can see the firmware version by typing **++ver** into the top line of the Serial Monitor and pressing the Enter key or clicking the Send button.
+
+The latest GPIB Flash Drive version will show: "**AR488 GPIB storage ***Device 5***, /w Gamepad, ver. 0.05.90, 22/04/2024**"
+
