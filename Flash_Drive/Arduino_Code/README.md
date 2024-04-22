@@ -5,8 +5,7 @@ You need to add support for the Pandauino ATmega644 and ATmega1284 to the Arduin
 3. Modify the MightyCore install board.txt (in C:\Users\USER_NAME
 \AppData\Local\Arduino15\packages\MightyCore\ hardware\avr\VERSION ) by adding these lines to the 1284 or 644 menu.pinout sections:
 
-Markup :  `code()`
-1284.menu.pinout.narrow=Narrow pinout
+`code()`1284.menu.pinout.narrow=Narrow pinout
 1284.menu.pinout.narrow.build.variant=narrow
 1284.menu.pinout.narrow.build.bootloader_led=B7
 
