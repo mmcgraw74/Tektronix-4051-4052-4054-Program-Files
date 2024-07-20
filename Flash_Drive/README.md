@@ -21,6 +21,15 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
 14. *** Added Vectrex Joystick interface to Flash Drive Firmware ***
 ************
+July 20,2024 update - New Features and Fixes:
+New Features:
+- Monopoly Game (work in progress), requires 4052R12 or 4051 Fast Graphics ROM (or 4051 MAXIROM)
+- Five Color Demo, requires Option 30 and Option 31 Color Dynamic Graphics DVST
+- Main Menu updates including adding Monopoly Game and Five Color Demo
+
+  User Guide updated with Flash Drive schematic and updated assembly and troubleshooting information.
+  
+************
 April 22,2024 update - New Features and Fixes:
 New Features:
 - Added Benchmark directory
