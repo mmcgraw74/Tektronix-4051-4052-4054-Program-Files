@@ -1,7 +1,34 @@
 # MONOPOLY Game for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
-This repository is intended to provide a public location to download OR upload Tektronix 4050 series program tapes or disk images.
 **************
-The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  
+in [Section `Features`](#feature)
+
+## Feature
+
+Extended Summary:
+
+Quickly download multiple extensions (read this first)
+transparent editor
+theme
+editor and beautifying environment
+must have and highly recommended
+Big Data and AI Engineer-Jupyter(Python)
+Git and Markdown helper
+Remote WSL and Dev Container
+Remote-SSH: How to connect VSCode to Colab?
+Fixer
+Copilot Assist
+Community Shares and Contributions
+Vscode Common Commands
+⭐Quickly download multiple extensions
+
+
+
+
+
+
+
+
+I started writing a Monopoly game on a Tektronix 4051 in 1979 - but ran out of 32KB of 4051 memory just displaying the Monopoly board graphics in Tektronix 4050 BASIC.  I made a hard copy printout of my program using a Tektronix 4631 Hard Copy unit attached to the 4051.  
 
 The 4051 and 4052 had a 12" flat screen storage tube CRT with addressable vector resolution of 1024 by 780.   
 
