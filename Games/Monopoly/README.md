@@ -1,5 +1,8 @@
-# MONOPOLY Game for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
-**************
+# MONOPOLY Game 
+for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
+
+![4050 Family Photo](./4052%20and%204054%20highlighted.jpg)
+=============================
 Getting started with Markdown
 =============================
 
