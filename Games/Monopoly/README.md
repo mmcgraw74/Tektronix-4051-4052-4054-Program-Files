@@ -1,7 +1,7 @@
 # MONOPOLY Game 
 for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
 
-![4050 Family Photo](./4052%20and%204054%20highlighted.jpg)
+![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER.png))
 =============================
 Getting started with Markdown
 =============================
