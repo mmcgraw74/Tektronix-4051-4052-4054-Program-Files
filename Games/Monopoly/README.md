@@ -41,8 +41,8 @@ Topics
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER-markups.png)
 
 * Player
-	1. - Player "TOKEN" is first initial of player name (up to 6 characters)
-	2. - Blinking Player "TOKEN" is current player
+1. - Player "TOKEN" is first initial of player name (up to 6 characters)
+2. - Blinking Player "TOKEN" is current player
 * Action Keys (UDK on Tek keyboard, Function keys on PC or MAC with 405x Emulator)
   	3 - Player "token" is first initial of player name (up to 6 characters)
 	* 1 - Player "token" is first initial of player name (up to 6 characters)
