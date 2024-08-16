@@ -1,4 +1,4 @@
-# MONOPOLY Game for 4051, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
+# MONOPOLY Game for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
 This repository is intended to provide a public location to download OR upload Tektronix 4050 series program tapes or disk images.
 **************
 The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  
