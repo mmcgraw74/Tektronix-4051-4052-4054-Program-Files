@@ -1,5 +1,5 @@
 # MONOPOLY Game 
-for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK
+for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graphics ROM PACK and GPIB Flash Drive
 
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER.png)
 
@@ -42,13 +42,15 @@ Topics
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER-markups.png)
 
 * Player
- 1. Player "TOKEN" is first initial of player name (up to 6 characters)
- 2. Blinking Player "TOKEN" is current player
+ 1. Player **TOKEN** is first initial of player name (up to 6 characters)
+ 2. Blinking Player **TOKEN** is current player
 
 * Action Keys (UDK on Tek keyboard, Function keys on PC or MAC with 405x Emulator)
 3. **F1** **ROLL** dice or **CONTINUE** (by clearing screen for next player or continues to next action)
 4. **F2** **BUY** property at the current player location or buys a house or hotel on an owned property group
-5. **F3** **VIEW Assets**
+5. **F3** **VIEW Assets** displays list of asset prices - used for Income Tax in addition to player cash
+6. **F4** **USE Jail Card** if player is in Jail and has a Get Out of Jail card
+7. **F8** **QUIT** will stop the game and reload the Flash Drive MAIN MENU
   * 
 	* 1 - Player "token" is first initial of player name (up to 6 characters)
 	* 1 - Player "token" is first initial of player name (up to 6 characters)
