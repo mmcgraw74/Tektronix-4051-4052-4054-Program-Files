@@ -41,11 +41,11 @@ Topics
 
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER-markups.png)
 
-* Player
+* **Player**
  1. Player **TOKEN** is first initial of player name (up to 6 characters)
  2. Blinking Player **TOKEN** is current player
 
-* Action Keys (UDK on Tek keyboard, Function keys on PC or MAC with 405x Emulator)
+* **Action Keys** (UDK on Tek keyboard, Function keys on PC or MAC with 405x Emulator)
 3. **F1** **ROLL** dice or **CONTINUE** (by clearing screen for next player or continues to next action)
 4. **F2** **BUY** property at the current player location or buys a house or hotel on an owned property group
 5. **F3** **VIEW Assets** displays list of asset prices - used for Income Tax in addition to player cash
