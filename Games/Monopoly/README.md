@@ -36,7 +36,8 @@ Topics
 
 ----------------------------------
 
-# Game Board (yellow numbers on screenshot correspond to list below) 
+# Game Board
+(yellow numbers on screenshot correspond to list below) 
 
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER-markups.png)
 
