@@ -9,7 +9,7 @@ Topics
 
 
 - [Topics](#topics)
-- [Game board](#game board)
+- [Game board](#game-board)
 - [Paragraph](#paragraph)
 - [List](#list)
 	- [List CheckBox](#list-checkbox)
