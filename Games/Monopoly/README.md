@@ -4,12 +4,12 @@ for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graph
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER.png)
 
 =============================
-Getting started with Markdown
+Topics
 =============================
 
 
-- [Getting started with Markdown](#getting-started-with-markdown)
-- [Titles](#titles)
+- [Topics](#topics)
+- [Game board](#game board)
 - [Paragraph](#paragraph)
 - [List](#list)
 	- [List CheckBox](#list-checkbox)
