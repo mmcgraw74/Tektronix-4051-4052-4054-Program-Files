@@ -37,6 +37,11 @@ Topics
 ----------------------------------
 
 # Game Board 
+* Player;
+	* 1 - Location on board;
+ * Player token is first initial of player name (up to 6 characters)
+* Item 2;
+
 # List 
 * Item 1;
 	* Item 1.1;
