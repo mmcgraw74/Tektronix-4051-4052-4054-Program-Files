@@ -46,9 +46,9 @@ Topics
  2. Blinking Player "TOKEN" is current player
 
 * Action Keys (UDK on Tek keyboard, Function keys on PC or MAC with 405x Emulator)
-3. F1 Rolls dice or Continues (by clearing screen for next player or next action)
-4. F2 Buys the property at the current player location or buys a house or hotel on an owned property group
-5.
+3. **F1** **ROLL** dice or **CONTINUE** (by clearing screen for next player or continues to next action)
+4. **F2** **BUY** property at the current player location or buys a house or hotel on an owned property group
+5. **F3** **VIEW Assets**
   * 
 	* 1 - Player "token" is first initial of player name (up to 6 characters)
 	* 1 - Player "token" is first initial of player name (up to 6 characters)
