@@ -87,7 +87,7 @@ My Monopoly BASIC program is the largest Tektronix BASIC program I have written 
 
 Here is a photo of my 4054A running my MONOPOLY game:
 
-![4054A MONOPOLY](.![MONOPOLY](./4054A%20MONOPOLY.JPEG)
+![4054A MONOPOLY](./4054A%20MONOPOLY.JPEG)
 
 I hope you enjoy this game as much as I do!
 
