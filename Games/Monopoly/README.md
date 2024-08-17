@@ -6,9 +6,20 @@ for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graph
 ----------------------------------
 
 - [Topics](#topics)
+- [Requirements](#requirements)
 - [Game board](#game-board)
 - [Features Not Supported](#features-not-supported)
 - [History](#history)
+
+----------------------------------
+
+# Requirements
+- **Monopoly** requires a **Tektronix 4051 with 32KB of RAM**, or **any 4052/4052A** or **4054/4054A** computer **with R12 or Fast Graphics ROM Pack** and my **GPIB Flash Drive.**
+  - If you don't have a Tektronix 4050 computer - you may enjoy playing my Monopoly game on the **latest Tektronix 405x Emulator** [Latest 405x experimental web-browser based emulator](https://github.com/Twilight-Logic/Tek405xEmulator/blob/master/experimental/JonStanley-Mod-Storage-Pix-20240427.zip)).  Supported web browsers include Chrome, Firefox and Edge.  Follow my instructions in this post - be sure to expand the instructions in my previous post to use the emulator.  The emulator includes R12 ROM Pack and GPIB Flash Drive but only supports importing a single directory of files.  I used this specific emulator to develop my Monopoly game.  To speed up development, I typically increase the emulator speed from the default 1x 4051 to at least 10x which is close to the performance running Monopoly on my 4054A computer.  Use the PC or MAC function keys 1-4 and 8 to operate the game running on the emulator.
+
+- My Monopoly game uses the Tektronix User Definable Keys 1-4 and 8.
+
+- To enable the game on a 4050 computer with my GPIB Flash Drive to use a Vectrex gamepad in addition to the UDK keys, after the game is loaded, press the BREAK key to stop the program and type 6110 and press the RECALL LINE editing key and then press the RUB OUT key to delete the TURN characters and type M to change the text to REM and press the RETURN key to save the change.  Now you can use the Vectrex gamepad buttons 1-4 to perform the same operations as pressing UDK 1-4.
 
 ----------------------------------
 
@@ -66,7 +77,7 @@ This screenshot shows my original Monopoly game board layout.  The 4051 and 4052
 
 My completed game board is completely redesigned and used a Tek 4050 BASIC program that creates Leroy character set vector lettering at any size and any rotation angle!
 
-Since I needed to reduce the size of the BASIC program statements, I use the 4050R12 Graphics Enhancement ROM Pack and BASIC programs I created to use BASIC MOVE and DRAW commands for the vectors and then an R12 CALL "AGIN" X,Y command to capture the X,Y coordinates in GDUs (native 130,100 graphic display units) and then saved each X,Y vector in 3 byte R12 format with the R12 CALL "CHANGE",D,D$ where D was dimensioned as D(2) with D(1)=-X and D(2)=-Y.  The resulting vector string was then written to a binary data file.
+Since I needed to reduce the size of the BASIC program statements, I use the 4050R12 Graphics Enhancement ROM Pack and BASIC programs I created to use BASIC MOVE and DRAW commands for the vectors and then an R12 CALL "AGIN" X,Y command to capture the X,Y coordinates in GDUs (native 130,100 graphic display units). Next each X,Y vector is saved in 3 byte R12 format with the R12 CALL "CHANGE",D,D$ where D is dimensioned as D(2) with D(1)=-X and D(2)=-Y.  The resulting vector string combining multiple MOVE and DRAW vectors was then written to a single binary data file.
 
 All the Monopoly board lines, text, and images like the Jailer and Free Parking are in a single file 42 with a size of 17613 bytes representing about 5800 move or draw X/Y vectors - since the Tek 4050 BASIC binary data format adds a two byte header and one byte trailer to each data block.  The two byte header includes the length of the binary string.  The BASIC programs I created to make each of the binary files for the deeds include an end of card string |EOC| which my code uses to know the number of lines of text displayed on the card have all been read and the deed display code is done.
 
