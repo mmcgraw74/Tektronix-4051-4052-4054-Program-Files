@@ -60,10 +60,11 @@ for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graph
 13. If that property is owned, the player pays the rent as shown on the deed.
 
 * **Houses and Hotel**
-14. After a property group has an owner, the owner may buy a house for any of the properties in that group. You must buy houses evenly following the standard Monopoly rules.  After four houses are on all the properties in a group you may buy a hotel one or more of the group of properties.
+14. After all the properties in a property group has the same owner, the owner may buy a house for any of the properties in that group. You must buy houses evenly following the standard Monopoly rules.  After four houses are on all the properties in a group you may buy a hotel one or more of the group of properties.
 
 * **JAIL**
 15. There are four jail cells - one for each possible player starting from the right cell for player1.
+16. Possession of a Get Out of Jail card is a number displayed at the top of the jail cell column for that player.
   
 ----------------------------------
 # Paragraph
