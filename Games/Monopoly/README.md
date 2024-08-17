@@ -91,6 +91,4 @@ Here is a photo of my 4054A running my MONOPOLY game:
 
 I hope you enjoy this game as much as I do!
 
-I limited the string variable length for drawing the entire Monopoly board to 1023 bytes which represents 341 MOVE or DRAW X,Y vectors. 
-
 
