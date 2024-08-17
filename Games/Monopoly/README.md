@@ -67,7 +67,9 @@ Limited 32KB memory space for more features to be compatible with the 4051 is th
 ----------------------------------
 
 # History
-I started writing a Monopoly game on a Tektronix 4051 in 1979 - but ran out of 32KB of 4051 memory just displaying the Monopoly board graphics in Tektronix 4050 BASIC.  I made a hard copy printout of my program using a Tektronix 4631 Hard Copy unit attached to the 4051.  
+I started writing a Monopoly game on a Tektronix 4051 in 1979 - but ran out of 32KB of 4051 memory just displaying the Monopoly board graphics in Tektronix 4050 BASIC.  I made a hard copy printout of my program using a Tektronix 4631 Hard Copy unit attached to the 4051. 
+
+![MONOPOLY orig scan](./Original%20Monopoly%20page1%20scan.jpg)
 
 The 4051 and 4052 had a 12" flat screen storage tube CRT with addressable vector resolution of 1024 by 780. The 4054 and 4054A had a 19" curved screen storage tube and different display hardware that accelerated all graphics 10x over the 4052/4052A.
 
