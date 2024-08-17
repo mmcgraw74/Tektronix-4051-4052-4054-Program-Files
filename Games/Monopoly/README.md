@@ -74,7 +74,7 @@ The 4051 and 4052 had a 12" flat screen storage tube CRT with addressable vector
 
 This screenshot shows my original Monopoly game board layout.  The 4051 and 4052 use dot matrix for text, so my program put the text for the properties at the top and bottom of the screen as shown.
 
-![MONOPOLY](./my%20original%20Monopoly%20game%20board.png)
+![MONOPOLY](./my%20original%20Monopoly%20game%20board.jpg)
 
 My completed game board is completely redesigned and used a Tek 4050 BASIC program that creates Leroy character set vector lettering at any size and any rotation angle!
 
