@@ -7,29 +7,8 @@ for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graph
 
 - [Topics](#topics)
 - [Game board](#game-board)
+- [Features Not Supported](#features-not-supported)
 - [History](#history)
-- [List](#list)
-	- [List CheckBox](#list-checkbox)
-- [Link](#link)
-	- [Anchor links](#anchor-links)
-- [Blockquote](#blockquote)
-- [Image | GIF](#image--gif)
-- [Style Text](#style-text)
-	- [Italic](#italic)
-	- [Bold](#bold)
-	- [Strikethrough](#strikethrough)
-- [Code](#code)
-- [Email](#email)
-- [Table](#table)
-	- [Table Align](#table-align)
-    	- [Align Center](#align-center)
-    	- [Align Left](#align-left)
-    	- [Align Right](#align-right)
-- [Escape Characters](#escape-characters)
-- [Emoji](#emoji)
-- [Shields Badges](#Shields-Badges)
-- [Markdown Editor](#markdown-editor)
-- [Some links for more in depth learning](#some-links-for-more-in-depth-learning)
 
 ----------------------------------
 
@@ -67,6 +46,15 @@ for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graph
 16. Possession of a Get Out of Jail card is a number displayed at the top of the jail cell column for that player.
   
 ----------------------------------
+
+# Features Not Supported
+Limited 32KB memory space for more features to be compatible with the 4051 is the primary reason.
+
+ 1. MORTGAGE and UNMORTGAGE are not supported.    
+ 2. SELL and AUCTION are not supported.
+
+----------------------------------
+
 # History
 I started writing a Monopoly game on a Tektronix 4051 in 1979 - but ran out of 32KB of 4051 memory just displaying the Monopoly board graphics in Tektronix 4050 BASIC.  I made a hard copy printout of my program using a Tektronix 4631 Hard Copy unit attached to the 4051.  
 
