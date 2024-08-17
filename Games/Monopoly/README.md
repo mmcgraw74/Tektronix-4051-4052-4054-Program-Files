@@ -3,10 +3,7 @@ for 4051 with 32KB RAM, 4052/4052A, and 4054/4054A computers with R12/Fast Graph
 
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER.png)
 
-=============================
-Topics
-=============================
-
+----------------------------------
 
 - [Topics](#topics)
 - [Game board](#game-board)
@@ -37,7 +34,7 @@ Topics
 ----------------------------------
 
 # Game Board
-(yellow numbers on screenshot correspond to numbered list below) 
+(yellow numbers on screenshot below correspond to numbered list below) 
 
 ![MONOPOLY](./Wilma%20is%20bankrupt%20-%20GAME%20OVER-markups.png)
 
@@ -51,53 +48,24 @@ Topics
 5. **F3** **VIEW Assets** displays list of asset prices - used for Income Tax in addition to player cash
 6. **F4** **USE Jail Card** if player is in Jail and has a Get Out of Jail card
 7. **F8** **QUIT** will stop the game and reload the Flash Drive MAIN MENU
-  * 
-	* 1 - Player "token" is first initial of player name (up to 6 characters)
-	* 1 - Player "token" is first initial of player name (up to 6 characters)
- * Player token is first initial of player name (up to 6 characters)
-* Item 2;
 
-# List 
-* Item 1;
-	* Item 1.1;
-* Item 2;
-	* Item 2.1;
-	* Item 2.2;
-* Item 3
-	* Item 3.1;
-		* Item 3.1.1;
-    
->      * Item 1;
->	      * Item 1.1;
->	    * Item 2;
->	     * Item 2.1;
->	     * Item 2.2;
->	    * Item 3
->		   * Item 3.1;
->			  * Item 3.1.1;
+* **Property**
+8. Property Owner marked with **Owner TOKEN**
+9. Properties in the same property group have the same **dashed UNDERLINE** under each property name
+10. When all properties in a property group are owned by the same player the group has a **group outline** around the **Owner TOKENs**
 
-### Title 1
-### Title 2
+* **Game Messages**
+11. Show which property the current player is on.  At the start of each turn - the "Deed" area is blank and the player can use any of the five Action Keys.
+12. After F1 is pressed, the two dice are displayed with a total of the two dice and the player **TOKEN** is advanced that number of spaces and then the name of the property is displayed along with the property DEED in the middle of the screen.
+13. If that property is owned, the player pays the rent as shown on the deed.
 
-	Title 1
-	========================
-	Title 2 
-	------------------------
+* **Houses and Hotel**
+14. After a property group has an owner, the owner may buy a house for any of the properties in that group. You must buy houses evenly following the standard Monopoly rules.  After four houses are on all the properties in a group you may buy a hotel one or more of the group of properties.
 
-# Title 1
-## Title 2
-### Title 3
-#### Title 4
-##### Title 5
-###### Title 6
-
-    # Title 1
-    ## Title 2
-    ### Title 3    
-    #### Title 4
-    ##### Title 5
-    ###### Title 6    
-
+* **JAIL**
+15. There are four jail cells - one for each possible player starting from the right cell for player1.
+  
+----------------------------------
 # Paragraph
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum, nibh eu commodo posuere, ligula ante dictum neque, vitae pharetra mauris mi a velit. Phasellus eleifend egestas diam, id tincidunt arcu dictum quis. Pellentesque eu dui tempus, tempus massa sed, eleifend tortor. Donec in sem in erat iaculis tincidunt. Fusce condimentum hendrerit turpis nec vehicula. Aliquam finibus nisi vel eros lobortis dictum. Etiam congue tortor libero, quis faucibus ligula gravida a. Suspendisse non pulvinar nisl. Sed malesuada, felis vitae consequat gravida, dui ligula suscipit ligula, nec elementum nulla sem vel dolor. Vivamus augue elit, venenatis non lorem in, volutpat placerat turpis. Nullam et libero at eros vulputate auctor. Duis sed pharetra lacus. Sed egestas ligula vitae libero aliquet, ac imperdiet est ullamcorper. Sed dapibus sem tempus eros dignissim, ac suscipit lectus dapibus. Proin sagittis diam vel urna volutpat, vel ullamcorper urna lobortis. Suspendisse potenti.
 
