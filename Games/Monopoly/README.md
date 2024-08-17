@@ -85,6 +85,10 @@ All the Monopoly board lines, text, and images like the Jailer and Free Parking 
 
 My Monopoly BASIC program is the largest Tektronix BASIC program I have written and I learned a lot of 4050 BASIC tricks to move as much graphics data and numeric data to external files to allow the most space for the Monopoly game logic.
 
+Here is a photo of my 4054A running my MONOPOLY game:
+
+![4054A MONOPOLY](.![MONOPOLY](./4054A%20MONOPOLY.JPEG)
+
 I hope you enjoy this game as much as I do!
 
 I limited the string variable length for drawing the entire Monopoly board to 1023 bytes which represents 341 MOVE or DRAW X,Y vectors. 
