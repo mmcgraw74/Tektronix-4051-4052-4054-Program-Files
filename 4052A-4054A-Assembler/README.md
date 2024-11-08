@@ -8,7 +8,7 @@ Tektronix introduced their second generation 4050 microcomputers in 1979 - the 4
 
 Both of these computers were at least 8x faster running Tektronix 4050 BASIC programs than their first generation 4051 introduced in 1975 which had a Motorola 6800 CPU with a clock speed of 800KHz.
 
-Bob Haas designed the custom bit-slice CPU using four AMD2901 integrated circuits for a sixteen-bit ALU for the 4052 and 4054 and described the design goals in his VintageTEK youtube video:
+Bob Haas designed the custom bit-slice CPU using four AMD 2901 integrated circuits for a sixteen-bit ALU for the 4052 and 4054 and described the design goals in his VintageTEK youtube video:
 [Tektronix 4052 Development and Speed Comparison to 4051](https://www.youtube.com/watch?v=JfmbJDVlfog)
 
 **4052/4054 CPU Design goals**
