@@ -44,7 +44,7 @@ The next Tekniques Vol6 No4 included a tape with a 4052A/4054A Assembler written
 
 I inventoried a large collection of Tektronix manuals and tapes at the Living Computer Museum in Seattle in 2018 and found that tape in the collection! I filled out a request to try to recover that tape and a couple of other tapes in that collection and recovered the entire tape and got LCM to scan the documentation for that tape and posted the assembler BASIC program and documentation on my github repository in this folder:
 
-4052A-4054A-Assembler
+[4052A-4054A-Assembler](https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/tree/208bda80e8226a74dbbd78349c59409617cedefd/4052A-4054A-Assembler)
 
 The assembler documentation is 97 pages and includes not only the new opcodes for the 4052/4054 but also the opcodes added for the 4052A/4054A. It includes a couple of short programs to assemble and run - I also got Motorola MIKBUG assembled and running on my 4054A.
 
@@ -53,7 +53,7 @@ Most of the documentation is detailed descriptions for each new opcode and a lis
 As I have been trying to disassemble the Option 30 Dynamic Graphics Coprocessor firmware - I will also need to understand how the 4054A sends commands to the Option 30, so I am examining the 4052 Assembler documentation again.
 
 I found a nice Motorola 6800 opcode table here:
-6800 instruction set
+[6800 instruction set](http://www.8bit-era.cz/6800.html)
 
 I put the table into a Word document and created a Tektronix 4052/4052A 4054/4054A opcode table from the BASIC assembler program and the assembler document:
 
