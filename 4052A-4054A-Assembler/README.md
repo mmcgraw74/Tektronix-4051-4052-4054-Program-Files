@@ -11,6 +11,8 @@ Both of these computers were at least 8x faster running Tektronix 4050 BASIC pro
 Bob Haas designed the bit-slice CPU for the 4052 and 4054 and described the design goals in his VintageTEK youtube video:
 Tektronix 4052 Development and Speed Comparison to 4051
 
+https://www.youtube.com/watch?v=JfmbJDVlfog
+
 4052/4054 CPU Design goals
 6800 compatibility
 Must be able to leverage the 4051 32KB BASIC ROM firmware development
