@@ -1,10 +1,8 @@
 Tektronix 4052/4054 and 4052A/4054A 275 Opcode Tables and new 16-bit registers
 -------------
-![4052/4054 and A-series Opcode table](./4052A-4054A-Assembler/Tektronix%204052-4054%20Opcode%20Table.png)
+![4052/4054 and A-series Opcode table](./Tektronix%204052-4054%20Opcode%20Table.png)
 
 ![4052/4054 and A-series register info](./6800%20Registers%20and%204052-4054%20%26%20A-Series%20registers.png)
-
-
 
 Tektronix introduced their second generation 4050 microcomputers in 1979 - the 4052 and 4054.
 
