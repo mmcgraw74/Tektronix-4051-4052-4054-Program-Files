@@ -54,7 +54,17 @@ I found a nice Motorola 6800 opcode table here:
 
 I put the table into a Word document and created a Tektronix 4052/4052A 4054/4054A opcode table from the BASIC assembler program and the assembler document:
 
+As you can see - Bob Haas added the opcodes in RED in the 6800 opcode gaps which have a GREY background color in addition to all the 6800 opcodes in BLACK to the original 4052/4054. Bob told me he did not work on the 4052A/4054A ALU, but the opcodes in BLUE and GREEN were added in addition to keeping all the opcodes in BLACK and RED.
 
+The GREEN opcodes are 6800 backwards compatible 16-bit extensions to operations on the A and B accumulator registers.
+
+The engineers ran out of gaps for all the BLUE opcodes added for the 4052A/4054A and added C7 and FC as escape prefix codes to support the two extra lines in the opcode table for a total number of opcodes of 275 !!!
+
+My list of register extensions for the original 4052/4054 and 4052A/4054A with the same color codes as the opcode table.
+
+Since they doubled the RAM and ROM sizes to 64KB - they were still limited to the 16-bit address lines so they added opcodes to change the address to/from the new Data Space A and Fetch Space B - and added condition code bits to detect which space is currently selected.
+
+The assembler document indicates that this is the reason the assembly programs need to use SWI before accessing the ROMs - and the microcode will switch the space from RAM to ROM. The RET instruction will return from ROM space back to RAM space for the assembly program.
 
 ---
 
