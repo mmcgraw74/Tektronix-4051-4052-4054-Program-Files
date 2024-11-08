@@ -19,8 +19,8 @@ Bob Haas designed the bit-slice CPU for the 4052 and 4054 and described the desi
 3. 3 Factors of Two
    - Double CPU clock speed (2MHz vs 800KHz)
    - Double memory bandwidth with 16-bit memory width
-   - This also doubled the address space which doubled the RAM to 64KB and doubled the ROM space to 64KB!
-Harvard Architecture - overlap instruction and data fetch
+     - This also doubled the address space which doubled the RAM to 64KB and doubled the ROM space to 64KB!
+   - Harvard Architecture - overlap instruction and data fetch
 
 **Hurdles**
 - 6800 8-bit instructions and data could not take advantage of 16-bit memory bandwidth speedup
