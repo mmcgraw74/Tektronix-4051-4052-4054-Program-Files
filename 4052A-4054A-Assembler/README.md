@@ -12,31 +12,33 @@ Bob Haas designed the bit-slice CPU for the 4052 and 4054 and described the desi
 
 [Tektronix 4052 Development and Speed Comparison to 4051](https://www.youtube.com/watch?v=JfmbJDVlfog)
 
-4052/4054 CPU Design goals
-6800 compatibility
-Must be able to leverage the 4051 32KB BASIC ROM firmware development
-8 times faster than the 4051
-3 Factors of Two
-Double CPU clock speed (2MHz vs 800KHz)
-Double memory bandwidth with 16-bit memory width
-This also doubled the address space which doubled the RAM to 64KB and doubled the ROM space to 64KB!
+**4052/4054 CPU Design goals**
+1. 6800 compatibility
+   - Must be able to leverage the 4051 32KB BASIC ROM firmware development
+2. 8 times faster than the 4051
+3. 3 Factors of Two
+   - Double CPU clock speed (2MHz vs 800KHz)
+   - Double memory bandwidth with 16-bit memory width
+   - This also doubled the address space which doubled the RAM to 64KB and doubled the ROM space to 64KB!
 Harvard Architecture - overlap instruction and data fetch
-Hurdles
-6800 8-bit instructions and data could not take advantage of 16-bit memory bandwidth speedup
-Harvard architecture was challenging and not delivered at launch in 1979
+
+**Hurdles**
+- 6800 8-bit instructions and data could not take advantage of 16-bit memory bandwidth speedup
+- Harvard architecture was challenging and not delivered at launch in 1979
+
 Prototype performance result of 3x the 4051 with these hurdles did not satisfy management.
 
 Engineering proposed and management supported incorporating the double-precision floating point operations in microcode. This also would require extensive changes in the BASIC ROMs to use the new microcode instructions.
 
 Bob added new opcodes for 4050 BASIC 64-bit floating point in the unused spaces of the 6800 instruction set and the result was over 30x speedup for floating point computations which also resulted in 8x speedup in vector graphics performance due to the multiple floating point operations to draw any vector!
 
-Result
+**Result**
 
 The 4052 and 4054 exceeded the goal of 8x performance improvement for the launch in 1979.
 
 The third generation 4050 computers were named 4052A/4054A and launched in June 1982 with more new opcodes in the bit-slice CPU providing a 20% performance increase for some BASIC commands. These computers also included faster GPIB and serial interfaces, and new 4050 BASIC commands including structured BASIC and several new graphics commands - see this article:
 
-Tekniques Vol6 No3 - BASIC Language Enhancements Highlight New Models
+[Tekniques Vol6 No3 - BASIC Language Enhancements Highlight New Models](http://www.bitsavers.org/pdf/tektronix/tekniques/vol6/Tekniques_Vol_6_No_03.pdf)
 
 The next Tekniques Vol6 No4 included a tape with a 4052A/4054A Assembler written by two Tektronix programmers using the new structured BASIC commands.
 
