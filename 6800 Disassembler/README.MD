@@ -15,4 +15,4 @@ There are four files:
 4. Disassembled listing for file 3
 
 Here is a screenshot from the 4051 Emulator running the 6800 Disassembler:
-![4051 Emulator running 6800 Disassembler](./https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/6800%20Disassembler/4051%20Emulator%20running%206800%20Disassembler.png)
+![4051 Emulator running 6800 Disassembler](./4051%20Emulator%20running%206800%20Disassembler.png)
