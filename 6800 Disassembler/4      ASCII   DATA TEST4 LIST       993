@@ -1,0 +1,8 @@
+                   MC6800 DISASSEMBLER  V1.1
+
+                   TEST4
+
+1     0000  8602          LDAA  #02    ;3     0002  B78798        STAA   8798  ;6     0005  7F8798        CLR    8798  ;9     0008  B687AA        LDAA   87AA  ;12    000B  8508          BITA  #08    ;14    000D  2705          BEQ    0014  ;16    000F  8639          LDAA  #39    ;18    0011  974B          STAA   4B,D  ;20    0013  39            RTS          ;21    0014  BDE00C        JSR    E00C  ;24    0017  8623          LDAA  #23    ;26    0019  BDFFD1        JSR    FFD1  ;29    001C  BDFFB5        JSR    FFB5  ;32    001F  B6879B        LDAA   879B  ;35    0022  2B07          BMI    002B  ;37    0024  B687AA        LDAA   87AA  ;40    0027  8508          BITA  #08    ;42    0029  27F4          BEQ    001F  ;44    002B  BDFBD7        JSR    FBD7  ;47    002E  BDFFE3        JSR    FFE3  ;50    0031  BDFC24        JSR    FC24  ;53    0034  7ECBBF        JMP    CBBF  ;
+
+FINISHED !
+
