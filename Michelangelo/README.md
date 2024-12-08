@@ -1,6 +1,6 @@
 Tektronix 4050 Michelangelo - VECTOR art - programs and data files
 -------------
-![isco37 3D Vector Graphs](./isco27-3D_graphs.png)
+![Michelangelo vectors on my 4054A](.[/Michelangelo%20-%20vectors%204054A.png])
 
 FILE 1 PROGRAM:
 OVER 6 MIN TO CALCULATE AND DRAW NON-FILLED VECTOR POLYGONS ON 4051 COMPUTER OR 4051 EMULATOR AT 1X SPEED
