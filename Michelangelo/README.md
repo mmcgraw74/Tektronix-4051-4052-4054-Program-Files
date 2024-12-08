@@ -1,10 +1,10 @@
 Tektronix 4050 Michelangelo - VECTOR art - programs and data files
 -------------
 ![Michelangelo vectors on my 4054A](./Michelangelo%20-%20vectors%204054A.png) 
-Michelangelo - Non-filled vector polygons on my 4054A
+**Michelangelo - Non-filled vector polygons on my 4054A**
 
 ![Michelangelo non-filled polygons on my 4054A](./Michelangelo%20-%20filled%20polygons%204054A.png)
-Michelangelo - Filled and dilated polygons on my 4054A
+**Michelangelo - Filled and dilated polygons on my 4054A**
 
 FILE 1 PROGRAM:
 OVER 6 MIN TO CALCULATE AND DRAW NON-FILLED VECTOR POLYGONS ON 4051 COMPUTER OR 4051 EMULATOR AT 1X SPEED
