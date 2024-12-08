@@ -13,7 +13,7 @@ Overview:
 I was inspired by Georgios Patsos filled polygon image of Michelangelo on the facebook group "BASIC Programming" on 19 NOV 2024.
 
 
-[! Georgios Patsos Michelangelo screenshot](./Commodore%20Plus-64%20Michelangelo.jpg)
+![Georgios Patsos Michelangelo screenshot](./Commodore%20Plus-64%20Michelangelo.jpg)
 
 
 OVER 6 MIN TO CALCULATE AND DRAW NON-FILLED VECTOR POLYGONS ON 4051 COMPUTER OR 4051 EMULATOR AT 1X SPEED
