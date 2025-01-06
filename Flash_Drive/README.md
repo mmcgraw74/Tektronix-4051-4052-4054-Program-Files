@@ -21,6 +21,17 @@ a. FIND, MARK, KILL, OLD, BOLD, SAVE, BSAVE, APPEND, BAPPEN, PRINT, INPUT, READ,
 13. One Flash Drive zip file with the all the latest ‘tapes’ and programs can be downloaded from the internet and be unzipped to your MicroSD card to update your Flash Drive.
 14. *** Added Vectrex Joystick interface to Flash Drive Firmware ***
 ************
+
+**January 6, 2025**
+- updated Flash Drive zip to January 6, 2025
+  - updated MAIN MENU to add SimpleDemo and Michelangelo
+  - added SimpleDemo for VintageTEK and other exhibitors to easily demo Mickey Mouse, Death Star and INSTANT ART
+  - added Michelangelo to view vector image ported from Commodore Plus/4 BASIC
+  - added 6800 Disassembler program and example source from Application Library tape
+  - added MENU to SVG2FG to view and select from list of SVG files
+  - updated EM Benchmark to compare with my 4051 benchmark results in 1979
+
+************
 October 14,2024 update - New Features and Fixes:
 Added Player asset summary at end of Monopoly game:
 - Monopoly Game (21Aug2024 latest released version), requires 4052R12 or 4051 Fast Graphics ROM (or 4051 MAXIROM)
