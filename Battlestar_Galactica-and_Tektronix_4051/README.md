@@ -1,6 +1,6 @@
 # Be sure to check out my 2025 Battlestar Galactica 1978 DEMO CGI scenes 
 
-[https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/tree/master/Battlestar_Galactica-and_Tektronix_4051/Battlestar_Galactica_Demo_2025](https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/commit/6ad327f5c7581f66bd2c615d2c249d4ef05696b6)
+[https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/tree/master/Battlestar_Galactica-and_Tektronix_4051/Battlestar_Galactica_Demo_2025]
 
 
 # Battlestar Galactica 1978 TV Series featured Tektronix 4051 computers
