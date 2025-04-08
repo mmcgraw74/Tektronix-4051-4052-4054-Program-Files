@@ -1,5 +1,8 @@
 I finished my new demo for Vintage Computer Federation VCF Southwest June 2025 in Dallas Texas - a recreation of the Tektronix 4051 and 4081 CGI computer generated scenes for the 1978 Battlestar Galactica TV season!
 
+Check out my YouTube video of my BSG 1978 Demo Scene Recreation:
+[https://www.youtube.com/watch?v=ClCZXP93yy4]
+
 I developed over eighty Tektronix 4050 BASIC computer programs and data files in the last 30 days.  Some of the programs were experiments - like displaying a bitmap of the Battlestar Galactica.  I decided it took too long to display the bitmap and manually created a vector tracing of the image using Inkscape to dramatically speed up the image.
 
 Since I never found a Battlestar Galactica Demo Tape - I created some of the images by using Inkscape to trace the outlines of the images from my screen captures of a BSG 1978 Blu-Ray set of disks!  I then converted those images to Tektronix 4050R12 Fast Graphics format for quick display on all 4050 computers with R12 Option ROMs (including 4051 MAXIROM and 4052 Multifunction ROM Packs).
