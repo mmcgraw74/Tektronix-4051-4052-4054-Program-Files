@@ -1,7 +1,8 @@
-# Be sure to check out my 2025 Battlestar Galactica 1978 DEMO CGI scenes 
+# Be sure to check out my 2025 Battlestar Galactica 1978 DEMO CGI scenes - just click the link
 
 [https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/tree/master/Battlestar_Galactica-and_Tektronix_4051/Battlestar_Galactica_Demo_2025]
 
+![CONDITION RED alert](./Battlestar_Galactica_Demo_2025/Screenshots/Battlestars%20under%20attack%20by%20Cylons%20(straightened).jpg)
 
 # Battlestar Galactica 1978 TV Series featured Tektronix 4051 computers
 
