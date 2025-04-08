@@ -14,4 +14,4 @@ I also took the liberty of updating some of the scenes to use my vector graphics
 
 I am not aware of any Tektronix 4081 that are operational - but I'm sure my 4054A with Option 30 and Option 31 can reproduce any of the 4081 dynamic graphics scenes.
 
-![Battlestars under attack by Cylons](./Screenshots/Battlestars under attack by Cylons (straightened).jpg)
+![Battlestars under attack by Cylons](./Screenshots/Battlestars%20under%20attack%20by%20Cylons%20(straightened).jpg))
