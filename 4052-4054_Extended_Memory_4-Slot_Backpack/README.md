@@ -1,6 +1,27 @@
 # Tektronix 4052-4054 Extended Memory File Manager
 
-This was an Option 27 (256KB) or Option 28 (512KB) Extended Memory File Manager for the 4052, 4052A, 4054 and 4054A graphics computers.   
+This was an Option 27 (256KB) or Option 28 (512KB) Extended Memory File Manager for the 4052, 4052A, 4054 and 4054A graphics computers. 
+
+Access to this Extended RAM is through 4907 File Manager style commands as FILES.
+
+**********************************************************************************
+ WARNING:
+ 
+ The Extended Memory Option 27 or 28 works like a 4050E01 ROM Expander in slot 2
+ 
+ Therefore 4050E01 ROM Expander or Jos Dreesen's 4052 Multifunction ROM Pack
+ cannot be used in slot 2 of the 4-slot backpack (secondary address 51)
+ but must be plugged into slot 1, 3 or 4 (41, 61, or 71 secondary addresses)
+**********************************************************************************
+
+
+Link to Tektronix 4052/4054 4-slot backpack Option 27 (256KB) or Option 28 (512KB) battery backed RAM
+ Service Manual 070-4384-00
+
+http://www.tekmuseum.com/Manuals/ExtMemSvc.pdf
+
+****************
+
 
 The 4052A/4054A had data access speed up to 400KB per second!
 The 4052 and 4054 with this option achieved memory access speed up to 50KB per second.
