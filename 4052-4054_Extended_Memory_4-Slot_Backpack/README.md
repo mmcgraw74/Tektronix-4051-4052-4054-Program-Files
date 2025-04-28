@@ -14,6 +14,11 @@ Access to this Extended RAM is through 4907 File Manager style commands as FILES
  but must be plugged into slot 1, 3 or 4 (41, 61, or 71 secondary addresses)
 **********************************************************************************
 
+The Extended Memory File Manager Operators manual is merged with the latest Tektronix 4907 Operators manual 070-2380-02 Dec 1982 at archive dot org here:
+
+Tektronix 4907 4907 File Manager and 4052, 4052A, 4054, 4054A (Options 27 and 28) Extended Memory OPERATOR'S MANUAL 070-2380-02
+https://ia801400.us.archive.org/7/items/070-2380-02/070-2380-02.pdf
+
 
 Link to Tektronix 4052/4054 4-slot backpack Option 27 (256KB) or Option 28 (512KB) battery backed RAM
  Service Manual 070-4384-00
