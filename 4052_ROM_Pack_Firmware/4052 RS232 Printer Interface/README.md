@@ -1,3 +1,14 @@
+*********
+29 April 2025 Update
+
+I moved the previous Printer Interface ROM to Archive - @stepleton reported it did NOT work with @jdreesen's 4052 Multifunction ROM Pack
+Root cause for failure - the Printer Interface ROM must start at 8000 Hex in MFM ROM Pack and previous ROM had an offset of 1000
+
+Please use 4052 RS232 Printer Interface ROM and program it into MFM ROM Pack starting at address 8000 Hex.
+
+***********
+
+
 My **4052/4054 RS-232 Printer Interface 4052F10 ROM Pack** contained a single 8Kx8 Motorola mask ROM.  The 4052 service manual schematic showed a MOSTEK 36000 ROM - so I used my MOSTEK ROM technique to read the ROM. 
 
 To read the MOSTEK 36xxx mask ROMs - I found you can use the Data I/O Unipak and Unipak 2B FAMILY/PINOUT 27 50 with pin 21 pulled low or high to read a 4KB chunk.
