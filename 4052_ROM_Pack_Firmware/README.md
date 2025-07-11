@@ -14,6 +14,7 @@ Here is a table of ROM Packs for the 4052/4054 and 4052A/4054A from the 1983 Tek
 | 4052R09    | Real Time Clock      | Not Available |
 | 4052R10    | Advanced File Manager | Requires 4909 Multi-User Hard Disk File Management System |
 | 4052R11    | Character and Symbol  | Works in all 4052/4054 and 4052A/4054A |
+| 4052R12    | Graphics Enhancement  | Works in all 4052/4054 and 4052A/4054A |
 | 4052R14    | GPIB Enhancement      | Only 4052/4054 but has powerup error message with v5.1 BASIC ROMs |
 | 4052R14-1A | GPIB Enhancement      | Only 4052A/4054A due to TI9914 GPIB IC on I/O Board |
 |            |                       |                              |
