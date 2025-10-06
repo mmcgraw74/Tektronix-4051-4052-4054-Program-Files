@@ -80,6 +80,6 @@ You can create a custom MFM image by opening the MFM_BASE.bin file with a HEX ed
     * If the CRC program detects an Option ROM or MFM ROM with CRC that matches a name it will print the name of the ROM
 
 
-If you don't have the Diagnostic ROM Pack - but you have a 4052A or 4054A type CALL "_C_L_I_S_T_" to see a list of ROM calls in each option ROM discovered by BASIC.
+If you don't have the Diagnostic ROM Pack - but you have a 4052A or 4054A type CALL "___C___L___I___S___T___" to see a list of ROM calls in each option ROM discovered by BASIC.
 
 
