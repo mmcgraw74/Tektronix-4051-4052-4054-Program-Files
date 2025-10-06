@@ -21,7 +21,7 @@ Here is a table of ROM Packs posted in this repository for the 4052/4054 and 405
 | 4052R10    | Advanced File Manager | __Requires 4909 Multi-User Hard Disk File Management System__ | any   |
 | 4052R11    | Character and Symbol  | Works in all 4052/4054 and 4052A/4054A | any  |
 | 4052R12    | Graphics Enhancement  | Works in all 4052/4054 and 4052A/4054A | any  |
-| 4052R14    | GPIB Enhancement      | __Only 4052 and 4054. IGNORE powerup error message with v5.1 BASIC ROMs__ | any   |
+| 4052R14    | GPIB Enhancement      | __Only 4052 and 4054. IGNORE powerup error message with v5.1 BASIC__ | any   |
 | 4052R14-1A | GPIB Enhancement      | __Only 4052A and 4054A due to TI9914 GPIB IC on I/O Board__ | any   |
 | 4052F10    | RS 232 Printer Interface | __Requires MFM printer components__. Works in all 4052/4052A 4054/4054A | 2  |
 | 020-0476-00 | 4052 File Manager -00     | __Requires 4907 floppy system__.  __Older version ROM not recommended__ | any   |
