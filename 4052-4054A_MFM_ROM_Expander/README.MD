@@ -45,3 +45,12 @@ Table of MFM EPROM 'slots' and address ranges:
 |     7      | 18000-1BFFF   |
 |     8      | 1C000-1FFFF   |
 
+----------
+Recommended MFM EPROM images:
+
+| MFM image name | Contains these ROMs | MFM components required |
+|----------|:-------------:|
+| MFM_BASE | R12 Graphics, 750 Super Utilities, R11 Character & Symbol |
+| MFM_RTC  | MFM_BASE + 741RTC   |
+| MFM_PRINTER | MFM_BASE + RS 232 Printer Interface |
+| MFM_4907 | MFM_BASE + 4907 File Manager -01 |
