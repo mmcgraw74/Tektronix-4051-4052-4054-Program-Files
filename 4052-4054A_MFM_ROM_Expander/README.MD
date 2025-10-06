@@ -7,7 +7,7 @@ His 4052 MFM supports up to eight 4052 ROM Packs like the Tektronix 4050E01 but 
 * 4052 MFM fits in a single slot of the 4052 ROM backpack while the 4050E01 consumes one slot in the ROM backpack and is cabled to an enclosure with eight individual ROM slots.
 * 4052 MFM supports adding TransEra 741 RTC real time clock components (see his MFM document: ftp://ftp.dreesen.ch/TEK_MFM )
 * 4052 MFM supports adding 4052 RS-232 Printer Interface components (see his MFM document above)
-* 4052 MFM contains a single 1Mb 27C010 EPROM to contain the eight 16KB 4052 Tektronix ROM images and/or 4052 TransEra ROM images posted on this repository
+* 4052 MFM contains a single 128KB 27C010 EPROM to contain the eight 16KB 4052 Tektronix ROM images and/or 4052 TransEra ROM images posted on this repository
 
 -------
 Here is a table of ROM Packs posted in this repository for the 4052/4054 and 4052A/4054A that could be programmed into one of the eight slots in the 4052 MFM:
