@@ -23,11 +23,11 @@ Here is a table of ROM Packs posted in this repository for the 4052/4054 and 405
 | 4052R12    | Graphics Enhancement  | Works in all 4052/4054 and 4052A/4054A | any  |
 | 4052R14    | GPIB Enhancement      | Only 4052/4054 __IGNORE powerup error message with v5.1 BASIC ROMs__ | any   |
 | 4052R14-1A | GPIB Enhancement      | Only 4052A/4054A due to TI9914 GPIB IC on I/O Board | any   |
-| 4052F10    | RS 232 Printer Interface | Works in all 4052/4052A 4054/4054A | 2  |
-| 020-0476-00 | 4052 File Manager -00     | Requires 4907 floppy system.  __Older version ROM not recommended__ | any   |
-| 020-0476-01 | 4052 File Manager -01     | Requires 4907 floppy system.  Works in all 4052/4052A 4054/4054A    | any   |
+| 4052F10    | RS 232 Printer Interface | __Requires MFM printer components__. Works in all 4052/4052A 4054/4054A | 2  |
+| 020-0476-00 | 4052 File Manager -00     | __Requires 4907 floppy system__.  __Older version ROM not recommended__ | any   |
+| 020-0476-01 | 4052 File Manager -01     | __Requires 4907 floppy system__.  Works in all 4052/4052A 4054/4054A    | any   |
 |  |  |  |  |
-| 741RTC | TransEra Real-Time-Clock | Works in all 4052/4054 and 4052A/4054A | 3   |
+| 741RTC | TransEra Real-Time-Clock | __Requires MFM RTC components__. Works in all 4052/4054 and 4052A/4054A | 3   |
 | 750SPU | TransEra Super Utilities | Works in all 4052/4054 and 4052A/4054A | any   |
 | 764AUX | TransEra Auxiliary Memory | Works in all 4052-4054A. Requires Jos 4052 AUX ROM Pack | any   |
 
