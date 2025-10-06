@@ -13,7 +13,7 @@ His 4052 MFM supports up to eight 4052 ROM Packs like the Tektronix 4050E01 but 
 Here is a table of ROM Packs posted in this repository for the 4052/4054 and 4052A/4054A that could be programmed into one of the eight slots in the 4052 MFM:
 
 | ROM Pack # | Name   | Compatibility | MFM Slot# |
-|:----------:|----------|----------|-------|
+|:----------:|----------|----------|-------------|
 | 4052R06    | Editor   | Works in all 4052/4054 and 4052A/4054A |  any  |
 | 4052R07    | Signal Processing #1 | Works in all 4052/4054 and 4052A/4054A |  any  |
 | 4052R08    | Signal Processing #2 | Works in all 4052/4054 and 4052A/4054A |  any |
