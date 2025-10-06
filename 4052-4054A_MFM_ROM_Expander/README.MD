@@ -31,3 +31,10 @@ Here is a table of ROM Packs posted in this repository for the 4052/4054 and 405
 | 750SPU | TransEra Super Utilities | Works in all 4052/4054 and 4052A/4054A | any |
 | 764AUX | TransEra Auxiliary Memory | Works in all 4052-4054A. Requires Jos 4052 AUX ROM Pack | any |
 
+-------
+Table of MFM EPROM 'slots' and address ranges:
+
+| MFM EPROM SLOT# | Address range in HEX |
+|:----------:|------------|
+|     1      | 00000-03FF |
+
