@@ -5,7 +5,7 @@ Jos designed his 4052 Multifunction Module (MFM) ROM Expander based on the Tektr
 His 4052 MFM supports up to eight 4052 ROM Packs like the Tektronix 4050E01 but has several new features and a couple of differences with the Tektronix 4050E01 ROM Expander:
 * __4052 MFM only supports 4052, 4054, 4052A and 4054A__ while the __Tektronix 4050E01 supports 4051 and 4052 through 4054A__.
 * 4052 MFM fits in a single slot of the 4052 ROM backpack while the 4050E01 consumes one slot in the ROM backpack and is cabled to an enclosure with eight individual ROM slots.
-* 4052 MFM supports adding TransEra 741 RTC real time clock components (see his MFM document: ftp://ftp.dreesen.ch/TEK_MFM
+* 4052 MFM supports adding TransEra 741 RTC real time clock components (see his MFM document: ftp://ftp.dreesen.ch/TEK_MFM )
 * 4052 MFM supports adding 4052 RS-232 Printer Interface components (see his MFM document above)
 * 4052 MFM contains a single 1Mb 27C010 EPROM to contain the eight 16KB 4052 Tektronix ROM images and/or 4052 TransEra ROM images posted on this repository
 
