@@ -35,6 +35,13 @@ Here is a table of ROM Packs posted in this repository for the 4052/4054 and 405
 Table of MFM EPROM 'slots' and address ranges:
 
 | MFM EPROM SLOT# | Address range in HEX |
-|:----------:|------------|
-|     1      | 00000-03FF |
+|:----------:|-------------|
+|     1      | 00000-03FFF |
+|     2      | 04000-07FFF |
+|     3      | 08000-0BFFF |
+|     4      | 0C000-0FFFF |
+|     5      | 10000-13FFF |
+|     6      | 14000-17FFF |
+|     7      | 18000-1BFFF |
+|     8      | 1C000-1FFFF |
 
