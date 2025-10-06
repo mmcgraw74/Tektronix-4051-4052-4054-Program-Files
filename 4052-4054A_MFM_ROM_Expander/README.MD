@@ -75,9 +75,9 @@ You can create a custom MFM image by opening the MFM_BASE.bin file with a HEX ed
 
 
 * If you have Jos Dreesen's 4052 Diagnostic ROM you can test your MFM ROM CRCs - plug the Diagnostic ROM Pack into backpack slot 1 and MFM into slot 2
-- Power on the computer
-- Load and run my 4052 CRC program from Flash Drive MAIN MENU or Option 1 RS-232 or manually typing: [4052_ROM_Checksums.UNI](https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/4f478baca32dbd6669eb47fe67240d39400555c2/4052-4054_ROM_Checksums/4052_ROM_Checksums.UNI) 
-- If the CRC program detects an Option ROM or MFM ROM with CRC that matches a name it will print the name of the ROM
+    * Power on the computer
+    * Load and run my 4052 CRC program from Flash Drive MAIN MENU or Option 1 RS-232 or manually typing: [4052_ROM_Checksums.UNI](https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/4f478baca32dbd6669eb47fe67240d39400555c2/4052-4054_ROM_Checksums/4052_ROM_Checksums.UNI) 
+    * If the CRC program detects an Option ROM or MFM ROM with CRC that matches a name it will print the name of the ROM
 
 
 If you don't have the Diagnostic ROM Pack - but you have a 4052A or 4054A type CALL "_C_L_I_S_T_" to see a list of ROM calls in each option ROM discovered by BASIC.
