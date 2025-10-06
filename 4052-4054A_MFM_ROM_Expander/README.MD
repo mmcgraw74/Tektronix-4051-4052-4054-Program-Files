@@ -48,9 +48,9 @@ Table of MFM EPROM 'slots' and address ranges:
 ----------
 Recommended MFM EPROM images:
 
-| MFM image name | Contains these ROMs | MFM components required |
-|----------|:-------------:|
-| MFM_BASE | R12 Graphics, 750 Super Utilities, R11 Character & Symbol |
-| MFM_RTC  | MFM_BASE + 741RTC   |
-| MFM_PRINTER | MFM_BASE + RS 232 Printer Interface |
-| MFM_4907 | MFM_BASE + 4907 File Manager -01 |
+| MFM image name | Contains these ROMs | Components required |
+|----------|:-------------:|------|
+| MFM_BASE | R12 Graphics, 750 Super Utilities, R11 Character & Symbol | BASE MFM components |
+| MFM_RTC  | MFM_BASE + 741RTC   | BASE + RTC MFM components |
+| MFM_PRINTER | MFM_BASE + RS 232 Printer Interface | BASE + Printer MFM components |
+| MFM_4907 | MFM_BASE + 4907 File Manager -01 | BASE MFM components + 4907 Floppy System |
