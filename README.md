@@ -62,8 +62,10 @@ More details here: **https://github.com/mmcgraw74/Tektronix-4050-GPIB-Flash-Driv
 
 *********
 
-My latest programs like MONOPOLY run on the latest Tektronix 4051 Emulator!  
+My latest Tektronix 4050 programs like MONOPOLY run on any 4050 computer AND the latest Tektronix 4051 Emulator!  
 Download from **https://github.com/mmcgraw74/Tektronix-4051-Emulator**
+
+![MONOPOLY](./MONOPOLY.png)
 
 ***********
 File Upload - Start by making a pull request of your uploaded files - including a name for the tape or disk.
