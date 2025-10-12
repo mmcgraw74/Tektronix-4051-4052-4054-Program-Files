@@ -4,7 +4,7 @@ This repository is intended to provide a public location to download OR upload T
 **************
 Updates:
  - Flash Drive: 23 June 2025 zip file with Battlestar Galactica Demo
- - Tektronix 4051 Emulator: April 2024 includes single directory Flash Drive emulation and multiple Flash Drives and all the 4051 Option ROMs including R12 Fast Graphics
+ - Tektronix 4051 Emulator: April 2024 includes single directory Flash Drive emulation and multiple Flash Drives and all the 4051 Option ROMs including R12 Fast Graphics.  Separate repository here: **https://github.com/mmcgraw74/Tektronix-4051-Emulator**
 
 **************
 The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  
