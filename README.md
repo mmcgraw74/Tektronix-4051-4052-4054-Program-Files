@@ -2,6 +2,11 @@
 
 This repository is intended to provide a public location to download OR upload Tektronix 4050 series program tapes or disk images.
 **************
+Updates:
+ - Flash Drive: 23 June 2025 zip file with Battlestar Galactica Demo
+ - Tektronix 4051 Emulator: April 2024 includes single directory Flash Drive emulation and multiple Flash Drives and all the 4051 Option ROMs including R12 Fast Graphics
+
+**************
 The Tektronix 4051 (1975), 4052 and 4054 (1979) had unique storage tube vector graphics screens with very high resolution.  
 
 The 4051 and 4052 had a 12" flat screen storage tube CRT with addressable vector resolution of 1024 by 780.   
@@ -49,21 +54,18 @@ More details about individual programs and how I was able to recover them from 4
 
 A couple of YouTube videos running my 4052 and 4054A:
 **https://www.youtube.com/user/mmcgraw1974/videos**
-*********
-Older program files (.txt or .BAS) are only compatible with the 405x (4051) javascript emulator, download from **https://github.com/jonbstanley/Tek405xEmulator**
 
-
-**TODO: I am uploading .UNI versions of new programs and I plan to convert and upload .UNI versions of the older programs over time**
-
-Files with .UNI or commented as Universal are compatible with 4051/4052 or 4054 computers AND the 405x javascript **_universal_** emulator, unless they require special instructions or higher resolution and memory of the 4052 and 4054.
 ***********
-You can download a single file, folder with all included files or whole archive by clicking the Clone or Download button.
 
-If the file has a text name - you will lose that name when transferring to tape.
+My Flash Drive plugs into the GPIB connector of any 4051, 4052/4052A, 4054/4054A computer and contains a MicroSD flash card with LOTs of 4050 Programs!
+More details here: **https://github.com/mmcgraw74/Tektronix-4050-GPIB-Flash-Drive**
 
-One of the utility programs can relabel the tape file headers with text.
-*******************************
+*********
 
+My latest programs like MONOPOLY run on the latest Tektronix 4051 Emulator!  
+Download from **https://github.com/mmcgraw74/Tektronix-4051-Emulator**
+
+***********
 File Upload - Start by making a pull request of your uploaded files - including a name for the tape or disk.
 
 I will then create a folder containing those files.
@@ -96,9 +98,9 @@ Hit 4051 BREAK key twice  | when the transfer is complete from the PC terminal p
 - type RUN to start the program
 ******
 
-For 4052/4054 computers with v5.1 firmware or 4052A/4054A computers - no need to delay the lines or characters:
+_For 4052/4054 computers with v5.1 firmware or 4052A/4054A computers - use XON/XOFF handshaking plus serial speed increases to 9600 baud!_:
 ```
-CALL "RATE",9400,2,0      | to set the rate to 9600 baud, Even Parity
+CALL "RATE",9600,2,0      | to set the rate to 9600 baud, Even Parity
 CALL "TSTRIN","","",""    | stops the 4050 from modifying control characters on transmit
 CALL "RSTRIN","","",""    | stops the 4050 from modifying control characters on receive
 CALL "CMFLAG",3           | set XON/XOFF protocol for TX and RX
