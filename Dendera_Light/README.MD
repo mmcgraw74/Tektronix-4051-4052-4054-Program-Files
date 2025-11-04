@@ -1,4 +1,5 @@
 My first exposure to the Dendera "Lights" in Egypt was when I found Tektronix 4014 terminal plot files - on @jdreesen's ftp save of Chuck Forsberg's OMEN website in my post #10 in my first VCF thread in 2018:
+
 **https://forum.vcfed.org/index.php?threads/tektronix-4051-4052-4052a-4054-4054a-program-archives.65705/post-802656**
 
 Here is the 4014 bitmap image of Dendera Lights - displayed using the excellent Tektronix 4010 vector display emulator:
