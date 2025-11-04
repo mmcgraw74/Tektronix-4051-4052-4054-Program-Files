@@ -9,7 +9,7 @@ The file is named z_aswan.plt in the pltfiles/More_pltfiles included with the Te
 
 ![z_aswan plt on Tek4010 Emulator](./z_aswan%20plt%20on%20Tek4010%20Emulator.png)
 
-The above image was created by Tektronix engineers in the early 1970's using dots with the same brightness but organized in 2x2 cells as shown in this zoom of the screenshot above:
+The above image was created by Tektronix engineers in the early 1970's using dots with the two brightness levels, organized in 2x2 cells as shown in this zoom of the screenshot above:
 
 ![z_aswan plt on Tek4010 Emulator - zoom to show 2x2 cells of dot](./z_aswan%20plt%20on%20Tek4010%20Emulator%20-%20zoom%20to%20show%202x2%20cells%20of%20dots.png)
 
@@ -42,9 +42,10 @@ and displayed on my Tektronix 4054A computer:
 
 ![Aswan Light 4054A](./Aswan%20Light%204054A%20cropped.JPEG)
 
-I have attached a Dendera lights zip file with the following Tektronix 4050 BASIC Flash Drive files:
-1 - simple bitmap viewer for Aswan Light2 R12 BMP file 5
-3 - my DitheredBW create program using two Flash Drives in the 4051 Emulator (read from @5:4, write to @6:5)
-4 - Aswan Light2 S19 ASCII DATA input file
-5 - Aswan Light2 R12 BMP BINARY DATA output file
-124 - LAST file (always required in every Flash Drive directory)
+This directory includes my Dendera lights zip file with the following Tektronix 4050 BASIC Flash Drive files:
+
+- 1 - simple bitmap viewer for Aswan Light2 R12 BMP file 5
+- 3 - my DitheredBW create program using two Flash Drives in the 4051 Emulator (read from @5:4, write to @6:5)
+- 4 - Aswan Light2 S19 ASCII DATA input file
+- 5 - Aswan Light2 R12 BMP BINARY DATA output file
+- 124 - LAST file (always required in every Flash Drive directory)
