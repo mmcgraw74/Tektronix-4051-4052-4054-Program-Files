@@ -24,11 +24,11 @@ After watching the video I decided to make a new Dendera Light R12 bitmap image 
 ![Fig 4 Picture of actual relief](./Fig%204%20Picture%20of%20actual%20relief.jpg)
 
 Here is the Dendera Light bitmap I created from the photo:
-Using PhotoDemon to invert the image, adjust the levels, and create a dithered dot black and white BMP file
-Exported to S19 ASCII text format with HxD
-Using my Flash Drive bitmap create program on the Tektronix 4051 Emulator to create the 4050R12 format image
+- Using PhotoDemon to invert the image, adjust the levels, and create a dithered dot black and white BMP file
+- Exported to S19 ASCII text format with HxD
+- Using my Tektronix 4050 GPIB Flash Drive bitmap create program on the Tektronix 4051 Emulator to create the 4050R12 format image
 
-Fig 4 Picture of actual relief (BW) (inverted) (2).png
+![Fig 4 Picture of actual relief (BW) (inverted) (2)](./Fig%204%20Picture%20of%20actual%20relief%20(BW)%20(inverted)%20(2).bmp)
 
 Here is that 4050R12 image displayed on the Tektronix 4051 Emulator:
 
