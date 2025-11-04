@@ -32,15 +32,15 @@ Here is the Dendera Light bitmap I created from the photo:
 
 Here is that 4050R12 image displayed on the Tektronix 4051 Emulator:
 
-Aswan Light MCM 2025 on 4051 Emulator.png
+![Aswan Light MCM 2025 on 4051 Emulator](./Aswan%20Light%20MCM%202025%20on%204051%20Emulator%20(2).jpg)
 
 And displayed on my Tektronix 4052 computer:
 
-Aswan Light 4052.JPEG
+![Aswan Light 4052](./Aswan%20Light%204052%20cropped.jpg)
 
 and displayed on my Tektronix 4054A computer:
 
-Aswan Light 4054A.JPEG
+![Aswan Light 4054A](./Aswan%20Light%204054A%20cropped.JPEG)
 
 I have attached a Dendera lights zip file with the following Tektronix 4050 BASIC Flash Drive files:
 1 - simple bitmap viewer for Aswan Light2 R12 BMP file 5
