@@ -15,7 +15,7 @@ The above image was created by Tektronix engineers in the early 1970's using dot
 
 I watched a very interesting video in Nov 2025: 
 
-![Dendera Light Re-Discovered? Ancient Electricity from Egyptian Pyramids](./https://www.youtube.com/watch?v=g507G2Ei2To)
+![Dendera Light Re-Discovered Ancient Electricity from Egyptian Pyramids](./https://www.youtube.com/watch?v=g507G2Ei2To)
 
 that was an interview with William Sosa, a researcher that had been working on replicating the Dendera Light for 30 years. He believes it was a plasma effect with mercury vapor and demonstrates his reproduction in the video and shows on a breadboard how it may have been created.
 
