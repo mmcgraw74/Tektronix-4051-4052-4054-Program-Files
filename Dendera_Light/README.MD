@@ -15,13 +15,13 @@ The above image was created by Tektronix engineers in the early 1970's using dot
 
 I watched a very interesting video in Nov 2025: 
 
-[Dendera Light (Re)(Discovered?](https://www.youtube.com/watch?v=g507G2Ei2To)
+[Dendera Light (Re)(Discovered?)](https://www.youtube.com/watch?v=g507G2Ei2To)
 
-that was an interview with William Sosa, a researcher that had been working on replicating the Dendera Light for 30 years. He believes it was a plasma effect with mercury vapor and demonstrates his reproduction in the video and shows on a breadboard how it may have been created.
+This video was an interview with William Sosa, a researcher that had been working on replicating the Dendera Light for 30 years. He believes it was a plasma effect with mercury vapor and demonstrates his reproduction in the video and shows on a breadboard how it may have been created.
 
-After watching the video I decided to make a new Dendera Light R12 bitmap image from an article on the web dendera-light-bulb-explained - Fig.4 Picture of actual relief – Photo credit: Mick Palarczyk
+After watching the video I decided to make a new Dendera Light R12 bitmap image from an article on the web [dendera-light-bulb-explained](https://seshmedewnetcher.com/dendera-light-bulb-explained/) - Fig.4 Picture of actual relief – Photo credit: Mick Palarczyk
 
-Fig 4 Picture of actual relief.jpg
+![Fig 4 Picture of actual relief](./Fig%204%20Picture%20of%20actual%20relief.jpg)
 
 Here is the Dendera Light bitmap I created from the photo:
 Using PhotoDemon to invert the image, adjust the levels, and create a dithered dot black and white BMP file
