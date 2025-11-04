@@ -13,7 +13,11 @@ The above image was created by Tektronix engineers in the early 1970's using dot
 
 ![z_aswan plt on Tek4010 Emulator - zoom to show 2x2 cells of dot](./z_aswan%20plt%20on%20Tek4010%20Emulator%20-%20zoom%20to%20show%202x2%20cells%20of%20dots.png)
 
-I watched a very interesting video in Nov 2025: ![Dendera Light (Re)Discovered? Ancient Electricity from Egyptian Pyramids](./https://www.youtube.com/watch?v=g507G2Ei2To) that was an interview with William Sosa, a researcher that had been working on replicating the Dendera Light for 30 years. He believes it was a plasma effect with mercury vapor and demonstrates his reproduction in the video and shows on a breadboard how it may have been created.
+I watched a very interesting video in Nov 2025: 
+
+![Dendera Light (Re)Discovered? Ancient Electricity from Egyptian Pyramids](./https://www.youtube.com/watch?v=g507G2Ei2To)
+
+that was an interview with William Sosa, a researcher that had been working on replicating the Dendera Light for 30 years. He believes it was a plasma effect with mercury vapor and demonstrates his reproduction in the video and shows on a breadboard how it may have been created.
 
 After watching the video I decided to make a new Dendera Light R12 bitmap image from an article on the web dendera-light-bulb-explained - Fig.4 Picture of actual relief – Photo credit: Mick Palarczyk
 
