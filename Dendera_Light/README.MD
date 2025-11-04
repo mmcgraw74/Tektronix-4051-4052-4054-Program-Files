@@ -9,7 +9,7 @@ The file is named z_aswan.plt in the pltfiles/More_pltfiles included with the Te
 
 ![z_aswan plt on Tek4010 Emulator](./z_aswan%20plt%20on%20Tek4010%20Emulator.png)
 
-The above image was created by Tektronix engineers in the early 1970's using dots with the two brightness levels, organized in 2x2 cells as shown in this zoom of the screenshot above:
+The above image was created by Tektronix engineers in the early 1970's using dots with two brightness levels, organized in 2x2 cells as shown in this zoom of the screenshot above:
 
 ![z_aswan plt on Tek4010 Emulator - zoom to show 2x2 cells of dot](./z_aswan%20plt%20on%20Tek4010%20Emulator%20-%20zoom%20to%20show%202x2%20cells%20of%20dots.png)
 
