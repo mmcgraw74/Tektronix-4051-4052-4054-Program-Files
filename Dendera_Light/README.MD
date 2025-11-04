@@ -26,7 +26,6 @@ Using my Flash Drive bitmap create program on the Tektronix 4051 Emulator to cre
 
 Fig 4 Picture of actual relief (BW) (inverted) (2).png
 
-
 Here is that 4050R12 image displayed on the Tektronix 4051 Emulator:
 
 Aswan Light MCM 2025 on 4051 Emulator.png
