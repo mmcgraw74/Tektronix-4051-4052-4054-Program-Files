@@ -1,8 +1,16 @@
-# **General Function Plot Z=F(X,Y)**
+# **General Function Plot Z=F(X,Y) and 3D Function Plot by Dony Robert**
 
-Recovered from Tektronix 4050 Education/Research Tape T2 062-5983-01 file 2
+3D Function Plot program was recovered from Tektronix 4050 Education/Research Tape T2 062-5983-01 file 2.  This program will run in 8KB of RAM.  Here is the 3D Function Plot abstract:
+
+![3D Function Plot abstract](./3D%20Function%20Plot%20abstract%20in%20Education-Research%20Tape2.jpg)
+
+I am still searching for the General Function Plot program which requires 32KB of RAM according to the abstract.  I may have to recreate the program from the flowcharts in the General Function Plot PDF.  General Function Plot program requires 32KB of RAM.  Here is the General Function Plot abstract:
+
+![General Function Plot abstract](./General%20Function%20Plot%20abstract%20in%20Tekniques%20V5N4.jpg)
 
 -----
+
+
 The Education/Research Tape T2 was labeled version -01
 
 I extracted the General Function Plot instructions PDF from the TekniquesVol5No4-T1 pdf in that directory of this repository, and in that document this program was listed as program 11 in file 33.
