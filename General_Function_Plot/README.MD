@@ -18,3 +18,7 @@ I conclude that the Education/Research Tape T2 which was issued AFTER the Tekniq
 Here is the output of running the _CASE 2_ plot using the 3D Function BASIC program on the Tektronix 4051 Emulator:
 
 ![CASE 2 - 3D Function Plot](./GenFNCTplot-pg14_using_3D_Function_program.png)
+
+and here is the CASE 2 example run with the General Function Plot program for comparison with the 3D Function Plot program output:
+
+![CASE 2 - General Function Plot in PDF](./CASE%202%20Example%20in%20pdf.jpg)
