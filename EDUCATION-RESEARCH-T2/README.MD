@@ -54,4 +54,4 @@ I changed the DIRECTORY menu program file 1 to add *** after the programs that w
 
 Here is my Tektronix 4051 Emulator screenshot of running the Directory menu program showing the programs not completely recovered.
 
-[EDUCATION-RESEARCH-T2/EDU-RES_MENU](./EDUCATION-RESEARCH-T2/EDU-RES_MENU.png)
+![EDUCATION-RESEARCH-T2/EDU-RES_MENU](./EDUCATION-RESEARCH-T2/EDU-RES_MENU.png)
