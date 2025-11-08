@@ -1,6 +1,6 @@
-# EDUCATION RESEARCH Tape 2
+# EDUCATION/RESEARCH Tape2
 
-In Tektronix Tekniques Vol.5 No.3 newsletter in September 1981, they announced that the number of 4050 BASIC application programs submitted to the Application Library had grown to over 600 and the Applications Library team had decided to stop creating custom tapes with three selected programs for each application program submitted and consolidate some of the applications into separate tapes with Abstracts for each tape published in an Application Library Programs catalog.  
+In Tektronix Tekniques Vol.5 No.3 newsletter in September 1981, they announced that the number of 4050 BASIC application programs submitted to the Application Library had grown to over 200 and the Applications Library team had decided to stop creating custom tapes with three selected programs for each application program submitted and consolidate some of the top applications that had been submitted into separate tapes with Abstracts for each tape published in an Application Library Programs catalog.  
 
 Here is a list of the tapes in the 1981 Application Library catalog.
 T1 and T2 are quarter-inch cartridge tapes (capacity 300KB)
