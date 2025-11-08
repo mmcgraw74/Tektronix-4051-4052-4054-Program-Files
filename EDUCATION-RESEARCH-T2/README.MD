@@ -62,7 +62,7 @@ I have included the following files in this directory:
 
 * EDUCATION-RESEARCH T2.zip - zip file with all the recovered programs and posted the individual programs in the PROGRAMS directory
 * EDUCATION-RESEARCH_T2_Abstracts.pdf - Abstracts for each program from the 1981 Applications Library Programs catalog
-* EDU-RES T2 dump.txt - all the files dumped from this tape except files 1 and 2 which were damaged in all my dump attempts and manually reconstructed
+* EDU-RES T2 dump.txt - all the files dumped from this tape
 * EDU-RES_MENU.png - screenshot of the Tektronix 4051 Emulator running file 1 showing with *** the programs that have damaged files or BINARY files
 * EDU-RES_T2 TLIST.txt - my list of the programs from extracting the headers for each file and multiplying the number of 256 byte tape blocks by 256 to form the MARKed tape file size
 * PROGRAMS - individual BASIC program files on this recovered tape
