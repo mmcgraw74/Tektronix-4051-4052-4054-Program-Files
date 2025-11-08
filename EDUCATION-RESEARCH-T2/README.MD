@@ -8,6 +8,7 @@ D1 and D1 are eight-inch Floppy disks (capacity 600KB)
 
 1. Character Generator T1
 2. Education/Research T1
+
 **3. Education/Research T2**
 4. Electrical Engineering T1
 5. Graphing T1
