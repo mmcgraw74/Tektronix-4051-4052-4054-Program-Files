@@ -57,6 +57,10 @@ I changed the DIRECTORY menu program file 1 to add *** after the programs that w
 
 Here is my Tektronix 4051 Emulator screenshot of running the Directory menu program showing the programs not completely recovered.
 
+You might notice I moved my Cubic Spline program in the DIRECTORY menu to 11 - as I edited the program to change the file numbers from 1, 2 and 3 to 24, 25 and 26 and changed the tape commands to Flash Drive commands - so this program works without moving all the files to a separate tape.
+
+The DIRECTORY menu programs 13 and above have multiple program files (like my Cubic Spline program) to reduce the RAM requirements of the program - since the original Tektronix 4051 computer was introduced in 1975 with only 8KB of RAM and 32KB BASIC ROM.  Tektronix 4050 BASIC has an APPEND command to append another program file into RAM at a designated program line number.  Typically you would delete some of the program lines and append a different set of lines into your program - for example: replace one subroutine with a different subroutine.
+
 ![EDU-RES_MENU](./EDU-RES_MENU.png) 
 
 --------
