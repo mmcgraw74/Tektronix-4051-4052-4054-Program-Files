@@ -46,8 +46,9 @@ Then I edit the dump to extract each ASCII program and some character editing to
 
 [General Function Plot](https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/tree/466109406434db70894417a334b0401d3834d99b/General_Function_Plot)
 
+---------------
 I also realized that one of my 4050 program submissions to the Application Library was published in Education/Research Tape2: Cubic Spline Interpolation - Files 24, 25 and 26.
------
+
 I recovered almost all the ASCII program files, but the BINARY program files were recovered as ASCII text and my attempts to convert it to BINARY programs so far have not worked.
 
 I changed the DIRECTORY menu program file 1 to add *** after the programs that were not recovered successfully.
