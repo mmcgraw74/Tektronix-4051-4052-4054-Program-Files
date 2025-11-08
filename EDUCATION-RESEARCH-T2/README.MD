@@ -32,4 +32,8 @@ D1 and D1 are eight-inch Floppy disks (capacity 600KB)
 22. Utilities T1
 23. Utilities D1
 
+---------
+The Education/Research Tape2 was in the estate of Jack Everson, a Tektronix sales engineer in New York.
 
+I recovered this tape in Nov 2025 after looking at the Tekniques Vol.5 No.4 Tape 1 documentation that I had previously posted (I don't have that tape)
+[Tektronix_Tekniques_Vol5_No4_T1_Program_Documentation_Dec81.pdf](https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/95c14ff7eff7e072417ad0c37ed56ceaa1256888/TekniquesVol5No4-T1/158082_Tektronix_Tekniques_Vol5_No4_T1_Program_Documentation_Dec81.pdf)
