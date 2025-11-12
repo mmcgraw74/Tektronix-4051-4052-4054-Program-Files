@@ -3,7 +3,7 @@ My internet search for Tektronix 4050 programs with CALL "EXEC" which provided 6
 
 Actually Checksum gen.txt is a document file that contains a short 4051 program with CALL "EXEC" at the end of the document.
 The document mentions a MAXIPACK and RAMPACK and line 1 of the program indicates the authors initials: MDC
-This leads me to believe the author is Michael Cranford - one of the 4051 engineers and designer of a MAXIPACK and RAMPACK, both of which are installed in a working 4051 in the vintagetek.org museum! https://vintagetek.org/4051-graphic-desktop-system/
+This leads me to believe the author is Micheal Cranford - one of the 4051 engineers and designer of a MAXIPACK and RAMPACK, both of which are installed in a working 4051 in the vintagetek.org museum! https://vintagetek.org/4051-graphic-desktop-system/
 
 I reworked the document into a program I named 4051 ROM Checksums and uploaded it in my Universal format which only uses CR for line delimiters and includes all Tektronix control characters in printable strings.
 
