@@ -19,8 +19,8 @@ or CALL "NOFONT" command.
 
 CALL "@FONTN" allows you to switch between the fonts dynamically, within
 the text in a PRINT statement.  The fonts are enumerated 0 through 4, so
-after that call, adding @0 in a PRINT string selects FONT0 until you type @1
-when it switches to FONT1, etc.  This means that you have to give up typing "@"
+after that call, adding @0 in a PRINT string selects FONT00 until you type @1
+when it switches to FONT01, etc.  This means that you have to give up typing "@"
 in any text, since it is used to select between the various fonts.
 
 CALL "NOFONT" or else power cycling the 4051 returns you to the standard
