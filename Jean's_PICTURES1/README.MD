@@ -1,4 +1,4 @@
-# Tektronix 4050 computer series - VECTOR Pictures by JEAN CAMPIONI in Jan 2026
+# VECTOR Pictures by JEAN CAMPIONI in Jan 2026 - for Tektronix 4051 / 4052 / 4054 computers
 
 ![PORSCHE AV](./Porsche%20AV.png)
 
