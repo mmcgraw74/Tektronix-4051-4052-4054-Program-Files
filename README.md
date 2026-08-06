@@ -18,8 +18,8 @@ The photo below is my 4054, 4052 and 4631 screen printer.
 
 ![4050 Family Photo](./4052%20and%204054%20highlighted.jpg)
 
-and this photo shows both computers running a hidden line program posted in BYTE Magazine
-![4054 and 4052 running hidden line program](./Tektronix%204052%20and%204054%20running%20hidden%20line%20program.png)
+and this photo shows both computers running a hidden line program posted in BYTE Magazine in May 1978
+![4054 and 4052 running hidden line program](./Tektronix%204052%20and%204054%20running%20May%201978%20BYTE%20HIDDEN%20LINE-restored.jpg) 
 
 ************************
 The Tektronix 4050 series of vector graphics computers were first introduced in 1975 with the 4051 using a Motorola 6800 CPU with 32KB of BASIC ROMs and 32KB RAM integrated with a 1024x780 vector graphics display, DC-300 quarter-inch tape drive, full keyboard, two option ROM slots and GPIB interface for attaching options like plotters, digitizing tablets, floppy and hard disk systems and other GPIB peripherals from Tektronix.
