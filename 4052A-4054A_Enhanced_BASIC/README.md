@@ -16,8 +16,6 @@ Both the 4052A and 4054A had the same chassis size as the original 4052 and 4054
 
 ![4052A/4054A Enhanced BASIC Tekniques article](./4052A-4054A%20BASIC%20language%20enhancements%20Tekniques%20Vol_6_No_3%20article.jpg)
 
-https://github.com/mmcgraw74/Tektronix-4051-4052-4054-Program-Files/blob/master/4052A-4054A_Enhanced_BASIC/4052A-4054A%20BASIC%20language%20enhancements%20Tekniques%20Vol_6_No_3%20article.jpg
-
 
 ************************
 The Tektronix 4050 series of vector graphics computers were first introduced in 1975 with the 4051 using a Motorola 6800 CPU with 32KB of BASIC ROMs and 32KB RAM integrated with a 1024x780 vector graphics display, DC-300 quarter-inch tape drive, full keyboard, two option ROM slots and GPIB interface for attaching options like plotters, digitizing tablets, floppy and hard disk systems and other GPIB peripherals from Tektronix.
