@@ -6,7 +6,7 @@ The Tektronix 4052A and 4054A were the third (and last) generation of Tektronix 
 Both the 4052A and 4054A had the same chassis size as the original 4052 and 4054 respectively but they both included hardware and firmware updates.
 
 # 4052A and 4054A Hardware updates:
-- ALU ROMs were updated to include new A-Series microcode opcodes
+- ALU ROMs were updated to ADD 23 new A-Series microcode opcodes and EXTEND 16 6800 opcodes to support A-Series 16-bit A and B registers!
 - MAS board was redesigned to use EPROMs instead of ROMs and eliminated the Patch ROMs (since the EPROMs could be reprogrammed)
 - IO board was redesigned to replace the discrete GPIB logic with the TI 9914 GPIB integrated circuit for faster GPIB throughput
 
