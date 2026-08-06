@@ -20,9 +20,3 @@ Both the 4052A and 4054A had the same chassis size as the original 4052 and 4054
 
 
 ************************
-The Tektronix 4050 series of vector graphics computers were first introduced in 1975 with the 4051 using a Motorola 6800 CPU with 32KB of BASIC ROMs and 32KB RAM integrated with a 1024x780 vector graphics display, DC-300 quarter-inch tape drive, full keyboard, two option ROM slots and GPIB interface for attaching options like plotters, digitizing tablets, floppy and hard disk systems and other GPIB peripherals from Tektronix.
-
-The 4052 and 4054 computers were second generation systems both introduced in 1979 with 10x performance over the 4051 through a custom 16-bit bit-slice CPU architecture which added hardware floating point and doubled the program memory capacity to 64KB and included 64KB of BASIC ROMs.
-
-The Tektronix 4050 computers targeted scientific and business applications that could take advantage of the high resolution vector graphics and text of these computers.  Since there were no BASIC programs available for those applications - Tektronix developed a series of PLOT 50 Software packages that included DC-300 tapes with programs targeting Mathematics, Statistics, Electrical Engineering, Graph Plot, Business Planning and Analysis, Modeling and Reporting Software and General Utility programs for editing and sorting strings or data as shown in this photo:
-
