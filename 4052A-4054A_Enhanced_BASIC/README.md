@@ -10,11 +10,8 @@ Both the 4052A and 4054A had the same chassis size as the original 4052 and 4054
 - MAS board was redesigned to use EPROMs instead of ROMs and eliminated the Patch ROMs (since the EPROMs could be reprogrammed)
 - IO board was redesigned to replace the discrete GPIB logic with the TI 9914 GPIB integrated circuit for faster GPIB throughput
 
-The 4054 had a 19" curved screen storage tube CRT with 4096 by 3072 addressable vector resolution!
 
-The photo below is my 4054, 4052 and 4631 screen printer.
-
-![4050 Family Photo](./4052%20and%204054%20highlighted.jpg)
+![Work in Progress - 4052A/4054A microcode opcodes](./WIP%206800%204052-4054%20and%20A-Series%20opcodes.jpg)
 
 and this photo shows both computers running a hidden line program posted in BYTE Magazine
 ![4054 and 4052 running hidden line program](./Tektronix%204052%20and%204054%20running%20hidden%20line%20program.png)
